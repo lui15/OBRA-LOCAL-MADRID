@@ -1,32 +1,238 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-ES">
   <head>
     <meta charset="utf-8" />
-    <title>ObraLocalMadrid | Reformas en Madrid</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Reformas en Madrid | Albañilería, baños y cocinas | ObraLocalMADRID</title>
 
     <base href="/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- SEO PRINCIPAL -->
     <meta
       name="description"
-      content="Descubre opciones para tu reforma en Madrid. Consulta servicios de pintura, albañilería, baños, cocinas y reformas integrales."
+      content="ObraLocalMADRID: especialistas en reformas en Madrid y alrededores. Albañilería, pintura, baños, cocinas, pladur y reformas integrales. Solicita tu presupuesto."
     />
 
-    <meta name="theme-color" content="#1B365D" />
+    <meta
+      name="keywords"
+      content="reformas Madrid, empresa de reformas Madrid, reformas integrales Madrid, albañilería Madrid, reformas de baños Madrid, reformas de cocinas Madrid, pintores Madrid, pladur Madrid, quitar gotelé Madrid, presupuesto reformas"
+    />
+
+    <meta name="author" content="ObraLocalMADRID" />
+    <meta name="theme-color" content="#10365f" />
+    <meta name="color-scheme" content="light" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <!-- INDEXACIÓN -->
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+
+    <meta name="language" content="es" />
+
+    <!-- CANONICAL E IDIOMA -->
+    <link rel="canonical" href="https://obralocalmadrid.es/" />
+    <link rel="alternate" hreflang="es-ES" href="https://obralocalmadrid.es/" />
+    <link rel="alternate" hreflang="x-default" href="https://obralocalmadrid.es/" />
+
+    <!-- SITEMAP -->
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://obralocalmadrid.es/sitemap.xml"
+    />
+
+    <!-- RENDIMIENTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <!-- LOGOTIPO -->
+    <link rel="preload" as="image" href="/images/logo.png" />
+
+    <!-- GOOGLE ANALYTICS 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7D56FY5K0V"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'G-7D56FY5K0V');
+    </script>
+
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="/images/logito.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
+    <!-- OPEN GRAPH -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:title" content="ObraLocalMadrid | Reformas en Madrid" />
+    <meta property="og:site_name" content="ObraLocalMADRID" />
+
+    <meta property="og:title" content="Reformas en Madrid | ObraLocalMADRID" />
+
     <meta
       property="og:description"
-      content="Cuéntanos qué reforma necesitas en Madrid y solicita información para tu proyecto."
+      content="Reformas de baños, cocinas, pintura, albañilería, pladur y reformas integrales en Madrid. Cuéntanos tu proyecto y solicita presupuesto."
     />
 
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta property="og:url" content="https://obralocalmadrid.es/" />
+    <meta property="og:image" content="https://obralocalmadrid.es/images/logo.png" />
+    <meta property="og:image:alt" content="ObraLocalMADRID, empresa de reformas en Madrid" />
+
+    <!-- TWITTER / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Reformas en Madrid | ObraLocalMADRID" />
+    <meta
+      name="twitter:description"
+      content="Reformas integrales, baños, cocinas, pintura y albañilería en Madrid. Solicita tu presupuesto."
+    />
+    <meta name="twitter:image" content="https://obralocalmadrid.es/images/logo.png" />
+
+    <!-- DATOS ESTRUCTURADOS: WEBSITE -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://obralocalmadrid.es/#website",
+        "url": "https://obralocalmadrid.es/",
+        "name": "ObraLocalMADRID",
+        "inLanguage": "es-ES",
+        "publisher": {
+          "@id": "https://obralocalmadrid.es/#organization"
+        }
+      }
+    </script>
+
+    <!-- DATOS ESTRUCTURADOS: EMPRESA -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["GeneralContractor", "LocalBusiness"],
+        "@id": "https://obralocalmadrid.es/#organization",
+        "name": "ObraLocalMADRID",
+        "description": "Servicios de reformas y obras en Madrid y alrededores. Albañilería, pintura, baños, cocinas, pladur y reformas integrales.",
+        "url": "https://obralocalmadrid.es/",
+        "logo": "https://obralocalmadrid.es/images/logo.png",
+        "image": "https://obralocalmadrid.es/images/logo.png",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Madrid",
+          "addressRegion": "Comunidad de Madrid",
+          "addressCountry": "ES"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Madrid"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Comunidad de Madrid"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de ObraLocalMADRID",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Reformas integrales",
+                "description": "Reformas completas de viviendas y espacios en Madrid."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Reformas de baños",
+                "description": "Renovación y reforma de baños."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Reformas de cocinas",
+                "description": "Renovación y reforma de cocinas."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Albañilería",
+                "description": "Trabajos de albañilería y obra."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pintura y quitar gotelé",
+                "description": "Servicios de pintura y renovación de paredes."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pladur",
+                "description": "Instalaciones y trabajos de pladur."
+              }
+            }
+          ]
+        }
+      }
+    </script>
   </head>
 
   <body>
     <app-root></app-root>
+
+    <noscript>
+      <div
+        style="
+          font-family: Arial, sans-serif;
+          max-width: 720px;
+          margin: 40px auto;
+          padding: 20px;
+          color: #14232b;
+          line-height: 1.6;
+        "
+      >
+        <h1>ObraLocalMADRID | Reformas en Madrid</h1>
+
+        <p>
+          Realizamos reformas en Madrid y alrededores: albañilería, pintura, baños, cocinas, pladur
+          y reformas integrales. Solicita información para tu proyecto.
+        </p>
+
+        <ul>
+          <li>Reformas integrales</li>
+          <li>Reformas de baños</li>
+          <li>Reformas de cocinas</li>
+          <li>Albañilería</li>
+          <li>Pintura y quitar gotelé</li>
+          <li>Pladur</li>
+        </ul>
+
+        <p>Activa JavaScript para utilizar nuestro formulario de presupuesto.</p>
+      </div>
+    </noscript>
   </body>
 </html>
