@@ -3269,3 +3269,99 @@ li:nth-child(6) {
     opacity: 1;
   }
 }
+
+/* ---------- SEO: contenido propio de cada URL ---------- */
+.seo-section {
+  background: var(--surface);
+}
+.seo-head {
+  max-width: 760px;
+}
+.seo-head h2 {
+  margin: 14px 0;
+  color: var(--navy-dark);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.15;
+}
+.seo-head p,
+.seo-bloque p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+.seo-puntos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.seo-puntos li {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+}
+.seo-bloques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+.seo-bloque {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+}
+.seo-bloque h3 {
+  margin: 0 0 8px;
+  color: var(--navy-dark);
+  font-size: 18px;
+}
+.seo-bloque p {
+  margin: 0;
+}
+.seo-cta {
+  margin-top: 28px;
+}
+.seo-faq {
+  margin-top: 40px;
+}
+.seo-faq h3 {
+  margin: 0 0 12px;
+  color: var(--navy-dark);
+  font-size: 21px;
+}
+.seo-nav {
+  margin-top: 40px;
+  color: var(--navy-dark);
+}
+.seo-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.seo-nav a {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.seo-nav a:hover {
+  border-color: var(--orange);
+  color: var(--orange-dark);
+}

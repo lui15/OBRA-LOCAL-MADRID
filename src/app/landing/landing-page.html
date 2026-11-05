@@ -48,10 +48,10 @@
         <div class="hero-content reveal">
           <span class="eyebrow">
             <span class="eyebrow-dot"></span>
-            REFORMAS EN MADRID
+            {{ pagina.kicker }}
           </span>
 
-          <h1>Tu casa, renovada.<br /><span>Tu proyecto, bien hecho.</span></h1>
+          <h1>{{ pagina.h1.linea }}<br /><span>{{ pagina.h1.resaltado }}</span></h1>
 
           <p class="hero-description">
             Albañilería, pintura, baños, cocinas, pladur y reformas integrales. Encuentra
@@ -763,6 +763,53 @@
         </div>
       </section>
     </div>
+
+    <!-- Contenido propio de cada URL -->
+    <section class="section seo-section" id="informacion">
+      <div class="container">
+        <div class="seo-head reveal">
+          <span class="eyebrow">{{ pagina.kicker }}</span>
+          <h2>{{ pagina.h2 }}</h2>
+          <p>{{ pagina.intro }}</p>
+        </div>
+
+        <ul class="seo-puntos">
+          <li *ngFor="let punto of pagina.puntos; trackBy: trackPorValor">{{ punto }}</li>
+        </ul>
+
+        <div class="seo-bloques">
+          <article class="seo-bloque" *ngFor="let bloque of pagina.bloques">
+            <h3>{{ bloque.titulo }}</h3>
+            <p>{{ bloque.texto }}</p>
+          </article>
+        </div>
+
+        <button
+          class="button button-orange seo-cta"
+          type="button"
+          (click)="seleccionarServicio(pagina.servicioFormulario)"
+        >
+          Pedir presupuesto <span>↗</span>
+        </button>
+
+        <div class="seo-faq">
+          <h3>Preguntas frecuentes: {{ pagina.etiqueta }}</h3>
+          <details class="faq-item" *ngFor="let faq of pagina.faqs; trackBy: trackPorPregunta">
+            <summary>{{ faq.pregunta }} <span>+</span></summary>
+            <p>{{ faq.respuesta }}</p>
+          </details>
+        </div>
+
+        <nav class="seo-nav" aria-label="Más páginas de ObraLocalMADRID">
+          <strong>También te puede interesar</strong>
+          <ul>
+            <li *ngFor="let otra of otrasPaginas">
+              <a [routerLink]="'/' + otra.path">{{ otra.etiqueta }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
 
     <section class="section faq-section" id="preguntas">
       <div class="container faq-layout">
