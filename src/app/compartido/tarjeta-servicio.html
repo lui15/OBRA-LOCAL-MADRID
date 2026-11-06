@@ -1,0 +1,55 @@
+@let s = servicio();
+<article class="service-card" appReveal [id]="'servicio-' + s.numero">
+  <div class="service-card-heading">
+    <span class="service-number">
+      {{ s.numero < 10 ? '0' + s.numero : s.numero }}
+    </span>
+
+    <h3>{{ s.nombre }}</h3>
+    <span class="service-heading-icon">↗</span>
+  </div>
+
+  <img class="service-photo" [src]="s.imagen" [alt]="s.nombre" loading="lazy" decoding="async" />
+
+  <div class="service-card-body">
+    <p class="service-summary">{{ s.resumen }}</p>
+
+    <h4>¿Qué incluye?</h4>
+
+    <ul class="included-list">
+      @for (elemento of s.incluye; track $index) {
+        <li><span>✓</span>{{ elemento }}</li>
+      }
+    </ul>
+
+    <div class="checklist-block" appReveal>
+      <h4>Claves para presupuestar</h4>
+
+      <ul class="checklist">
+        @for (aspecto of s.presupuestar; track $index) {
+          <li><span>✓</span>{{ aspecto }}</li>
+        }
+      </ul>
+    </div>
+
+    <div class="example-layout" appReveal>
+      <img [src]="s.ejemploImagen" [alt]="s.ejemplo" loading="lazy" decoding="async" />
+
+      <div>
+        <span class="example-kicker">EJEMPLO DE TRABAJO</span>
+        <h4>{{ s.ejemplo }}</h4>
+        <p>{{ s.nota }}</p>
+      </div>
+    </div>
+
+    <app-guia-precios [precios]="s.precios" />
+
+    <button
+      class="button button-card"
+      type="button"
+      (click)="presupuesto.abrir(s.nombre, 'tarjeta_servicio')"
+    >
+      Presupuestar este servicio <span>→</span>
+    </button>
+  </div>
+</article>

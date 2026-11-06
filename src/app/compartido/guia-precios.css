@@ -1,0 +1,134 @@
+:host {
+  display: block;
+}
+
+.prices-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 28px 0 16px;
+}
+
+.prices-heading h4 {
+  margin: 8px 0 0;
+}
+
+.prices-heading > small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 17px 15px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: white;
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
+}
+
+.price-size {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.price-card strong {
+  color: var(--navy);
+  font-size: clamp(15px, 1.5vw, 20px);
+  overflow-wrap: anywhere;
+}
+
+.price-card small {
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.price-card > span:last-child {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.price-disclaimer {
+  margin: 16px 0 20px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.price-grid.reveal.is-visible {
+  animation: none;
+}
+
+.price-grid.is-visible .price-card {
+  animation: riseSmall 0.6s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 0.09s);
+}
+
+.price-card:nth-child(2) {
+  --i: 1;
+}
+
+.price-card:nth-child(3) {
+  --i: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.price-card:hover {
+    border-color: #f6b88a;
+    box-shadow: 0 12px 26px rgba(241, 106, 10, 0.12);
+    transform: translateY(-4px);
+  }
+
+}
+
+@media (max-width: 720px) {
+.price-grid {
+    grid-template-columns: 1fr;
+  }
+
+.price-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 6px 12px;
+  }
+
+.price-card .price-size,
+  .price-card small,
+  .price-card > span:last-child {
+    grid-column: 1;
+  }
+
+.price-card strong {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    font-size: 17px;
+    text-align: right;
+  }
+
+}
+
+
+.prices-heading h4 {
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 800;
+}
