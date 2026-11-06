@@ -14,6 +14,7 @@ import {
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { AnaliticaService } from '../compartido/analitica.service';
 import {
   ESTADOS,
   MATERIALES,
@@ -49,6 +50,7 @@ export class PresupuestoWizard implements OnDestroy {
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly presupuestoService = inject(PresupuestoService);
   private readonly envio = inject(PresupuestoEnvioService);
+  private readonly analitica = inject(AnaliticaService);
   private readonly esNavegador = isPlatformBrowser(inject(PLATFORM_ID));
 
   /** Al crearse el modal recibe el foco (accesibilidad con teclado y lector de pantalla). */
@@ -270,6 +272,7 @@ export class PresupuestoWizard implements OnDestroy {
 
     this.bloquearScroll();
     this.envio.precargar();
+    this.analitica.evento('form_open', { ubicacion: peticion.ubicacion });
   }
 
   cerrarPresupuesto(): void {
@@ -351,6 +354,7 @@ export class PresupuestoWizard implements OnDestroy {
     if (this.pasoActual < this.ultimoPaso) {
       this.direccionPaso = 'adelante';
       this.pasoActual++;
+      this.analitica.evento('form_step', { paso: this.pasoActual + 1 });
       this.intentoContinuar = false;
       this.errorEnvio = '';
       this.irArribaDelFormulario();
@@ -465,9 +469,10 @@ export class PresupuestoWizard implements OnDestroy {
       this.refrescarVista();
       this.irArribaDelFormulario();
 
-      void this.envio.avisarPorEmail(this.respuesta);
+      void this.avisarYMedir();
     } catch (error: unknown) {
       console.error('No se pudo guardar la solicitud:', error);
+      this.analitica.evento('form_error', { motivo: 'guardado_fallido' });
 
       this.confirmacionEnvio = false;
       this.enviandoSolicitud = false;
@@ -475,6 +480,21 @@ export class PresupuestoWizard implements OnDestroy {
         'No hemos podido confirmar el envío. Comprueba la conexión e inténtalo de nuevo.';
 
       this.refrescarVista();
+    }
+  }
+
+  /**
+   * La solicitud ya está guardada: el lead se cuenta solo si EmailJS confirma el aviso.
+   * Solo salen el servicio y la página: nunca datos personales.
+   */
+  private async avisarYMedir(): Promise<void> {
+    const servicio = this.respuesta.servicio;
+    const paginaOrigen = this.esNavegador ? window.location.pathname : '';
+
+    if (await this.envio.avisarPorEmail(this.respuesta)) {
+      this.analitica.evento('generate_lead', { servicio, pagina_origen: paginaOrigen });
+    } else {
+      this.analitica.evento('form_error', { motivo: 'aviso_email_fallido' });
     }
   }
 

@@ -7,6 +7,8 @@
 
   <app-site-footer />
 
+  <app-aviso-cookies />
+
   <!-- El formulario y sus librerías se descargan solo cuando hacen falta -->
   @defer (when presupuesto.abierto(); prefetch on idle) {
     <app-presupuesto-wizard />

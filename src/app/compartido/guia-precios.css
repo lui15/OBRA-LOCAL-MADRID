@@ -132,3 +132,7 @@
   font-size: 14px;
   font-weight: 800;
 }
+
+:host-context(.lp-banda) .price-disclaimer {
+  color: #566679;
+}

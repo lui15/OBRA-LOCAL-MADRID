@@ -165,3 +165,12 @@
 .footer-column h3 a:hover {
   transform: none;
 }
+
+.legal-links button {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: none;
+  font-size: inherit;
+  text-decoration: underline;
+}

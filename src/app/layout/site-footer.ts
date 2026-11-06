@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { ConsentimientoService } from '../compartido/consentimiento.service';
 import { SERVICIOS } from '../datos/catalogo';
 import { paginaDeServicio, urlDePagina } from '../landing/landing-data';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
@@ -19,6 +20,7 @@ export class SiteFooter {
   readonly navegacion = inject(NavegacionService);
   readonly presupuesto = inject(PresupuestoService);
   readonly ruta = inject(EstadoRuta);
+  readonly consentimiento = inject(ConsentimientoService);
 
   readonly servicios = SERVICIOS.map((servicio) => {
     const pagina = paginaDeServicio(servicio);
