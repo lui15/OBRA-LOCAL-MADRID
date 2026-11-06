@@ -3365,3 +3365,17 @@ li:nth-child(6) {
   border-color: var(--orange);
   color: var(--orange-dark);
 }
+
+.legal-links a {
+  color: inherit;
+}
+.legal-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.legal-note a {
+  color: inherit;
+  text-decoration: underline;
+}
