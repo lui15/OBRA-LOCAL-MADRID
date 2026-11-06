@@ -32,10 +32,11 @@
     <div class="lp-hero-foto">
       <img
         [src]="pagina.imagen"
+        [attr.srcset]="srcsetFoto"
+        sizes="(max-width: 720px) 100vw, 480px"
         [alt]="pagina.imagenAlt"
-        width="1000"
-        height="750"
-        decoding="async"
+        [attr.width]="anchoFoto"
+        [attr.height]="altoFoto"
         fetchpriority="high"
       />
     </div>

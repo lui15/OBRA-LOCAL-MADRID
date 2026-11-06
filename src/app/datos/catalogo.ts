@@ -27,7 +27,7 @@ export const SERVICIOS: Servicio[] = [
     numero: 1,
     nombre: 'Albañilería',
     color: 'naranja',
-    imagen: '/images/albanileria.jpg',
+    imagen: '/images/albanileria.webp',
     resumen: 'Reparaciones, construcción, revestimientos y trabajos de albañilería.',
     incluye: [
       'Levantamiento y demolición de tabiques',
@@ -44,7 +44,7 @@ export const SERVICIOS: Servicio[] = [
       'Protecciones y acabados',
     ],
     ejemplo: 'Reparación de pared',
-    ejemploImagen: '/images/albanileria-ejemplo.jpg',
+    ejemploImagen: '/images/albanileria-ejemplo.webp',
     precios: [
       {
         tamano: 'Pequeño',
@@ -74,7 +74,7 @@ export const SERVICIOS: Servicio[] = [
     numero: 2,
     nombre: 'Pintura',
     color: 'azul',
-    imagen: '/images/pintura.jpg',
+    imagen: '/images/pintura.webp',
     resumen: 'Pintura de paredes y techos, preparación de superficies y acabados.',
     incluye: [
       'Pintura plástica de paredes y techos',
@@ -91,7 +91,7 @@ export const SERVICIOS: Servicio[] = [
       'Protección de muebles y suelos',
     ],
     ejemplo: 'Pintar una habitación',
-    ejemploImagen: '/images/pintura-ejemplo.jpg',
+    ejemploImagen: '/images/pintura-ejemplo.webp',
     precios: [
       {
         tamano: 'Pequeño',
@@ -121,7 +121,7 @@ export const SERVICIOS: Servicio[] = [
     numero: 3,
     nombre: 'Reforma de baño',
     color: 'turquesa',
-    imagen: '/images/reforma-bano.jpg',
+    imagen: '/images/reforma-bano.webp',
     resumen: 'Renovación de baños, sanitarios, revestimientos e instalaciones.',
     incluye: [
       'Cambio de azulejos y pavimento',
@@ -138,7 +138,7 @@ export const SERVICIOS: Servicio[] = [
       'Impermeabilización y mampara',
     ],
     ejemplo: 'Renovación de baño',
-    ejemploImagen: '/images/reforma-bano-ejemplo.jpg',
+    ejemploImagen: '/images/reforma-bano-ejemplo.webp',
     precios: [
       {
         tamano: 'Pequeño',
@@ -168,7 +168,7 @@ export const SERVICIOS: Servicio[] = [
     numero: 4,
     nombre: 'Reforma de cocinas',
     color: 'verde',
-    imagen: '/images/reforma-cocina.jpg',
+    imagen: '/images/reforma-cocina.webp',
     resumen: 'Renovación de muebles, encimeras, revestimientos e instalaciones.',
     incluye: [
       'Montaje de muebles',
@@ -185,7 +185,7 @@ export const SERVICIOS: Servicio[] = [
       'Cortes, remates y conexiones',
     ],
     ejemplo: 'Cambio de encimera y muebles',
-    ejemploImagen: '/images/reforma-cocina-ejemplo.jpg',
+    ejemploImagen: '/images/reforma-cocina-ejemplo.webp',
     precios: [
       {
         tamano: 'Pequeño',
@@ -215,7 +215,7 @@ export const SERVICIOS: Servicio[] = [
     numero: 5,
     nombre: 'Reformas integrales',
     color: 'azul-oscuro',
-    imagen: '/images/reformas-integrales.jpg',
+    imagen: '/images/reformas-integrales.webp',
     resumen: 'Renovación completa o parcial de viviendas y locales.',
     incluye: [
       'Demolición y nueva distribución',
@@ -232,7 +232,7 @@ export const SERVICIOS: Servicio[] = [
       'Plazos y permisos',
     ],
     ejemplo: 'Reforma de vivienda',
-    ejemploImagen: '/images/reformas-integrales-ejemplo.jpg',
+    ejemploImagen: '/images/reformas-integrales-ejemplo.webp',
     precios: [
       {
         tamano: 'Pequeña',
@@ -262,7 +262,7 @@ export const SERVICIOS: Servicio[] = [
     numero: 6,
     nombre: 'Pladur',
     color: 'morado',
-    imagen: '/images/pladur.jpg',
+    imagen: '/images/pladur.webp',
     resumen: 'Tabiques, falsos techos, trasdosados y aislamiento.',
     incluye: [
       'Tabiques y divisiones',
@@ -279,7 +279,7 @@ export const SERVICIOS: Servicio[] = [
       'Juntas y acabado final',
     ],
     ejemplo: 'Falso techo',
-    ejemploImagen: '/images/pladur-ejemplo.jpg',
+    ejemploImagen: '/images/pladur-ejemplo.webp',
     precios: [
       {
         tamano: 'Pequeño',
@@ -309,7 +309,7 @@ export const SERVICIOS: Servicio[] = [
     numero: 7,
     nombre: 'Paredes',
     color: 'rojo',
-    imagen: '/images/paredes.jpg',
+    imagen: '/images/paredes.webp',
     resumen: 'Reparación, alisado, revestimiento y renovación de paredes.',
     incluye: [
       'Reparación de grietas y agujeros',
@@ -326,7 +326,7 @@ export const SERVICIOS: Servicio[] = [
       'Protección y retirada de residuos',
     ],
     ejemplo: 'Alisar y pintar una pared',
-    ejemploImagen: '/images/paredes-ejemplo.jpg',
+    ejemploImagen: '/images/paredes-ejemplo.webp',
     precios: [
       {
         tamano: 'Pequeño',

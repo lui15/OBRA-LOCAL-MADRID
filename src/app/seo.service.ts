@@ -11,7 +11,7 @@ export interface SeoConfig {
   path: string;
   jsonLd?: object;
   noindex?: boolean;
-  /** Ruta de la imagen para redes sociales. Por defecto, el logotipo. */
+  /** Ruta de la imagen para redes sociales. */
   imagen?: string;
 }
 
@@ -24,7 +24,7 @@ export class SeoService {
 
   update(config: SeoConfig): void {
     const url = SITE_URL + config.path;
-    const imagen = SITE_URL + (config.imagen ?? '/images/logo.png');
+    const imagen = SITE_URL + (config.imagen ?? '/images/og-obralocal.jpg');
 
     this.titleService.setTitle(config.title);
     this.meta.updateTag({ name: 'description', content: config.description });

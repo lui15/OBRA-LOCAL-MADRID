@@ -92,7 +92,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Reformas integrales',
     servicioFormulario: 'Reformas integrales',
-    imagen: '/images/reformas-integrales.jpg',
+    imagen: '/images/reformas-integrales.webp',
     imagenAlt: 'Vivienda en Madrid durante una reforma integral',
     relacionadas: [
       'reforma-piso-completo-madrid',
@@ -188,7 +188,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Reforma de baño',
     servicioFormulario: 'Reforma de baño',
-    imagen: '/images/reforma-bano.jpg',
+    imagen: '/images/reforma-bano.webp',
     imagenAlt: 'Baño reformado con revestimientos nuevos en una vivienda de Madrid',
     relacionadas: [
       'cambiar-banera-por-plato-ducha-madrid',
@@ -284,7 +284,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Reforma de cocinas',
     servicioFormulario: 'Reforma de cocinas',
-    imagen: '/images/reforma-cocina.jpg',
+    imagen: '/images/reforma-cocina.webp',
     imagenAlt: 'Cocina reformada con muebles y encimera nuevos en Madrid',
     relacionadas: [
       'reforma-banos-madrid',
@@ -388,7 +388,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Albañilería',
     servicioFormulario: 'Albañilería',
-    imagen: '/images/albanileria.jpg',
+    imagen: '/images/albanileria.webp',
     imagenAlt: 'Trabajo de albañilería en una vivienda de Madrid',
     relacionadas: [
       'reformas-integrales-madrid',
@@ -440,6 +440,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         titulo: 'Elegir pintura y acabado',
         parrafos: [
+          'Si dudas entre dos colores, prueba una muestra en la pared real: la luz de cada estancia cambia mucho el tono.',
           'Para paredes y techos de vivienda, lo habitual es la pintura plástica. El acabado también influye: el mate disimula mejor las imperfecciones, algo muy útil en paredes antiguas o con la luz rasante de una ventana; el satinado se limpia mejor, por lo que suele elegirse en pasillos y zonas de paso.',
           'En cocinas y baños conviene una pintura resistente a la humedad y a la limpieza frecuente, y en techos, un producto que no salpique demasiado y unifique bien. Si hay manchas de humedad, primero hay que resolver la causa: pintar encima solo las esconde durante unos meses.',
         ],
@@ -488,7 +489,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Pintura',
     servicioFormulario: 'Pintura',
-    imagen: '/images/pintura.jpg',
+    imagen: '/images/pintura.webp',
     imagenAlt: 'Pintor preparando y pintando una pared en Madrid',
     relacionadas: [
       'quitar-gotele-madrid',
@@ -594,7 +595,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Pladur',
     servicioFormulario: 'Pladur',
-    imagen: '/images/pladur.jpg',
+    imagen: '/images/pladur.webp',
     imagenAlt: 'Instalación de tabique y falso techo de pladur en Madrid',
     relacionadas: [
       'albanileria-madrid',
@@ -700,7 +701,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Paredes',
     servicioFormulario: 'Paredes',
-    imagen: '/images/paredes.jpg',
+    imagen: '/images/paredes.webp',
     imagenAlt: 'Pared alisada y preparada para pintar en una vivienda de Madrid',
     relacionadas: [
       'quitar-gotele-madrid',
@@ -807,7 +808,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     servicioCatalogo: 'Reforma de baño',
     servicioFormulario: 'Reforma de baño',
     preciosSoloReferencia: true,
-    imagen: '/images/reforma-bano-ejemplo.jpg',
+    imagen: '/images/reforma-bano-ejemplo.webp',
     imagenAlt: 'Baño renovado con zona de ducha en lugar de bañera',
     relacionadas: [
       'reforma-banos-madrid',
@@ -911,7 +912,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Paredes',
     servicioFormulario: 'Paredes',
-    imagen: '/images/paredes-ejemplo.jpg',
+    imagen: '/images/paredes-ejemplo.webp',
     imagenAlt: 'Pared lisa después de quitar el gotelé',
     relacionadas: [
       'alisado-paredes-madrid',
@@ -1012,7 +1013,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Reformas integrales',
     servicioFormulario: 'Reformas integrales',
-    imagen: '/images/reformas-integrales-ejemplo.jpg',
+    imagen: '/images/reformas-integrales-ejemplo.webp',
     imagenAlt: 'Piso en Madrid durante una reforma completa',
     relacionadas: [
       'reformas-integrales-madrid',

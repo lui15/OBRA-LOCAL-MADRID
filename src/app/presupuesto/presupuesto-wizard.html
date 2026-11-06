@@ -204,7 +204,7 @@
                   [class.selected]="respuesta.servicio === servicio.nombre"
                   (click)="respuesta.servicio = servicio.nombre"
                 >
-                  <img [src]="servicio.imagen" alt="" loading="lazy" decoding="async" />
+                  <img [src]="miniatura(servicio.imagen)" alt="" width="39" height="39" loading="lazy" decoding="async" />
 
                   <span>{{ servicio.nombre }}</span>
 

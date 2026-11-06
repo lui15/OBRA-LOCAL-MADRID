@@ -93,7 +93,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas y locales en el distrito de Chamberí, Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/reformas-integrales.jpg',
+    imagen: '/images/reformas-integrales.webp',
     imagenAlt: 'Reforma de una vivienda clásica en Chamberí, Madrid',
     relacionadas: [
       'reformas-integrales-madrid',
@@ -192,7 +192,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas y locales en el distrito de Salamanca, Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/reforma-cocina.jpg',
+    imagen: '/images/reforma-cocina.webp',
     imagenAlt: 'Cocina reformada en una vivienda del distrito de Salamanca, Madrid',
     relacionadas: [
       'reformas-integrales-madrid',
@@ -291,7 +291,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas y locales en el distrito de Retiro, Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/reforma-bano.jpg',
+    imagen: '/images/reforma-bano.webp',
     imagenAlt: 'Baño reformado en una vivienda del distrito de Retiro, Madrid',
     relacionadas: [
       'reforma-banos-madrid',
@@ -391,7 +391,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas y locales en el distrito de Carabanchel, Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/reforma-cocina-ejemplo.jpg',
+    imagen: '/images/reforma-cocina-ejemplo.webp',
     imagenAlt: 'Cocina renovada en un piso de Carabanchel, Madrid',
     relacionadas: [
       'reforma-piso-completo-madrid',
@@ -490,7 +490,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas, chalets y locales en Alcobendas, Comunidad de Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/pladur.jpg',
+    imagen: '/images/pladur.webp',
     imagenAlt: 'Trabajos de reforma interior en una vivienda de Alcobendas',
     relacionadas: [
       'reformas-integrales-madrid',

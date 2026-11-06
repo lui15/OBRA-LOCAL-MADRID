@@ -9,6 +9,7 @@ import { GuiaPrecios } from '../compartido/guia-precios';
 import { Migas } from '../compartido/migas';
 import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
 import { SERVICIOS, Servicio, ZONAS, buscarServicio, formatearPrecio } from '../datos/catalogo';
+import { altoDe, anchoDe, srcsetDe } from '../datos/imagenes';
 import { NavegacionService } from '../layout/navegacion.service';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
 import { SeoService } from '../seo.service';
@@ -57,6 +58,10 @@ export class LandingPage {
   /** Los servicios del catálogo con su página, para el índice de precios y las zonas. */
   readonly serviciosConPagina = SERVICIOS.map((s) => ({ s, pagina: paginaDeServicio(s) }));
 
+  readonly anchoFoto = anchoDe(this.pagina.imagen);
+  readonly altoFoto = altoDe(this.pagina.imagen);
+  readonly srcsetFoto = srcsetDe(this.pagina.imagen);
+
   readonly url = urlDePagina;
   readonly formato = formatearPrecio;
   readonly verPrecios = Boolean(this.servicioCatalogo) || this.pagina.tipo === 'zona';
@@ -74,7 +79,6 @@ export class LandingPage {
       title: this.pagina.title,
       description: this.pagina.description,
       path: urlDePagina(this.pagina),
-      imagen: this.pagina.imagen,
       jsonLd: crearJsonLd(this.pagina),
     });
   }

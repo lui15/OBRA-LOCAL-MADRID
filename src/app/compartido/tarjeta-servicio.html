@@ -9,7 +9,17 @@
     <span class="service-heading-icon">↗</span>
   </div>
 
-  <img class="service-photo" [src]="s.imagen" [alt]="s.nombre" loading="lazy" decoding="async" />
+  <img
+    class="service-photo"
+    [src]="s.imagen"
+    [attr.srcset]="srcset(s.imagen)"
+    sizes="(max-width: 720px) 100vw, 400px"
+    [alt]="'Trabajos de ' + s.nombre.toLowerCase() + ' en Madrid'"
+    [attr.width]="ancho(s.imagen)"
+    [attr.height]="alto(s.imagen)"
+    loading="lazy"
+    decoding="async"
+  />
 
   <div class="service-card-body">
     <p class="service-summary">{{ s.resumen }}</p>
@@ -33,7 +43,16 @@
     </div>
 
     <div class="example-layout" appReveal>
-      <img [src]="s.ejemploImagen" [alt]="s.ejemplo" loading="lazy" decoding="async" />
+      <img
+        [src]="s.ejemploImagen"
+        [attr.srcset]="srcset(s.ejemploImagen)"
+        sizes="(max-width: 720px) 100vw, 260px"
+        [alt]="'Ejemplo de trabajo: ' + s.ejemplo.toLowerCase()"
+        [attr.width]="ancho(s.ejemploImagen)"
+        [attr.height]="alto(s.ejemploImagen)"
+        loading="lazy"
+        decoding="async"
+      />
 
       <div>
         <span class="example-kicker">EJEMPLO DE TRABAJO</span>

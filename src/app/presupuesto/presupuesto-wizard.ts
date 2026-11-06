@@ -23,6 +23,7 @@ import {
   TIPOS_INMUEBLE,
   ZONAS,
 } from '../datos/catalogo';
+import { IMAGENES } from '../datos/imagenes';
 import { PresupuestoEnvioService, RespuestaPresupuesto } from './presupuesto-envio.service';
 import { PeticionPresupuesto, PresupuestoService } from './presupuesto.service';
 
@@ -237,6 +238,10 @@ export class PresupuestoWizard implements OnDestroy {
 
     this.cdr.markForCheck();
     this.cdr.detectChanges();
+  }
+
+  miniatura(ruta: string): string {
+    return IMAGENES[ruta]?.peq.ruta ?? ruta;
   }
 
   get porcentajeProgreso(): number {
