@@ -65,7 +65,7 @@ import { ConsentimientoService } from './consentimiento.service';
       font-size: 14px;
     }
     a {
-      color: var(--orange-dark);
+      color: #b84800;
       font-weight: 600;
       text-decoration: underline;
     }
