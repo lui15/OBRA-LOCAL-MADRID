@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:obra-local-madrid": "node dist/obra-local-madrid/server/server.mjs"
+    "serve:ssr:obra-local-madrid": "node dist/obra-local-madrid/server/server.mjs",
+    "prebuild": "node scripts/generar-sitemap.mjs",
+    "seo:comprobar": "node scripts/generar-sitemap.mjs --comprobar"
   },
   "prettier": {
     "printWidth": 100,
@@ -44,6 +46,7 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "esbuild": "0.28.1",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
