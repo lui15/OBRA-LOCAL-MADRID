@@ -16,3 +16,6 @@ export const NEGOCIO = {
   /** Correo que recibe el aviso de cada solicitud. */
   correoSolicitudes: 'tramoreforma@gmail.com',
 };
+
+/** Dominio final, sin barra al final. */
+export const SITE_URL = 'https://obralocalmadrid.es';

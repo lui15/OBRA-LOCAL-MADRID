@@ -1,4 +1,4 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, NgTemplateOutlet, isPlatformBrowser } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -10,12 +10,16 @@ import {
   inject,
 } from '@angular/core';
 
+import { RouterLink } from '@angular/router';
+
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
+import { EstadoRuta } from './estado-ruta.service';
 import { NavegacionService } from './navegacion.service';
 
 @Component({
   selector: 'app-site-header',
   standalone: true,
+  imports: [NgTemplateOutlet, RouterLink],
   templateUrl: './site-header.html',
   styleUrl: './site-header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,6 +32,8 @@ export class SiteHeader implements OnDestroy {
 
   @ViewChild('barraScroll', { static: true }) private barraScroll?: ElementRef<HTMLElement>;
   @ViewChild('cabecera', { static: true }) private cabecera?: ElementRef<HTMLElement>;
+
+  readonly ruta = inject(EstadoRuta);
 
   menuAbierto = false;
 

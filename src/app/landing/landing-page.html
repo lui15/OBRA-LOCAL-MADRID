@@ -1,0 +1,243 @@
+<section class="lp-hero">
+  <div class="container lp-hero-grid">
+    <div class="lp-hero-copia">
+      <app-migas [migas]="migas" />
+
+      <span class="eyebrow lp-kicker">
+        <span class="eyebrow-dot"></span>
+        {{ pagina.kicker }}
+      </span>
+
+      <h1>{{ pagina.h1.linea }}<br /><span>{{ pagina.h1.resaltado }}</span></h1>
+
+      <p class="lp-intro">{{ pagina.intro }}</p>
+
+      <div class="lp-acciones">
+        <button
+          class="button button-orange"
+          type="button"
+          (click)="presupuesto.abrir(pagina.servicioFormulario, 'hero_landing')"
+        >
+          Pedir presupuesto <span>↗</span>
+        </button>
+
+        @if (verPrecios) {
+          <a class="button button-outline" href="#precios" (click)="navegacion.irA('precios', $event)">
+            Ver precios orientativos
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="lp-hero-foto">
+      <img
+        [src]="pagina.imagen"
+        [alt]="pagina.imagenAlt"
+        width="1000"
+        height="750"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
+  </div>
+</section>
+
+<app-garantias />
+
+<!-- ================= CONTENIDO ================= -->
+<div class="section lp-contenido">
+  <div class="container lp-texto">
+    @for (seccion of pagina.secciones; track seccion.titulo) {
+      <section class="lp-seccion">
+        <h2>{{ seccion.titulo }}</h2>
+
+        @for (parrafo of seccion.parrafos; track parrafo) {
+          <p>{{ parrafo }}</p>
+        }
+
+        @if (seccion.subsecciones?.length) {
+          <div class="lp-subsecciones">
+            @for (sub of seccion.subsecciones; track sub.titulo) {
+              <div class="lp-sub">
+                <h3>{{ sub.titulo }}</h3>
+                <p>{{ sub.texto }}</p>
+              </div>
+            }
+          </div>
+        }
+
+        @if (seccion.lista?.length) {
+          <ul class="lp-lista">
+            @for (item of seccion.lista; track item) {
+              <li><span>✓</span>{{ item }}</li>
+            }
+          </ul>
+        }
+      </section>
+    }
+  </div>
+</div>
+
+<!-- ================= PRECIOS DEL SERVICIO ================= -->
+@if (servicioCatalogo; as s) {
+  <section class="section lp-banda" id="precios">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <span class="eyebrow">GUÍA DE PRECIOS</span>
+        @if (pagina.preciosSoloReferencia) {
+          <h2>Precios de referencia: {{ s.nombre.toLowerCase() }}</h2>
+          <p>Son los rangos del servicio completo, no el precio de este trabajo concreto.</p>
+        } @else {
+          <h2>¿Cuánto puede costar?</h2>
+          <p>{{ s.nota }}</p>
+        }
+      </div>
+      <app-guia-precios [precios]="s.precios" [conCabecera]="false" />
+      <p class="lp-ver-todo">
+        <a routerLink="/precios">Ver los precios de todos los servicios →</a>
+      </p>
+    </div>
+  </section>
+}
+
+<!-- ================= ZONAS: RESUMEN DE PRECIOS ================= -->
+@if (pagina.tipo === 'zona') {
+  <section class="section lp-banda" id="precios">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <span class="eyebrow">PRECIOS ORIENTATIVOS</span>
+        <h2>Qué podemos hacer en tu vivienda</h2>
+        <p>Rangos de referencia, desde el trabajo más pequeño hasta el más amplio de cada servicio.</p>
+      </div>
+      <ul class="lp-tarjetas">
+        @for (item of serviciosConPagina; track item.s.numero) {
+          <li>
+            <a class="lp-tarjeta" [routerLink]="item.pagina ? url(item.pagina) : '/servicios'">
+              <h3>{{ item.s.nombre }}</h3>
+              <p>{{ item.s.resumen }}</p>
+              <strong>{{ formato(desde(item.s)) }}–{{ formato(hasta(item.s)) }}</strong>
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+}
+
+<!-- ================= MÓDULOS DE LOS ÍNDICES ================= -->
+@switch (pagina.modulo) {
+  @case ('servicios') {
+    <section class="section lp-banda" id="catalogo">
+      <div class="container">
+        <div class="section-heading" appReveal>
+          <span class="eyebrow">TODOS LOS SERVICIOS</span>
+          <h2>Elige qué quieres renovar</h2>
+          <p>Cada página explica qué incluye el trabajo, qué influye en el coste y sus precios.</p>
+        </div>
+        <ul class="lp-tarjetas">
+          @for (p of paginasServicio; track p.path) {
+            <li>
+              <a class="lp-tarjeta" [routerLink]="url(p)">
+                <h3>{{ p.etiqueta }}</h3>
+                <p>{{ p.resumen }}</p>
+              </a>
+            </li>
+          }
+        </ul>
+
+        <div class="section-heading lp-subindice" appReveal>
+          <h2>Trabajos más buscados</h2>
+        </div>
+        <ul class="lp-tarjetas">
+          @for (p of paginasIntencion; track p.path) {
+            <li>
+              <a class="lp-tarjeta" [routerLink]="url(p)">
+                <h3>{{ p.etiqueta }}</h3>
+                <p>{{ p.resumen }}</p>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+  }
+  @case ('precios') {
+    <section class="section lp-banda" id="tabla">
+      <div class="container">
+        <div class="section-heading" appReveal>
+          <span class="eyebrow">GUÍA DE PRECIOS</span>
+          <h2>Rangos orientativos por servicio</h2>
+          <p>El presupuesto final debe confirmar cantidades, materiales, mano de obra e impuestos.</p>
+        </div>
+        @for (item of serviciosConPagina; track item.s.numero) {
+          <div class="lp-grupo-precio" appReveal>
+            <h3>
+              @if (item.pagina; as p) {
+                <a [routerLink]="url(p)">{{ item.s.nombre }} →</a>
+              } @else {
+                {{ item.s.nombre }}
+              }
+            </h3>
+            <app-guia-precios [precios]="item.s.precios" [conCabecera]="false" />
+            <p class="lp-nota">{{ item.s.nota }}</p>
+          </div>
+        }
+      </div>
+    </section>
+  }
+  @case ('zonas') {
+    <section class="section lp-banda" id="municipios">
+      <div class="container">
+        <div class="section-heading" appReveal>
+          <span class="eyebrow">GUÍAS POR ZONA</span>
+          <h2>Información específica de tu zona</h2>
+          <p>Tipos de edificio, trámites y lo que conviene tener en cuenta en cada lugar.</p>
+        </div>
+        <ul class="lp-tarjetas">
+          @for (p of paginasZona; track p.path) {
+            <li>
+              <a class="lp-tarjeta" [routerLink]="url(p)">
+                <h3>{{ p.etiqueta }}</h3>
+                <p>{{ p.resumen }}</p>
+              </a>
+            </li>
+          }
+        </ul>
+
+        <div class="section-heading lp-subindice" appReveal>
+          <h2>Todas las zonas en las que trabajamos</h2>
+        </div>
+        <ul class="lp-chips">
+          @for (z of zonasAtendidas; track z) {
+            <li>{{ z }}</li>
+          }
+        </ul>
+      </div>
+    </section>
+  }
+}
+
+<app-proceso-trabajo [servicio]="pagina.servicioFormulario" />
+
+<app-faq-seccion
+  [faqs]="pagina.faqs"
+  [titulo]="pagina.tipo === 'hub' ? 'Dudas habituales' : 'Dudas sobre ' + pagina.etiqueta.toLowerCase()"
+  texto="Si tu duda no aparece, cuéntanosla en tu solicitud."
+  [servicio]="pagina.servicioFormulario"
+/>
+
+<!-- ================= ENLAZADO INTERNO ================= -->
+<nav class="lp-relacionadas" aria-label="Páginas relacionadas">
+  <div class="container">
+    <strong>También te puede interesar</strong>
+    <ul>
+      @for (r of relacionadas; track r.path) {
+        <li>
+          <a [routerLink]="url(r)">{{ r.etiqueta }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+</nav>
+
+<app-cta-presupuesto [servicio]="pagina.servicioFormulario" />

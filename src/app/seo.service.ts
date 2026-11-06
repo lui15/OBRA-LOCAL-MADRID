@@ -2,21 +2,20 @@ import { DOCUMENT } from '@angular/common';
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
-/** Dominio final, sin barra al final. Debe coincidir con public/robots.txt y public/sitemap.xml. */
-export const SITE_URL = 'https://obralocalmadrid.es';
-
-export const NEGOCIO = {
-  nombre: 'ObraLocalMADRID',
-} as const;
+import { NEGOCIO, SITE_URL } from './datos/contacto';
 
 export interface SeoConfig {
   title: string;
   description: string;
+  /** Ruta con barra inicial. El canónico no lleva barra final salvo en la portada. */
   path: string;
   jsonLd?: object;
   noindex?: boolean;
+  /** Ruta de la imagen para redes sociales. Por defecto, el logotipo. */
+  imagen?: string;
 }
 
+/** Metadatos de cada ruta. index.html no los repite: aquí está la única fuente. */
 @Injectable({ providedIn: 'root' })
 export class SeoService {
   private readonly titleService = inject(Title);
@@ -25,6 +24,7 @@ export class SeoService {
 
   update(config: SeoConfig): void {
     const url = SITE_URL + config.path;
+    const imagen = SITE_URL + (config.imagen ?? '/images/logo.png');
 
     this.titleService.setTitle(config.title);
     this.meta.updateTag({ name: 'description', content: config.description });
@@ -35,13 +35,16 @@ export class SeoService {
 
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:site_name', content: NEGOCIO.nombre });
+    this.meta.updateTag({ property: 'og:locale', content: 'es_ES' });
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
     this.meta.updateTag({ property: 'og:url', content: url });
-    this.meta.updateTag({ property: 'og:locale', content: 'es_ES' });
-    this.meta.updateTag({ property: 'og:image', content: SITE_URL + '/images/logo.png' });
+    this.meta.updateTag({ property: 'og:image', content: imagen });
+
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.meta.updateTag({ name: 'twitter:title', content: config.title });
     this.meta.updateTag({ name: 'twitter:description', content: config.description });
+    this.meta.updateTag({ name: 'twitter:image', content: imagen });
 
     if (config.noindex) {
       this.removeCanonical();

@@ -2,7 +2,9 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { SERVICIOS } from '../datos/catalogo';
+import { paginaDeServicio, urlDePagina } from '../landing/landing-data';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
+import { EstadoRuta } from './estado-ruta.service';
 import { NavegacionService } from './navegacion.service';
 
 @Component({
@@ -16,7 +18,12 @@ import { NavegacionService } from './navegacion.service';
 export class SiteFooter {
   readonly navegacion = inject(NavegacionService);
   readonly presupuesto = inject(PresupuestoService);
-  readonly servicios = SERVICIOS;
+  readonly ruta = inject(EstadoRuta);
+
+  readonly servicios = SERVICIOS.map((servicio) => {
+    const pagina = paginaDeServicio(servicio);
+    return { nombre: servicio.nombre, url: pagina ? urlDePagina(pagina) : '/servicios' };
+  });
 
   pedir(evento: Event): void {
     evento.preventDefault();

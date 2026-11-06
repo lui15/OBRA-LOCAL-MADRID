@@ -1,40 +1,49 @@
 <footer class="site-footer">
   <div class="container footer-main">
     <div class="footer-brand">
-      <a class="brand" href="#inicio" (click)="navegacion.irA('inicio', $event)">
-        <img
-          class="brand-logo"
-          src="/images/logo.png"
-          alt="ObraLocal Madrid — Reformas, construcción, hogares más fuertes"
-          loading="lazy"
-          decoding="async"
-        />
-      </a>
+      @if (ruta.esPortada()) {
+        <a class="brand" href="#inicio" aria-label="ObraLocalMADRID, inicio" (click)="navegacion.irA('inicio', $event)">
+          <img
+            class="brand-logo"
+            src="/images/logo.png"
+            alt="ObraLocal Madrid — Reformas, construcción, hogares más fuertes"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      } @else {
+        <a class="brand" routerLink="/" aria-label="ObraLocalMADRID, inicio">
+          <img
+            class="brand-logo"
+            src="/images/logo.png"
+            alt="ObraLocal Madrid — Reformas, construcción, hogares más fuertes"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      }
 
       <p>Información y orientación para planificar trabajos de reforma y mejora del hogar.</p>
     </div>
 
     <div class="footer-column">
-      <h3>Servicios</h3>
+      <h3><a routerLink="/servicios">Servicios</a></h3>
 
-      @for (servicio of servicios; track servicio.numero) {
-        <a
-          [href]="'#servicio-' + servicio.numero"
-          (click)="navegacion.irA('servicio-' + servicio.numero, $event)"
-        >
-          {{ servicio.nombre }}
-        </a>
+      @for (servicio of servicios; track servicio.url) {
+        <a [routerLink]="servicio.url">{{ servicio.nombre }}</a>
       }
     </div>
 
     <div class="footer-column">
       <h3>Explora</h3>
 
-      <a href="#como-funciona" (click)="navegacion.irA('como-funciona', $event)"> Cómo funciona </a>
+      <a routerLink="/como-trabajamos"> Cómo funciona </a>
 
-      <a href="#servicios" (click)="navegacion.irA('servicios', $event)"> Precios orientativos </a>
+      <a routerLink="/precios"> Precios orientativos </a>
 
-      <a href="#preguntas" (click)="navegacion.irA('preguntas', $event)"> Preguntas frecuentes </a>
+      <a routerLink="/zonas"> Zonas de trabajo </a>
+
+      <a routerLink="/preguntas-frecuentes"> Preguntas frecuentes </a>
 
       <a href="#presupuesto" (click)="pedir($event)"> Solicitar presupuesto </a>
     </div>
@@ -44,7 +53,7 @@
     <div class="container footer-bottom-inner">
       <span>© 2026 ObraLocalMADRID. Todos los derechos reservados.</span>
       <span>Precios orientativos sujetos a valoración.</span>
-      <span class="legal-links"><a routerLink="/aviso-legal">Aviso legal</a> · <a routerLink="/politica-privacidad">Política de privacidad</a></span>
+      <span class="legal-links"><a routerLink="/aviso-legal">Aviso legal</a> · <a routerLink="/politica-privacidad">Política de privacidad</a> · <a routerLink="/politica-cookies">Política de cookies</a></span>
     </div>
   </div>
 </footer>

@@ -1,17 +1,27 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
+import { Migas } from '../compartido/migas';
+import { Miga, nodoMigas } from '../landing/landing-data';
 import { SeoService } from '../seo.service';
 import { LEGAL } from './legal-data';
+
+type TipoLegal = 'aviso' | 'privacidad' | 'cookies';
+
+const TITULOS: Record<TipoLegal, { titulo: string; path: string }> = {
+  aviso: { titulo: 'Aviso legal', path: '/aviso-legal' },
+  privacidad: { titulo: 'Política de privacidad', path: '/politica-privacidad' },
+  cookies: { titulo: 'Política de cookies', path: '/politica-cookies' },
+};
 
 @Component({
   selector: 'app-legal',
   standalone: true,
-  imports: [RouterLink],
+  imports: [Migas],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="legal">
-      <a class="volver" routerLink="/">← Volver a {{ legal.nombre }}</a>
+      <app-migas [migas]="migas" />
 
       @if (tipo === 'aviso') {
         <h1>Aviso legal</h1>
@@ -62,6 +72,47 @@ import { LEGAL } from './legal-data';
         <p>
           Estas condiciones se rigen por la legislación española. Si eres consumidor, conservas los
           derechos y el fuero que te reconoce la normativa de consumo.
+        </p>
+      } @else if (tipo === 'cookies') {
+        <h1>Política de cookies</h1>
+
+        <h2>Qué son las cookies</h2>
+        <p>
+          Son pequeños archivos que una web guarda en tu navegador para recordar información sobre
+          tu visita. Esta web usa solo las que se indican aquí.
+        </p>
+
+        <h2>Qué cookies usamos</h2>
+        <p>
+          <strong>Cookies analíticas de Google Analytics.</strong> Solo se activan si pulsas
+          «Aceptar» en el aviso de cookies. Nos ayudan a saber qué páginas interesan más y a contar
+          las solicitudes de presupuesto. No enviamos a Google tu nombre, tu teléfono, tu correo ni
+          tu dirección.
+        </p>
+        <ul>
+          <li><strong>_ga</strong>: distingue visitantes. Dura hasta 2 años. Es de Google.</li>
+          <li>
+            <strong>_ga_*</strong>: mantiene el estado de la sesión. Dura hasta 2 años. Es de
+            Google.
+          </li>
+        </ul>
+        <p>
+          <strong>Preferencia de cookies.</strong> Guardamos tu decisión en el almacenamiento local
+          de tu navegador, durante un máximo de 24 meses, para no volver a preguntarte. Es técnica:
+          no te identifica y no necesita consentimiento.
+        </p>
+
+        <h2>Cómo cambiar tu decisión</h2>
+        <p>
+          Puedes cambiarla en cualquier momento con el enlace «Configurar cookies» del pie de la
+          página. Si rechazas, se borran las cookies de Google Analytics de este sitio. También
+          puedes eliminarlas desde la configuración de tu navegador.
+        </p>
+
+        <h2>Transferencias internacionales</h2>
+        <p>
+          Google puede tratar datos fuera del Espacio Económico Europeo, con las garantías que exige
+          el RGPD. Consulta la información de Google en policies.google.com/privacy.
         </p>
       } @else {
         <h1>Política de privacidad</h1>
@@ -115,7 +166,6 @@ import { LEGAL } from './legal-data';
   styles: `
     :host {
       display: block;
-      min-height: 100vh;
       background: #fff;
     }
     .legal {
@@ -124,11 +174,6 @@ import { LEGAL } from './legal-data';
       padding: 40px 24px 72px;
       color: #092746;
       line-height: 1.65;
-    }
-    .volver {
-      color: #f16a0a;
-      font-weight: 700;
-      text-decoration: none;
     }
     h1 {
       margin: 24px 0 16px;
@@ -154,16 +199,21 @@ import { LEGAL } from './legal-data';
 })
 export class LegalPage {
   readonly legal = LEGAL;
-  readonly tipo = inject(ActivatedRoute).snapshot.data['tipo'] as 'aviso' | 'privacidad';
+  readonly tipo = inject(ActivatedRoute).snapshot.data['tipo'] as TipoLegal;
+  readonly migas: Miga[] = [
+    { etiqueta: 'Inicio', url: '/' },
+    { etiqueta: TITULOS[this.tipo].titulo, url: TITULOS[this.tipo].path },
+  ];
 
   constructor() {
-    const esAviso = this.tipo === 'aviso';
+    const { titulo, path } = TITULOS[this.tipo];
 
     inject(SeoService).update({
-      title: `${esAviso ? 'Aviso legal' : 'Política de privacidad'} | ${LEGAL.nombre}`,
-      description: `${esAviso ? 'Aviso legal' : 'Política de privacidad'} de ${LEGAL.dominio}.`,
-      path: esAviso ? '/aviso-legal' : '/politica-privacidad',
+      title: `${titulo} | ${LEGAL.nombre}`,
+      description: `${titulo} de ${LEGAL.dominio}.`,
+      path,
       noindex: true,
+      jsonLd: { '@context': 'https://schema.org', ...nodoMigas(this.migas) },
     });
   }
 }

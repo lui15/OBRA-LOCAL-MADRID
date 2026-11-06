@@ -1,10 +1,12 @@
-<div class="prices-heading">
-  <div>
-    <span class="eyebrow">GUÍA DE PRECIOS</span>
-    <h4>¿Cuánto puede costar?</h4>
+@if (conCabecera()) {
+  <div class="prices-heading">
+    <div>
+      <span class="eyebrow">GUÍA DE PRECIOS</span>
+      <h4>¿Cuánto puede costar?</h4>
+    </div>
+    <small>Importes orientativos</small>
   </div>
-  <small>Importes orientativos</small>
-</div>
+}
 
 <div class="price-grid" appReveal>
   @for (precio of precios(); track precio.tamano) {

@@ -14,5 +14,7 @@ import { RevealDirective } from './animaciones';
 })
 export class GuiaPrecios {
   readonly precios = input.required<readonly Precio[]>();
+  /** Fuera de la tarjeta de la portada, la página pone su propio título con el nivel correcto. */
+  readonly conCabecera = input(true);
   readonly formato = formatearPrecio;
 }

@@ -20,7 +20,6 @@ export const LEGAL = {
     'Hostinger: alojamiento de la web.',
     'Supabase: base de datos donde se guardan las solicitudes.',
     'EmailJS: envío del aviso por correo de cada solicitud.',
-    'Google Analytics (Google): estadísticas de visitas a la web.',
-    'Google Fonts y Unsplash: tipografías e imágenes que tu navegador descarga al visitar la web, lo que les comunica tu dirección IP.',
+    'Google Analytics (Google): estadísticas de visitas a la web, solo si aceptas las cookies analíticas.',
   ],
 };

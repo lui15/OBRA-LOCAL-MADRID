@@ -85,18 +85,18 @@
   <div class="container">
     <div class="seo-head" appReveal>
       <span class="eyebrow">{{ pagina.kicker }}</span>
-      <h2>{{ pagina.h2 }}</h2>
+      <h2>{{ seccion.titulo }}</h2>
       <p>{{ pagina.intro }}</p>
     </div>
 
     <ul class="seo-puntos">
-      @for (punto of pagina.puntos; track punto) {
+      @for (punto of seccion.lista; track punto) {
           <li>{{ punto }}</li>
         }
     </ul>
 
     <div class="seo-bloques">
-      @for (bloque of pagina.bloques; track bloque.titulo) {
+      @for (bloque of seccion.subsecciones; track bloque.titulo) {
           <article class="seo-bloque">
         <h3>{{ bloque.titulo }}</h3>
         <p>{{ bloque.texto }}</p>

@@ -156,3 +156,12 @@
   color: inherit;
 }
 
+
+.footer-column h3 a {
+  color: inherit;
+  font-size: inherit;
+}
+
+.footer-column h3 a:hover {
+  transform: none;
+}
