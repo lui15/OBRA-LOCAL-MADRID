@@ -10,7 +10,7 @@ import { LEGAL } from './legal-data';
   imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <main class="legal">
+    <div class="legal">
       <a class="volver" routerLink="/">← Volver a {{ legal.nombre }}</a>
 
       @if (tipo === 'aviso') {
@@ -110,14 +110,13 @@ import { LEGAL } from './legal-data';
           de Datos (www.aepd.es).
         </p>
       }
-    </main>
+    </div>
   `,
   styles: `
     :host {
       display: block;
       min-height: 100vh;
       background: #fff;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     }
     .legal {
       max-width: 760px;

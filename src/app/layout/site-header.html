@@ -1,0 +1,38 @@
+<!-- Barra de progreso de lectura (se actualiza desde el TS con transform) -->
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress-bar" #barraScroll></div>
+</div>
+
+<header class="site-header" #cabecera>
+  <div class="container header-inner">
+    <a class="brand" href="#inicio" (click)="irA('inicio', $event)">
+      <img
+        class="brand-logo"
+        src="/images/logo.png"
+        alt="ObraLocal Madrid — Reformas, construcción, hogares más fuertes"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="menuAbierto = !menuAbierto"
+      [attr.aria-expanded]="menuAbierto"
+      [attr.aria-label]="menuAbierto ? 'Cerrar menú' : 'Abrir menú'"
+      aria-controls="menu-principal"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="menu-principal" [class.open]="menuAbierto">
+      <a href="#servicios" (click)="irA('servicios', $event)">Servicios</a>
+      <a href="#como-funciona" (click)="irA('como-funciona', $event)">Cómo funciona</a>
+      <a href="#preguntas" (click)="irA('preguntas', $event)">Preguntas</a>
+      <button class="button button-orange nav-button" type="button" (click)="pedirPresupuesto()">
+        Pedir presupuesto <span>↗</span>
+      </button>
+    </nav>
+  </div>
+</header>

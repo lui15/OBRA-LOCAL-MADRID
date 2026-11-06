@@ -1,0 +1,14 @@
+<div class="site-shell">
+  <app-site-header />
+
+  <main>
+    <router-outlet />
+  </main>
+
+  <app-site-footer />
+
+  <!-- El formulario y sus librerías se descargan solo cuando hacen falta -->
+  @defer (when presupuesto.abierto(); prefetch on idle) {
+    <app-presupuesto-wizard />
+  }
+</div>

@@ -6,7 +6,7 @@ const rutasLanding: Routes = PAGINAS.map(
   (pagina): Route => ({
     path: pagina.path,
     pathMatch: 'full',
-    loadComponent: () => import('./landing/landing-page').then((m) => m.LandingPage),
+    loadComponent: () => import('./inicio/inicio-page').then((m) => m.InicioPage),
     data: { slug: pagina.path },
   }),
 );
