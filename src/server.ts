@@ -34,7 +34,7 @@ app.use(
     redirect: false,
     setHeaders: (res, ruta) => {
       // Sin hash en el nombre: deben poder actualizarse.
-      if (/\.(xml|txt)$/.test(ruta)) res.setHeader('Cache-Control', 'public, max-age=86400');
+      if (/\.(xml|txt|ico)$/.test(ruta)) res.setHeader('Cache-Control', 'public, max-age=86400');
     },
   }),
 );

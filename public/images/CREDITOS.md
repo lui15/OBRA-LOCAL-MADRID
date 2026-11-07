@@ -56,4 +56,4 @@ Origen no documentado en el proyecto. TODO: confirmar que son propias o que hay 
 - `reformas-integrales`
 - `reformas-integrales-ejemplo`
 
-Logotipos: `logo.png`, `logo-400.webp` y `logito.png`, de ObraLocal Madrid.
+Logotipos e iconos de ObraLocal Madrid: `logo.png`, `logo-400.webp`, `favicon-48.png`, `favicon-96.png`, `favicon-192.png`, `apple-touch-icon.png` y `/favicon.ico`.
