@@ -1,16 +1,52 @@
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="progreso" aria-hidden="true" [style.transform]="'scaleX(' + scroll.progreso() + ')'"></div>
+
 <div class="site-shell">
   <app-site-header />
 
-  <main>
+  <main id="contenido">
     <router-outlet />
   </main>
 
   <app-site-footer />
-
-  <app-aviso-cookies />
-
-  <!-- El formulario y sus librerías se descargan solo cuando hacen falta -->
-  @defer (when presupuesto.abierto(); prefetch on idle) {
-    <app-presupuesto-wizard />
-  }
 </div>
+
+<!-- Escritorio: botón flotante · Móvil: barra de acción fija al alcance del pulgar -->
+<button
+  type="button"
+  class="button button-orange fab"
+  [class.visible]="scroll.avanzado() && !presupuesto.abierto()"
+  [attr.tabindex]="scroll.avanzado() && !presupuesto.abierto() ? 0 : -1"
+  (click)="presupuesto.abrir(contexto.servicio(), 'boton_flotante')"
+>
+  Pedir presupuesto <span>↗</span>
+</button>
+
+<div class="barra-movil" data-ubicacion="barra_movil" [class.oculta]="presupuesto.abierto()">
+  <a class="bm-icono" [href]="telefono" aria-label="Llamar por teléfono">
+    <app-icono nombre="telefono" />
+  </a>
+  <a
+    class="bm-icono"
+    [href]="contexto.whatsapp()"
+    target="_blank"
+    rel="noopener"
+    aria-label="Escribir por WhatsApp"
+  >
+    <app-icono nombre="whatsapp" />
+  </a>
+  <button
+    type="button"
+    class="button button-orange bm-cta"
+    (click)="presupuesto.abrir(contexto.servicio(), 'barra_movil')"
+  >
+    Pedir presupuesto
+  </button>
+</div>
+
+<app-aviso-cookies />
+
+<!-- El formulario y sus librerías se descargan solo cuando hacen falta -->
+@defer (when presupuesto.abierto(); prefetch on idle) {
+  <app-presupuesto-wizard />
+}

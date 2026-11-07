@@ -1,0 +1,116 @@
+:host {
+  display: block;
+}
+
+.site-shell {
+  overflow: clip;
+  /* La cabecera es fija: su hueco no cambia al compactarse, así el contenido no salta. */
+  padding-top: var(--hh);
+  background: #fff;
+}
+
+main {
+  display: block;
+  min-height: 60vh;
+}
+
+main:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 130;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--navy-dark);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  transform: translateY(-200%);
+  transition: transform 0.2s;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.progreso {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 120;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), #ffa05c);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.fab {
+  position: fixed;
+  right: clamp(16px, 2.4vw, 36px);
+  bottom: clamp(16px, 2.4vw, 36px);
+  z-index: 80;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition:
+    opacity 0.3s,
+    transform 0.5s var(--ease-out),
+    background 0.25s;
+}
+
+.fab.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.barra-movil {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .fab {
+    display: none;
+  }
+
+  .barra-movil {
+    position: fixed;
+    inset: auto 10px calc(10px + env(safe-area-inset-bottom));
+    z-index: 80;
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    background: rgba(9, 39, 70, 0.94);
+    box-shadow: 0 20px 40px -14px rgba(9, 39, 70, 0.65);
+    transition: transform 0.4s var(--ease-out);
+  }
+
+  .barra-movil.oculta {
+    transform: translateY(140%);
+  }
+
+  .bm-icono {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    --icono: 20px;
+  }
+
+  .bm-cta {
+    flex: 1;
+    min-height: 48px;
+    padding-inline: 12px;
+    border-radius: 999px;
+  }
+}

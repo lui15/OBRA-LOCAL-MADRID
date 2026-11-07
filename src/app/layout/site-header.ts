@@ -1,96 +1,95 @@
-import { DOCUMENT, NgTemplateOutlet, isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  OnDestroy,
+  HostListener,
   PLATFORM_ID,
-  ViewChild,
-  afterNextRender,
+  effect,
   inject,
+  signal,
 } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
-import { RouterLink } from '@angular/router';
-
+import { Icono } from '../compartido/icono';
+import { ENLACE_TELEFONO, NEGOCIO } from '../datos/contacto';
+import { PAGINAS, urlDePagina } from '../landing/landing-data';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
-import { EstadoRuta } from './estado-ruta.service';
-import { NavegacionService } from './navegacion.service';
+import { ContextoPagina } from './contexto-pagina.service';
+import { ScrollEstado } from './scroll-estado.service';
 
 @Component({
   selector: 'app-site-header',
   standalone: true,
-  imports: [NgTemplateOutlet, RouterLink],
+  imports: [Icono, RouterLink, RouterLinkActive],
   templateUrl: './site-header.html',
   styleUrl: './site-header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SiteHeader implements OnDestroy {
+export class SiteHeader {
+  readonly scroll = inject(ScrollEstado);
+  private readonly presupuesto = inject(PresupuestoService);
+  private readonly contexto = inject(ContextoPagina);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
   private readonly doc = inject(DOCUMENT);
   private readonly esNavegador = isPlatformBrowser(inject(PLATFORM_ID));
-  private readonly navegacion = inject(NavegacionService);
-  private readonly presupuesto = inject(PresupuestoService);
 
-  @ViewChild('barraScroll', { static: true }) private barraScroll?: ElementRef<HTMLElement>;
-  @ViewChild('cabecera', { static: true }) private cabecera?: ElementRef<HTMLElement>;
+  readonly telefono = ENLACE_TELEFONO;
+  readonly telefonoVisible = NEGOCIO.telefonoVisible;
+  readonly url = urlDePagina;
 
-  readonly ruta = inject(EstadoRuta);
+  readonly servicios = PAGINAS.filter((p) => p.tipo === 'servicio');
+  readonly trabajos = PAGINAS.filter((p) => p.tipo === 'trabajo');
+  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona');
 
-  menuAbierto = false;
+  readonly enlaces = [
+    { ruta: '/precios', texto: 'Precios' },
+    { ruta: '/zonas', texto: 'Zonas' },
+    { ruta: '/como-trabajamos', texto: 'Cómo trabajamos' },
+    { ruta: '/preguntas-frecuentes', texto: 'Preguntas' },
+  ];
 
-  private rafScroll = 0;
-  private conSombra = false;
+  readonly megaAbierto = signal(false);
+  readonly menuAbierto = signal(false);
 
   constructor() {
-    afterNextRender(() => {
-      const ventana = this.doc.defaultView!;
-      ventana.addEventListener('scroll', this.alHacerScroll, { passive: true });
-      ventana.addEventListener('resize', this.alHacerScroll, { passive: true });
-      this.actualizarScroll();
+    effect(() => {
+      const abierto = this.menuAbierto();
+      if (this.esNavegador) this.doc.documentElement.style.overflow = abierto ? 'hidden' : '';
     });
   }
 
-  ngOnDestroy(): void {
-    if (!this.esNavegador) return;
-
-    const ventana = this.doc.defaultView!;
-    ventana.removeEventListener('scroll', this.alHacerScroll);
-    ventana.removeEventListener('resize', this.alHacerScroll);
-    if (this.rafScroll) cancelAnimationFrame(this.rafScroll);
+  /** Con teclado alterna; con ratón o táctil solo abre, porque pasar por encima ya lo abrió. */
+  alPulsarServicios(evento: MouseEvent): void {
+    this.megaAbierto.set(evento.detail === 0 ? !this.megaAbierto() : true);
   }
 
-  irA(id: string, evento: Event): void {
-    this.menuAbierto = false;
-    this.navegacion.irA(id, evento);
+  /** Al salir con el tabulador del mega menú, se cierra. */
+  alSalirDelMenu(evento: FocusEvent): void {
+    const destino = evento.relatedTarget;
+    const contenedor = evento.currentTarget as HTMLElement;
+    if (destino instanceof Node && !contenedor.contains(destino)) this.megaAbierto.set(false);
   }
 
-  pedirPresupuesto(): void {
-    this.menuAbierto = false;
-    this.presupuesto.abrir('', 'cabecera');
+  cerrarTodo(): void {
+    this.megaAbierto.set(false);
+    this.menuAbierto.set(false);
   }
 
-  private readonly alHacerScroll = (): void => {
-    if (this.rafScroll) return;
+  pedirPresupuesto(ubicacion: string): void {
+    this.cerrarTodo();
+    this.presupuesto.abrir(this.contexto.servicio(), ubicacion);
+  }
 
-    this.rafScroll = requestAnimationFrame(() => {
-      this.rafScroll = 0;
-      this.actualizarScroll();
-    });
-  };
+  @HostListener('document:keydown.escape')
+  alPulsarEscape(): void {
+    this.cerrarTodo();
+  }
 
-  /** Se escribe directamente en el DOM con transform: sin detección de cambios y sin reflow. */
-  private actualizarScroll(): void {
-    const ventana = this.doc.defaultView!;
-    const altura = this.doc.documentElement.scrollHeight - ventana.innerHeight;
-    const posicion = ventana.scrollY;
-    const progreso = altura > 0 ? Math.min(100, Math.max(0, (posicion / altura) * 100)) : 0;
-
-    const barra = this.barraScroll?.nativeElement;
-    if (barra) barra.style.transform = `scaleX(${progreso / 100})`;
-
-    const conSombra = posicion > 8;
-    if (conSombra !== this.conSombra) {
-      this.conSombra = conSombra;
-      this.cabecera?.nativeElement.classList.toggle('is-scrolled', conSombra);
+  @HostListener('document:click', ['$event'])
+  alPulsarFuera(evento: MouseEvent): void {
+    if (this.megaAbierto() && !this.host.contains(evento.target as Node)) {
+      this.megaAbierto.set(false);
     }
   }
 }

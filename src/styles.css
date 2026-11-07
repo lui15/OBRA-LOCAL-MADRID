@@ -26,8 +26,9 @@
   --line: #e3e9ef;
   --surface: #f5f8fb;
 
-  /* Alto de la cabecera (se reduce en tablet y móvil) */
-  --header-h: 165px;
+  /* Alto de la cabecera, normal y compacta */
+  --hh: 96px;
+  --hh-compacta: 72px;
 
   /* Curvas de animación */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -39,15 +40,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1080px) {
   :root {
-    --header-h: 135px;
-  }
-}
-
-@media (max-width: 720px) {
-  :root {
-    --header-h: 110px;
+    --hh: 72px;
   }
 }
 
@@ -59,7 +54,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 95px;
+  scroll-padding-top: calc(var(--hh-compacta) + 12px);
 }
 
 body {
@@ -116,11 +111,6 @@ textarea:focus-visible {
 }
 
 /* El estado oculto solo se activa en el navegador (ver compartido/animaciones.ts) */
-.site-shell {
-  overflow: clip;
-  background: #fff;
-}
-
 .container {
   width: min(1160px, calc(100% - 40px));
   margin-inline: auto;
@@ -329,6 +319,32 @@ textarea:focus-visible {
     opacity: 0;
     transform: scale(1.25, 1.55);
   }
+}
+
+.button-ink {
+  color: #fff;
+  background: var(--navy-dark);
+}
+
+.button-ink:hover {
+  background: var(--navy);
+}
+
+.button-claro {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #fff;
+  background: transparent;
+}
+
+.button-claro:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Entrada escalonada de las cabeceras de página */
+.rise {
+  animation: riseIn 0.7s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
 }
 
 /* Accesibilidad: movimiento reducido */

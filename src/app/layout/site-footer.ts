@@ -2,33 +2,28 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { ConsentimientoService } from '../compartido/consentimiento.service';
-import { SERVICIOS } from '../datos/catalogo';
-import { paginaDeServicio, urlDePagina } from '../landing/landing-data';
-import { PresupuestoService } from '../presupuesto/presupuesto.service';
-import { EstadoRuta } from './estado-ruta.service';
-import { NavegacionService } from './navegacion.service';
+import { Icono } from '../compartido/icono';
+import { ENLACE_TELEFONO, NEGOCIO } from '../datos/contacto';
+import { ContextoPagina } from './contexto-pagina.service';
+import { PAGINAS, urlDePagina } from '../landing/landing-data';
 
 @Component({
   selector: 'app-site-footer',
   standalone: true,
-  imports: [RouterLink],
+  imports: [Icono, RouterLink],
   templateUrl: './site-footer.html',
   styleUrl: './site-footer.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SiteFooter {
-  readonly navegacion = inject(NavegacionService);
-  readonly presupuesto = inject(PresupuestoService);
-  readonly ruta = inject(EstadoRuta);
   readonly consentimiento = inject(ConsentimientoService);
+  readonly anio = new Date().getFullYear();
+  readonly negocio = NEGOCIO;
+  readonly telefono = ENLACE_TELEFONO;
+  readonly contexto = inject(ContextoPagina);
+  readonly url = urlDePagina;
 
-  readonly servicios = SERVICIOS.map((servicio) => {
-    const pagina = paginaDeServicio(servicio);
-    return { nombre: servicio.nombre, url: pagina ? urlDePagina(pagina) : '/servicios' };
-  });
-
-  pedir(evento: Event): void {
-    evento.preventDefault();
-    this.presupuesto.abrir('', 'pie');
-  }
+  readonly servicios = PAGINAS.filter((p) => p.tipo === 'servicio');
+  readonly trabajos = PAGINAS.filter((p) => p.tipo === 'trabajo');
+  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona');
 }
