@@ -23,8 +23,9 @@ import {
   SERVICIOS,
   TIPOS_INMUEBLE,
   ZONAS,
-} from '../datos/catalogo';
-import { IMAGENES } from '../datos/imagenes';
+} from '../datos/catalogo-servicios';
+import { ENLACE_TELEFONO, NEGOCIO, enlaceWhatsApp } from '../datos/contacto';
+import { miniaturaDe } from '../datos/imagenes';
 import { PresupuestoEnvioService, RespuestaPresupuesto } from './presupuesto-envio.service';
 import { PeticionPresupuesto, PresupuestoService } from './presupuesto.service';
 
@@ -93,6 +94,10 @@ export class PresupuestoWizard implements OnDestroy {
   /** Índice del último paso (desde aquí se envía la solicitud). */
   readonly ultimoPaso = this.pasos.length - 1;
 
+  readonly miniatura = miniaturaDe;
+  readonly telefono = ENLACE_TELEFONO;
+  readonly telefonoVisible = NEGOCIO.telefonoVisible;
+  readonly whatsapp = enlaceWhatsApp('Hola, acabo de enviar una solicitud de presupuesto');
   readonly servicios = SERVICIOS;
   readonly zonas = ZONAS;
   readonly tiposInmueble = TIPOS_INMUEBLE;
@@ -240,10 +245,6 @@ export class PresupuestoWizard implements OnDestroy {
 
     this.cdr.markForCheck();
     this.cdr.detectChanges();
-  }
-
-  miniatura(ruta: string): string {
-    return IMAGENES[ruta]?.peq.ruta ?? ruta;
   }
 
   get porcentajeProgreso(): number {

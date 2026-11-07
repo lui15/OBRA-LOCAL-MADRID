@@ -1145,3 +1145,11 @@
     transform: translateY(18px) scale(0.985);
   }
 }
+
+.success-contacto {
+  margin-bottom: 18px;
+}
+
+.success-contacto p {
+  margin: 0 0 6px;
+}
