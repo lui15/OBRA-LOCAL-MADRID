@@ -1,131 +1,246 @@
-/** Dimensiones reales de las imágenes de public/images. */
+/** Dimensiones reales de las imágenes de public/images. Cada una existe en 1200, 800 y 240 px. */
 interface Imagen {
   w: number;
   h: number;
-  /** Variante pequeña para móvil. */
-  peq: { ruta: string; w: number };
+  /** Anchos reales de las variantes -800 y -240. */
+  m: number;
+  p: number;
 }
 
 export const IMAGENES: Record<string, Imagen> = {
-  '/images/albanileria-ejemplo.webp': {
-    w: 1000,
-    h: 750,
-    peq: {
-      ruta: '/images/albanileria-ejemplo-480.webp',
-      w: 480
-    }
-  },
   '/images/albanileria.webp': {
-    w: 1000,
-    h: 1500,
-    peq: {
-      ruta: '/images/albanileria-480.webp',
-      w: 480
-    }
+    w: 1200,
+    h: 1800,
+    m: 800,
+    p: 240
   },
-  '/images/paredes-ejemplo.webp': {
-    w: 1000,
-    h: 1333,
-    peq: {
-      ruta: '/images/paredes-ejemplo-480.webp',
-      w: 480
-    }
+  '/images/albanileria-ejemplo.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
   },
   '/images/paredes.webp': {
-    w: 1000,
-    h: 1628,
-    peq: {
-      ruta: '/images/paredes-480.webp',
-      w: 480
-    }
+    w: 1199,
+    h: 1952,
+    m: 800,
+    p: 240
   },
-  '/images/pintura-ejemplo.webp': {
-    w: 1000,
-    h: 667,
-    peq: {
-      ruta: '/images/pintura-ejemplo-480.webp',
-      w: 480
-    }
+  '/images/paredes-ejemplo.webp': {
+    w: 1200,
+    h: 1600,
+    m: 800,
+    p: 240
   },
   '/images/pintura.webp': {
-    w: 1000,
-    h: 1500,
-    peq: {
-      ruta: '/images/pintura-480.webp',
-      w: 480
-    }
+    w: 1200,
+    h: 1800,
+    m: 800,
+    p: 240
   },
-  '/images/pladur-ejemplo.webp': {
-    w: 1000,
-    h: 1185,
-    peq: {
-      ruta: '/images/pladur-ejemplo-480.webp',
-      w: 480
-    }
+  '/images/pintura-ejemplo.webp': {
+    w: 1200,
+    h: 800,
+    m: 800,
+    p: 240
   },
   '/images/pladur.webp': {
     w: 474,
     h: 842,
-    peq: {
-      ruta: '/images/pladur-480.webp',
-      w: 474
-    }
+    m: 474,
+    p: 240
   },
-  '/images/reforma-bano-ejemplo.webp': {
-    w: 1000,
-    h: 1351,
-    peq: {
-      ruta: '/images/reforma-bano-ejemplo-480.webp',
-      w: 480
-    }
+  '/images/pladur-ejemplo.webp': {
+    w: 1200,
+    h: 1422,
+    m: 800,
+    p: 240
   },
   '/images/reforma-bano.webp': {
     w: 736,
     h: 981,
-    peq: {
-      ruta: '/images/reforma-bano-480.webp',
-      w: 480
-    }
+    m: 736,
+    p: 240
   },
-  '/images/reforma-cocina-ejemplo.webp': {
-    w: 736,
-    h: 1104,
-    peq: {
-      ruta: '/images/reforma-cocina-ejemplo-480.webp',
-      w: 480
-    }
+  '/images/reforma-bano-ejemplo.webp': {
+    w: 1125,
+    h: 1520,
+    m: 800,
+    p: 240
   },
   '/images/reforma-cocina.webp': {
     w: 736,
     h: 1104,
-    peq: {
-      ruta: '/images/reforma-cocina-480.webp',
-      w: 480
-    }
+    m: 736,
+    p: 240
   },
-  '/images/reformas-integrales-ejemplo.webp': {
-    w: 1000,
-    h: 1333,
-    peq: {
-      ruta: '/images/reformas-integrales-ejemplo-480.webp',
-      w: 480
-    }
+  '/images/reforma-cocina-ejemplo.webp': {
+    w: 736,
+    h: 1104,
+    m: 736,
+    p: 240
   },
   '/images/reformas-integrales.webp': {
-    w: 1000,
-    h: 1333,
-    peq: {
-      ruta: '/images/reformas-integrales-480.webp',
-      w: 480
-    }
+    w: 1200,
+    h: 1600,
+    m: 800,
+    p: 240
+  },
+  '/images/reformas-integrales-ejemplo.webp': {
+    w: 1200,
+    h: 1600,
+    m: 800,
+    p: 240
   },
   '/images/hero-reforma.webp': {
     w: 1200,
     h: 816,
-    peq: {
-      ruta: '/images/hero-reforma-640.webp',
-      w: 640
-    }
+    m: 800,
+    p: 240
+  },
+  '/images/plato-ducha.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/bano-moderno.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/cocina-nueva.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/cocina-abierta.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/pintor-rodillo.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/rodillos-pared.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/albanil-ladrillos.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/llana-masilla.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/alisando-pared.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/enlucido.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/tabique-pladur.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/instalando-pladur.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/sala-vacia.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/piso-reformado.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/obra-en-curso.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/piso-en-obra.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/instalaciones-vistas.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/medicion-pared.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/planos-medidas.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/planos-mesa.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/edificio-clasico-madrid.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/edificio-esquina.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/edificios-madrid.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
+  },
+  '/images/edificio-ladrillo-madrid.webp': {
+    w: 1200,
+    h: 900,
+    m: 800,
+    p: 240
   }
 };
 
@@ -137,8 +252,21 @@ export function altoDe(ruta: string): number | null {
   return IMAGENES[ruta]?.h ?? null;
 }
 
-/** Atributo srcset con los dos tamaños disponibles. */
+const variante = (ruta: string, sufijo: string): string => ruta.replace('.webp', `-${sufijo}.webp`);
+
+/** Variante de 240 px, para miniaturas. */
+export function miniaturaDe(ruta: string): string {
+  return IMAGENES[ruta] ? variante(ruta, '240') : ruta;
+}
+
+/** Variante de 800 px, para tarjetas. */
+export function tarjetaDe(ruta: string): string {
+  return IMAGENES[ruta] ? variante(ruta, '800') : ruta;
+}
+
+/** Atributo srcset con los tamaños disponibles. */
 export function srcsetDe(ruta: string): string | null {
-  const imagen = IMAGENES[ruta];
-  return imagen ? `${imagen.peq.ruta} ${imagen.peq.w}w, ${ruta} ${imagen.w}w` : null;
+  const i = IMAGENES[ruta];
+  if (!i) return null;
+  return `${variante(ruta, '240')} ${i.p}w, ${variante(ruta, '800')} ${i.m}w, ${ruta} ${i.w}w`;
 }
