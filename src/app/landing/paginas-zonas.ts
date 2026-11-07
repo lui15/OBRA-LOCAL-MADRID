@@ -217,7 +217,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     },
     servicioFormulario: '',
     imagen: '/images/edificio-esquina.webp',
-    imagenAlt: 'Edificio residencial clásico en esquina',
+    imagenAlt: 'Balcones de un edificio residencial clásico',
     relacionadas: [
       'reformas-integrales-madrid',
       'reforma-cocinas-madrid',

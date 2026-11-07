@@ -30,7 +30,7 @@ Hay que comprobar en cada enlace que la licencia sigue siendo esa antes de publi
 | `planos-medidas` | Plano con cinta métrica y bolígrafo | ver enlace | [Pexels](https://www.pexels.com/photo/instruments-prepared-for-measurements-in-house-4792479/) |
 | `planos-mesa` | Plano de una vivienda sobre una mesa | Anete Lusina | [Pexels](https://www.pexels.com/photo/architecture-plan-on-wooden-surface-4792483/) |
 | `edificio-clasico-madrid` | Fachadas clásicas de Madrid | antonio filigno | [Pexels](https://www.pexels.com/photo/facade-of-concrete-buildings-10431546/) |
-| `edificio-esquina` | Edificio residencial clásico en esquina | ver enlace | [Pexels](https://www.pexels.com/photo/facades-of-city-residential-buildings-11092356/) |
+| `edificio-esquina` | Balcones de un edificio residencial clásico | ver enlace | [Pexels](https://www.pexels.com/photo/apartment-buildings-against-sky-258181/) |
 | `edificios-madrid` | Bloques residenciales en Madrid | ver enlace | [Pexels](https://www.pexels.com/photo/tenements-in-madrid-17627455/) |
 | `edificio-ladrillo-madrid` | Edificio de ladrillo en Madrid | ver enlace | [Pexels](https://www.pexels.com/photo/historic-red-brick-apartment-building-in-madrid-35417629/) |
 | `hero-reforma` | Interior de una vivienda reformada | ver enlace | [Unsplash](https://images.unsplash.com/photo-1600607687939-ce8a6c25118c), licencia de Unsplash; ya se usaba en la portada |

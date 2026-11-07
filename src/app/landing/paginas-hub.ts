@@ -327,7 +327,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
           {
             titulo: 'Tipo de edificio',
             imagen: '/images/edificio-esquina.webp',
-            imagenAlt: 'Edificio clásico en esquina',
+            imagenAlt: 'Balcones de un edificio residencial clásico',
             texto:
               'Las fincas del Ensanche, con techos altos y forjados antiguos, no se parecen a los bloques de los años 60, a la vivienda de un PAU o a un chalet de una urbanización. Cada tipología tiene sus problemas y oportunidades.',
           },
