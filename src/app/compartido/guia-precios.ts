@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-import { Precio, formatearPrecio } from '../datos/catalogo';
+import { Precio, formatearPrecio } from '../datos/catalogo-servicios';
 import { RevealDirective } from './animaciones';
 
 /** Rangos orientativos de un servicio. */

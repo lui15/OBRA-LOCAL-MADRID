@@ -6,15 +6,22 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: '',
     tipo: 'inicio',
-    title: 'Empresa de reformas en Madrid | ObraLocalMADRID',
+    title: 'Empresa de reformas en Madrid | ObraLocal Madrid',
     description:
       'Reformas en Madrid y alrededores: albañilería, pintura, baños, cocinas, pladur y reformas integrales. Precios orientativos y presupuesto paso a paso.',
     etiqueta: 'Reformas en Madrid',
     resumen: 'Reformas de viviendas y locales en Madrid y alrededores.',
-    h1: { linea: 'Reformas en Madrid.', resaltado: 'Tu proyecto, bien hecho.' },
+    h1: { antes: 'Reformas en Madrid.', resaltado: 'Tu proyecto, bien hecho.', despues: '' },
+    puntos: [
+      'Madrid y alrededores',
+      'Precios orientativos',
+      'Solicitud paso a paso',
+      'Presupuesto sin compromiso',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para una reforma en Madrid',
     kicker: 'REFORMAS EN MADRID',
     intro:
-      'En ObraLocalMADRID preparamos contigo tu reforma, desde un arreglo puntual hasta la renovación completa de una vivienda o un local en Madrid y alrededores.',
+      'En ObraLocal Madrid preparamos contigo tu reforma, desde un arreglo puntual hasta la renovación completa de una vivienda o un local en Madrid y alrededores.',
     secciones: [
       {
         titulo: 'Reformas en Madrid capital y en toda la Comunidad',
@@ -67,7 +74,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
         'Reformas de viviendas y locales en Madrid y alrededores: albañilería, pintura, baños, cocinas, pladur y reformas integrales.',
     },
     servicioFormulario: '',
-    imagen: '/images/reformas-integrales.webp',
+    imagen: '/images/hero-reforma.webp',
     imagenAlt: 'Interior de una vivienda reformada en Madrid',
     relacionadas: ['servicios', 'precios', 'zonas', 'como-trabajamos', 'preguntas-frecuentes'],
   },
@@ -76,12 +83,19 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: 'servicios',
     tipo: 'hub',
-    title: 'Servicios de reformas en Madrid | ObraLocalMADRID',
+    title: 'Servicios de reformas en Madrid | ObraLocal Madrid',
     description:
       'Servicios de reformas en Madrid: integrales, baños, cocinas, albañilería, pintura, pladur y paredes. Elige qué necesitas y consulta sus precios.',
     etiqueta: 'Servicios',
     resumen: 'Todos los trabajos de reforma que realizamos.',
-    h1: { linea: 'Servicios de reformas', resaltado: 'en Madrid.' },
+    h1: { antes: 'Servicios de', resaltado: 'reformas', despues: 'en Madrid' },
+    puntos: [
+      '7 servicios de reforma',
+      'Precios desde 150 €',
+      'Viviendas, locales y comunidades',
+      'Madrid y alrededores',
+    ],
+    whatsapp: 'Hola, quiero información sobre vuestros servicios de reformas en Madrid',
     kicker: 'NUESTROS SERVICIOS',
     intro:
       'Desde arreglar una pared hasta renovar una vivienda entera: aquí tienes todos los trabajos que hacemos, qué incluye cada uno y dónde consultar sus precios orientativos. Si no sabes bien cómo se llama lo que necesitas, sigue leyendo, porque te ayudamos a identificarlo.',
@@ -94,21 +108,29 @@ export const PAGINAS_HUB: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Quiero renovar toda la casa',
+            imagen: '/images/reformas-integrales.webp',
+            imagenAlt: 'Vivienda en reforma integral',
             texto:
               'Si vas a actuar sobre varias estancias, tocar la distribución o renovar instalaciones, estás ante una reforma integral. Coordinar todos los oficios en una sola obra evita repetir trabajos y suele salir mejor que encadenar pequeñas reformas.',
           },
           {
             titulo: 'Solo el baño o la cocina',
+            imagen: '/images/cocina-nueva.webp',
+            imagenAlt: 'Cocina renovada',
             texto:
               'Son las estancias con más instalaciones y las que más se notan en el día a día. Se pueden hacer por partes o de forma completa, según el estado de las tuberías y los revestimientos.',
           },
           {
             titulo: 'Tengo la pared en mal estado',
+            imagen: '/images/alisando-pared.webp',
+            imagenAlt: 'Pared en reparación',
             texto:
               'Para grietas, agujeros, irregularidades o gotelé, lo adecuado es el servicio de paredes. Si la pared solo está sucia o quieres cambiar el color, basta con pintura. Y si lo que necesitas es levantar o cerrar un tabique, es albañilería o pladur.',
           },
           {
             titulo: 'Quiero dividir o ganar aislamiento',
+            imagen: '/images/tabique-pladur.webp',
+            imagenAlt: 'Tabique de pladur',
             texto:
               'Un tabique o un trasdosado de pladur es una solución rápida y ligera para dividir una estancia, ocultar instalaciones o mejorar el aislamiento. La albañilería tradicional encaja cuando se necesita más resistencia o se trabaja en zonas húmedas o exteriores.',
           },
@@ -158,8 +180,8 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       descripcion: 'Reformas integrales, baños, cocinas, albañilería, pintura, pladur y paredes.',
     },
     servicioFormulario: '',
-    imagen: '/images/albanileria-ejemplo.webp',
-    imagenAlt: 'Profesional realizando trabajos de reforma en Madrid',
+    imagen: '/images/obra-en-curso.webp',
+    imagenAlt: 'Vivienda en Madrid durante una reforma',
     modulo: 'servicios',
     relacionadas: ['precios', 'zonas', 'como-trabajamos', 'preguntas-frecuentes'],
   },
@@ -168,41 +190,52 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: 'precios',
     tipo: 'hub',
-    title: 'Precios de reformas en Madrid | ObraLocalMADRID',
+    title: 'Precios de reformas en Madrid | ObraLocal Madrid',
     description:
       'Precios orientativos de reformas en Madrid por servicio: baños, cocinas, integrales, pintura, albañilería y pladur. Qué influye en el coste de cada obra.',
     etiqueta: 'Precios orientativos',
     resumen: 'Rangos orientativos por servicio y factores que influyen en el coste.',
-    h1: { linea: 'Precios de reformas', resaltado: 'en Madrid.' },
+    h1: { antes: 'Precios de', resaltado: 'reformas', despues: 'en Madrid' },
+    puntos: [
+      'Rangos por cada servicio',
+      'Precios desde 150 €',
+      'Importes orientativos',
+      'Presupuesto sin compromiso',
+    ],
+    whatsapp: 'Hola, quiero que me orientéis sobre el precio de una reforma en Madrid',
     kicker: 'PRECIOS ORIENTATIVOS',
     intro:
       'Aquí tienes los rangos de precio de todos nuestros servicios, para que puedas hacerte una idea antes de pedir presupuesto. Son orientativos, no precios cerrados: una reforma depende de muchos factores, y lo honesto es explicarte cuáles son y cómo afectan al resultado final.',
     secciones: [
       {
-        titulo: 'Por qué dos reformas parecidas cuestan distinto',
+        titulo: 'Qué influye en el precio',
         parrafos: [
-          'Dos baños de 4 m² pueden tener presupuestos muy distintos, y ambos ser correctos. Estos son los factores que explican la mayor parte de las diferencias.',
+          'Dos baños de 4 m² pueden tener presupuestos muy distintos, y ambos ser correctos. Estos seis factores explican la mayor parte de las diferencias.',
         ],
         subsecciones: [
           {
-            titulo: 'Estado de partida',
-            texto:
-              'Tuberías antiguas, humedades, paredes irregulares o instalaciones sin renovar añaden trabajo que no se ve en el resultado final, pero que determina cuánto durará.',
+            titulo: 'Metros cuadrados',
+            texto: 'Marcan la cantidad de material y de mano de obra, pero no lo son todo: un baño pequeño concentra más oficios por metro que un salón grande.',
           },
           {
-            titulo: 'Materiales y calidades',
-            texto:
-              'El mismo metro de suelo o de azulejo puede variar mucho de precio. La colocación también cambia: grandes formatos y diseños con muchos cortes requieren más tiempo.',
+            titulo: 'Estado previo',
+            texto: 'Humedades, paredes irregulares o suelos desnivelados añaden trabajo que no se ve en el resultado final, pero que determina cuánto durará.',
           },
           {
-            titulo: 'Acceso y logística',
-            texto:
-              'No es igual un edificio con ascensor amplio que un cuarto sin ascensor en una calle estrecha. Subir materiales, bajar escombros y conseguir permiso para un contenedor también tienen un coste.',
+            titulo: 'Materiales',
+            texto: 'El mismo metro de suelo o azulejo puede variar mucho de precio. La colocación también cambia: los grandes formatos y los diseños con muchos cortes requieren más tiempo.',
           },
           {
-            titulo: 'Cambios de distribución',
-            texto:
-              'Mover tabiques, tomas de agua o puntos de luz significa más demolición e instalaciones. Mantener los elementos en su sitio es de las formas más eficaces de contener el presupuesto.',
+            titulo: 'Fontanería y electricidad',
+            texto: 'Renovar una instalación antigua o mover tomas de agua y puntos de luz significa más obra. Mantenerlos en su sitio es una de las formas más eficaces de contener el presupuesto.',
+          },
+          {
+            titulo: 'Licencias y trámites',
+            texto: 'Tasas e impuesto de obras dependen del municipio y del tipo de actuación. Las licencias se valoran aparte, así que conviene confirmar qué corresponde a tu obra.',
+          },
+          {
+            titulo: 'Retirada de escombros',
+            texto: 'No es igual un edificio con ascensor amplio que un cuarto sin ascensor en una calle estrecha. Bajar escombros y conseguir permiso para un contenedor también tiene un coste.',
           },
         ],
       },
@@ -258,8 +291,8 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       descripcion: 'Rangos orientativos por servicio y factores que influyen en el coste.',
     },
     servicioFormulario: '',
-    imagen: '/images/reforma-bano-ejemplo.webp',
-    imagenAlt: 'Reforma de un baño, uno de los trabajos con precio orientativo',
+    imagen: '/images/planos-mesa.webp',
+    imagenAlt: 'Plano de una vivienda sobre una mesa para calcular una reforma',
     modulo: 'precios',
     relacionadas: ['servicios', 'reformas-integrales-madrid', 'reforma-banos-madrid', 'como-trabajamos'],
   },
@@ -268,12 +301,19 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: 'zonas',
     tipo: 'hub',
-    title: 'Zonas de trabajo: reformas en Madrid | ObraLocalMADRID',
+    title: 'Zonas de trabajo: reformas en Madrid | ObraLocal Madrid',
     description:
       'Zonas donde hacemos reformas: Madrid capital y municipios como Alcobendas, Getafe o Móstoles. Consulta tu zona y lo que debes tener en cuenta en cada una.',
     etiqueta: 'Zonas de trabajo',
     resumen: 'Madrid capital, distritos y municipios en los que trabajamos.',
-    h1: { linea: 'Dónde hacemos reformas:', resaltado: 'Madrid y alrededores.' },
+    h1: { antes: 'Zonas donde hacemos', resaltado: 'reformas', despues: '' },
+    puntos: [
+      'Madrid capital',
+      '19 municipios',
+      'Guías por distrito',
+      'Otra zona: indícalo en el formulario',
+    ],
+    whatsapp: 'Hola, quiero saber si hacéis reformas en mi zona',
     kicker: 'ZONAS DE TRABAJO',
     intro:
       'Hacemos reformas en Madrid capital y en buena parte de los municipios de la Comunidad. La zona no solo importa por la distancia: el tipo de edificio más habitual, las ordenanzas municipales y hasta el acceso a la calle cambian de un sitio a otro y afectan a tu reforma.',
@@ -286,16 +326,22 @@ export const PAGINAS_HUB: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Tipo de edificio',
+            imagen: '/images/edificio-esquina.webp',
+            imagenAlt: 'Edificio clásico en esquina',
             texto:
               'Las fincas del Ensanche, con techos altos y forjados antiguos, no se parecen a los bloques de los años 60, a la vivienda de un PAU o a un chalet de una urbanización. Cada tipología tiene sus problemas y oportunidades.',
           },
           {
             titulo: 'Ordenanzas de cada municipio',
+            imagen: '/images/planos-mesa.webp',
+            imagenAlt: 'Planos de una vivienda',
             texto:
               'Cada ayuntamiento regula sus propios trámites, tasas y horarios de ruido. Madrid capital tiene una ordenanza específica, pero en Alcobendas, Getafe o Móstoles deciden sus ayuntamientos. Por eso conviene comprobar la normativa concreta antes de empezar.',
           },
           {
             titulo: 'Acceso y logística',
+            imagen: '/images/edificio-clasico-madrid.webp',
+            imagenAlt: 'Calle de Madrid con fachadas clásicas',
             texto:
               'Las calles estrechas, la falta de aparcamiento y la zona de bajas emisiones pueden influir en la entrega de materiales y en la retirada de escombros. Es importante tenerlo en cuenta en la planificación y en el presupuesto.',
           },
@@ -353,8 +399,8 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       descripcion: 'Madrid capital y municipios de la Comunidad de Madrid en los que trabajamos.',
     },
     servicioFormulario: '',
-    imagen: '/images/reformas-integrales-ejemplo.webp',
-    imagenAlt: 'Vivienda en obras en la Comunidad de Madrid',
+    imagen: '/images/edificios-madrid.webp',
+    imagenAlt: 'Bloques residenciales en Madrid',
     modulo: 'zonas',
     relacionadas: ['servicios', 'precios', 'reformas-integrales-madrid', 'como-trabajamos'],
   },
@@ -363,15 +409,22 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: 'como-trabajamos',
     tipo: 'hub',
-    title: 'Cómo trabajamos: pasos de una reforma | ObraLocalMADRID',
+    title: 'Cómo trabajamos: pasos de una reforma | ObraLocal Madrid',
     description:
-      'Así funciona pedir presupuesto en ObraLocalMADRID: de tu solicitud a la llamada. Qué datos preparar, qué revisar antes de aceptar y cómo organizar tu obra.',
+      'Así funciona tu reforma con ObraLocal Madrid: seis pasos desde la solicitud hasta la revisión final. Qué preparar y qué revisar antes de aceptar.',
     etiqueta: 'Cómo trabajamos',
     resumen: 'De tu solicitud a la llamada, y qué conviene preparar antes.',
-    h1: { linea: 'Cómo trabajamos,', resaltado: 'paso a paso.' },
+    h1: { antes: 'Así funciona tu', resaltado: 'reforma', despues: 'con ObraLocal' },
+    puntos: [
+      'Solicitud en menos de un minuto',
+      'Presupuesto sin compromiso',
+      'Fechas acordadas contigo',
+      'Revisión final de la obra',
+    ],
+    whatsapp: 'Hola, quiero saber cómo funciona una reforma con vosotros',
     kicker: 'CÓMO TRABAJAMOS',
     intro:
-      'Empezar una reforma genera muchas dudas: qué preparar, a quién avisar, qué mirar en un presupuesto. Hemos simplificado el primer paso en un formulario de tres etapas, y en esta página te contamos qué ocurre después y qué te conviene tener a mano para que todo vaya mejor.',
+      'Empezar una reforma genera muchas dudas: qué preparar, a quién avisar, qué mirar en un presupuesto. Aquí tienes los seis pasos de una reforma con nosotros, desde tu solicitud hasta la revisión final, y lo que te conviene tener a mano para que todo vaya mejor.',
     secciones: [
       {
         titulo: 'Qué ocurre después de enviar tu solicitud',
@@ -463,8 +516,8 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       descripcion: 'El proceso para solicitar y organizar una reforma en Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/pintura-ejemplo.webp',
-    imagenAlt: 'Preparación de una vivienda antes de la reforma',
+    imagen: '/images/medicion-pared.webp',
+    imagenAlt: 'Medición de una pared con cinta métrica antes de presupuestar',
     modulo: 'proceso',
     relacionadas: ['servicios', 'precios', 'preguntas-frecuentes', 'reformas-integrales-madrid'],
   },
@@ -473,12 +526,19 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: 'preguntas-frecuentes',
     tipo: 'hub',
-    title: 'Preguntas frecuentes sobre reformas | ObraLocalMADRID',
+    title: 'Preguntas frecuentes sobre reformas | ObraLocal Madrid',
     description:
       'Dudas habituales sobre reformas en Madrid: permisos, comunidad de vecinos, horarios, presupuestos, IVA y cómo funciona nuestra solicitud de presupuesto.',
     etiqueta: 'Preguntas frecuentes',
     resumen: 'Permisos, comunidad, presupuestos y cómo funciona la solicitud.',
-    h1: { linea: 'Preguntas frecuentes', resaltado: 'sobre reformas.' },
+    h1: { antes: 'Preguntas', resaltado: 'frecuentes', despues: 'sobre reformas' },
+    puntos: [
+      'Precios',
+      'Plazos',
+      'Licencias y comunidad',
+      'Zonas y presupuesto',
+    ],
+    whatsapp: 'Hola, tengo una duda sobre una reforma en Madrid',
     kicker: 'PREGUNTAS FRECUENTES',
     intro:
       'Hemos reunido las dudas que surgen con más frecuencia antes de empezar una reforma en Madrid: permisos, vecinos, presupuestos, impuestos y cómo funciona nuestra solicitud. La información es general y orientativa; para trámites concretos, confirma siempre con tu ayuntamiento o con un técnico.',
@@ -505,50 +565,122 @@ export const PAGINAS_HUB: PaginaSeo[] = [
         ],
       },
     ],
-    faqs: [
+    faqs: [],
+    gruposFaq: [
       {
-        pregunta: '¿Qué necesito para solicitar un presupuesto?',
-        respuesta:
-          'Describe el trabajo, la zona y las medidas aproximadas. Las fotografías ayudan a entender mejor el estado actual.',
+        titulo: 'Precios',
+        faqs: [
+          {
+            pregunta: '¿Los precios son definitivos?',
+            respuesta:
+              'No. Son orientativos. El precio final debe confirmar las cantidades, materiales, mano de obra, impuestos y exclusiones.',
+          },
+          {
+            pregunta: '¿Cuánto cuesta una reforma en Madrid?',
+            respuesta:
+              'Depende del alcance. Como referencia, un baño completo va de 3.500 a 7.000 € y una reforma integral de 60 a 90 m², de 25.000 a 45.000 €. Tienes todos los rangos en nuestra página de precios.',
+          },
+          {
+            pregunta: '¿Por qué no dais un precio por metro cuadrado?',
+            respuesta:
+              'Porque el metro cuadrado no refleja el estado de las instalaciones, las calidades ni el acceso. Por eso damos rangos por tipo de trabajo.',
+          },
+          {
+            pregunta: '¿Se aplica el IVA reducido a las reformas?',
+            respuesta:
+              'Puede aplicarse el 10 % a obras de renovación y reparación en viviendas particulares si se cumplen ciertos requisitos, como la antigüedad de la vivienda y la proporción de materiales. Confirma tu caso antes de cerrar el presupuesto.',
+          },
+          {
+            pregunta: '¿Cómo comparo dos presupuestos?',
+            respuesta:
+              'Comprueba que tengan el mismo alcance: cantidades, marca o gama de materiales, retirada de escombros, impuestos, exclusiones y plazos. Un precio bajo puede significar menos trabajos incluidos.',
+          },
+        ],
       },
       {
-        pregunta: '¿Los precios publicados son definitivos?',
-        respuesta:
-          'No. Son orientativos. El precio final debe confirmar las cantidades, los materiales, la mano de obra, los impuestos y las exclusiones.',
+        titulo: 'Plazos',
+        faqs: [
+          {
+            pregunta: '¿Cuánto dura una reforma?',
+            respuesta:
+              'Depende del tamaño, de los trámites y de los materiales. Un arreglo puntual es mucho más corto que una vivienda completa. Las fechas se concretan contigo al planificar la obra.',
+          },
+          {
+            pregunta: '¿Qué suele retrasar una obra?',
+            respuesta:
+              'Sobre todo los cambios de decisión a mitad de camino, los materiales que tardan en llegar y lo que aparece al abrir paredes y suelos en edificios antiguos.',
+          },
+          {
+            pregunta: '¿Puedo vivir en casa durante la obra?',
+            respuesta:
+              'En trabajos pequeños, sí. En una reforma integral suele ser poco práctico, porque durante varias fases no hay agua, luz, cocina o baño, y hay polvo en toda la vivienda.',
+          },
+          {
+            pregunta: '¿Cuándo debo pedir presupuesto?',
+            respuesta:
+              'Con margen respecto a la fecha en la que quieres empezar, sobre todo si hay materiales por encargo o trámites. En el formulario puedes indicar cuándo te gustaría empezar.',
+          },
+        ],
       },
       {
-        pregunta: '¿Necesito licencia para reformar mi piso en Madrid?',
-        respuesta:
-          'Depende de la obra. En Madrid capital, los acabados interiores de una vivienda no protegida no suelen necesitar título urbanístico; otras obras requieren declaración responsable y algunas, licencia. Confirma tu caso con el Ayuntamiento o con un técnico.',
+        titulo: 'Licencias y comunidad',
+        faqs: [
+          {
+            pregunta: '¿Necesito licencia para reformar mi piso en Madrid?',
+            respuesta:
+              'Depende de la obra. En Madrid capital, los acabados interiores de una vivienda no protegida no suelen necesitar título urbanístico; otras obras requieren declaración responsable y algunas, licencia. Confirma tu caso con el Ayuntamiento o con un técnico.',
+          },
+          {
+            pregunta: '¿Tengo que avisar a mi comunidad de vecinos?',
+            respuesta:
+              'Sí. La Ley de Propiedad Horizontal establece que hay que comunicar las obras previamente a quien represente a la comunidad, normalmente el presidente o el administrador.',
+          },
+          {
+            pregunta: '¿A qué horas se pueden hacer obras en un piso de Madrid?',
+            respuesta:
+              'Como referencia, en Madrid capital las obras en el interior de viviendas no deben realizarse de 21:00 a 8:00 en días laborables, ni de 21:00 a 9:30 los sábados, domingos y festivos. Comprueba el horario vigente, las normas de tu comunidad y, fuera de la capital, la ordenanza de tu municipio.',
+          },
+          {
+            pregunta: '¿Puedo tirar un tabique sin técnico?',
+            respuesta:
+              'Nunca debe hacerse sin confirmar que no es estructural. Si hay dudas, un técnico competente debe revisarlo antes. Además, cambiar la distribución puede requerir un trámite municipal.',
+          },
+          {
+            pregunta: '¿Hace falta permiso para poner un contenedor?',
+            respuesta:
+              'Ocupar la vía pública con un contenedor o con sacas requiere autorización municipal. Es una gestión que conviene prever con antelación y dejar reflejada en el presupuesto.',
+          },
+        ],
       },
       {
-        pregunta: '¿Tengo que avisar a mi comunidad de vecinos?',
-        respuesta:
-          'Sí. La Ley de Propiedad Horizontal establece que hay que comunicar las obras previamente a quien represente a la comunidad, normalmente el presidente o el administrador.',
-      },
-      {
-        pregunta: '¿A qué horas se pueden hacer obras en un piso de Madrid?',
-        respuesta:
-          'Como referencia, en Madrid capital las obras en el interior de viviendas no deben realizarse de 21:00 a 8:00 en días laborables, ni de 21:00 a 9:30 los sábados, domingos y festivos. Comprueba el horario vigente, las normas de tu comunidad y, fuera de la capital, la ordenanza de tu municipio.',
-      },
-      {
-        pregunta: '¿Se aplica el IVA reducido a las reformas?',
-        respuesta:
-          'Puede aplicarse el 10 % a obras de renovación y reparación en viviendas particulares si se cumplen ciertos requisitos, como la antigüedad de la vivienda y la proporción de materiales. Confirma tu caso antes de cerrar el presupuesto.',
-      },
-      {
-        pregunta: '¿Puedo tirar un tabique sin técnico?',
-        respuesta:
-          'Nunca debe hacerse sin confirmar que no es estructural. Si hay dudas, un técnico competente debe revisarlo antes. Además, cambiar la distribución puede requerir un trámite municipal.',
-      },
-      {
-        pregunta: '¿Puedo volver a una pregunta anterior del formulario?',
-        respuesta: 'Sí. Puedes volver atrás y cambiar tus respuestas antes de enviar la solicitud.',
-      },
-      {
-        pregunta: '¿Enviar la solicitud implica contratar?',
-        respuesta:
-          'No. Enviar la solicitud no supone ningún compromiso de contratación y no equivale a un presupuesto cerrado.',
+        titulo: 'Zonas y presupuesto',
+        faqs: [
+          {
+            pregunta: '¿Qué necesito para solicitar un presupuesto?',
+            respuesta:
+              'Describe el trabajo, la zona y las medidas aproximadas. Las fotografías ayudan a entender mejor el estado actual.',
+          },
+          {
+            pregunta: '¿En qué zonas trabajáis?',
+            respuesta:
+              'En Madrid capital y en municipios como Alcobendas, Alcorcón, Getafe, Leganés, Móstoles o Pozuelo de Alarcón, entre otros. Si tu zona no aparece, indícalo en el formulario.',
+          },
+          {
+            pregunta: '¿Enviar la solicitud implica contratar?',
+            respuesta:
+              'No. Enviar la solicitud no supone ningún compromiso de contratación y no equivale a un presupuesto cerrado.',
+          },
+          {
+            pregunta: '¿Puedo volver a una pregunta anterior?',
+            respuesta:
+              'Sí. Puedes volver atrás y cambiar tus respuestas antes de enviar la solicitud.',
+          },
+          {
+            pregunta: '¿Puedo contactar sin rellenar el formulario?',
+            respuesta:
+              'Sí. Puedes llamarnos al 624 67 13 74 o escribirnos por WhatsApp al mismo número.',
+          },
+        ],
       },
     ],
     servicio: {
@@ -556,8 +688,8 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       descripcion: 'Dudas habituales sobre reformas, permisos y presupuestos en Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/pladur-ejemplo.webp',
-    imagenAlt: 'Falso techo instalado durante una reforma',
+    imagen: '/images/piso-en-obra.webp',
+    imagenAlt: 'Piso en obra con escalera y materiales',
     relacionadas: ['como-trabajamos', 'precios', 'servicios', 'zonas'],
   },
 ];

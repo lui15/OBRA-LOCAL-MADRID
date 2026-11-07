@@ -6,9 +6,13 @@ import { CtaPresupuesto } from '../compartido/cta-presupuesto';
 import { FaqAcordeon } from '../compartido/faq-acordeon';
 import { FaqSeccion } from '../compartido/faq-seccion';
 import { Garantias } from '../compartido/garantias';
+import { Icono } from '../compartido/icono';
 import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
+import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { TarjetaServicio } from '../compartido/tarjeta-servicio';
-import { PREGUNTAS_PORTADA, SERVICIOS } from '../datos/catalogo';
+import { enlaceWhatsApp } from '../datos/contacto';
+import { ContextoPagina } from '../layout/contexto-pagina.service';
+import { PREGUNTAS_PORTADA, SERVICIOS } from '../datos/catalogo-servicios';
 import {
   PAGINAS,
   PaginaSeo,
@@ -31,7 +35,9 @@ import { SeoService } from '../seo.service';
     FaqSeccion,
     Garantias,
     ProcesoTrabajo,
+    TarjetaPagina,
     TarjetaServicio,
+    Icono,
   ],
   templateUrl: './inicio-page.html',
   styleUrl: './inicio-page.css',
@@ -41,24 +47,30 @@ export class InicioPage {
   readonly navegacion = inject(NavegacionService);
   readonly presupuesto = inject(PresupuestoService);
 
+  readonly trabajos = PAGINAS.filter((p) => p.tipo === 'trabajo');
+  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona');
   readonly servicios = SERVICIOS;
   readonly preguntas = PREGUNTAS_PORTADA;
 
   /** Contenido SEO de la URL actual. */
   readonly pagina = buscarPagina('');
   readonly seccion = this.pagina.secciones[0];
+  readonly whatsapp = enlaceWhatsApp(this.pagina.whatsapp);
   /** Enlazado interno: primero los índices, después todo lo demás. */
   readonly otrasPaginas = PAGINAS.filter((p) => p !== this.pagina && !this.esIntencion(p));
 
   private esIntencion(p: PaginaSeo): boolean {
-    return p.tipo === 'intencion';
+    return p.tipo === 'trabajo';
   }
 
   constructor() {
+    inject(ContextoPagina).fijar('', this.pagina.whatsapp);
+
     inject(SeoService).update({
       title: this.pagina.title,
       description: this.pagina.description,
       path: urlDePagina(this.pagina),
+      imagenPrincipal: this.pagina.imagen,
       jsonLd: crearJsonLd(this.pagina, [...this.pagina.faqs, ...this.preguntas]),
     });
   }

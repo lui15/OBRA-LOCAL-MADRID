@@ -4,7 +4,7 @@
 
 .hero,
 .services-section {
-  scroll-margin-top: calc(var(--header-h) - 64px);
+  scroll-margin-top: 0;
 }
 
 .hero {
@@ -477,4 +477,34 @@
   to {
     clip-path: inset(0 0 0 0 round 20px);
   }
+}
+
+.bloque-zonas {
+  background: var(--surface);
+}
+
+.rejilla-portada {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ver-todo {
+  margin: 20px 0 0;
+  text-align: center;
+}
+
+.ver-todo a {
+  display: inline-block;
+  padding: 12px 0;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ver-todo a:hover {
+  color: #b84800;
 }

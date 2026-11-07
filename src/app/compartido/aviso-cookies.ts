@@ -41,7 +41,7 @@ import { ConsentimientoService } from './consentimiento.service';
       position: fixed;
       left: 20px;
       bottom: calc(20px + env(safe-area-inset-bottom));
-      z-index: 1500;
+      z-index: 85;
       width: min(25rem, calc(100vw - 40px));
       padding: 18px 20px;
       border: 1px solid var(--line);
@@ -79,10 +79,11 @@ import { ConsentimientoService } from './consentimiento.service';
       width: 100%;
       min-height: 44px;
     }
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       .aviso {
         left: 10px;
-        bottom: calc(10px + env(safe-area-inset-bottom));
+        /* Queda justo encima de la barra de acción móvil. */
+        bottom: calc(76px + env(safe-area-inset-bottom));
         width: calc(100vw - 20px);
         padding: 16px;
       }

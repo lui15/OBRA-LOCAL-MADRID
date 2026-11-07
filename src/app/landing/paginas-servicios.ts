@@ -1,18 +1,25 @@
 import { PaginaSeo } from './pagina-seo';
 
-/** Páginas de cada servicio y de las búsquedas concretas de alta intención. */
+/** Páginas de cada servicio del catálogo. */
 export const PAGINAS_SERVICIOS: PaginaSeo[] = [
   /* ---------------------------- REFORMAS INTEGRALES ---------------------------- */
   {
     path: 'reformas-integrales-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reformas integrales en Madrid: precios | ObraLocalMADRID',
+    title: 'Reformas integrales en Madrid: precios | ObraLocal Madrid',
     description:
       'Reformas integrales en Madrid: demolición, nueva distribución, instalaciones y acabados. Rangos orientativos por superficie y presupuesto por partidas.',
     etiqueta: 'Reformas integrales',
     resumen: 'Renovación completa o parcial de viviendas y locales, ordenada por partidas.',
-    h1: { linea: 'Reformas integrales', resaltado: 'en Madrid.' },
+    h1: { antes: 'Reformas', resaltado: 'integrales', despues: 'en Madrid' },
+    puntos: [
+      'Desde 15.000 €',
+      'Presupuesto por partidas',
+      'Viviendas y locales',
+      'Distribución e instalaciones',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para una reforma integral en Madrid',
     kicker: 'REFORMAS INTEGRALES',
     intro:
       'Una reforma integral coordina muchos oficios en un mismo espacio: demolición, albañilería, fontanería, electricidad, suelos, carpintería y pintura. Lo que decide si sale bien no es solo la calidad de los materiales, sino el orden en que se hace cada cosa y lo claro que esté el presupuesto antes de empezar.',
@@ -39,11 +46,15 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Primero, lo que no se volverá a ver',
+            imagen: '/images/instalaciones-vistas.webp',
+            imagenAlt: 'Tuberías y cables antes de cerrar la pared',
             texto:
               'Protección de zonas comunes, demolición, retirada de escombros, nueva tabiquería y paso de instalaciones. Es el mejor momento para decidir dónde irán enchufes, tomas de agua, radiadores y puntos de luz, porque después moverlos cuesta mucho más.',
           },
           {
             titulo: 'Después, lo que se va a ver',
+            imagen: '/images/rodillos-pared.webp',
+            imagenAlt: 'Rodillo pintando una pared al final de la obra',
             texto:
               'Alicatados, solados, falsos techos, carpintería, muebles de cocina y baño, y por último pintura y remates. Los suelos delicados y la pintura final se dejan para el tramo final, cuando ya no pasan materiales pesados por la vivienda.',
           },
@@ -61,6 +72,18 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         parrafos: [
           'En Madrid capital, la Ordenanza 6/2022 establece la declaración responsable como vía general y reserva la licencia a los casos de su anexo. Las actuaciones que afectan a estructura, fachada o a edificios protegidos exigen más comprobaciones que un simple cambio de acabados. En otros municipios, el trámite lo marca su propio ayuntamiento, así que hay que comprobarlo caso por caso.',
           'Si vives en un edificio con comunidad, la Ley de Propiedad Horizontal obliga a comunicar la obra previamente a quien la represente, normalmente el presidente o el administrador. Avisar con tiempo también facilita acordar la protección del ascensor y el paso de materiales.',
+        ],
+      },
+      {
+        titulo: 'Materiales y acabados: dónde merece la pena invertir',
+        parrafos: [
+          'Antes de elegir revestimientos, separa lo que se usa a diario de lo decorativo. Suelos, grifería y herrajes de cocina soportan el desgaste de cada día, y una calidad media-alta suele compensar. En cambio, una lámpara o un color de pared se cambian sin obra. Conviene cerrar los materiales antes de empezar, porque los plazos de entrega también condicionan el calendario.',
+        ],
+      },
+      {
+        titulo: 'Plazos orientativos',
+        parrafos: [
+          'Una reforma integral se mide en semanas o meses, según la superficie, los trámites y el estado de las instalaciones. Lo que más alarga una obra no es el trabajo en sí, sino los cambios de decisión a mitad de camino y los materiales que tardan en llegar. Las fechas se fijan contigo al planificar, una vez definido el alcance.',
         ],
       },
     ],
@@ -108,12 +131,19 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reforma-banos-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reforma de baños en Madrid: precios | ObraLocalMADRID',
+    title: 'Reforma de baños en Madrid: precios | ObraLocal Madrid',
     description:
       'Reforma de baños en Madrid: azulejos, sanitarios, grifería, mampara e instalaciones. Precios orientativos, desde un cambio puntual hasta el baño completo.',
     etiqueta: 'Reforma de baños',
     resumen: 'Azulejos, sanitarios, muebles, grifería e instalaciones, por partes o por completo.',
-    h1: { linea: 'Reforma de baños', resaltado: 'en Madrid.' },
+    h1: { antes: 'Reforma de', resaltado: 'baños', despues: 'en Madrid' },
+    puntos: [
+      'Desde 600 €',
+      'Parcial o completa',
+      'Impermeabilización incluida en la valoración',
+      'Cambio de bañera por ducha',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para reformar un baño en Madrid',
     kicker: 'REFORMA DE BAÑO',
     intro:
       'El baño concentra en pocos metros agua, electricidad, ventilación y revestimientos, y cualquier error se nota con el tiempo en forma de humedades. Te ayudamos a decidir hasta dónde merece la pena llegar: desde cambiar un mueble y la grifería hasta demoler y empezar de cero.',
@@ -126,16 +156,22 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Cambio puntual',
+            imagen: '/images/reforma-bano-ejemplo.webp',
+            imagenAlt: 'Baño con mueble y grifería renovados',
             texto:
               'Sustituyes grifería, mueble de lavabo o sanitarios sin tocar paredes ni suelo. Es lo más rápido, y tiene sentido si los azulejos están bien y no hay problemas de humedad.',
           },
           {
             titulo: 'Reforma parcial',
+            imagen: '/images/bano-moderno.webp',
+            imagenAlt: 'Baño con revestimientos nuevos',
             texto:
               'Renuevas revestimientos y sanitarios sin cambiar la distribución. Las tomas de agua y los desagües se quedan en su sitio, lo que contiene bastante el coste.',
           },
           {
             titulo: 'Baño completo',
+            imagen: '/images/plato-ducha.webp',
+            imagenAlt: 'Baño completo con ducha de obra',
             texto:
               'Demolición, nuevas instalaciones, impermeabilización, revestimientos, sanitarios y mampara. Es la opción recomendable si las tuberías son antiguas: reformar sobre una instalación agotada es arriesgarse a romper lo nuevo.',
           },
@@ -162,6 +198,24 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
           'Mover el inodoro es de lo que más encarece un baño, porque su desagüe tiene un diámetro grande y necesita pendiente hacia la bajante. Si puedes mantenerlo donde está, ahorrarás obra. Mover lavabo o ducha suele ser más sencillo, aunque depende del edificio.',
           'Elige los azulejos y el plato de ducha antes de fijar el presupuesto final: el formato y la colocación influyen en el precio de la mano de obra. Las piezas de gran formato y los diseños con cortes requieren más tiempo que un formato estándar.',
           'En baños sin ventana, la ventilación no es un detalle. Un extractor bien dimensionado y conectado al conducto adecuado evita condensaciones y moho, especialmente en los baños interiores tan frecuentes en los pisos de Madrid.',
+        ],
+      },
+      {
+        titulo: 'Proceso de la obra',
+        parrafos: [
+          'Primero se protegen las zonas de paso y se desmonta lo existente. Después se adaptan fontanería, electricidad y desagües, y se impermeabiliza la zona húmeda. Con la base lista llega el alicatado y el solado, y por último la colocación de sanitarios, mueble, grifería y mampara, seguida de una prueba de agua y desagües.',
+        ],
+      },
+      {
+        titulo: 'Materiales y acabados',
+        parrafos: [
+          'En suelos, busca piezas antideslizantes, sobre todo en la zona de ducha. Las juntas estrechas con un buen producto se limpian mejor. Si el baño es pequeño, los tonos claros y un espejo grande dan amplitud, y un mueble suspendido deja ver más suelo.',
+        ],
+      },
+      {
+        titulo: 'Plazos orientativos',
+        parrafos: [
+          'Un cambio puntual puede resolverse en poco tiempo, mientras que un baño completo requiere secados y varios oficios que se suceden, por lo que se organiza por fases. Las fechas se acuerdan contigo al planificar, y conviene preverlas bien si es el único baño de la vivienda.',
         ],
       },
     ],
@@ -204,12 +258,19 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reforma-cocinas-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reforma de cocinas en Madrid: precios | ObraLocalMADRID',
+    title: 'Reforma de cocinas en Madrid: precios | ObraLocal Madrid',
     description:
       'Reforma de cocinas en Madrid: muebles, encimera, alicatado, fregadero y conexiones. Precios orientativos, desde cambios puntuales a cocina completa.',
     etiqueta: 'Reforma de cocinas',
     resumen: 'Muebles, encimeras, revestimientos e instalaciones de agua y luz.',
-    h1: { linea: 'Reforma de cocinas', resaltado: 'en Madrid.' },
+    h1: { antes: 'Reforma de', resaltado: 'cocinas', despues: 'en Madrid' },
+    puntos: [
+      'Desde 1.500 €',
+      'Muebles y encimeras',
+      'Agua y electricidad',
+      'Cambio puntual o cocina completa',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para reformar una cocina en Madrid',
     kicker: 'REFORMA DE COCINAS',
     intro:
       'Reformar la cocina no siempre significa cambiarlo todo. A veces basta con una encimera nueva y otras hay que replantear la distribución y las instalaciones. Lo sensato es partir de cómo cocinas y de lo que no funciona hoy, y a partir de ahí decidir el alcance.',
@@ -229,11 +290,15 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Encimera',
+            imagen: '/images/cocina-abierta.webp',
+            imagenAlt: 'Cocina con encimera clara',
             texto:
               'El laminado es la opción económica y hoy tiene acabados muy conseguidos, aunque sufre más con el calor y las juntas mojadas. Las piedras naturales y los compactos soportan mejor el uso intensivo, pero pesan más y encarecen la partida: las encimeras de piedra pueden aumentar el coste.',
           },
           {
             titulo: 'Muebles',
+            imagen: '/images/reforma-cocina.webp',
+            imagenAlt: 'Muebles de cocina nuevos',
             texto:
               'Lo que más se nota con los años son los herrajes, las bisagras y las guías de los cajones, y la resistencia del tablero a la humedad, sobre todo bajo el fregadero. Merece la pena mirar eso antes que el acabado exterior.',
           },
@@ -260,6 +325,31 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
           'Los electrodomésticos, las encimeras de piedra y los cambios de distribución pueden aumentar el coste, así que aclara si están incluidos. Pregunta también quién suministra los muebles, quién mide y quién responde si una pieza llega mal: si cada parte la lleva una empresa distinta, conviene saber quién coordina el conjunto.',
         ],
       },
+      {
+        titulo: 'Qué incluye',
+        parrafos: [
+          'Según el alcance, la reforma puede abarcar desde un único elemento hasta toda la estancia.',
+        ],
+        lista: [
+          'Montaje de muebles',
+          'Instalación de encimeras',
+          'Alicatado y solado',
+          'Fregadero y grifería',
+          'Conexiones de electrodomésticos',
+        ],
+      },
+      {
+        titulo: 'Proceso de la obra',
+        parrafos: [
+          'Se empieza midiendo con precisión y desmontando la cocina antigua. Luego se adaptan agua, luz y extracción, se reparan paredes y se renuevan revestimientos. Los muebles se montan al final de la obra gruesa, y la encimera se mide sobre ellos para ajustarla bien. Por último se conectan los electrodomésticos.',
+        ],
+      },
+      {
+        titulo: 'Plazos orientativos',
+        parrafos: [
+          'La fabricación o la entrega de muebles y encimeras suele marcar el calendario más que la propia obra, así que conviene encargarlos con margen. Mientras dure, tendrás la cocina fuera de servicio durante algunas fases: pregúntalo al fijar las fechas para organizarte en casa.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -284,8 +374,8 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Reforma de cocinas',
     servicioFormulario: 'Reforma de cocinas',
-    imagen: '/images/reforma-cocina.webp',
-    imagenAlt: 'Cocina reformada con muebles y encimera nuevos en Madrid',
+    imagen: '/images/cocina-nueva.webp',
+    imagenAlt: 'Cocina nueva con isla central y muebles claros',
     relacionadas: [
       'reforma-banos-madrid',
       'reformas-integrales-madrid',
@@ -300,12 +390,19 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'albanileria-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Albañilería en Madrid: obras y arreglos | ObraLocalMADRID',
+    title: 'Albañilería en Madrid: obras y arreglos | ObraLocal Madrid',
     description:
       'Albañiles en Madrid: tabiques, enfoscados, alicatados, solados, huecos y reparaciones de obra. Precios orientativos, desde arreglos pequeños hasta 40 m².',
     etiqueta: 'Albañilería',
     resumen: 'Tabiques, enfoscados, alicatados, solados, huecos y reparaciones de obra.',
-    h1: { linea: 'Albañilería', resaltado: 'en Madrid.' },
+    h1: { antes: '', resaltado: 'Albañilería', despues: 'en Madrid' },
+    puntos: [
+      'Desde 150 €',
+      'Arreglos pequeños y obra',
+      'Tabiques, alicatados y solados',
+      'Retirada de escombros valorada',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para un trabajo de albañilería en Madrid',
     kicker: 'ALBAÑILERÍA',
     intro:
       'La albañilería es la base de casi cualquier obra, y también lo que resuelve los pequeños problemas de una vivienda: una pared dañada, un hueco que abrir o cerrar, un suelo levantado. Aquí encontrarás qué trabajos cubrimos, qué cuesta cada escala de intervención y qué conviene comprobar antes.',
@@ -318,21 +415,29 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Tabiques: levantar y demoler',
+            imagen: '/images/obra-en-curso.webp',
+            imagenAlt: 'Vivienda con tabiques en obra',
             texto:
               'Dividir una habitación o unir dos estancias cambia por completo una vivienda. El punto clave es confirmar antes que el muro que se quiere tirar no sea estructural, y prever por dónde pasan instalaciones que pueda haber dentro.',
           },
           {
             titulo: 'Enfoscados y enlucidos',
+            imagen: '/images/enlucido.webp',
+            imagenAlt: 'Enlucido de una pared',
             texto:
               'Son las capas que regularizan la pared antes del acabado. Una pared mal preparada se nota después en la pintura o en el azulejo, por lo que es una de las partidas en las que no conviene recortar.',
           },
           {
             titulo: 'Alicatados y solados',
+            imagen: '/images/reforma-bano-ejemplo.webp',
+            imagenAlt: 'Baño con alicatado nuevo',
             texto:
               'Colocación de azulejo en paredes y baldosa en suelos. Influyen el formato de la pieza, el estado de la base y la cantidad de cortes. En terrazas y exteriores, además, importan la pendiente y las juntas de dilatación.',
           },
           {
             titulo: 'Apertura y cierre de huecos',
+            imagen: '/images/albanileria-ejemplo.webp',
+            imagenAlt: 'Reparación de una pared',
             texto:
               'Para una puerta nueva, un paso más ancho o tapar una antigua. En tabiques simples es una obra sencilla; en muros de carga o en fachada es otra cosa, y requiere estudio técnico y permiso.',
           },
@@ -357,6 +462,24 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
           'Estado del soporte',
           'Accesibilidad y escombros',
           'Protecciones y acabados',
+        ],
+      },
+      {
+        titulo: 'Proceso de la obra',
+        parrafos: [
+          'Se protege la zona, se demuele o se sanea lo necesario y se retira el escombro. A continuación se ejecuta el trabajo: tabique, enfoscado, alicatado o reparación. Se respetan los tiempos de fraguado y secado antes de dar acabados, porque si se acortan aparecen fisuras o piezas sueltas.',
+        ],
+      },
+      {
+        titulo: 'Materiales y acabados',
+        parrafos: [
+          'La elección depende del uso. Un tabique de ladrillo aporta masa y resistencia, el mortero debe ser compatible con el soporte existente y, en zonas húmedas o exteriores, hacen falta adhesivos y juntas adecuados. En edificios antiguos conviene evitar materiales que impidan transpirar a los muros.',
+        ],
+      },
+      {
+        titulo: 'Plazos orientativos',
+        parrafos: [
+          'Una reparación localizada es un trabajo corto, aunque el secado puede requerir volver otro día para el acabado. Los trabajos amplios dependen de la superficie, del acceso y de la retirada de escombros. Te indicaremos las fechas previstas al concretar el presupuesto.',
         ],
       },
     ],
@@ -388,8 +511,8 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Albañilería',
     servicioFormulario: 'Albañilería',
-    imagen: '/images/albanileria.webp',
-    imagenAlt: 'Trabajo de albañilería en una vivienda de Madrid',
+    imagen: '/images/albanil-ladrillos.webp',
+    imagenAlt: 'Mano de albañil colocando un ladrillo con mortero',
     relacionadas: [
       'reformas-integrales-madrid',
       'pladur-madrid',
@@ -404,12 +527,19 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'pintores-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Pintores en Madrid: precios por estancia | ObraLocalMADRID',
+    title: 'Pintores en Madrid: precios por estancia | ObraLocal Madrid',
     description:
       'Pintores en Madrid: paredes y techos, lijado, imprimación, grietas, puertas y marcos. Precios orientativos desde una habitación hasta varias estancias.',
     etiqueta: 'Pintores',
     resumen: 'Pintura de paredes y techos, preparación de superficies y acabados.',
-    h1: { linea: 'Pintores', resaltado: 'en Madrid.' },
+    h1: { antes: '', resaltado: 'Pintores', despues: 'en Madrid' },
+    puntos: [
+      'Desde 200 €',
+      'Paredes y techos',
+      'Preparación del soporte',
+      'Puertas y marcos',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para pintar mi vivienda en Madrid',
     kicker: 'PINTURA',
     intro:
       'Pintar parece sencillo hasta que se ven las marcas de una mala preparación con la luz lateral de la tarde. La calidad del resultado depende sobre todo de lo que se hace antes de abrir el bote: proteger, reparar, lijar e imprimar. Por eso dos presupuestos de la misma habitación pueden ser muy diferentes.',
@@ -422,16 +552,22 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Protección',
+            imagen: '/images/pintura-ejemplo.webp',
+            imagenAlt: 'Habitación preparada para pintar',
             texto:
               'Cubrir suelos, muebles, enchufes y marcos. Es tiempo de trabajo real, sobre todo si la vivienda está amueblada y se sigue habitando durante la obra.',
           },
           {
             titulo: 'Preparación del soporte',
+            imagen: '/images/llana-masilla.webp',
+            imagenAlt: 'Masilla aplicada con llana',
             texto:
               'Reparar grietas y agujeros con masilla, lijar para unificar y aplicar imprimación donde haga falta. Las paredes nuevas de yeso o las reparaciones absorben de otro modo la pintura, y sin imprimación se notan las diferencias de tono.',
           },
           {
             titulo: 'Manos de pintura',
+            imagen: '/images/rodillos-pared.webp',
+            imagenAlt: 'Rodillo sobre una pared blanca',
             texto:
               'Cuántas manos hacen falta depende del color anterior y del nuevo. Pasar de un tono oscuro a un blanco, o al revés, puede requerir manos adicionales. Es uno de los datos que deben quedar por escrito.',
           },
@@ -458,6 +594,25 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
           'Gotelé, grietas o humedades',
           'Número de manos y pintura',
           'Protección de muebles y suelos',
+        ],
+      },
+      {
+        titulo: 'Qué incluye',
+        parrafos: [
+          'Estos son los trabajos que forman parte del servicio. Indica en la solicitud cuáles necesitas.',
+        ],
+        lista: [
+          'Pintura plástica de paredes y techos',
+          'Lijado e imprimación',
+          'Reparación de grietas',
+          'Pintura de puertas y marcos',
+          'Acabados decorativos',
+        ],
+      },
+      {
+        titulo: 'Plazos orientativos',
+        parrafos: [
+          'Depende de la superficie, de cómo estén las paredes y de los tiempos de secado entre manos, que no conviene acortar. Con la vivienda vacía se avanza más rápido que con muebles que hay que mover y proteger. Las fechas se acuerdan contigo según las estancias que tengas que dejar libres.',
         ],
       },
     ],
@@ -489,8 +644,8 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Pintura',
     servicioFormulario: 'Pintura',
-    imagen: '/images/pintura.webp',
-    imagenAlt: 'Pintor preparando y pintando una pared en Madrid',
+    imagen: '/images/pintor-rodillo.webp',
+    imagenAlt: 'Pintor de espaldas pintando una pared con rodillo',
     relacionadas: [
       'quitar-gotele-madrid',
       'alisado-paredes-madrid',
@@ -505,12 +660,19 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'pladur-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Pladur en Madrid: tabiques y techos | ObraLocalMADRID',
+    title: 'Pladur en Madrid: tabiques y techos | ObraLocal Madrid',
     description:
       'Pladur en Madrid: tabiques, falsos techos, trasdosados y aislamiento térmico y acústico. Precios orientativos por metros y qué influye en el coste.',
     etiqueta: 'Pladur',
     resumen: 'Tabiques, falsos techos, trasdosados y aislamiento térmico y acústico.',
-    h1: { linea: 'Pladur', resaltado: 'en Madrid.' },
+    h1: { antes: '', resaltado: 'Pladur', despues: 'en Madrid' },
+    puntos: [
+      'Desde 250 €',
+      'Tabiques y falsos techos',
+      'Trasdosados',
+      'Aislamiento térmico y acústico',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para un trabajo de pladur en Madrid',
     kicker: 'PLADUR',
     intro:
       'El pladur, o placa de yeso laminado, permite dividir una estancia, bajar un techo o mejorar el aislamiento con menos peso y obra húmeda que un tabique tradicional. Es rápido y limpio, pero solo rinde si se elige bien la placa y se presta atención a estructura y juntas.',
@@ -523,16 +685,22 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Tabiques y divisiones',
+            imagen: '/images/tabique-pladur.webp',
+            imagenAlt: 'Montaje de un tabique de pladur',
             texto:
               'Una estructura metálica con placas por ambas caras crea una habitación nueva sin apenas añadir peso sobre el forjado, lo que resulta útil en edificios antiguos. Con lana mineral en el interior, además, mejora el aislamiento entre estancias.',
           },
           {
             titulo: 'Falsos techos',
+            imagen: '/images/pladur-ejemplo.webp',
+            imagenAlt: 'Falso techo de pladur',
             texto:
               'Permiten ocultar instalaciones o conductos, empotrar focos e igualar techos irregulares. La altura libre que queda es clave: en un piso con techos bajos, unos centímetros pueden marcar la diferencia.',
           },
           {
             titulo: 'Trasdosados',
+            imagen: '/images/instalando-pladur.webp',
+            imagenAlt: 'Operario trabajando en un trasdosado',
             texto:
               'Es un revestimiento adosado a una pared existente. Sirve para mejorar el aislamiento, ocultar defectos o pasar instalaciones sin hacer rozas. A cambio, resta unos centímetros a la habitación, que conviene medir antes.',
           },
@@ -566,6 +734,18 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
           'Juntas y acabado final',
         ],
       },
+      {
+        titulo: 'Proceso de la obra',
+        parrafos: [
+          'Se replantea sobre suelo y techo dónde irá la estructura, se fijan los perfiles metálicos y se dejan pasadas las instalaciones. Después se coloca el aislamiento, si lo lleva, y se atornillan las placas. Por último se encintan y lijan las juntas para dejar la superficie lista para pintar.',
+        ],
+      },
+      {
+        titulo: 'Plazos orientativos',
+        parrafos: [
+          'Es uno de los sistemas más rápidos, porque apenas tiene obra húmeda. Aun así, las juntas necesitan secarse entre manos de pasta, y si el trabajo incluye electricidad o pintura hay que coordinarlas. El calendario se concreta al definir los metros y el acabado.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -595,8 +775,8 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Pladur',
     servicioFormulario: 'Pladur',
-    imagen: '/images/pladur.webp',
-    imagenAlt: 'Instalación de tabique y falso techo de pladur en Madrid',
+    imagen: '/images/tabique-pladur.webp',
+    imagenAlt: 'Montaje de un tabique de pladur en una vivienda',
     relacionadas: [
       'albanileria-madrid',
       'alisado-paredes-madrid',
@@ -611,12 +791,19 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'alisado-paredes-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Alisado de paredes en Madrid: precios | ObraLocalMADRID',
+    title: 'Alisado de paredes en Madrid: precios | ObraLocal Madrid',
     description:
       'Alisado de paredes en Madrid: reparación de grietas, enlucido, revestimiento y preparación para pintura o papel. Precios orientativos por metros cuadrados.',
     etiqueta: 'Alisado y reparación de paredes',
     resumen: 'Reparación, alisado, enlucido y renovación de paredes.',
-    h1: { linea: 'Alisado de paredes', resaltado: 'en Madrid.' },
+    h1: { antes: 'Alisado de', resaltado: 'paredes', despues: 'en Madrid' },
+    puntos: [
+      'Desde 150 €',
+      'Grietas y agujeros',
+      'Enlucido y revestimiento',
+      'Listas para pintar o empapelar',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para alisar paredes en Madrid',
     kicker: 'PAREDES',
     intro:
       'Una pared lisa cambia la sensación de toda una habitación, pero no se consigue con pintura. Alisar es un trabajo de preparación: sanear lo que está suelto, reparar grietas y agujeros, aplicar el material adecuado y lijar hasta que la superficie no delate nada a contraluz.',
@@ -636,16 +823,22 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Grietas',
+            imagen: '/images/paredes-ejemplo.webp',
+            imagenAlt: 'Pared reparada',
             texto:
               'Las fisuras finas del acabado se abren, se rellenan y se refuerzan con malla si hace falta. Pero las grietas activas, que siguen creciendo, volverán a salir si no se resuelve antes su causa.',
           },
           {
             titulo: 'Humedad',
+            imagen: '/images/piso-en-obra.webp',
+            imagenAlt: 'Paredes de un piso en obra',
             texto:
               'Si hay manchas, desconchones o salitre, hay que encontrar y tratar el origen antes de aplicar nada. Alisar sobre una pared húmeda es trabajo perdido.',
           },
           {
             titulo: 'Capas antiguas',
+            imagen: '/images/llana-masilla.webp',
+            imagenAlt: 'Retirada de capas antiguas con llana',
             texto:
               'En pisos con varias décadas, debajo puede haber papel pintado, temple o muchas capas de pintura. Si no están bien adheridas, el material nuevo arrastrará lo que tiene debajo, por lo que hay que retirarlas o fijarlas con una imprimación.',
           },
@@ -670,6 +863,31 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
           'Gotelé y capas de pintura',
           'Masilla, lijado e imprimación',
           'Protección y retirada de residuos',
+        ],
+      },
+      {
+        titulo: 'Qué incluye',
+        parrafos: [
+          'El servicio de paredes cubre desde arreglos localizados hasta la renovación de estancias enteras.',
+        ],
+        lista: [
+          'Reparación de grietas y agujeros',
+          'Enlucido y revestimiento',
+          'Quitar gotelé y alisar',
+          'Pintura o papel pintado',
+          'Preparación de acabados',
+        ],
+      },
+      {
+        titulo: 'Materiales y acabados',
+        parrafos: [
+          'Para capas finas se usan masillas de alisar, y para grosores mayores, yesos o morteros compatibles con el soporte. Sobre superficies poco absorbentes hace falta una imprimación de agarre. El resultado se define en el lijado final, por lo que conviene revisarlo con luz lateral antes de pintar.',
+        ],
+      },
+      {
+        titulo: 'Plazos orientativos',
+        parrafos: [
+          'Cada capa debe secar antes de la siguiente, de modo que el tiempo depende del número de manos, de la ventilación y del estado de la pared. Es un trabajo que se reparte en varios días aunque la superficie sea pequeña, algo que conviene tener en cuenta si vas a pintar después.',
         ],
       },
     ],
@@ -701,325 +919,13 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Paredes',
     servicioFormulario: 'Paredes',
-    imagen: '/images/paredes.webp',
-    imagenAlt: 'Pared alisada y preparada para pintar en una vivienda de Madrid',
+    imagen: '/images/enlucido.webp',
+    imagenAlt: 'Enlucido de una pared con llana',
     relacionadas: [
       'quitar-gotele-madrid',
       'pintores-madrid',
       'pladur-madrid',
       'albanileria-madrid',
-      'precios',
-    ],
-  },
-
-  /* ---------------------------- BAÑERA POR DUCHA ---------------------------- */
-  {
-    path: 'cambiar-banera-por-plato-ducha-madrid',
-    tipo: 'intencion',
-    padre: 'reforma-banos-madrid',
-    title: 'Cambiar bañera por plato de ducha, Madrid | ObraLocalMADRID',
-    description:
-      'Cambiar la bañera por un plato de ducha en Madrid: qué incluye, desagüe, impermeabilización, mampara y azulejos. Qué comprobar antes de pedir precio.',
-    etiqueta: 'Cambiar bañera por plato de ducha',
-    resumen: 'Qué implica el cambio, qué comprobar y qué influye en el precio.',
-    h1: { linea: 'Cambiar bañera por ducha', resaltado: 'en Madrid.' },
-    kicker: 'BAÑERA POR DUCHA',
-    intro:
-      'Es uno de los cambios más pedidos en los pisos de Madrid: más espacio, entrada a ras de suelo o casi, y mucha más seguridad para personas mayores. Pero bajo la bañera puede haber sorpresas, y lo que parece un cambio sencillo depende de cómo está el desagüe y de lo que aparezca al retirarla.',
-    secciones: [
-      {
-        titulo: 'Qué incluye el cambio',
-        parrafos: [
-          'El trabajo no consiste solo en poner un plato en el hueco de la bañera. Normalmente incluye estos pasos, y es importante confirmar en el presupuesto que todos están contemplados.',
-        ],
-        lista: [
-          'Desmontar la bañera y retirar los residuos',
-          'Adaptar el desagüe y la toma de agua',
-          'Nivelar la base y dar pendiente',
-          'Impermeabilizar la zona de ducha',
-          'Colocar el plato, la grifería y la mampara',
-          'Reponer o renovar el azulejo afectado',
-        ],
-      },
-      {
-        titulo: 'Tres puntos que deciden la dificultad',
-        parrafos: [
-          'Estas son las comprobaciones que más cambian el alcance del trabajo. Si puedes, míralas o fotografíalas antes de pedir presupuesto.',
-        ],
-        subsecciones: [
-          {
-            titulo: 'El desagüe',
-            texto:
-              'La bañera suele tener el desagüe en un extremo y a poca altura. Un plato extraplano necesita salida y pendiente suficientes, y en un edificio antiguo no siempre hay margen en el suelo. A veces la solución es un plato algo más elevado.',
-          },
-          {
-            titulo: 'El azulejo',
-            texto:
-              'Al retirar la bañera, suele quedar la parte baja de la pared sin alicatar, porque el azulejo termina en el borde. Si ya no se fabrica el mismo modelo, hay que combinar con otro, usar un panel o renovar la pared de la ducha.',
-          },
-          {
-            titulo: 'El estado de la pared',
-            texto:
-              'Los baños antiguos pueden tener humedades ocultas tras la bañera. Hay que sanearlas antes de cerrar, ya que una ducha somete a la pared a mucha más agua directa que una bañera.',
-          },
-        ],
-      },
-      {
-        titulo: 'Elegir plato y mampara',
-        parrafos: [
-          'Mide el hueco antes de elegir. Las bañeras habituales rondan los 150 o 170 cm de largo, por 70 cm de ancho, y muchos platos se fabrican o se cortan a medida para ajustarse. Conviene elegir una superficie antideslizante, sobre todo si la ducha es para una persona mayor.',
-          'La mampara también merece atención: una puerta corredera ahorra espacio en baños estrechos, mientras que un panel fijo es más fácil de limpiar si hay espacio para entrar. Y si la accesibilidad es el motivo principal, piensa también en barras de apoyo o un asiento, ya que reforzar la pared es más sencillo antes de cerrar.',
-        ],
-      },
-      {
-        titulo: 'Sobre el precio',
-        parrafos: [
-          'No publicamos un precio cerrado para este trabajo, porque depende en gran medida de lo que hay bajo la bañera y de los azulejos. Es uno de los trabajos incluidos en la reforma de baño, cuya guía de precios orientativos tienes a continuación: te ayuda a situar el nivel de cada intervención, no a fijar el precio de este cambio concreto.',
-          'Para orientarte mejor, indica en la solicitud las medidas del hueco, la planta del edificio y si quieres conservar los azulejos. Si tienes fotos de la zona, tenlas a mano para cuando hablemos.',
-        ],
-      },
-    ],
-    faqs: [
-      {
-        pregunta: '¿Se puede cambiar la bañera por una ducha sin hacer obra?',
-        respuesta:
-          'Siempre hay algo de obra, aunque puede ser limitada: retirar la bañera, adaptar el desagüe, impermeabilizar y colocar el plato. Lo que se puede evitar en algunos casos es renovar todo el alicatado del baño.',
-      },
-      {
-        pregunta: '¿Hace falta permiso de la comunidad?',
-        respuesta:
-          'Se trata de una obra dentro de la vivienda, pero la Ley de Propiedad Horizontal obliga a comunicar las obras previamente a quien represente a la comunidad. Además, conviene revisar el horario y la protección de las zonas comunes.',
-      },
-      {
-        pregunta: '¿Se puede poner un plato a ras de suelo en cualquier piso?',
-        respuesta:
-          'No siempre. Depende de la altura disponible para el desagüe y de la pendiente necesaria. En algunos edificios antiguos hay que elevar ligeramente el plato. Es una de las primeras cosas que debe comprobarse.',
-      },
-      {
-        pregunta: '¿Cuánto cuesta cambiar la bañera por un plato de ducha?',
-        respuesta:
-          'Depende del desagüe, del azulejo y de la mampara elegida, por lo que no publicamos un precio cerrado. Pide una valoración e indica las medidas en los detalles de tu solicitud.',
-      },
-    ],
-    servicio: {
-      nombre: 'Cambio de bañera por plato de ducha',
-      descripcion: 'Sustitución de bañera por plato de ducha en viviendas de Madrid.',
-    },
-    servicioCatalogo: 'Reforma de baño',
-    servicioFormulario: 'Reforma de baño',
-    preciosSoloReferencia: true,
-    imagen: '/images/reforma-bano-ejemplo.webp',
-    imagenAlt: 'Baño renovado con zona de ducha en lugar de bañera',
-    relacionadas: [
-      'reforma-banos-madrid',
-      'albanileria-madrid',
-      'reformas-integrales-madrid',
-      'preguntas-frecuentes',
-    ],
-  },
-
-  /* ---------------------------- GOTELÉ ---------------------------- */
-  {
-    path: 'quitar-gotele-madrid',
-    tipo: 'intencion',
-    padre: 'alisado-paredes-madrid',
-    title: 'Quitar gotelé en Madrid: precio y métodos | ObraLocalMADRID',
-    description:
-      'Quitar gotelé en Madrid: raspar, cubrir o trasdosar. Qué método conviene según la pared, qué precio orientativo tiene y qué comprobar antes de empezar.',
-    etiqueta: 'Quitar gotelé',
-    resumen: 'Raspar, cubrir o trasdosar: qué método encaja con tu pared.',
-    h1: { linea: 'Quitar gotelé', resaltado: 'en Madrid.' },
-    kicker: 'QUITAR GOTELÉ',
-    intro:
-      'El gotelé estuvo presente en una gran parte de los pisos que se construyeron en España durante décadas, porque era barato y escondía bien los defectos. Hoy es de lo primero que se quiere eliminar al renovar una vivienda. Hay más de una forma de hacerlo, y la correcta depende de cómo está tu pared.',
-    secciones: [
-      {
-        titulo: 'Los tres métodos',
-        parrafos: [
-          'No existe un método único que funcione en todas las paredes. Antes de decidirlo, se suele hacer una prueba en una zona discreta para ver cómo reacciona.',
-        ],
-        subsecciones: [
-          {
-            titulo: 'Raspar',
-            texto:
-              'Consiste en humedecer el gotelé y retirarlo con espátula. Funciona bien si la pintura superior es permeable, como el temple. Si es plástica, el agua no penetra y cuesta mucho más. Después hay que reparar y alisar lo que queda.',
-          },
-          {
-            titulo: 'Cubrir con masilla',
-            texto:
-              'Se aplican varias capas de masilla o pasta de alisar sobre el gotelé hasta enrasarlo, y después se lija. Es más limpio porque no hay que quitar nada, aunque depende de que la capa inferior esté firmemente adherida y de un buen lijado.',
-          },
-          {
-            titulo: 'Trasdosar con pladur',
-            texto:
-              'Si las paredes están muy deterioradas, una opción es revestirlas con placa de yeso. Se obtiene una superficie nueva y se aprovecha para mejorar el aislamiento, a cambio de perder algunos centímetros en cada pared.',
-          },
-        ],
-      },
-      {
-        titulo: 'Cómo saber qué gotelé tienes',
-        parrafos: [
-          'Humedece una pequeña zona con una esponja y espera unos minutos. Si se reblandece y sale con la espátula, probablemente se puede raspar. Si el agua resbala sin penetrar, tiene pintura plástica por encima y suele ser más razonable cubrirlo.',
-          'Fíjate también en si hay zonas que se despegan, bolsas o humedades. Eso indica que hay un problema de adherencia que debe resolverse antes de aplicar masilla, porque el peso de las capas nuevas puede hacer que se desprenda todo.',
-        ],
-      },
-      {
-        titulo: 'Polvo, tiempos y organización',
-        parrafos: [
-          'Quitar gotelé es un trabajo sucio, aunque el resultado valga la pena. El lijado genera mucho polvo fino, de modo que hay que retirar o cubrir muebles, sellar puertas y proteger el suelo. Si tienes previsto cambiar el suelo, hazlo después de este trabajo y no antes.',
-          'El proceso tiene tiempos de secado entre capas que no se pueden acortar sin que se note, porque la masilla húmeda agrieta. Por eso, una vivienda entera se suele organizar por estancias y es mucho más cómodo si está vacía. En un edificio con comunidad, ten en cuenta los horarios de ruido y las normas internas, sobre todo si se usan lijadoras.',
-        ],
-      },
-      {
-        titulo: 'Qué influye en el precio',
-        parrafos: [
-          'El precio depende del estado de la pared, las capas de gotelé, la preparación y el acabado final. Los techos suelen ser más costosos que las paredes, por la postura y por la dificultad de trabajar sobre la cabeza. Si se incluye la pintura final, comprueba cuántas manos y qué producto entran en el precio.',
-        ],
-        lista: [
-          'Metros cuadrados, incluidos los techos',
-          'Tipo de gotelé y de pintura superior',
-          'Grietas o humedades que deban repararse',
-          'Si la vivienda está vacía o amueblada',
-          'Acabado final y número de manos',
-        ],
-      },
-    ],
-    faqs: [
-      {
-        pregunta: '¿Cuánto cuesta quitar el gotelé en Madrid?',
-        respuesta:
-          'Como referencia de nuestro servicio de paredes: un alisado localizado de 5 a 10 m² va de 150 a 350 €, de 10 a 20 m² con preparación de 400 a 800 €, y de 20 a 40 m² con pintura de 1.000 a 2.000 €. Son precios orientativos, que cambian según la pared.',
-      },
-      {
-        pregunta: '¿Es mejor raspar o tapar el gotelé?',
-        respuesta:
-          'Si sale con agua, rasparlo evita añadir grosor y peso. Si tiene pintura plástica, suele ser mejor cubrirlo con masilla. La prueba en una zona pequeña es lo que mejor indica qué hacer.',
-      },
-      {
-        pregunta: '¿Se puede quitar el gotelé con la casa amueblada?',
-        respuesta:
-          'Se puede, pero es más lento y requiere proteger muy bien todo, porque el polvo del lijado llega a cualquier sitio. Es recomendable retirar lo que se pueda o trabajar habitación por habitación.',
-      },
-      {
-        pregunta: '¿Hace falta permiso para quitar el gotelé?',
-        respuesta:
-          'Es un acabado interior. En Madrid capital, estos trabajos en viviendas sin protección no suelen necesitar título urbanístico, aunque conviene comunicarlo a la comunidad y respetar los horarios. En otros municipios, consulta a su ayuntamiento.',
-      },
-    ],
-    servicio: {
-      nombre: 'Quitar gotelé',
-      descripcion: 'Eliminación de gotelé, alisado y preparación de paredes en Madrid.',
-    },
-    servicioCatalogo: 'Paredes',
-    servicioFormulario: 'Paredes',
-    imagen: '/images/paredes-ejemplo.webp',
-    imagenAlt: 'Pared lisa después de quitar el gotelé',
-    relacionadas: [
-      'alisado-paredes-madrid',
-      'pintores-madrid',
-      'pladur-madrid',
-      'reforma-piso-completo-madrid',
-    ],
-  },
-
-  /* ---------------------------- PISO COMPLETO ---------------------------- */
-  {
-    path: 'reforma-piso-completo-madrid',
-    tipo: 'intencion',
-    padre: 'reformas-integrales-madrid',
-    title: 'Reforma de piso completo en Madrid | ObraLocalMADRID',
-    description:
-      'Reformar un piso completo en Madrid: precios orientativos por metros, qué revisar si lo acabas de comprar y cómo priorizar para ajustar el presupuesto.',
-    etiqueta: 'Reforma de piso completo',
-    resumen: 'Qué revisar al comprar un piso y cómo priorizar el presupuesto.',
-    h1: { linea: 'Reforma de piso completo', resaltado: 'en Madrid.' },
-    kicker: 'PISO COMPLETO',
-    intro:
-      'Has comprado o heredado un piso y quieres dejarlo a tu gusto antes de entrar a vivir. La pregunta no es solo cuánto cuesta, sino por dónde empezar y qué no debes dejar para más adelante. Esta página está pensada para tomar esas decisiones antes de pedir presupuesto.',
-    secciones: [
-      {
-        titulo: 'Antes de comprar o de firmar: qué revisar',
-        parrafos: [
-          'Si aún estás a tiempo, una visita con la vista puesta en la reforma puede evitarte sorpresas caras. En un piso antiguo, estos son los puntos que más afectan al presupuesto.',
-        ],
-        subsecciones: [
-          {
-            titulo: 'Instalaciones',
-            texto:
-              'Mira el cuadro eléctrico: si no tiene diferencial, o los enchufes no tienen toma de tierra, es muy probable que haya que renovar la instalación. Pregunta también por el material de las tuberías y por el sistema de calefacción.',
-          },
-          {
-            titulo: 'Edificio',
-            texto:
-              'Pide las últimas actas de la comunidad y pregunta si hay derramas previstas, la inspección del edificio (IEE) y el estado de las bajantes. También conviene saber si hay ascensor y cómo se puede organizar el acceso de materiales.',
-          },
-          {
-            titulo: 'Distribución y luz',
-            texto:
-              'Comprueba por dónde pasan las bajantes y conductos, ya que limitan dónde colocar baños y cocina. Y antes de imaginarte sin un tabique, recuerda que hay que confirmar que no sea estructural.',
-          },
-        ],
-      },
-      {
-        titulo: 'Si el presupuesto no llega para todo',
-        parrafos: [
-          'Es lo más habitual. La regla práctica es invertir primero en lo que es difícil de cambiar después y dejar para más adelante lo que puede cambiarse sin obra.',
-        ],
-        lista: [
-          'Prioridad alta: electricidad, fontanería, desagües y ventanas si aíslan mal',
-          'Prioridad media: distribución, baños y cocina',
-          'Se puede dejar para después: muebles, iluminación decorativa y algunos acabados',
-        ],
-      },
-      {
-        titulo: 'Diferencias entre una reforma de piso y otra integral',
-        parrafos: [
-          'Una reforma de piso completo es un tipo de reforma integral, pero con condicionantes propios: hay vecinos arriba, abajo y a los lados, las zonas comunes son compartidas y a menudo no existe margen para ampliar. Si buscas información general sobre el proceso, los trabajos y las partidas, consulta nuestra página de reformas integrales.',
-          'Durante la obra, ten presente la logística: la protección del ascensor y del portal, el horario de los trabajos ruidosos, dónde se colocan los escombros y si hace falta un permiso para la ocupación de la vía pública. Son gestiones pequeñas pero, si no se planifican, generan retrasos y conflictos con la comunidad.',
-        ],
-      },
-      {
-        titulo: 'Fiscalidad y gastos que se olvidan',
-        parrafos: [
-          'Además del precio de la obra, ten en cuenta el impuesto municipal de obras y las tasas, si proceden, y pregunta si el presupuesto incluye el IVA. Las obras de renovación de una vivienda habitual pueden tributar al tipo reducido del 10 % si cumplen ciertas condiciones, como la antigüedad de la vivienda y la proporción de materiales, por lo que conviene confirmarlo antes de cerrar el precio.',
-        ],
-      },
-    ],
-    faqs: [
-      {
-        pregunta: '¿Cuánto cuesta reformar un piso completo en Madrid?',
-        respuesta:
-          'Como referencia: de 40 a 60 m² va de 15.000 a 25.000 €, de 60 a 90 m² de 25.000 a 45.000 €, y a partir de 90 m² de 45.000 a 80.000 €. Son precios orientativos que dependen de las calidades, las instalaciones y la distribución.',
-      },
-      {
-        pregunta: '¿Por dónde empiezo si acabo de comprar un piso?',
-        respuesta:
-          'Mide y fotografía todo, revisa instalaciones, define qué quieres cambiar y establece una lista de prioridades. Con eso ya se puede pedir un presupuesto por partidas que sea comparable.',
-      },
-      {
-        pregunta: '¿Cuánto dura una reforma de un piso completo?',
-        respuesta:
-          'Depende del tamaño, de los trámites y de la disponibilidad de materiales, por lo que cualquier plazo debe concretarse una vez definido el alcance. Pide que el presupuesto indique un calendario por fases.',
-      },
-      {
-        pregunta: '¿Puedo reformar el piso por fases?',
-        respuesta:
-          'Sí, aunque suele salir más caro y puede obligar a romper lo ya terminado. Si eliges esta opción, deja hecha primero la obra de instalaciones. Cuéntanos tu plan en la solicitud.',
-      },
-    ],
-    servicio: {
-      nombre: 'Reforma de piso completo',
-      descripcion: 'Reforma completa de pisos y viviendas en Madrid.',
-    },
-    servicioCatalogo: 'Reformas integrales',
-    servicioFormulario: 'Reformas integrales',
-    imagen: '/images/reformas-integrales-ejemplo.webp',
-    imagenAlt: 'Piso en Madrid durante una reforma completa',
-    relacionadas: [
-      'reformas-integrales-madrid',
-      'reforma-banos-madrid',
-      'reforma-cocinas-madrid',
-      'como-trabajamos',
       'precios',
     ],
   },

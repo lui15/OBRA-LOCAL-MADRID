@@ -83,9 +83,6 @@ export class AnaliticaService {
   }
 
   private ubicacionDe(elemento: Element): string {
-    if (elemento.closest('header')) return 'cabecera';
-    if (elemento.closest('footer')) return 'pie';
-    if (elemento.closest('.quote-modal')) return 'formulario';
-    return 'contenido';
+    return elemento.closest('[data-ubicacion]')?.getAttribute('data-ubicacion') ?? 'contenido';
   }
 }

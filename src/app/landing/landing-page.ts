@@ -3,14 +3,22 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { RevealDirective } from '../compartido/animaciones';
 import { CtaPresupuesto } from '../compartido/cta-presupuesto';
+import { FaqAcordeon } from '../compartido/faq-acordeon';
 import { FaqSeccion } from '../compartido/faq-seccion';
-import { Garantias } from '../compartido/garantias';
 import { GuiaPrecios } from '../compartido/guia-precios';
+import { Icono } from '../compartido/icono';
 import { Migas } from '../compartido/migas';
-import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
-import { SERVICIOS, Servicio, ZONAS, buscarServicio, formatearPrecio } from '../datos/catalogo';
-import { altoDe, anchoDe, srcsetDe } from '../datos/imagenes';
-import { NavegacionService } from '../layout/navegacion.service';
+import { TarjetaPagina } from '../compartido/tarjeta-pagina';
+import {
+  SERVICIOS,
+  ZONAS,
+  buscarServicio,
+  formatearPrecio,
+} from '../datos/catalogo-servicios';
+import { enlaceWhatsApp } from '../datos/contacto';
+import { altoDe, anchoDe, srcsetDe, tarjetaDe } from '../datos/imagenes';
+import { PASOS_OBRA } from '../datos/pasos-obra';
+import { ContextoPagina } from '../layout/contexto-pagina.service';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
 import { SeoService } from '../seo.service';
 import {
@@ -19,6 +27,7 @@ import {
   crearJsonLd,
   migasDe,
   paginaDeServicio,
+  precioCabecera,
   urlDePagina,
 } from './landing-data';
 
@@ -30,11 +39,12 @@ import {
     RouterLink,
     RevealDirective,
     CtaPresupuesto,
+    FaqAcordeon,
     FaqSeccion,
-    Garantias,
     GuiaPrecios,
+    Icono,
     Migas,
-    ProcesoTrabajo,
+    TarjetaPagina,
   ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
@@ -42,43 +52,38 @@ import {
 })
 export class LandingPage {
   readonly presupuesto = inject(PresupuestoService);
-  readonly navegacion = inject(NavegacionService);
 
   readonly pagina = buscarPagina(inject(ActivatedRoute).snapshot.data['slug']);
   readonly migas = migasDe(this.pagina);
   readonly relacionadas = this.pagina.relacionadas.map((path) => buscarPagina(path));
   readonly servicioCatalogo = buscarServicio(this.pagina.servicioCatalogo ?? '');
+  readonly whatsapp = enlaceWhatsApp(this.pagina.whatsapp);
+
+  readonly desde = precioCabecera(this.pagina);
+  readonly desdeTexto = this.desde === null ? '' : formatearPrecio(this.desde);
 
   /** Índices: todo lo que cuelga de ellos. */
   readonly paginasServicio = PAGINAS.filter((p) => p.tipo === 'servicio');
-  readonly paginasIntencion = PAGINAS.filter((p) => p.tipo === 'intencion');
+  readonly paginasTrabajo = PAGINAS.filter((p) => p.tipo === 'trabajo');
   readonly paginasZona = PAGINAS.filter((p) => p.tipo === 'zona');
-  readonly zonasAtendidas = ZONAS.filter((z) => z !== 'Otra zona de Madrid');
-
-  /** Los servicios del catálogo con su página, para el índice de precios y las zonas. */
+  readonly zonasPorNombre = ZONAS.filter((z) => z !== 'Otra zona de Madrid');
   readonly serviciosConPagina = SERVICIOS.map((s) => ({ s, pagina: paginaDeServicio(s) }));
-
-  readonly anchoFoto = anchoDe(this.pagina.imagen);
-  readonly altoFoto = altoDe(this.pagina.imagen);
-  readonly srcsetFoto = srcsetDe(this.pagina.imagen);
+  readonly pasos = PASOS_OBRA;
 
   readonly url = urlDePagina;
-  readonly formato = formatearPrecio;
-  readonly verPrecios = Boolean(this.servicioCatalogo) || this.pagina.tipo === 'zona';
-
-  desde(s: Servicio): number {
-    return Math.min(...s.precios.map((p) => p.minimo));
-  }
-
-  hasta(s: Servicio): number {
-    return Math.max(...s.precios.map((p) => p.maximo));
-  }
+  readonly ancho = anchoDe;
+  readonly alto = altoDe;
+  readonly srcset = srcsetDe;
+  readonly fotoTarjeta = tarjetaDe;
 
   constructor() {
+    inject(ContextoPagina).fijar(this.pagina.servicioFormulario, this.pagina.whatsapp);
+
     inject(SeoService).update({
       title: this.pagina.title,
       description: this.pagina.description,
       path: urlDePagina(this.pagina),
+      imagenPrincipal: this.pagina.imagen,
       jsonLd: crearJsonLd(this.pagina),
     });
   }

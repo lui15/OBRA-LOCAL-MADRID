@@ -3,7 +3,7 @@
 }
 
 .service-card {
-  scroll-margin-top: calc(var(--header-h) + 16px);
+  scroll-margin-top: 16px;
 }
 
 .service-card {

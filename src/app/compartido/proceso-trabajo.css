@@ -3,7 +3,7 @@
 }
 
 .process-section {
-  scroll-margin-top: calc(var(--header-h) - 64px);
+  scroll-margin-top: 0;
 }
 
 .process-section {

@@ -1,17 +1,23 @@
-import { SERVICIOS, Servicio, ZONAS, buscarServicio } from '../datos/catalogo';
+import { SERVICIOS, Servicio, ZONAS, buscarServicio } from '../datos/catalogo-servicios';
 import { NEGOCIO, SITE_URL } from '../datos/contacto';
-import { PaginaSeo } from './pagina-seo';
+import { Faq, PaginaSeo } from './pagina-seo';
 import { PAGINAS_HUB } from './paginas-hub';
 import { PAGINAS_SERVICIOS } from './paginas-servicios';
+import { PAGINAS_TRABAJOS } from './paginas-trabajos';
 import { PAGINAS_ZONAS } from './paginas-zonas';
 
 export type { PaginaSeo } from './pagina-seo';
 
 /** Fuente única de todas las URL. Añadir una página es añadir un objeto en su archivo. */
-export const PAGINAS: PaginaSeo[] = [...PAGINAS_HUB, ...PAGINAS_SERVICIOS, ...PAGINAS_ZONAS];
+export const PAGINAS: PaginaSeo[] = [
+  ...PAGINAS_HUB,
+  ...PAGINAS_SERVICIOS,
+  ...PAGINAS_TRABAJOS,
+  ...PAGINAS_ZONAS,
+];
 
 /** Última revisión del contenido: el lastmod del sitemap. Actualízala al cambiar los textos. */
-export const ULTIMA_REVISION = '2026-11-06';
+export const ULTIMA_REVISION = '2026-11-07';
 
 export function buscarPagina(slug: unknown): PaginaSeo {
   return PAGINAS.find((p) => p.path === slug) ?? PAGINAS[0];
@@ -46,6 +52,11 @@ export function migasDe(p: PaginaSeo): Miga[] {
   return [inicio, ...cadena.map((c) => ({ etiqueta: c.etiqueta, url: urlDePagina(c) }))];
 }
 
+/** Preguntas visibles en la página, estén o no agrupadas. */
+export function faqsDe(p: PaginaSeo): Faq[] {
+  return p.gruposFaq?.flatMap((g) => g.faqs) ?? p.faqs;
+}
+
 /** Precio más bajo que se publica como oferta de la página, o null si no procede. */
 export function precioDesde(p: PaginaSeo): number | null {
   if (p.preciosSoloReferencia) return null;
@@ -60,13 +71,20 @@ export function precioDesde(p: PaginaSeo): number | null {
     : null;
 }
 
+/** Etiqueta «desde X €» de la cabecera; en los índices de servicios y precios, el más bajo. */
+export function precioCabecera(p: PaginaSeo): number | null {
+  const desde = precioDesde(p);
+  if (desde !== null || (p.modulo !== 'servicios' && p.modulo !== 'precios')) return desde;
+  return Math.min(...SERVICIOS.flatMap((s) => s.precios.map((x) => x.minimo)));
+}
+
 export const ID_NEGOCIO = SITE_URL + '/#organization';
 
 function nodoNegocio(): object {
   const municipios = ZONAS.filter((z) => z !== 'Madrid capital' && z !== 'Otra zona de Madrid');
 
   return {
-    '@type': 'GeneralContractor',
+    '@type': 'HomeAndConstructionBusiness',
     '@id': ID_NEGOCIO,
     name: NEGOCIO.nombre,
     url: SITE_URL + '/',
@@ -106,7 +124,7 @@ export function nodoMigas(migas: Miga[]): object {
 /** Datos estructurados de una página. Las FAQ son exactamente las que se muestran en ella. */
 export function crearJsonLd(
   p: PaginaSeo,
-  faqs: readonly { pregunta: string; respuesta: string }[] = p.faqs,
+  faqs: readonly Faq[] = faqsDe(p),
 ): object {
   const url = SITE_URL + urlDePagina(p);
   const nodos: object[] = [nodoNegocio()];
@@ -124,7 +142,7 @@ export function crearJsonLd(
     nodos.push(nodoMigas(migasDe(p)));
   }
 
-  if (p.tipo === 'servicio' || p.tipo === 'intencion' || p.tipo === 'zona') {
+  if (p.tipo === 'servicio' || p.tipo === 'trabajo' || p.tipo === 'zona') {
     const desde = precioDesde(p);
 
     nodos.push({

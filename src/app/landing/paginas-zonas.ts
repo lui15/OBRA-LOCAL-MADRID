@@ -10,13 +10,20 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-chamberi',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Chamberí, Madrid | ObraLocalMADRID',
+    title: 'Reformas en Chamberí, Madrid | ObraLocal Madrid',
     description:
       'Reformas en Chamberí: pisos antiguos, techos altos y edificios con protección. Trámites, horarios y comunidad de vecinos, con presupuesto paso a paso.',
     etiqueta: 'Reformas en Chamberí',
     resumen: 'Pisos de principios del siglo XX, techos altos y edificios con valor patrimonial.',
     zona: 'Chamberí',
-    h1: { linea: 'Reformas en Chamberí.', resaltado: 'Pisos con historia, bien tratados.' },
+    h1: { antes: 'Reformas en', resaltado: 'Chamberí', despues: '' },
+    puntos: [
+      'Desde 150 €',
+      'Fincas clásicas',
+      'Techos altos',
+      'Edificios con posible protección',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para una reforma en Chamberí',
     kicker: 'REFORMAS EN CHAMBERÍ',
     intro:
       'Chamberí reúne parte del mejor parque residencial clásico de Madrid: edificios del Ensanche con techos altos, suelos antiguos y patios interiores, en barrios como Almagro, Trafalgar, Gaztambide, Arapiles, Ríos Rosas y Vallehermoso. Reformar aquí consiste en renovar lo que está agotado sin perder lo que da valor a la vivienda.',
@@ -36,16 +43,22 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Forjados y paredes irregulares',
+            imagen: '/images/piso-en-obra.webp',
+            imagenAlt: 'Piso antiguo en obra',
             texto:
               'En fincas antiguas pueden aparecer forjados con viguetas de madera, suelos desnivelados y paredes con desplomes. Antes de añadir peso, como un suelo nuevo con capa de mortero o una bañera grande, hay que valorar el estado de la estructura.',
           },
           {
             titulo: 'Instalaciones agotadas',
+            imagen: '/images/instalaciones-vistas.webp',
+            imagenAlt: 'Instalaciones renovadas',
             texto:
               'Las tuberías de plomo y las instalaciones eléctricas sin toma de tierra todavía aparecen en pisos que no se han reformado en décadas. Si se va a abrir la vivienda, es el momento de renovarlas por completo.',
           },
           {
             titulo: 'Habitaciones interiores y patios',
+            imagen: '/images/piso-reformado.webp',
+            imagenAlt: 'Piso con paso abierto entre estancias',
             texto:
               'Abrir la distribución mejora mucho la luz en estos pisos, pero antes hay que distinguir muros de carga de tabiques. Y los cambios que afectan a un patio o a una ventana no son una decisión solo de la vivienda.',
           },
@@ -93,8 +106,8 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas y locales en el distrito de Chamberí, Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/reformas-integrales.webp',
-    imagenAlt: 'Reforma de una vivienda clásica en Chamberí, Madrid',
+    imagen: '/images/edificio-clasico-madrid.webp',
+    imagenAlt: 'Fachadas clásicas de edificios residenciales en Madrid',
     relacionadas: [
       'reformas-integrales-madrid',
       'reforma-piso-completo-madrid',
@@ -109,13 +122,20 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-salamanca',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en el barrio de Salamanca | ObraLocalMADRID',
+    title: 'Reformas en el barrio de Salamanca | ObraLocal Madrid',
     description:
       'Reformas en el distrito de Salamanca: fincas señoriales, normas de comunidad y fachadas protegidas. Qué revisar antes de empezar y presupuesto paso a paso.',
     etiqueta: 'Reformas en Salamanca',
     resumen: 'Fincas señoriales, comunidades exigentes y reformas de altas calidades.',
     zona: 'Distrito de Salamanca',
-    h1: { linea: 'Reformas en Salamanca.', resaltado: 'Calidades y comunidad, bien gestionadas.' },
+    h1: { antes: 'Reformas en', resaltado: 'Salamanca', despues: '' },
+    puntos: [
+      'Desde 150 €',
+      'Fincas señoriales',
+      'Normas de comunidad',
+      'Calidades altas',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para una reforma en el barrio de Salamanca',
     kicker: 'REFORMAS EN SALAMANCA',
     intro:
       'El distrito de Salamanca combina las fincas señoriales de Recoletos, Castellana y Goya con los edificios más modernos de Lista, Guindalera y Fuente del Berro. Aquí la reforma suele venir acompañada de dos condicionantes: una comunidad con normas estrictas y unas expectativas altas en los acabados.',
@@ -128,11 +148,15 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Recoletos, Castellana, Goya y Lista',
+            imagen: '/images/reforma-cocina.webp',
+            imagenAlt: 'Cocina reformada en un piso amplio',
             texto:
               'Predominan pisos grandes con techos altos, a menudo con zonas de servicio que hoy se integran en la vivienda, escaleras secundarias y ascensores de época. Las reformas tienden a redistribuir el espacio, mejorar el aislamiento e incorporar climatización sin alterar los elementos nobles.',
           },
           {
             titulo: 'Guindalera y Fuente del Berro',
+            imagen: '/images/edificios-madrid.webp',
+            imagenAlt: 'Bloques residenciales de Madrid',
             texto:
               'Hay más variedad: bloques de mediados del siglo XX, pisos más compactos y algunas zonas de vivienda baja. Las prioridades suelen ser actualizar instalaciones, mejorar la distribución y modernizar baños y cocinas.',
           },
@@ -192,8 +216,8 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas y locales en el distrito de Salamanca, Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/reforma-cocina.webp',
-    imagenAlt: 'Cocina reformada en una vivienda del distrito de Salamanca, Madrid',
+    imagen: '/images/edificio-esquina.webp',
+    imagenAlt: 'Edificio residencial clásico en esquina',
     relacionadas: [
       'reformas-integrales-madrid',
       'reforma-cocinas-madrid',
@@ -208,13 +232,20 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-retiro',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Retiro, Madrid | ObraLocalMADRID',
+    title: 'Reformas en Retiro, Madrid | ObraLocal Madrid',
     description:
       'Reformas en Retiro: Jerónimos, Ibiza, Pacífico, Adelfas, Estrella y Niño Jesús. Edificios, permisos y trabajos frecuentes por barrio, con presupuesto.',
     etiqueta: 'Reformas en Retiro',
     resumen: 'Del entorno protegido de Jerónimos a los bloques de Estrella y Adelfas.',
     zona: 'Retiro',
-    h1: { linea: 'Reformas en Retiro.', resaltado: 'Cada barrio, su reforma.' },
+    h1: { antes: 'Reformas en', resaltado: 'Retiro', despues: '' },
+    puntos: [
+      'Desde 150 €',
+      'Seis barrios',
+      'Clásicos y bloques',
+      'Mejora de aislamiento',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para una reforma en Retiro',
     kicker: 'REFORMAS EN RETIRO',
     intro:
       'Retiro es uno de los distritos más variados para reformar. En sus seis barrios conviven las fincas señoriales de Jerónimos e Ibiza, los edificios de Pacífico y los bloques residenciales de Adelfas y Estrella. Por eso, la misma reforma puede plantear retos muy diferentes según la calle.',
@@ -227,16 +258,22 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Jerónimos e Ibiza',
+            imagen: '/images/edificio-clasico-madrid.webp',
+            imagenAlt: 'Fachadas clásicas de Madrid',
             texto:
               'Fincas clásicas, pisos amplios, techos altos y mucho valor patrimonial en el entorno del parque. Las prioridades suelen ser renovar instalaciones, recuperar elementos originales y redistribuir sin perder carácter. Jerónimos forma parte además del Paisaje de la Luz, declarado Patrimonio Mundial en 2021.',
           },
           {
             titulo: 'Pacífico y Niño Jesús',
+            imagen: '/images/cocina-nueva.webp',
+            imagenAlt: 'Cocina renovada',
             texto:
               'Mezcla de edificios de distintas épocas, con muchas viviendas de tamaño medio. Son frecuentes las reformas de baños y cocinas, los cambios de suelos y la actualización de la instalación eléctrica.',
           },
           {
             titulo: 'Adelfas y Estrella',
+            imagen: '/images/sala-vacia.webp',
+            imagenAlt: 'Habitación renovada en un bloque residencial',
             texto:
               'Predominan los bloques residenciales de la segunda mitad del siglo XX, con distribuciones más homogéneas y, a menudo, gotelé y terrazas. Aquí tiene mucho sentido integrar la terraza si la comunidad y la normativa lo permiten, abrir la cocina y mejorar el aislamiento.',
           },
@@ -291,8 +328,8 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas y locales en el distrito de Retiro, Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/reforma-bano.webp',
-    imagenAlt: 'Baño reformado en una vivienda del distrito de Retiro, Madrid',
+    imagen: '/images/bano-moderno.webp',
+    imagenAlt: 'Baño reformado con mampara y revestimientos',
     relacionadas: [
       'reforma-banos-madrid',
       'reforma-piso-completo-madrid',
@@ -307,13 +344,20 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-carabanchel',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Carabanchel, Madrid | ObraLocalMADRID',
+    title: 'Reformas en Carabanchel, Madrid | ObraLocal Madrid',
     description:
       'Reformas en Carabanchel: pisos de los años 50 a 70, gotelé, bañeras e instalaciones antiguas. Qué priorizar, precios orientativos y presupuesto.',
     etiqueta: 'Reformas en Carabanchel',
     resumen: 'Pisos compactos por actualizar y vivienda más reciente en el PAU.',
     zona: 'Carabanchel',
-    h1: { linea: 'Reformas en Carabanchel.', resaltado: 'Saca más partido a tu piso.' },
+    h1: { antes: 'Reformas en', resaltado: 'Carabanchel', despues: '' },
+    puntos: [
+      'Desde 150 €',
+      'Pisos compactos',
+      'Instalaciones por renovar',
+      'Gotelé y bañeras',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para una reforma en Carabanchel',
     kicker: 'REFORMAS EN CARABANCHEL',
     intro:
       'Carabanchel está viviendo una renovación clara: muchos pisos se compran para reformar y entrar a vivir, sobre todo en Comillas, Opañel, San Isidro, Vista Alegre, Puerta Bonita y Abrantes. En cuanto al PAU de Buenavista, sus viviendas son mucho más recientes y plantean otras necesidades.',
@@ -346,11 +390,15 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Instalaciones y bajantes',
+            imagen: '/images/instalaciones-vistas.webp',
+            imagenAlt: 'Instalaciones durante la obra',
             texto:
               'Revisa tuberías y cuadro eléctrico, porque una instalación antigua puede no soportar los electrodomésticos actuales. Si en la obra se detectan elementos de fibrocemento, como algunas bajantes o conductos antiguos, su manipulación debe correr a cargo de una empresa inscrita en el registro de empresas con riesgo de amianto.',
           },
           {
             titulo: 'Edificios sin ascensor',
+            imagen: '/images/obra-en-curso.webp',
+            imagenAlt: 'Vivienda durante la obra',
             texto:
               'Muchos bloques no tienen ascensor o lo tienen muy pequeño. Eso afecta al subir materiales y al bajar escombros, y es normal que incida en el precio. Indica siempre la planta y el acceso en tu solicitud.',
           },
@@ -391,8 +439,8 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas y locales en el distrito de Carabanchel, Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/reforma-cocina-ejemplo.webp',
-    imagenAlt: 'Cocina renovada en un piso de Carabanchel, Madrid',
+    imagen: '/images/edificio-ladrillo-madrid.webp',
+    imagenAlt: 'Edificio de viviendas de ladrillo en Madrid',
     relacionadas: [
       'reforma-piso-completo-madrid',
       'quitar-gotele-madrid',
@@ -407,13 +455,20 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-alcobendas',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Alcobendas | ObraLocalMADRID',
+    title: 'Reformas en Alcobendas | ObraLocal Madrid',
     description:
       'Reformas en Alcobendas: pisos del Centro, viviendas de Valdelasfuentes y chalets de La Moraleja. Trámites municipales, urbanizaciones y presupuesto.',
     etiqueta: 'Reformas en Alcobendas',
     resumen: 'Pisos del centro, vivienda reciente y chalets de La Moraleja y El Soto.',
     zona: 'Alcobendas',
-    h1: { linea: 'Reformas en Alcobendas.', resaltado: 'Pisos, chalets y urbanizaciones.' },
+    h1: { antes: 'Reformas en', resaltado: 'Alcobendas', despues: '' },
+    puntos: [
+      'Desde 150 €',
+      'Pisos y chalets',
+      'Urbanizaciones',
+      'Trámites del Ayuntamiento de Alcobendas',
+    ],
+    whatsapp: 'Hola, quiero presupuesto para una reforma en Alcobendas',
     kicker: 'REFORMAS EN ALCOBENDAS',
     intro:
       'Alcobendas tiene su propio ayuntamiento y una oferta residencial muy amplia: pisos del Centro y de Fuentelucha, viviendas más recientes en Valdelasfuentes y Arroyo de la Vega, y chalets en La Moraleja y El Soto. Cada una de estas situaciones requiere enfocar la reforma de forma distinta.',
@@ -426,16 +481,22 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
         subsecciones: [
           {
             titulo: 'Centro y Fuentelucha',
+            imagen: '/images/bano-moderno.webp',
+            imagenAlt: 'Baño renovado en un piso',
             texto:
               'Bloques con varias décadas, cuya reforma se parece a la de muchos barrios de Madrid: actualizar instalaciones, renovar baños y cocinas, quitar gotelé y ganar luz con una mejor distribución.',
           },
           {
             titulo: 'Valdelasfuentes y Arroyo de la Vega',
+            imagen: '/images/tabique-pladur.webp',
+            imagenAlt: 'División de pladur en una vivienda',
             texto:
               'Viviendas más recientes con instalaciones en mejor estado. Lo habitual es personalizar: cambiar suelos, modernizar la cocina, cerrar o acondicionar espacios y crear armarios o divisiones de pladur. Hay que tener en cuenta posibles garantías del edificio y las normas de la urbanización.',
           },
           {
             titulo: 'La Moraleja y El Soto',
+            imagen: '/images/cocina-abierta.webp',
+            imagenAlt: 'Cocina abierta en una vivienda unifamiliar',
             texto:
               'Chalets y viviendas unifamiliares de gran superficie. Las reformas pueden abarcar varias plantas, sótanos, instalaciones de climatización o zonas exteriores, por lo que el alcance y los plazos son muy diferentes a los de un piso.',
           },
@@ -490,8 +551,8 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       descripcion: 'Reformas de viviendas, chalets y locales en Alcobendas, Comunidad de Madrid.',
     },
     servicioFormulario: '',
-    imagen: '/images/pladur.webp',
-    imagenAlt: 'Trabajos de reforma interior en una vivienda de Alcobendas',
+    imagen: '/images/cocina-abierta.webp',
+    imagenAlt: 'Cocina abierta al comedor en una vivienda amplia',
     relacionadas: [
       'reformas-integrales-madrid',
       'pladur-madrid',

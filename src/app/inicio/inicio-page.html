@@ -1,4 +1,4 @@
-<section class="hero" id="inicio">
+<section class="hero" id="inicio" data-ubicacion="hero">
   <div class="container hero-grid">
     <div class="hero-content" appReveal>
       <span class="eyebrow">
@@ -6,7 +6,7 @@
         {{ pagina.kicker }}
       </span>
 
-      <h1>{{ pagina.h1.linea }}<br /><span>{{ pagina.h1.resaltado }}</span></h1>
+      <h1>{{ pagina.h1.antes }}<br /><span>{{ pagina.h1.resaltado }}</span></h1>
 
       <p class="hero-description">
         Albañilería, pintura, baños, cocinas, pladur y reformas integrales. Encuentra
@@ -21,6 +21,10 @@
         <button class="button button-outline" type="button" (click)="navegacion.irA('servicios')">
           Explorar servicios
         </button>
+
+        <a class="button button-outline" [href]="whatsapp" target="_blank" rel="noopener">
+          <app-icono nombre="whatsapp" /> WhatsApp
+        </a>
       </div>
 
       <div class="hero-benefits">
@@ -33,18 +37,18 @@
     <div class="hero-image" appReveal>
       <img
           src="/images/hero-reforma.webp"
-          srcset="/images/hero-reforma-640.webp 640w, /images/hero-reforma.webp 1200w"
+          srcset="/images/hero-reforma-240.webp 240w, /images/hero-reforma-800.webp 800w, /images/hero-reforma.webp 1200w"
           sizes="(max-width: 720px) 100vw, 540px"
           alt="Interior de una vivienda reformada en Madrid"
           width="1200"
-          height="800"
+          height="816"
           fetchpriority="high"
         />
 
       <div class="hero-image-label">
         <span class="label-icon">⌂</span>
         <div>
-          <strong>ObraLocalMADRID</strong>
+          <strong>ObraLocal Madrid</strong>
           <small>Tu proyecto, en buenas manos</small>
         </div>
       </div>
@@ -83,6 +87,38 @@
 
 <app-proceso-trabajo />
 
+<section class="section bloque-portada" id="trabajos">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="eyebrow">LO MÁS BUSCADO</span>
+      <h2>Trabajos más pedidos</h2>
+      <p>Tres reformas concretas, con lo que implican y lo que conviene comprobar antes.</p>
+    </div>
+    <ul class="rejilla-portada">
+      @for (p of trabajos; track p.path) {
+        <li><app-tarjeta-pagina [pagina]="p" /></li>
+      }
+    </ul>
+    <p class="ver-todo"><a routerLink="/servicios">Ver todos los servicios →</a></p>
+  </div>
+</section>
+
+<section class="section bloque-portada bloque-zonas" id="zonas">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="eyebrow">MADRID Y ALREDEDORES</span>
+      <h2>Zonas donde trabajamos</h2>
+      <p>Edificios, trámites y horarios de obra de cada zona.</p>
+    </div>
+    <ul class="rejilla-portada">
+      @for (p of zonas; track p.path) {
+        <li><app-tarjeta-pagina [pagina]="p" /></li>
+      }
+    </ul>
+    <p class="ver-todo"><a routerLink="/zonas">Ver todas las zonas →</a></p>
+  </div>
+</section>
+
 <!-- Contenido propio de cada URL -->
 <section class="section seo-section" id="informacion">
   <div class="container">
@@ -120,7 +156,7 @@
       <app-faq-acordeon [faqs]="pagina.faqs" />
     </div>
 
-    <nav class="seo-nav" aria-label="Más páginas de ObraLocalMADRID">
+    <nav class="seo-nav" aria-label="Más páginas de ObraLocal Madrid">
       <strong>También te puede interesar</strong>
       <ul>
         @for (otra of otrasPaginas; track otra.path) {
