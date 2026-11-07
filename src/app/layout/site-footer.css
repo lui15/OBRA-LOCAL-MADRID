@@ -1,0 +1,138 @@
+:host {
+  display: block;
+}
+
+.site-footer {
+  color: #d5dfeb;
+  background: #071e35;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.35fr repeat(4, minmax(0, 1fr));
+  gap: 40px;
+  padding-top: 52px;
+  padding-bottom: 48px;
+}
+
+.brand {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.brand-logo {
+  width: auto;
+  height: 58px;
+}
+
+.footer-brand > p {
+  max-width: 280px;
+  margin: 16px 0;
+  color: #a8b8c9;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.footer-contacto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  --icono: 16px;
+}
+
+.footer-contacto:hover {
+  color: #ffb17d;
+}
+
+.footer-brand > .footer-zona {
+  margin: 10px 0 0;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.footer-column h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.footer-column > a,
+.footer-column > button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #b8c6d5;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: left;
+  transition:
+    color 0.2s ease,
+    transform 0.3s var(--ease-out);
+}
+
+.footer-column > a:hover,
+.footer-column > button:hover {
+  color: #ffb17d;
+  transform: translateX(4px);
+}
+
+.footer-column h3 a:hover {
+  color: #ffb17d;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  color: #a2b4c6;
+  font-size: 11px;
+}
+
+@media (max-width: 1000px) {
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 22px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Deja sitio a la barra de acción fija */
+  .site-footer {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+
+  .footer-column > a,
+  .footer-column > button {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

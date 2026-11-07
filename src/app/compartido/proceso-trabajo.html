@@ -1,0 +1,59 @@
+<section class="section process-section" id="como-funciona">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="eyebrow">ASÍ DE FÁCIL</span>
+      <h2>Tu presupuesto, sin complicaciones.</h2>
+      <p>Tres pasos para pasar de una idea a una solicitud clara y organizada.</p>
+    </div>
+
+    <div class="process-track">
+      <div class="process-line" aria-hidden="true"><span></span></div>
+
+      <article class="process-card" appReveal>
+        <div class="process-number">01</div>
+        <div class="process-icon">⌕</div>
+        <span class="process-tag">EMPEZAMOS</span>
+        <h3>Cuéntanos tu idea</h3>
+        <p>Elige el tipo de obra y dinos qué quieres cambiar, reparar o construir.</p>
+        <div class="process-bottom"><span>Tu proyecto</span><span>↗</span></div>
+      </article>
+
+      <article class="process-card" appReveal>
+        <div class="process-number">02</div>
+        <div class="process-icon">⌖</div>
+        <span class="process-tag">LO DEFINIMOS</span>
+        <h3>Personaliza los detalles</h3>
+        <p>Indica la zona, las medidas, el estado actual, los materiales y el plazo.</p>
+        <div class="process-bottom"><span>Los detalles</span><span>↗</span></div>
+      </article>
+
+      <article class="process-card" appReveal>
+        <div class="process-number">03</div>
+        <div class="process-icon">✓</div>
+        <span class="process-tag">LO ENVÍAS</span>
+        <h3>Envía tu solicitud</h3>
+        <p>Describe el trabajo, envíalo y nos pondremos en contacto contigo por teléfono.</p>
+        <div class="process-bottom"><span>Tu solicitud</span><span>↗</span></div>
+      </article>
+    </div>
+
+    <div class="process-note" appReveal>
+      <span class="note-icon">i</span>
+      <div>
+        <strong>Un buen presupuesto empieza con buenos detalles.</strong>
+        <p>
+          Antes de aceptar una obra, revisa cantidades, materiales, mano de obra, retirada de
+          residuos, impuestos, plazos y exclusiones.
+        </p>
+      </div>
+    </div>
+
+    <div class="process-cta" appReveal>
+      <span>¿Empezamos con tu proyecto?</span>
+
+      <button class="button button-orange" type="button" (click)="presupuesto.abrir(servicio(), 'proceso')">
+        Crear mi solicitud <span>↗</span>
+      </button>
+    </div>
+  </div>
+</section>

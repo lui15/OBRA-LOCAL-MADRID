@@ -1,0 +1,112 @@
+:host {
+  display: block;
+}
+
+.trust-strip {
+  padding: 25px 0;
+  border-top: 1px solid #e9eef3;
+  border-bottom: 1px solid #e9eef3;
+  background: white;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trust-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: var(--orange);
+  background: #fff1e8;
+  font-size: 20px;
+  font-weight: 800;
+  transition:
+    transform 0.4s var(--ease-spring),
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.trust-item strong,
+.trust-item small {
+  display: block;
+}
+
+.trust-item strong {
+  font-size: 12px;
+  color: var(--navy);
+}
+
+.trust-item small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.trust-grid.reveal.is-visible {
+  animation: none;
+}
+
+.trust-grid.is-visible .trust-item {
+  animation: riseIn 0.7s var(--ease-out) backwards;
+}
+
+.trust-grid.is-visible .trust-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.trust-grid.is-visible .trust-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.trust-grid.is-visible .trust-item:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.trust-item:hover .trust-icon {
+    color: white;
+    background: var(--orange);
+    transform: translateY(-3px) rotate(-6deg) scale(1.08);
+  }
+
+}
+
+@media (max-width: 720px) {
+.trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 13px;
+  }
+
+.trust-item {
+    gap: 9px;
+  }
+
+.trust-icon {
+    flex-basis: 35px;
+    width: 35px;
+    height: 35px;
+  }
+
+.trust-item strong {
+    font-size: 10px;
+  }
+
+.trust-item small {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+
+}
+

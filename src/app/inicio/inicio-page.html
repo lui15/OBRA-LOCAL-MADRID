@@ -1,0 +1,174 @@
+<section class="hero" id="inicio" data-ubicacion="hero">
+  <div class="container hero-grid">
+    <div class="hero-content" appReveal>
+      <span class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        {{ pagina.kicker }}
+      </span>
+
+      <h1>{{ pagina.h1.antes }}<br /><span>{{ pagina.h1.resaltado }}</span></h1>
+
+      <p class="hero-description">
+        Albañilería, pintura, baños, cocinas, pladur y reformas integrales. Encuentra
+        orientación para tu obra y prepara tu presupuesto paso a paso.
+      </p>
+
+      <div class="hero-actions">
+        <button class="button button-orange" type="button" (click)="presupuesto.abrir('', 'hero')">
+          Cuéntanos tu proyecto <span>↗</span>
+        </button>
+
+        <button class="button button-outline" type="button" (click)="navegacion.irA('servicios')">
+          Explorar servicios
+        </button>
+
+        <a class="button button-outline" [href]="whatsapp" target="_blank" rel="noopener">
+          <app-icono nombre="whatsapp" /> WhatsApp
+        </a>
+      </div>
+
+      <div class="hero-benefits">
+        <span>✓ Precios orientativos</span>
+        <span>✓ Solicitud paso a paso</span>
+        <span>✓ Madrid y alrededores</span>
+      </div>
+    </div>
+
+    <div class="hero-image" appReveal>
+      <img
+          src="/images/hero-reforma.webp"
+          [attr.srcset]="srcsetHero"
+          sizes="(max-width: 720px) 100vw, 540px"
+          alt="Interior de una vivienda reformada en Madrid"
+          width="1200"
+          height="816"
+          fetchpriority="high"
+        />
+
+      <div class="hero-image-label">
+        <span class="label-icon">⌂</span>
+        <div>
+          <strong>ObraLocal Madrid</strong>
+          <small>Tu proyecto, en buenas manos</small>
+        </div>
+      </div>
+
+      <div class="hero-floating">
+        <span class="floating-check">✓</span>
+        <div>
+          <strong>Planifica tu reforma</strong>
+          <small>Empieza con información clara</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-garantias />
+
+<section class="section services-section" id="servicios">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="eyebrow">NUESTROS SERVICIOS</span>
+      <h2>¿Qué quieres renovar?</h2>
+      <p>
+        Explora los trabajos, los puntos importantes para presupuestar y sus precios de
+        referencia.
+      </p>
+    </div>
+
+    <div class="service-grid">
+      @for (servicio of servicios; track servicio.numero) {
+        <app-tarjeta-servicio [servicio]="servicio" />
+      }
+    </div>
+  </div>
+</section>
+
+<app-proceso-trabajo />
+
+<section class="section bloque-portada" id="trabajos">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="eyebrow">LO MÁS BUSCADO</span>
+      <h2>Trabajos más pedidos</h2>
+      <p>Tres reformas concretas, con lo que implican y lo que conviene comprobar antes.</p>
+    </div>
+    <ul class="rejilla-portada">
+      @for (p of trabajos; track p.path) {
+        <li><app-tarjeta-pagina [pagina]="p" /></li>
+      }
+    </ul>
+    <p class="ver-todo"><a routerLink="/servicios">Ver todos los servicios →</a></p>
+  </div>
+</section>
+
+<section class="section bloque-portada bloque-zonas" id="zonas">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="eyebrow">MADRID Y ALREDEDORES</span>
+      <h2>Zonas donde trabajamos</h2>
+      <p>Edificios, trámites y horarios de obra de cada zona.</p>
+    </div>
+    <ul class="rejilla-portada">
+      @for (p of zonas; track p.path) {
+        <li><app-tarjeta-pagina [pagina]="p" /></li>
+      }
+    </ul>
+    <p class="ver-todo"><a routerLink="/zonas">Ver todas las zonas →</a></p>
+  </div>
+</section>
+
+<!-- Contenido propio de cada URL -->
+<section class="section seo-section" id="informacion">
+  <div class="container">
+    <div class="seo-head" appReveal>
+      <span class="eyebrow">{{ pagina.kicker }}</span>
+      <h2>{{ seccion.titulo }}</h2>
+      <p>{{ pagina.intro }}</p>
+    </div>
+
+    <ul class="seo-puntos">
+      @for (punto of seccion.lista; track punto) {
+          <li>{{ punto }}</li>
+        }
+    </ul>
+
+    <div class="seo-bloques">
+      @for (bloque of seccion.subsecciones; track bloque.titulo) {
+          <article class="seo-bloque">
+        <h3>{{ bloque.titulo }}</h3>
+        <p>{{ bloque.texto }}</p>
+      </article>
+        }
+    </div>
+
+    <button
+      class="button button-orange seo-cta"
+      type="button"
+      (click)="presupuesto.abrir(pagina.servicioFormulario, 'seccion_seo')"
+    >
+      Pedir presupuesto <span>↗</span>
+    </button>
+
+    <div class="seo-faq">
+      <h3>Preguntas frecuentes: {{ pagina.etiqueta }}</h3>
+      <app-faq-acordeon [faqs]="pagina.faqs" />
+    </div>
+
+    <nav class="seo-nav" aria-label="Más páginas de ObraLocal Madrid">
+      <strong>También te puede interesar</strong>
+      <ul>
+        @for (otra of otrasPaginas; track otra.path) {
+              <li>
+          <a [routerLink]="'/' + otra.path">{{ otra.etiqueta }}</a>
+        </li>
+            }
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<app-faq-seccion [faqs]="preguntas" />
+
+<app-cta-presupuesto />

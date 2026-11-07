@@ -1,0 +1,25 @@
+<section class="final-cta" data-ubicacion="cta_final">
+  <div class="container final-cta-inner">
+    <div>
+      <span class="eyebrow eyebrow-light">{{ etiqueta() }}</span>
+      <h2>{{ titulo() }}</h2>
+      <p>{{ texto() }}</p>
+    </div>
+
+    <div class="cta-acciones">
+      <button
+        class="button button-orange"
+        type="button"
+        (click)="presupuesto.abrir(servicio(), 'cta_final')"
+      >
+        Crear mi solicitud <span>↗</span>
+      </button>
+      <a class="button button-claro" [href]="contexto.whatsapp()" target="_blank" rel="noopener">
+        <app-icono nombre="whatsapp" /> WhatsApp
+      </a>
+      <a class="button button-claro" [href]="telefono">
+        <app-icono nombre="telefono" /> Llamar al {{ telefonoVisible }}
+      </a>
+    </div>
+  </div>
+</section>

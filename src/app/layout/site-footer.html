@@ -1,0 +1,68 @@
+<footer class="site-footer" data-ubicacion="pie">
+  <div class="container footer-main">
+    <div class="footer-brand">
+      <a class="brand" routerLink="/" aria-label="ObraLocal Madrid, ir al inicio">
+        <img
+          class="brand-logo"
+          src="/images/logo-400.webp"
+          alt="ObraLocal Madrid — Reformas, construcción, hogares más fuertes"
+          width="400"
+          height="156"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+
+      <p>Información y orientación para planificar trabajos de reforma y mejora del hogar.</p>
+
+      <a class="footer-contacto" [href]="telefono">
+        <app-icono nombre="telefono" />
+        {{ negocio.telefonoVisible }}
+      </a>
+      <a class="footer-contacto" [href]="contexto.whatsapp()" target="_blank" rel="noopener">
+        <app-icono nombre="whatsapp" />
+        Escribir por WhatsApp
+      </a>
+      <p class="footer-zona">Zona de servicio: {{ negocio.zonaServicio }}</p>
+    </div>
+
+    <nav class="footer-column" aria-label="Servicios">
+      <h3><a routerLink="/servicios">Servicios</a></h3>
+      @for (p of servicios; track p.path) {
+        <a [routerLink]="url(p)">{{ p.etiqueta }}</a>
+      }
+    </nav>
+
+    <nav class="footer-column" aria-label="Trabajos">
+      <h3>Trabajos</h3>
+      @for (p of trabajos; track p.path) {
+        <a [routerLink]="url(p)">{{ p.etiqueta }}</a>
+      }
+    </nav>
+
+    <nav class="footer-column" aria-label="Zonas">
+      <h3><a routerLink="/zonas">Zonas</a></h3>
+      @for (p of zonas; track p.path) {
+        <a [routerLink]="url(p)">{{ p.etiqueta }}</a>
+      }
+    </nav>
+
+    <nav class="footer-column" aria-label="Empresa">
+      <h3>Empresa</h3>
+      <a routerLink="/como-trabajamos">Cómo trabajamos</a>
+      <a routerLink="/precios">Precios</a>
+      <a routerLink="/preguntas-frecuentes">Preguntas</a>
+      <a routerLink="/aviso-legal">Aviso legal</a>
+      <a routerLink="/politica-privacidad">Política de privacidad</a>
+      <a routerLink="/politica-cookies">Política de cookies</a>
+      <button type="button" (click)="consentimiento.reabrir()">Configurar cookies</button>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© {{ anio }} ObraLocal Madrid. Todos los derechos reservados.</span>
+      <span>Precios orientativos sujetos a valoración.</span>
+    </div>
+  </div>
+</footer>
