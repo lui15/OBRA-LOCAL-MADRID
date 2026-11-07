@@ -3,7 +3,7 @@
  * Son un borrador: conviene que los revise un profesional.
  */
 export const LEGAL = {
-  nombre: 'ObraLocalMADRID',
+  nombre: 'ObraLocal Madrid',
   dominio: 'obralocalmadrid.es',
   actividad: 'servicios de reformas y obras en Madrid y alrededores',
 
@@ -20,6 +20,7 @@ export const LEGAL = {
     'Hostinger: alojamiento de la web.',
     'Supabase: base de datos donde se guardan las solicitudes.',
     'EmailJS: envío del aviso por correo de cada solicitud.',
+    'WhatsApp (Meta): solo si decides escribirnos por WhatsApp.',
     'Google Analytics (Google): estadísticas de visitas a la web, solo si aceptas las cookies analíticas.',
   ],
 };

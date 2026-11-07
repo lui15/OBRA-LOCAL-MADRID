@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 import { NEGOCIO, SITE_URL } from './datos/contacto';
+import { srcsetDe } from './datos/imagenes';
 
 export interface SeoConfig {
   title: string;
@@ -13,6 +14,8 @@ export interface SeoConfig {
   noindex?: boolean;
   /** Ruta de la imagen para redes sociales. */
   imagen?: string;
+  /** Imagen principal de la página: se precarga para que aparezca antes. */
+  imagenPrincipal?: string;
 }
 
 /** Metadatos de cada ruta. index.html no los repite: aquí está la única fuente. */
@@ -53,6 +56,24 @@ export class SeoService {
     }
 
     this.setJsonLd(config.jsonLd);
+    this.setPrecarga(config.imagenPrincipal);
+  }
+
+  private setPrecarga(ruta?: string): void {
+    const id = 'seo-precarga';
+    this.doc.getElementById(id)?.remove();
+
+    const srcset = ruta ? srcsetDe(ruta) : null;
+    if (!srcset) return;
+
+    const link = this.doc.createElement('link');
+    link.setAttribute('id', id);
+    link.setAttribute('rel', 'preload');
+    link.setAttribute('as', 'image');
+    link.setAttribute('imagesrcset', srcset);
+    link.setAttribute('imagesizes', '(max-width: 960px) 100vw, 520px');
+    link.setAttribute('fetchpriority', 'high');
+    this.doc.head.appendChild(link);
   }
 
   private setCanonical(url: string): void {

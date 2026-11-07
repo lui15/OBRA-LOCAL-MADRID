@@ -60,8 +60,8 @@ import { SeoService } from '../seo.service';
 export class NotFoundPage {
   constructor() {
     inject(SeoService).update({
-      title: 'Página no encontrada | ObraLocalMADRID',
-      description: 'La página que buscas no existe. Vuelve al inicio de ObraLocalMADRID.',
+      title: 'Página no encontrada | ObraLocal Madrid',
+      description: 'La página que buscas no existe. Vuelve al inicio de ObraLocal Madrid.',
       path: '/',
       noindex: true,
     });

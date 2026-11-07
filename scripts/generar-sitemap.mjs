@@ -46,7 +46,7 @@ function textoDe(p) {
       ...(s.lista ?? []),
       ...(s.subsecciones ?? []).flatMap((x) => [x.titulo, x.texto]),
     ]),
-    ...p.faqs.flatMap((f) => [f.pregunta, f.respuesta]),
+    ...(p.gruposFaq?.flatMap((g) => g.faqs) ?? p.faqs).flatMap((f) => [f.pregunta, f.respuesta]),
   ].join(' ');
 }
 
@@ -65,6 +65,8 @@ function revisar(PAGINAS) {
     if (p.description.length > 155) {
       problemas.push(`${url}: description de ${p.description.length} caracteres`);
     }
+    if (p.puntos.length !== 4) problemas.push(`${url}: la franja no tiene 4 datos`);
+    if (!p.whatsapp) problemas.push(`${url}: sin mensaje de WhatsApp`);
     // La portada tiene además su contenido propio en la plantilla.
     if (p.tipo !== 'inicio' && palabras(textoDe(p)) < 600) {
       problemas.push(`${url}: solo ${palabras(textoDe(p))} palabras`);
