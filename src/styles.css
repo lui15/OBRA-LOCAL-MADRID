@@ -1,15 +1,15 @@
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/inter-latin-var.woff2') format('woff2');
-  font-weight: 100 900;
+  font-weight: 400 800;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/montserrat-latin-var.woff2') format('woff2');
-  font-weight: 100 900;
+  src: url('/fonts/montserrat-latin-800.woff2') format('woff2');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
