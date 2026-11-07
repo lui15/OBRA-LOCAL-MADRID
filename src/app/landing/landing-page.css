@@ -60,9 +60,17 @@ h1 em {
   margin-top: 28px;
 }
 
+/* Solo movimiento, sin opacidad: es la imagen principal y debe verse desde el primer momento. */
 .lp-hero-foto {
   position: relative;
   margin: 0;
+  animation: fotoEntra 0.8s var(--ease-out) backwards;
+}
+
+@keyframes fotoEntra {
+  from {
+    transform: translateY(14px);
+  }
 }
 
 .lp-hero-foto img {

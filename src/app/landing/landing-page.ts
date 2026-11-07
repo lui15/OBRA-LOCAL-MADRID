@@ -84,6 +84,7 @@ export class LandingPage {
       description: this.pagina.description,
       path: urlDePagina(this.pagina),
       imagenPrincipal: this.pagina.imagen,
+      imagenSizes: '(max-width: 960px) 100vw, 520px',
       jsonLd: crearJsonLd(this.pagina),
     });
   }

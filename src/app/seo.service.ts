@@ -16,6 +16,8 @@ export interface SeoConfig {
   imagen?: string;
   /** Imagen principal de la página: se precarga para que aparezca antes. */
   imagenPrincipal?: string;
+  /** Atributo sizes de esa imagen: debe coincidir con el del HTML para no descargarla dos veces. */
+  imagenSizes?: string;
 }
 
 /** Metadatos de cada ruta. index.html no los repite: aquí está la única fuente. */
@@ -56,10 +58,10 @@ export class SeoService {
     }
 
     this.setJsonLd(config.jsonLd);
-    this.setPrecarga(config.imagenPrincipal);
+    this.setPrecarga(config.imagenPrincipal, config.imagenSizes);
   }
 
-  private setPrecarga(ruta?: string): void {
+  private setPrecarga(ruta?: string, sizes = '100vw'): void {
     const id = 'seo-precarga';
     this.doc.getElementById(id)?.remove();
 
@@ -71,7 +73,7 @@ export class SeoService {
     link.setAttribute('rel', 'preload');
     link.setAttribute('as', 'image');
     link.setAttribute('imagesrcset', srcset);
-    link.setAttribute('imagesizes', '(max-width: 960px) 100vw, 520px');
+    link.setAttribute('imagesizes', sizes);
     link.setAttribute('fetchpriority', 'high');
     this.doc.head.appendChild(link);
   }

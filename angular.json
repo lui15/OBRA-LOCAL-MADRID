@@ -21,14 +21,23 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "src/styles.css"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": ["obralocalmadrid.es", "www.obralocalmadrid.es"]
+              "allowedHosts": [
+                "obralocalmadrid.es",
+                "www.obralocalmadrid.es"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts"
+            },
+            "index": {
+              "input": "src/index.html",
+              "preloadInitial": false
             }
           },
           "configurations": {
@@ -80,7 +89,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"]
+            "styles": [
+              "src/styles.css"
+            ]
           }
         }
       }

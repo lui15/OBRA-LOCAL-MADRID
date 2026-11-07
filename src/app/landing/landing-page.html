@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <figure class="lp-hero-foto rise" style="--i: 2">
+    <figure class="lp-hero-foto">
       <img
         [src]="pagina.imagen"
         [attr.srcset]="srcset(pagina.imagen)"
@@ -75,7 +75,7 @@
                   <img
                     [src]="fotoTarjeta(img)"
                     [attr.srcset]="srcset(img)"
-                    sizes="(max-width: 720px) 100vw, 360px"
+                    sizes="(max-width: 560px) 60vw, 360px"
                     [alt]="sub.imagenAlt"
                     [attr.width]="ancho(img)"
                     [attr.height]="alto(img)"
@@ -235,7 +235,7 @@
               <img
                 [src]="fotoTarjeta(paso.imagen)"
                 [attr.srcset]="srcset(paso.imagen)"
-                sizes="(max-width: 720px) 100vw, 360px"
+                sizes="(max-width: 560px) 60vw, 360px"
                 [alt]="paso.imagenAlt"
                 [attr.width]="ancho(paso.imagen)"
                 [attr.height]="alto(paso.imagen)"

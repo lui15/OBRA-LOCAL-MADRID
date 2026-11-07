@@ -11,6 +11,7 @@ import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { TarjetaServicio } from '../compartido/tarjeta-servicio';
 import { enlaceWhatsApp } from '../datos/contacto';
+import { srcsetDe } from '../datos/imagenes';
 import { ContextoPagina } from '../layout/contexto-pagina.service';
 import { PREGUNTAS_PORTADA, SERVICIOS } from '../datos/catalogo-servicios';
 import {
@@ -49,6 +50,7 @@ export class InicioPage {
 
   readonly trabajos = PAGINAS.filter((p) => p.tipo === 'trabajo');
   readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona');
+  readonly srcsetHero = srcsetDe('/images/hero-reforma.webp');
   readonly servicios = SERVICIOS;
   readonly preguntas = PREGUNTAS_PORTADA;
 
@@ -71,6 +73,7 @@ export class InicioPage {
       description: this.pagina.description,
       path: urlDePagina(this.pagina),
       imagenPrincipal: this.pagina.imagen,
+      imagenSizes: '(max-width: 720px) 100vw, 540px',
       jsonLd: crearJsonLd(this.pagina, [...this.pagina.faqs, ...this.preguntas]),
     });
   }

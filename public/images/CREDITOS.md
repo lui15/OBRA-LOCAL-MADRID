@@ -1,6 +1,6 @@
 # Créditos de las imágenes
 
-Cada foto está en WebP en tres tamaños: `nombre.webp` (1200 px), `nombre-800.webp` y `nombre-240.webp`.
+Cada foto está en WebP en cuatro tamaños: `nombre.webp` (1200 px), `nombre-800.webp`, `nombre-480.webp` y `nombre-240.webp`.
 
 ## Fotos de stock
 
@@ -56,4 +56,4 @@ Origen no documentado en el proyecto. TODO: confirmar que son propias o que hay 
 - `reformas-integrales`
 - `reformas-integrales-ejemplo`
 
-Logotipos: `logo.png`, `logo.webp` y `logito.png`, de ObraLocal Madrid.
+Logotipos: `logo.png`, `logo-400.webp` y `logito.png`, de ObraLocal Madrid.

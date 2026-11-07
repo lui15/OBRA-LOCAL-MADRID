@@ -17,7 +17,7 @@ import { PaginaSeo, precioDesde, urlDePagina } from '../landing/landing-data';
         <img
           [src]="foto(p.imagen)"
           [attr.srcset]="srcset(p.imagen)"
-          sizes="(max-width: 720px) 100vw, 360px"
+          sizes="(max-width: 560px) 112px, 360px"
           [alt]="p.imagenAlt"
           [attr.width]="ancho(p.imagen)"
           [attr.height]="alto(p.imagen)"
