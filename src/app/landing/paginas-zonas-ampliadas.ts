@@ -56,7 +56,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-getafe',
     zona: 'Getafe',
-    title: 'Reformas en Getafe | ObraLocal Madrid',
+    title: 'Reformas en Getafe: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Getafe: pisos de los años 60 y 70 en el Centro y Las Margaritas, vivienda reciente en El Bercial y Los Molinos. Trámites y presupuesto.',
     resumen: 'Bloques del crecimiento industrial y barrios nuevos del norte y el sur.',
@@ -151,7 +151,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-leganes',
     zona: 'Leganés',
-    title: 'Reformas en Leganés | ObraLocal Madrid',
+    title: 'Reformas en Leganés: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Leganés: pisos de Zarzaquemada y San Nicasio, vivienda nueva en Arroyo Culebro y Solagua. Qué cambiar primero, trámites y presupuesto.',
     resumen: 'Zarzaquemada, San Nicasio y los desarrollos de Arroyo Culebro y Solagua.',
@@ -238,7 +238,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-alcorcon',
     zona: 'Alcorcón',
-    title: 'Reformas en Alcorcón | ObraLocal Madrid',
+    title: 'Reformas en Alcorcón: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Alcorcón: pisos de Parque Lisboa, San José de Valderas y Ondarreta, viviendas del Ensanche Sur y chalets de Campodón. Trámites y precios.',
     resumen: 'Parques residenciales de los setenta, Ensanche Sur y chalets de Campodón.',
@@ -329,7 +329,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-mostoles',
     zona: 'Móstoles',
-    title: 'Reformas en Móstoles | ObraLocal Madrid',
+    title: 'Reformas en Móstoles: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Móstoles: pisos del Centro y Villafontana, vivienda de Móstoles Sur y chalets de Parque Coimbra. Trabajos habituales, trámites y precios.',
     resumen: 'Centro, Villafontana, Móstoles Sur y los chalets de Parque Coimbra.',
@@ -425,7 +425,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-pozuelo-de-alarcon',
     zona: 'Pozuelo de Alarcón',
-    title: 'Reformas en Pozuelo de Alarcón | ObraLocal Madrid',
+    title: 'Reformas en Pozuelo de Alarcón: baño desde 5.000 €',
     description:
       'Reformas en Pozuelo de Alarcón: pisos del Pueblo y la Estación, viviendas de la zona de Avenida de Europa y chalets de Somosaguas y Monteclaro.',
     resumen: 'Pueblo, Estación, Avenida de Europa y chalets de Somosaguas o Monteclaro.',
@@ -517,7 +517,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-las-rozas',
     zona: 'Las Rozas',
-    title: 'Reformas en Las Rozas | ObraLocal Madrid',
+    title: 'Reformas en Las Rozas: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Las Rozas: pisos del centro, viviendas de Las Matas y chalets de El Pinar o Molino de la Hoz. Qué reformar primero, trámites y presupuesto.',
     resumen: 'Centro, Las Matas y urbanizaciones de chalets como El Pinar o Molino de la Hoz.',
@@ -608,7 +608,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-majadahonda',
     zona: 'Majadahonda',
-    title: 'Reformas en Majadahonda | ObraLocal Madrid',
+    title: 'Reformas en Majadahonda: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Majadahonda: pisos del casco, urbanizaciones como Los Satélites o Roza Martín y chalets junto al Monte del Pilar. Trámites y presupuesto.',
     resumen: 'Casco, urbanizaciones de pisos con zonas comunes y chalets.',
@@ -707,7 +707,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-moncloa',
     zona: 'Moncloa-Aravaca',
-    title: 'Reformas en Moncloa-Aravaca, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Moncloa-Aravaca: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Moncloa-Aravaca: pisos clásicos de Argüelles, bloques de Valdezarza y chalets de Aravaca y El Plantío. Trámites en Madrid y presupuesto.',
     resumen: 'Pisos clásicos de Argüelles, bloques de Valdezarza y chalets de Aravaca.',
@@ -805,7 +805,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-tetuan',
     zona: 'Tetuán',
-    title: 'Reformas en Tetuán, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Tetuán: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Tetuán: pisos pequeños en Bellas Vistas, Cuatro Caminos y Valdeacederas, edificios de varias épocas y calles estrechas. Trámites y precios.',
     resumen: 'Pisos pequeños, edificios de varias épocas y calles estrechas.',
@@ -910,9 +910,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-arganzuela',
     zona: 'Arganzuela',
-    title: 'Reformas en Arganzuela, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Arganzuela: baño desde 5.000 € | ObraLocal',
     description:
-      'Reformas en Arganzuela: pisos de Delicias, Acacias, Legazpi o Imperial, edificios de principios y mediados del siglo XX junto a Madrid Río.',
+      'Reformas en Arganzuela: pisos de Delicias, Acacias, Legazpi o Imperial, edificios de principios y mediados del siglo XX junto a Madrid Río. Con precios.',
     resumen: 'Delicias, Acacias, Legazpi e Imperial, junto a Madrid Río.',
     intro:
       'Arganzuela fue durante décadas un distrito ligado al ferrocarril y a la industria, y su vivienda lo refleja: edificios de principios y mediados del siglo XX en Delicias, Acacias, Chopera o Imperial, y desarrollos más recientes en zonas como Legazpi. La renovación del entorno del río ha hecho que muchos de esos pisos se estén reformando a fondo.',
@@ -1010,7 +1010,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-chamartin',
     zona: 'Chamartín',
-    title: 'Reformas en Chamartín, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Chamartín: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Chamartín: pisos amplios en Hispanoamérica, Prosperidad y Castilla, y la colonia El Viso. Qué tener en cuenta, trámites y presupuesto.',
     resumen: 'Pisos amplios, colonias históricas como El Viso y comunidades exigentes.',
@@ -1109,7 +1109,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-latina',
     zona: 'Latina',
-    title: 'Reformas en Latina, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Latina: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Latina: pisos de Aluche, Lucero, Los Cármenes y Puerta del Ángel, bloques de los años 50 a 70. Qué reformar primero, trámites y precios.',
     resumen: 'Aluche, Lucero, Los Cármenes y Puerta del Ángel: bloques de los 50 a los 70.',
@@ -1208,9 +1208,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-ciudad-lineal',
     zona: 'Ciudad Lineal',
-    title: 'Reformas en Ciudad Lineal, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Ciudad Lineal: baño desde 5.000 € | ObraLocal',
     description:
-      'Reformas en Ciudad Lineal: pisos de Ventas, Pueblo Nuevo, Quintana o Concepción y viviendas unifamiliares en el entorno de Arturo Soria.',
+      'Reformas en Ciudad Lineal: pisos de Ventas, Pueblo Nuevo, Quintana o Concepción y viviendas unifamiliares en el entorno de Arturo Soria. Con precios.',
     resumen: 'Ventas, Pueblo Nuevo, Quintana, Concepción y el eje de Arturo Soria.',
     intro:
       'El distrito toma su nombre del proyecto de Ciudad Lineal de Arturo Soria, de finales del siglo XIX, y todavía conserva en el entorno de esa calle algunas viviendas unifamiliares y colonias. Pero la mayor parte de su vivienda son bloques de pisos de mediados del siglo XX en barrios como Ventas, Pueblo Nuevo, Quintana, Concepción o San Pascual.',
@@ -1307,9 +1307,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-vallecas',
     zona: 'Vallecas',
-    title: 'Reformas en Vallecas, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Vallecas: baño desde 5.000 € | ObraLocal',
     description:
-      'Reformas en Puente de Vallecas y Villa de Vallecas: pisos de Entrevías, Palomeras o Numancia y vivienda nueva en el Ensanche de Vallecas.',
+      'Reformas en Puente de Vallecas y Villa de Vallecas: pisos de Entrevías, Palomeras o Numancia y vivienda nueva en el Ensanche de Vallecas. Con precios.',
     resumen: 'Puente de Vallecas, Villa de Vallecas y el Ensanche de Vallecas.',
     intro:
       'Vallecas son en realidad dos distritos: Puente de Vallecas, con barrios como Entrevías, San Diego, Palomeras, Portazgo o Numancia, y Villa de Vallecas, que incluye el casco histórico, Santa Eugenia y el Ensanche de Vallecas. Entre ellos hay vivienda de casi todas las épocas, desde edificios antiguos hasta promociones muy recientes.',

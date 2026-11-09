@@ -19,7 +19,6 @@ import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { MAS_PEDIDOS, NOTA_PRECIOS, cifra, preciosDePagina } from '../datos/precios';
 import { PreciosReferencia } from '../compartido/precios-referencia';
 import { proyectosDeZona } from '../datos/proyectos';
-import { esPendiente } from '../datos/revision';
 import {
   SERVICIOS,
   ZONAS,
@@ -103,7 +102,6 @@ export class LandingPage {
   readonly notaPrecios = NOTA_PRECIOS;
   readonly cifra = cifra;
   readonly formato = formatearPrecio;
-  readonly pendiente = esPendiente;
   readonly zonasPorNombre = ZONAS.filter((z) => z !== 'Otra zona de Madrid');
   readonly serviciosConPagina = SERVICIOS.map((s) => ({ s, pagina: paginaDeServicio(s) }));
   readonly pasos = PASOS_OBRA;

@@ -1,9 +1,14 @@
+/*
+ * Borrador sin publicar. Estas páginas no tienen ruta, no van al sitemap y no entran en la web.
+ * Para publicar una, confirma que se hace el servicio, completa los datos [por confirmar: …] y añádela
+ * a PAGINAS_SERVICIOS en paginas-servicios.ts.
+ */
 import { Faq, PaginaSeo, SeccionPagina } from './pagina-seo';
 
 /*
  * Servicios propuestos y aún sin confirmar. Son borradores: se ven en local, pero no se
  * prerenderizan, no van al sitemap ni a los menús y son noindex. Para publicar uno, confirma que
- * lo hacéis, rellena sus PENDIENTE y quita la línea «borrador».
+ * lo hacéis, completa sus datos por confirmar y quita la línea «borrador».
  */
 
 interface DatosServicio {
@@ -27,7 +32,7 @@ function servicio(d: DatosServicio): PaginaSeo {
     path: d.path,
     tipo: 'servicio',
     padre: 'servicios',
-    borrador: `PENDIENTE("¿hacemos ${d.nombre.toLowerCase()}? Confirmar antes de publicar")`,
+    borrador: `[por confirmar: ¿hacemos ${d.nombre.toLowerCase()}? Confirmar antes de publicar]`,
     title: d.title,
     description: d.description,
     etiqueta: d.nombre,
@@ -41,7 +46,7 @@ function servicio(d: DatosServicio): PaginaSeo {
       ...d.secciones,
       {
         titulo: 'Precios orientativos',
-        parrafos: [`PENDIENTE("rangos de precio de ${d.nombre.toLowerCase()}")`],
+        parrafos: [`[por confirmar: rangos de precio de ${d.nombre.toLowerCase()}]`],
       },
     ],
     faqs: d.faqs,
@@ -111,7 +116,7 @@ export const SERVICIOS_BORRADOR: PaginaSeo[] = [
     secciones: [
       {
         titulo: 'Qué incluye',
-        parrafos: ['PENDIENTE("trabajos de fontanería que hacéis: renovación, averías, calentadores…")'],
+        parrafos: ['[por confirmar: trabajos de fontanería que hacéis: renovación, averías, calentadores…]'],
       },
       {
         titulo: 'Cuándo renovar las tuberías',
@@ -156,7 +161,7 @@ export const SERVICIOS_BORRADOR: PaginaSeo[] = [
       {
         titulo: 'El boletín',
         parrafos: [
-          'Al renovar la instalación, debe documentarse con el certificado que corresponda, emitido por un instalador autorizado. PENDIENTE("confirmar si emitís el certificado de instalación eléctrica y con qué instalador")',
+          'Al renovar la instalación, debe documentarse con el certificado que corresponda, emitido por un instalador autorizado. [por confirmar: confirmar si emitís el certificado de instalación eléctrica y con qué instalador]',
         ],
       },
     ],
@@ -191,7 +196,7 @@ export const SERVICIOS_BORRADOR: PaginaSeo[] = [
       },
       {
         titulo: 'Qué incluye',
-        parrafos: ['PENDIENTE("qué tipos de humedades tratáis y cómo")'],
+        parrafos: ['[por confirmar: qué tipos de humedades tratáis y cómo]'],
       },
     ],
     faqs: [
@@ -309,13 +314,13 @@ export const SERVICIOS_BORRADOR: PaginaSeo[] = [
     secciones: [
       {
         titulo: 'Qué incluye',
-        parrafos: ['PENDIENTE("qué reparaciones pequeñas hacéis y desde qué importe")'],
+        parrafos: ['[por confirmar: qué reparaciones pequeñas hacéis y desde qué importe]'],
       },
     ],
     faqs: [
       {
         pregunta: '¿Atendéis arreglos de una sola visita?',
-        respuesta: 'PENDIENTE("confirmar si atendéis arreglos pequeños de una visita")',
+        respuesta: '[por confirmar: confirmar si atendéis arreglos pequeños de una visita]',
       },
     ],
     relacionadas: ['albanileria-madrid', 'pintores-madrid', 'alisado-paredes-madrid'],

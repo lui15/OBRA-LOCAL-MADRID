@@ -12,19 +12,16 @@ export const NEGOCIO = {
   zonaServicio: 'Madrid y alrededores',
   /** URLs públicas de redes sociales. */
   redes: [] as string[],
-  /** TODO: horario confirmado para los datos estructurados. Ej.: ['Mo-Fr 08:00-20:00'] */
-  horario: [] as string[],
   /** Correo que recibe el aviso de cada solicitud. */
   correoSolicitudes: 'tramoreforma@gmail.com',
 };
 
-/** Persona que revisa el contenido. Se muestra en cada página. */
-export const RESPONSABLE_OBRA = 'PENDIENTE("nombre del responsable de obra")';
-
-/** Datos de la empresa para el pie y los textos legales. */
+/** Titular de la web, para el pie y los textos legales (los mismos datos que en ArmaMuebles). */
 export const EMPRESA = {
-  razonSocial: 'PENDIENTE("razón social")',
-  cif: 'PENDIENTE("CIF")',
+  razonSocial: 'Luis Pichardo',
+  nif: '61850512Q',
+  domicilio: 'San Mariano 90, Madrid',
+  correo: 'lpichardosanchez2@gmail.com',
 };
 
 /** Dominio final, sin barra al final. */

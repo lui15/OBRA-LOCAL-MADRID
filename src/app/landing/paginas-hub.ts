@@ -6,22 +6,22 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: '',
     tipo: 'inicio',
-    title: 'Empresa de reformas en Madrid | ObraLocal Madrid',
+    title: 'Reformas en Madrid con presupuesto cerrado | ObraLocal',
     description:
-      'Reformas en Madrid y alrededores: albañilería, pintura, baños, cocinas, pladur y reformas integrales. Precios orientativos y presupuesto paso a paso.',
+      'Reformas en Madrid con presupuesto cerrado por escrito: baño desde 5.000 €, cocina desde 8.000 € e integral desde 500 €/m². Un único interlocutor.',
     etiqueta: 'Reformas en Madrid',
     resumen: 'Reformas de viviendas y locales en Madrid y alrededores.',
-    h1: { antes: 'Reformas en Madrid.', resaltado: 'Tu proyecto, bien hecho.', despues: '' },
+    h1: { antes: 'Reformas en Madrid', resaltado: 'con presupuesto cerrado por escrito', despues: '' },
     puntos: [
+      'Presupuesto cerrado por escrito',
+      'Un único interlocutor',
+      'Precios publicados',
       'Madrid y alrededores',
-      'Precios orientativos',
-      'Solicitud paso a paso',
-      'Presupuesto sin compromiso',
     ],
     whatsapp: 'Hola, quiero presupuesto para una reforma en Madrid',
     kicker: 'REFORMAS EN MADRID',
     intro:
-      'En ObraLocal Madrid preparamos contigo tu reforma, desde un arreglo puntual hasta la renovación completa de una vivienda o un local en Madrid y alrededores.',
+      'En ObraLocal Madrid hacemos tu reforma con nuestro equipo de albañiles, fontaneros, electricistas, pintores y pladuristas, con un presupuesto detallado y cerrado por escrito y un único interlocutor durante toda la obra, en Madrid y alrededores.',
     secciones: [
       {
         titulo: 'Reformas en Madrid capital y en toda la Comunidad',
@@ -468,25 +468,25 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     tipo: 'hub',
     title: 'Cómo trabajamos: pasos de una reforma | ObraLocal Madrid',
     description:
-      'Así funciona tu reforma con ObraLocal Madrid: seis pasos desde la solicitud hasta la revisión final. Qué preparar y qué revisar antes de aceptar.',
+      'Así funciona tu reforma con ObraLocal Madrid en cinco pasos: tu idea, la visita o las fotos, el presupuesto cerrado, la obra y la entrega final.',
     etiqueta: 'Cómo trabajamos',
     resumen: 'De tu solicitud a la llamada, y qué conviene preparar antes.',
     h1: { antes: 'Así funciona tu', resaltado: 'reforma', despues: 'con ObraLocal' },
     puntos: [
-      'Solicitud en menos de un minuto',
-      'Presupuesto sin compromiso',
-      'Fechas acordadas contigo',
-      'Revisión final de la obra',
+      'Nos cuentas tu idea',
+      'Visita o fotos',
+      'Presupuesto cerrado por escrito',
+      'Un único interlocutor',
     ],
     whatsapp: 'Hola, quiero saber cómo funciona una reforma con vosotros',
     kicker: 'CÓMO TRABAJAMOS',
     intro:
-      'Empezar una reforma genera muchas dudas: qué preparar, a quién avisar, qué mirar en un presupuesto. Aquí tienes los seis pasos de una reforma con nosotros, desde tu solicitud hasta la revisión final, y lo que te conviene tener a mano para que todo vaya mejor.',
+      'Empezar una reforma genera muchas dudas: qué preparar, a quién avisar, qué mirar en un presupuesto. Así trabajamos, en cinco pasos: nos cuentas tu idea, vemos el espacio, te damos un presupuesto detallado y cerrado por escrito, hacemos la obra con un único interlocutor y repasamos contigo el resultado.',
     secciones: [
       {
         titulo: 'Qué ocurre después de enviar tu solicitud',
         parrafos: [
-          'Revisamos la información que nos has facilitado y nos ponemos en contacto contigo en el teléfono que nos has indicado. Esa conversación sirve para aclarar dudas y entender mejor el trabajo. Enviar una solicitud no supone ningún compromiso de contratación, y no equivale a un presupuesto cerrado.',
+          'Revisamos lo que nos has contado y te escribimos por WhatsApp o te llamamos al teléfono que nos has indicado. Esa conversación sirve para aclarar dudas y entender bien el trabajo. Si nos mandas fotos del espacio, podemos avanzar el presupuesto. Enviar una solicitud no supone ningún compromiso de contratación.',
           'A partir de ahí, el trabajo se concreta: cantidades, materiales, mano de obra, plazos e impuestos deben quedar definidos antes de empezar. Si el trabajo lo requiere, se hará una valoración adaptada a lo que nos hayas contado.',
         ],
       },
@@ -565,7 +565,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       {
         pregunta: '¿Cómo me contactaréis?',
         respuesta:
-          'Te llamaremos al teléfono que nos hayas indicado en el formulario. También puedes añadir un correo electrónico, aunque es opcional.',
+          'Te escribimos por WhatsApp o te llamamos al teléfono que nos hayas indicado en el formulario. También puedes añadir un correo electrónico, aunque es opcional.',
       },
     ],
     servicio: {

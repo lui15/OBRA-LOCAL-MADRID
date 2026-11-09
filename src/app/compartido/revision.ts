@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-import { RESPONSABLE_OBRA } from '../datos/contacto';
 import { ULTIMA_REVISION, mesYAnio } from '../datos/revision';
 
 @Component({
@@ -8,8 +7,7 @@ import { ULTIMA_REVISION, mesYAnio } from '../datos/revision';
   standalone: true,
   template: `
     <p class="revision">
-      Revisado por {{ responsable }} · Actualizado:
-      <time [attr.datetime]="fecha()">{{ mes() }}</time>
+      Actualizado: <time [attr.datetime]="fecha()">{{ mes() }}</time>
     </p>
   `,
   styles: `
@@ -24,7 +22,6 @@ import { ULTIMA_REVISION, mesYAnio } from '../datos/revision';
 })
 export class Revision {
   readonly fecha = input(ULTIMA_REVISION);
-  readonly responsable = RESPONSABLE_OBRA;
   mes(): string {
     return mesYAnio(this.fecha());
   }

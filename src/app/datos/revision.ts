@@ -21,8 +21,3 @@ export function mesYAnio(fecha: string): string {
   const [anio, mes] = fecha.split('-').map(Number);
   return `${MESES[mes - 1]} ${anio}`;
 }
-
-/** Un dato sin confirmar se escribe PENDIENTE("..."): así se encuentra y se lista al final. */
-export function esPendiente(texto: string | null | undefined): boolean {
-  return !texto || texto.includes('PENDIENTE(');
-}

@@ -142,8 +142,8 @@ const TITULOS: Record<TipoLegal, { titulo: string; path: string }> = {
 
         <h2>Quién puede tratarlos</h2>
         <p>
-          No vendemos tus datos. Para que la web funcione, algunos proveedores los tratan por
-          cuenta nuestra:
+          No vendemos tus datos. Para que la web funcione, estos encargados del tratamiento los
+          tratan por cuenta nuestra:
         </p>
         <ul>
           @for (proveedor of legal.proveedores; track proveedor) {
@@ -154,6 +154,7 @@ const TITULOS: Record<TipoLegal, { titulo: string; path: string }> = {
           Si alguno de ellos trata datos fuera del Espacio Económico Europeo, se hará con las
           garantías que exige el RGPD.
         </p>
+        <p>{{ legal.comunicacion }}</p>
 
         <h2>Tus derechos</h2>
         <p>

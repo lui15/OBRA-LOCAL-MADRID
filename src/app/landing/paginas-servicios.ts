@@ -1,5 +1,4 @@
 import { PaginaSeo } from './pagina-seo';
-import { SERVICIOS_BORRADOR } from './paginas-servicios-borrador';
 
 /** Páginas de cada servicio del catálogo. */
 export const PAGINAS_SERVICIOS: PaginaSeo[] = [
@@ -8,9 +7,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reformas-integrales-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reformas integrales en Madrid: precios | ObraLocal Madrid',
+    title: 'Reformas integrales en Madrid desde 500 €/m² | ObraLocal',
     description:
-      'Reformas integrales en Madrid: demolición, nueva distribución, instalaciones y acabados. Rangos orientativos por superficie y presupuesto por partidas.',
+      'Reformas integrales en Madrid: 500–650 €/m² en calidad básica, 650–850 € en media y 850–1.200 € en alta. Plazo de 8–12 semanas y presupuesto cerrado.',
     etiqueta: 'Reformas integrales',
     resumen: 'Renovación completa o parcial de viviendas y locales, ordenada por partidas.',
     h1: { antes: 'Reformas', resaltado: 'integrales', despues: 'en Madrid' },
@@ -133,9 +132,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reforma-banos-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reforma de baños en Madrid: precios | ObraLocal Madrid',
+    title: 'Reforma de baños en Madrid desde 5.000 € | ObraLocal',
     description:
-      'Reforma de baños en Madrid: azulejos, sanitarios, grifería, mampara e instalaciones. Precios orientativos, desde un cambio puntual hasta el baño completo.',
+      'Reforma de baños en Madrid: baño completo de 4–6 m² por 5.500–10.000 € en calidad media, en 2–3 semanas. Cambiar bañera por plato, 1.000–2.200 €.',
     etiqueta: 'Reforma de baños',
     resumen: 'Azulejos, sanitarios, muebles, grifería e instalaciones, por partes o por completo.',
     h1: { antes: 'Reforma de', resaltado: 'baños', despues: 'en Madrid' },
@@ -261,9 +260,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reforma-cocinas-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reforma de cocinas en Madrid: precios | ObraLocal Madrid',
+    title: 'Reforma de cocinas en Madrid desde 8.000 € | ObraLocal',
     description:
-      'Reforma de cocinas en Madrid: muebles, encimera, alicatado, fregadero y conexiones. Precios orientativos, desde cambios puntuales a cocina completa.',
+      'Reforma de cocinas en Madrid: cocina completa de 8–12 m² por 8.000–18.000 €, sin electrodomésticos, en 3–4 semanas. Presupuesto cerrado por escrito.',
     etiqueta: 'Reforma de cocinas',
     resumen: 'Muebles, encimeras, revestimientos e instalaciones de agua y luz.',
     h1: { antes: 'Reforma de', resaltado: 'cocinas', despues: 'en Madrid' },
@@ -394,9 +393,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'albanileria-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Albañilería en Madrid: obras y arreglos | ObraLocal Madrid',
+    title: 'Albañilería en Madrid: oficial desde 25 €/h | ObraLocal',
     description:
-      'Albañiles en Madrid: tabiques, enfoscados, alicatados, solados, huecos y reparaciones de obra. Precios orientativos, desde arreglos pequeños hasta 40 m².',
+      'Albañilería en Madrid: tabiques, alicatados a 35–60 €/m², humedades a 30–60 €/m² y obra. Oficial a 25–35 €/h, IVA incluido y presupuesto cerrado.',
     etiqueta: 'Albañilería',
     resumen: 'Tabiques, enfoscados, alicatados, solados, huecos y reparaciones de obra.',
     h1: { antes: '', resaltado: 'Albañilería', despues: 'en Madrid' },
@@ -532,9 +531,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'pintores-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Pintores en Madrid: precios por estancia | ObraLocal Madrid',
+    title: 'Pintores en Madrid: piso de 80 m² desde 1.400 € | ObraLocal',
     description:
-      'Pintores en Madrid: paredes y techos, lijado, imprimación, grietas, puertas y marcos. Precios orientativos desde una habitación hasta varias estancias.',
+      'Pintores en Madrid: pintar un piso de 80 m² cuesta 1.400–2.600 € en 3–5 días, a 8–14 €/m² de pared. Con gotelé, 14–22 €/m². Presupuesto cerrado.',
     etiqueta: 'Pintores',
     resumen: 'Pintura de paredes y techos, preparación de superficies y acabados.',
     h1: { antes: '', resaltado: 'Pintores', despues: 'en Madrid' },
@@ -666,9 +665,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'pladur-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Pladur en Madrid: tabiques y techos | ObraLocal Madrid',
+    title: 'Pladur en Madrid: tabiques y techos desde 30 €/m²',
     description:
-      'Pladur en Madrid: tabiques, falsos techos, trasdosados y aislamiento térmico y acústico. Precios orientativos por metros y qué influye en el coste.',
+      'Pladur en Madrid: tabiques a 35–55 €/m², falsos techos a 30–50 €/m² y puntos de luz a 25–40 €. Precios con IVA y presupuesto cerrado por escrito.',
     etiqueta: 'Pladur',
     resumen: 'Tabiques, falsos techos, trasdosados y aislamiento térmico y acústico.',
     h1: { antes: '', resaltado: 'Pladur', despues: 'en Madrid' },
@@ -798,9 +797,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'alisado-paredes-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Alisado de paredes en Madrid: precios | ObraLocal Madrid',
+    title: 'Alisado de paredes en Madrid desde 10 €/m² | ObraLocal',
     description:
-      'Alisado de paredes en Madrid: reparación de grietas, enlucido, revestimiento y preparación para pintura o papel. Precios orientativos por metros cuadrados.',
+      'Alisado de paredes en Madrid a 10–16 €/m²; con gotelé, quitar, alisar y pintar a 14–22 €/m². Un piso completo en 1–2 semanas, presupuesto cerrado.',
     etiqueta: 'Alisado y reparación de paredes',
     resumen: 'Reparación, alisado, enlucido y renovación de paredes.',
     h1: { antes: 'Alisado de', resaltado: 'paredes', despues: 'en Madrid' },
@@ -937,5 +936,4 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       'albanileria-madrid',
     ],
   },
-  ...SERVICIOS_BORRADOR,
 ];

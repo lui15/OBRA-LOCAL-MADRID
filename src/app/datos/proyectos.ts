@@ -1,6 +1,6 @@
 /**
  * Obras realizadas. Solo las que tengan publicado: true se prerenderizan, van al sitemap y
- * aparecen en /proyectos/ y en la página de su zona. Las de ejemplo están sin publicar.
+ * aparecen en /proyectos/ y en la página de su zona.
  */
 export interface Proyecto {
   slug: string;
@@ -19,68 +19,27 @@ export interface Proyecto {
   fotos: { antes: string; despues: string; alt: string }[];
 }
 
-export const PROYECTOS: Proyecto[] = [
-  {
-    slug: 'ejemplo-reforma-integral',
-    publicado: false,
-    titulo: 'PENDIENTE("título de la obra")',
-    zonaPath: 'reformas-chamberi',
-    barrio: 'PENDIENTE("barrio")',
-    m2: 'PENDIENTE("metros cuadrados")',
-    plazo: 'PENDIENTE("duración real de la obra")',
-    rangoPrecio: 'PENDIENTE("rango de precio real")',
-    servicioPath: 'reformas-integrales-madrid',
-    trabajos: ['PENDIENTE("trabajos realizados")'],
-    descripcion: 'PENDIENTE("descripción de la obra: punto de partida, qué se hizo y resultado")',
-    fotos: [
-      {
-        antes: '/images/piso-en-obra.webp',
-        despues: '/images/piso-reformado.webp',
-        alt: 'PENDIENTE("fotos reales de antes y después")',
-      },
-    ],
-  },
-  {
-    slug: 'ejemplo-reforma-bano',
-    publicado: false,
-    titulo: 'PENDIENTE("título de la obra")',
-    zonaPath: 'reformas-retiro',
-    barrio: 'PENDIENTE("barrio")',
-    m2: 'PENDIENTE("metros cuadrados")',
-    plazo: 'PENDIENTE("duración real de la obra")',
-    rangoPrecio: 'PENDIENTE("rango de precio real")',
-    servicioPath: 'reforma-banos-madrid',
-    trabajos: ['PENDIENTE("trabajos realizados")'],
-    descripcion: 'PENDIENTE("descripción de la obra")',
-    fotos: [
-      {
-        antes: '/images/reforma-bano-ejemplo.webp',
-        despues: '/images/bano-moderno.webp',
-        alt: 'PENDIENTE("fotos reales de antes y después")',
-      },
-    ],
-  },
-  {
-    slug: 'ejemplo-quitar-gotele',
-    publicado: false,
-    titulo: 'PENDIENTE("título de la obra")',
-    zonaPath: 'reformas-carabanchel',
-    barrio: 'PENDIENTE("barrio")',
-    m2: 'PENDIENTE("metros cuadrados")',
-    plazo: 'PENDIENTE("duración real de la obra")',
-    rangoPrecio: 'PENDIENTE("rango de precio real")',
-    servicioPath: 'quitar-gotele-madrid',
-    trabajos: ['PENDIENTE("trabajos realizados")'],
-    descripcion: 'PENDIENTE("descripción de la obra")',
-    fotos: [
-      {
-        antes: '/images/paredes-ejemplo.webp',
-        despues: '/images/sala-vacia.webp',
-        alt: 'PENDIENTE("fotos reales de antes y después")',
-      },
-    ],
-  },
-];
+/*
+ * Todavía no hay obras documentadas con fotos reales. Para activar /proyectos/, añade aquí cada
+ * obra con publicado: true; se prerenderiza, entra en el sitemap y aparece en su página de zona.
+ *
+ * Ejemplo:
+ * {
+ *   slug: 'reforma-integral-chamberi',
+ *   publicado: true,
+ *   titulo: 'Reforma integral de un piso de 85 m² en Chamberí',
+ *   zonaPath: 'reformas-chamberi',
+ *   barrio: 'Trafalgar',
+ *   m2: '85 m²',
+ *   plazo: '10 semanas',
+ *   rangoPrecio: '55.000–60.000 €',
+ *   servicioPath: 'reformas-integrales-madrid',
+ *   trabajos: ['Demolición', 'Instalaciones nuevas', 'Cocina', 'Baño', 'Pintura'],
+ *   descripcion: 'Punto de partida, qué se hizo y resultado.',
+ *   fotos: [{ antes: '/images/obras/chamberi-antes.webp', despues: '/images/obras/chamberi-despues.webp', alt: 'Salón antes y después' }],
+ * },
+ */
+export const PROYECTOS: Proyecto[] = [];
 
 export const PROYECTOS_PUBLICADOS = PROYECTOS.filter((p) => p.publicado);
 

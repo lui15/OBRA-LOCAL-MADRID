@@ -104,7 +104,6 @@ export function nodoNegocio(): object {
     ],
     // Solo se publican si están confirmados en datos/contacto.ts.
     ...(NEGOCIO.telefono ? { telephone: NEGOCIO.telefono } : {}),
-    ...(NEGOCIO.horario.length ? { openingHours: NEGOCIO.horario } : {}),
     ...(NEGOCIO.redes.length ? { sameAs: NEGOCIO.redes } : {}),
   };
 }

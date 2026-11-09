@@ -11,7 +11,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-chamberi',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Chamberí, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Chamberí: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Chamberí: pisos antiguos, techos altos y edificios con protección. Trámites, horarios y comunidad de vecinos, con presupuesto paso a paso.',
     etiqueta: 'Reformas en Chamberí',
@@ -123,7 +123,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-salamanca',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en el barrio de Salamanca | ObraLocal Madrid',
+    title: 'Reformas en Salamanca: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en el distrito de Salamanca: fincas señoriales, normas de comunidad y fachadas protegidas. Qué revisar antes de empezar y presupuesto paso a paso.',
     etiqueta: 'Reformas en Salamanca',
@@ -233,7 +233,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-retiro',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Retiro, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Retiro: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Retiro: Jerónimos, Ibiza, Pacífico, Adelfas, Estrella y Niño Jesús. Edificios, permisos y trabajos frecuentes por barrio, con presupuesto.',
     etiqueta: 'Reformas en Retiro',
@@ -345,7 +345,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-carabanchel',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Carabanchel, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Carabanchel: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Carabanchel: pisos de los años 50 a 70, gotelé, bañeras e instalaciones antiguas. Qué priorizar, precios orientativos y presupuesto.',
     etiqueta: 'Reformas en Carabanchel',
@@ -456,7 +456,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-alcobendas',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Alcobendas | ObraLocal Madrid',
+    title: 'Reformas en Alcobendas: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Alcobendas: pisos del Centro, viviendas de Valdelasfuentes y chalets de La Moraleja. Trámites municipales, urbanizaciones y presupuesto.',
     etiqueta: 'Reformas en Alcobendas',

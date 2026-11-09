@@ -3,7 +3,7 @@ import { RenderMode, ServerRoute } from '@angular/ssr';
 import { PROYECTOS_PUBLICADOS } from './datos/proyectos';
 import { FICHAS } from './landing/fichas';
 
-/** Las obras solo se prerenderizan cuando hay alguna publicada. Antes, solo se ven en local. */
+/** Las obras solo se prerenderizan cuando hay alguna publicada. Hasta entonces, /proyectos/ no está en menús ni sitemap. */
 const rutasProyectos: ServerRoute[] = PROYECTOS_PUBLICADOS.length
   ? [
       { path: 'proyectos', renderMode: RenderMode.Prerender },
@@ -14,8 +14,9 @@ const rutasProyectos: ServerRoute[] = PROYECTOS_PUBLICADOS.length
       },
     ]
   : [
+      // Sin obras publicadas: el índice queda con noindex y cualquier obra da 404.
       { path: 'proyectos', renderMode: RenderMode.Server },
-      { path: 'proyectos/:slug', renderMode: RenderMode.Server },
+      { path: 'proyectos/:slug', renderMode: RenderMode.Server, status: 404 },
     ];
 
 export const serverRoutes: ServerRoute[] = [

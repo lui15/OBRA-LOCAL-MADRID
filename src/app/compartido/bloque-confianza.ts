@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { CONFIANZA } from '../datos/confianza';
-import { esPendiente } from '../datos/revision';
 
-/** Solo se pinta lo confirmado: mientras todo esté PENDIENTE, el bloque no aparece. */
+/** Compromisos confirmados por la empresa (datos/confianza.ts). */
 @Component({
   selector: 'app-bloque-confianza',
   standalone: true,
@@ -66,5 +65,5 @@ import { esPendiente } from '../datos/revision';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BloqueConfianza {
-  readonly confirmados = CONFIANZA.filter((c) => !esPendiente(c.texto));
+  readonly confirmados = CONFIANZA;
 }

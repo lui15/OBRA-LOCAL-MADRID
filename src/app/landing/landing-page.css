@@ -638,3 +638,47 @@ h1 em {
   flex-wrap: wrap;
   gap: 4px 24px;
 }
+
+/* Servicios: los cinco pasos, en corto */
+.lp-pasos-cortos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-pasos-cortos li {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+}
+
+.lp-paso-num {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: white;
+  background: #b84800;
+  font-weight: 800;
+}
+
+.lp-pasos-cortos h3 {
+  margin: 4px 0 6px;
+  color: var(--navy-dark);
+  font-size: 16px;
+}
+
+.lp-pasos-cortos p {
+  margin: 0;
+  color: #4f5f71;
+  font-size: 14px;
+  line-height: 1.55;
+}

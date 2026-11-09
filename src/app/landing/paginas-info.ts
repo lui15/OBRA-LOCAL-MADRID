@@ -71,209 +71,200 @@ export const PAGINAS_INFO: PaginaSeo[] = [
   {
     path: 'licencia-obra-madrid',
     tipo: 'info',
-    title: 'Licencia de obra en Madrid: qué necesitas | ObraLocal Madrid',
+    title: 'Licencia de obra en Madrid: declaración responsable e ICIO',
     description:
-      'Licencia de obra en Madrid: obra menor, declaración responsable y licencia según la Ordenanza 6/2022, cuándo hace falta proyecto y dónde se tramita.',
+      'Qué trámite pide tu reforma en Madrid: obras sin título, declaración responsable o licencia según la Ordenanza 6/2022, y el ICIO del 3,75 %. Con fuentes.',
     etiqueta: 'Licencia de obra en Madrid',
-    resumen: 'Declaración responsable, licencia y proyecto: qué pide tu obra en Madrid.',
+    resumen: 'Obras sin trámite, declaración responsable, licencia e ICIO en Madrid capital.',
     h1: { antes: 'Licencia de obra en Madrid:', resaltado: 'qué necesitas', despues: '' },
-    puntos: ['Ordenanza 6/2022', 'Declaración responsable', 'Licencia', 'Fuentes oficiales'],
+    puntos: ['Ordenanza 6/2022', 'Declaración responsable', 'ICIO del 3,75 %', 'Fuentes oficiales'],
     whatsapp: 'Hola, tengo dudas sobre el trámite de mi obra en Madrid',
     kicker: 'LICENCIA DE OBRA',
     intro:
-      'Antes de reformar conviene saber qué trámite pide tu obra. En Madrid capital lo regula la Ordenanza 6/2022 de Licencias y Declaraciones Responsables Urbanísticas, aprobada el 26 de abril de 2022. Aquí te explicamos sus líneas generales con enlaces a las fuentes oficiales; para tu caso concreto, la referencia es siempre el Ayuntamiento.',
+      'Antes de reformar conviene saber qué trámite pide tu obra. En Madrid capital lo regula la Ordenanza 6/2022, de 26 de abril, de Licencias y Declaraciones Responsables Urbanísticas, publicada en el BOCM el 17 de mayo de 2022. Hay tres casos: obras que no necesitan ningún trámite, obras que van por declaración responsable y obras que necesitan licencia. Lo hemos comprobado en las fuentes oficiales el 9 de noviembre de 2026; para tu caso concreto, la referencia es siempre el Ayuntamiento.',
     aviso:
       'Esta página es informativa y no sustituye la consulta al Ayuntamiento ni a un técnico. Revisa la normativa vigente antes de empezar tu obra.',
     secciones: [
       {
-        titulo: 'Declaración responsable: la vía general',
+        titulo: 'Obras que no necesitan licencia ni declaración responsable',
         parrafos: [
-          'Desde esta ordenanza, la declaración responsable es el medio general para la mayoría de las obras, y la licencia queda para los supuestos de su Anexo I. En la declaración, la persona interesada afirma, bajo su responsabilidad, que la obra cumple la normativa urbanística y sectorial, que dispone de la documentación que lo acredita y que la mantendrá durante toda la obra.',
-          'Según el Ayuntamiento, si la declaración no indica otra cosa, las obras deben empezar en un plazo de seis meses y terminar en un año desde su presentación completa. Al acabar, hay que presentar la documentación del Anexo II, apartado D, de la ordenanza y solicitar la visita de inspección a través del Sistema de Licencias Municipales (SLIM), dentro del mismo expediente.',
+          'El artículo 6 de la ordenanza recoge las actuaciones que no están sujetas a ningún medio de intervención urbanística. La que más afecta a una reforma de vivienda es la del apartado b): «las obras de conservación consistentes en la sustitución de acabados interiores de una sola vivienda o local, o de las zonas comunes de edificios de uso residencial, cuando no estén protegidos arquitectónicamente».',
+          'En la práctica, cambiar acabados interiores, como pintar o cambiar azulejos o suelos, en un piso de un edificio no protegido no necesita ni licencia ni declaración responsable. El mismo artículo incluye también la renovación de instalaciones cuando las nuevas ocupan la misma posición y tienen dimensiones similares a las que sustituyen, y estas ya estaban legalizadas.',
+          'Que no haga falta trámite urbanístico no quita otras obligaciones: el artículo 6 recuerda que sigue siendo necesario gestionar los residuos de la obra y pedir permiso para ocupar la vía pública, por ejemplo para poner un contenedor.',
         ],
       },
       {
-        titulo: '¿Y la «obra menor»?',
+        titulo: 'La declaración responsable: el trámite general',
         parrafos: [
-          'Mucha gente sigue hablando de «licencia de obra menor» para referirse a reformas interiores sencillas. Con la ordenanza actual, lo importante no es esa etiqueta, sino si la obra está entre las que no necesitan título, entre las que van por declaración responsable o entre las del Anexo I, que requieren licencia. La antigua comunicación previa se suprimió con carácter general el 17 de junio de 2022.',
-          'En términos generales, los acabados interiores de una vivienda que no está protegida —pintar, cambiar suelos o alicatados sin tocar instalaciones ni distribución— son el tipo de obra con menos requisitos. Cambiar la distribución, las instalaciones o actuar sobre elementos comunes exige más comprobaciones. Confirma siempre tu caso con el Ayuntamiento o con un técnico.',
+          'Según el artículo 26 y el anexo II de la ordenanza, van por declaración responsable «todas las actuaciones urbanísticas que deban ser objeto de intervención municipal y no estén incluidas en el control por licencia». Es decir, si tu obra necesita algún trámite y no está en la lista de licencias, es una declaración responsable.',
+          'En la declaración, el titular de la obra afirma bajo su responsabilidad que cumple la normativa urbanística y sectorial, y que dispone de la documentación que lo acredita. Se puede presentar ante el propio Ayuntamiento o con una entidad colaboradora urbanística (artículo 27). La comunicación previa, que se usaba antes, quedó suprimida con carácter general desde el 17 de junio de 2022, cuando entró en vigor la ordenanza.',
         ],
       },
       {
-        titulo: 'Cuándo hace falta un proyecto técnico',
+        titulo: 'Cuándo hace falta licencia',
         parrafos: [
-          'La Ley de Ordenación de la Edificación exige proyecto, redactado por un técnico competente, para las obras que alteran la configuración arquitectónica de los edificios: por ejemplo, las que cambian su estructura, su volumetría o la composición general exterior, y también para intervenciones en edificios protegidos. En una reforma de vivienda, eso suele ocurrir cuando se tocan muros de carga, forjados o la fachada.',
-          'Si tu obra no está en esos casos, puede bastar con la documentación que pida la declaración responsable. Si tienes dudas sobre si un muro es estructural, la respuesta la debe dar un técnico antes de tocarlo.',
+          'El artículo 34 remite al anexo I, que enumera las actuaciones sujetas a licencia. En una reforma de vivienda, las que más importan son dos: las obras que requieren proyecto técnico de obras de edificación según el artículo 2.2 de la Ley 38/1999 de Ordenación de la Edificación, y las actuaciones sobre edificios catalogados que alteren o modifiquen los elementos protegidos.',
+          'La Ley de Ordenación de la Edificación pide proyecto, entre otros casos, para las intervenciones que alteran la configuración arquitectónica del edificio, como las que cambian su estructura o su composición exterior. Si tu reforma toca muros de carga, forjados o la fachada, consulta antes con un técnico.',
         ],
       },
       {
-        titulo: 'Edificios protegidos y comunidad de vecinos',
+        titulo: 'El ICIO: el impuesto de la obra',
         parrafos: [
-          'Si tu edificio aparece en el Catálogo de Edificios Protegidos del Ayuntamiento, el margen para cambiar fachada, balcones, carpintería exterior o elementos originales puede ser mucho menor. Compruébalo antes de proyectar.',
-          'Con independencia del trámite municipal, la Ley de Propiedad Horizontal obliga a comunicar las obras previamente a quien represente a la comunidad, y no se puede alterar la seguridad del edificio, su estructura general, su configuración exterior ni los derechos de otros propietarios.',
+          'Cuando la obra necesita licencia o declaración responsable, en Madrid capital se paga el Impuesto sobre Construcciones, Instalaciones y Obras (ICIO), regulado por la Ordenanza Fiscal 7/2023, de 22 de diciembre. Según el Portal del Contribuyente del Ayuntamiento, el tipo es del 3,75 % para las obras iniciadas a partir del 1 de enero de 2024 (el 4 % para las iniciadas antes).',
+          'Se calcula sobre el coste real y efectivo de la obra: solo el coste de ejecución material, sin impuestos, tasas, honorarios profesionales ni beneficio del constructor. Por ejemplo, en una obra con 50.000 € de ejecución material, el ICIO es de 1.875 €. Se autoliquida al presentar la declaración responsable o en el mes siguiente a la concesión de la licencia, y el coste real se declara en el mes siguiente al final de la obra.',
+        ],
+      },
+      {
+        titulo: 'La comunidad de vecinos',
+        parrafos: [
+          'Con independencia del trámite municipal, el artículo 7.1 de la Ley de Propiedad Horizontal permite modificar tu piso siempre que no menoscabes ni alteres la seguridad del edificio, su estructura general o su configuración exterior, ni perjudiques los derechos de otro propietario. Y obliga a dar cuenta de las obras previamente a quien represente a la comunidad.',
         ],
       },
       {
         titulo: 'Fuera de Madrid capital',
         parrafos: [
-          'La Ordenanza 6/2022 solo se aplica en el término municipal de Madrid. Si tu vivienda está en Alcobendas, Getafe, Leganés, Alcorcón, Móstoles, Pozuelo de Alarcón, Las Rozas, Majadahonda o cualquier otro municipio, el trámite, las tasas y el impuesto de obras los fija su ayuntamiento.',
+          'La Ordenanza 6/2022 y la Ordenanza Fiscal 7/2023 solo se aplican en el municipio de Madrid. Si tu vivienda está en Getafe, Leganés, Alcorcón, Móstoles, Alcobendas, Pozuelo de Alarcón, Las Rozas, Majadahonda o cualquier otro municipio, el trámite, las tasas y el impuesto de obras los fija su ayuntamiento: consulta su sede electrónica.',
         ],
-      },
-      {
-        titulo: 'Qué gestionamos nosotros',
-        parrafos: ['PENDIENTE("qué parte del trámite gestiona ObraLocal Madrid y con qué técnico")'],
       },
     ],
     fuentes: [
       {
-        texto: 'Ordenanza 6/2022 de Licencias y Declaraciones Responsables Urbanísticas (Sede electrónica del Ayuntamiento de Madrid)',
-        url: 'https://sede.madrid.es/portal/site/tramites/menuitem.5dd4485239c96e10f7a72106a8a409a0/?vgnextoid=d3cdd4b13e0d0810VgnVCM1000001d4a900aRCRD&vgnextfmt=default&numPagina=2&target=texto&version=true&vgnextchannel=6b3d814231ede410VgnVCM1000000b205a0aRCRD',
-      },
-      {
-        texto: 'Publicación de la ordenanza en el BOCM (17 de mayo de 2022)',
+        texto: 'Ordenanza 6/2022 de Licencias y Declaraciones Responsables Urbanísticas, BOCM nº 116 de 17 de mayo de 2022 (consultada el 9/11/2026)',
         url: 'https://www.bocm.es/boletin/CM_Orden_BOCM/2022/05/17/BOCM-20220517-58.PDF',
       },
       {
-        texto: 'Licencias urbanísticas y declaraciones responsables (Portal de transparencia del Ayuntamiento de Madrid)',
-        url: 'https://transparencia.madrid.es/portales/transparencia/es/Transparencia-por-sectores/Urbanismo-Obras/Licencias-y-autorizaciones/Licencias-urbanisticas-y-declaraciones-responsables/?vgnextfmt=default&vgnextoid=2587a805cface910VgnVCM200000f921e388RCRD&vgnextchannel=dee9508929a56510VgnVCM1000008a4a900aRCRD',
+        texto: 'Trámites de obras y actividades, Ayuntamiento de Madrid (consultada el 9/11/2026)',
+        url: 'https://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Licencias-urbanisticas/Tramites-de-obras-y-actividades/?vgnextfmt=default&vgnextchannel=f701f3a438dc6410VgnVCM2000000c205a0aRCRD',
       },
       {
-        texto: 'Sistema de Licencias Municipales (SLIM)',
-        url: 'https://sede.madrid.es/portal/site/tramites/menuitem.62876cb64654a55e2dbd7003a8a409a0/?vgnextoid=edf5540d8819a610VgnVCM1000001d4a900aRCRD&vgnextchannel=7d7d5d53be9a0210VgnVCM100000171f5a0aRCRD&vgnextfmt=default',
+        texto: 'ICIO: autoliquidación, Portal del Contribuyente del Ayuntamiento de Madrid (consultada el 9/11/2026)',
+        url: 'https://agenciatributaria.madrid.es/portales/contribuyente/es/Tramites/Impuesto-sobre-Construcciones-Instalaciones-y-Obras-ICIO-Autoliquidacion/?vgnextfmt=default&vgnextoid=35d36cab45973510VgnVCM1000001d4a900aRCRD&vgnextchannel=97d608f9be116810VgnVCM1000001d4a900aRCRD',
       },
       {
-        texto: 'Ley 38/1999, de Ordenación de la Edificación (BOE)',
+        texto: 'Ley 38/1999, de Ordenación de la Edificación, BOE (consultada el 9/11/2026)',
         url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567',
+      },
+      {
+        texto: 'Ley 49/1960, de Propiedad Horizontal, BOE (consultada el 9/11/2026)',
+        url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1960-10906',
       },
     ],
     faqs: [
       {
         pregunta: '¿Necesito licencia para pintar o cambiar el suelo de mi piso en Madrid?',
         respuesta:
-          'En términos generales, los acabados interiores de una vivienda sin protección son las obras con menos requisitos. Confirma tu caso en la sede electrónica del Ayuntamiento o con un técnico.',
+          'No, si el edificio no está protegido. El artículo 6.b de la Ordenanza 6/2022 deja fuera de licencia y de declaración responsable la sustitución de acabados interiores de una sola vivienda no protegida.',
       },
       {
-        pregunta: '¿Qué plazo tengo para hacer la obra tras la declaración responsable?',
+        pregunta: '¿Qué obras van por declaración responsable?',
         respuesta:
-          'Según el Ayuntamiento de Madrid, si la declaración no indica otros plazos, la obra debe empezar en seis meses y terminar en un año desde su presentación completa.',
+          'Todas las que necesitan intervención municipal y no están en el anexo I de la ordenanza, que es la lista de obras con licencia.',
       },
       {
-        pregunta: '¿Dónde se presenta la declaración responsable en Madrid?',
+        pregunta: '¿Cuánto es el ICIO en Madrid?',
         respuesta:
-          'A través del Sistema de Licencias Municipales (SLIM) de la sede electrónica del Ayuntamiento de Madrid.',
+          'El 3,75 % del coste de ejecución material para las obras iniciadas desde el 1 de enero de 2024, según la Ordenanza Fiscal 7/2023. En una obra de 50.000 € de ejecución material, son 1.875 €.',
       },
       {
         pregunta: '¿Esta normativa vale para municipios como Getafe o Alcobendas?',
         respuesta:
-          'No. La Ordenanza 6/2022 es del Ayuntamiento de Madrid. En cada municipio, el trámite lo fija su propio ayuntamiento.',
+          'No. Las ordenanzas 6/2022 y 7/2023 son del Ayuntamiento de Madrid. En cada municipio, el trámite y el impuesto los fija su propio ayuntamiento.',
       },
     ],
     servicio: {
       nombre: 'Información sobre licencias de obra en Madrid',
-      descripcion: 'Qué trámite pide una reforma en Madrid capital.',
+      descripcion: 'Qué trámite pide una reforma en Madrid capital y cuánto es el ICIO.',
     },
     servicioFormulario: '',
     imagen: '/images/planos-mesa.webp',
     imagenAlt: 'Plano de una vivienda sobre una mesa',
-    relacionadas: ['ayudas-reformas-madrid', 'reformas-integrales-madrid', 'orden-trabajos-reforma-integral', 'preguntas-frecuentes', 'zonas'],
+    relacionadas: ['ayudas-reformas-madrid', 'precios', 'reformas-integrales-madrid', 'orden-trabajos-reforma-integral', 'preguntas-frecuentes'],
   },
 
   /* ---------------------------- AYUDAS ---------------------------- */
   {
     path: 'ayudas-reformas-madrid',
     tipo: 'info',
-    title: 'Ayudas para reformas en Madrid 2026 | ObraLocal Madrid',
+    title: 'Ayudas para reformas en Madrid 2026: qué hay y dónde mirar',
     description:
-      'Ayudas para reformas en Madrid 2026: Plan Rehabilita del Ayuntamiento y programas de rehabilitación de la Comunidad. Estado y fuentes oficiales.',
+      'Ayudas para reformas en Madrid en 2026: Plan Rehabilita del Ayuntamiento y deducciones del IRPF por eficiencia energética. Solo datos con fuente oficial.',
     etiqueta: 'Ayudas para reformas en Madrid',
-    resumen: 'Plan Rehabilita y programas de rehabilitación energética: dónde mirar.',
+    resumen: 'Plan Rehabilita 2026 y deducciones del IRPF, con sus fuentes oficiales.',
     h1: { antes: 'Ayudas para reformas en', resaltado: 'Madrid 2026', despues: '' },
-    puntos: ['Ayuntamiento de Madrid', 'Comunidad de Madrid', 'Rehabilitación y eficiencia', 'Fuentes oficiales'],
+    puntos: ['Plan Rehabilita 2026', 'Deducciones del IRPF', 'Solo fuentes oficiales', 'Comprobado el 9/11/2026'],
     whatsapp: 'Hola, tengo dudas sobre ayudas para mi reforma',
     kicker: 'AYUDAS',
     intro:
-      'Las ayudas para reformar cambian cada año: se abren convocatorias, se agotan fondos y se cierran plazos. En esta página resumimos lo que publican las fuentes oficiales que hemos consultado el 9 de noviembre de 2026, con enlaces para que compruebes el estado actual. No damos importes ni requisitos que no hayamos podido verificar.',
+      'Las ayudas para reformar cambian cada año: se abren convocatorias, se agotan fondos y se cierran plazos. Aquí solo resumimos lo que hemos podido comprobar en fuentes oficiales el 9 de noviembre de 2026, con el enlace a cada una. No publicamos importes, porcentajes ni requisitos que no hayamos podido verificar.',
     aviso:
       'Revisa la convocatoria vigente. Las ayudas, sus plazos y sus requisitos cambian con frecuencia y la información oficial es la única que vale para solicitarlas.',
     secciones: [
       {
         titulo: 'Plan Rehabilita Madrid 2026 (Ayuntamiento de Madrid)',
         parrafos: [
-          'Es la convocatoria municipal de subvenciones para actuaciones de accesibilidad, conservación, eficiencia energética, salubridad y seguridad en edificios existentes de uso residencial situados en el término municipal de Madrid. Está pensada sobre todo para comunidades de propietarios, aunque la convocatoria detalla quién puede pedirla.',
-          'Según la sede electrónica del Ayuntamiento, el plazo de solicitudes de la edición 2026 terminaba el 30 de septiembre de 2026, y el portal municipal de rehabilitación lo muestra como finalizado. Si estás pensando en una actuación en tu edificio, vigila la próxima convocatoria.',
+          'Es la convocatoria municipal de subvenciones para edificios existentes de uso residencial en Madrid capital. Según la nota de prensa del Ayuntamiento del 2 de junio de 2026, la edición de este año tiene seis líneas: accesibilidad, eficiencia energética, conservación, salubridad, seguridad y, como novedad, embellecimiento urbano.',
+          'La línea de embellecimiento incluye, por ejemplo, eliminar cableado visto, retirar o reubicar equipos de climatización de la fachada y homogeneizar persianas, toldos o barandillas, y suma un 5 % de subvención a las actuaciones de eficiencia energética que se acojan a ella. Las solicitudes se podían presentar desde el 3 de junio de 2026. Antes de contar con ella, comprueba en la sede electrónica del Ayuntamiento si la convocatoria sigue abierta y qué requisitos pide.',
         ],
       },
       {
-        titulo: 'Programas de la Comunidad de Madrid',
+        titulo: 'Deducciones del IRPF por obras de eficiencia energética',
         parrafos: [
-          'La Comunidad de Madrid ha gestionado ayudas de rehabilitación energética de edificios residenciales y viviendas financiadas con fondos europeos del Plan de Recuperación (PRTR). Según su web, el programa de mejora de la eficiencia energética en viviendas se declaró finalizado por una orden de julio de 2026, publicada en el BOCM, y los fondos restantes se destinan a solicitudes ya presentadas.',
-          'La Comunidad también ha informado de ayudas de rehabilitación a nivel de barrio en distintos municipios. No hemos podido confirmar si hay convocatorias abiertas en este momento: PENDIENTE("confirmar convocatorias abiertas de la Comunidad de Madrid").',
-        ],
-      },
-      {
-        titulo: 'Deducciones fiscales',
-        parrafos: [
-          'En años anteriores han existido deducciones en el IRPF por obras de mejora de la eficiencia energética de la vivienda. PENDIENTE("confirmar si las deducciones del IRPF por eficiencia energética están vigentes en 2026 y en qué condiciones"). Consulta con la Agencia Tributaria o con un asesor fiscal antes de contar con ellas.',
-        ],
-      },
-      {
-        titulo: 'Qué suele hacer falta para pedir una ayuda',
-        parrafos: [
-          'Sin entrar en los requisitos de cada convocatoria, que cambian, hay documentos que se repiten a menudo en las ayudas de rehabilitación: presupuestos detallados de la actuación, certificados o informes técnicos del estado del edificio y, en las ayudas energéticas, certificados de eficiencia antes y después de la obra. Muchas ayudas exigen además que la obra no haya empezado antes de solicitarlas.',
-          'Por eso, si tu reforma puede encajar en una ayuda, consulta la convocatoria antes de firmar el presupuesto y de empezar la obra. PENDIENTE("confirmar si ObraLocal Madrid ayuda a preparar la documentación de las ayudas").',
+          'La Ley del IRPF recoge deducciones por obras que mejoran la eficiencia energética de la vivienda. Según la Agencia Tributaria, el Real Decreto-ley 7/2026, de 20 de marzo, amplió sus plazos: las obras para reducir la demanda de calefacción y refrigeración y las que mejoran el consumo de energía primaria no renovable de la vivienda pueden hacerse hasta el 31 de diciembre de 2026, con el certificado de eficiencia energética expedido antes del 1 de enero de 2027.',
+          'Para las obras de rehabilitación energética en edificios de uso predominantemente residencial, el plazo llega al 31 de diciembre de 2027. Las deducciones valen para la vivienda habitual y para viviendas alquiladas o en expectativa de alquiler, con las condiciones que fija la Agencia Tributaria. Los porcentajes y los límites dependen de cada deducción: consúltalos en su web o con un asesor fiscal antes de decidir la obra.',
         ],
       },
       {
         titulo: 'Reforma de tu vivienda y rehabilitación del edificio',
         parrafos: [
-          'La mayoría de estas ayudas se dirigen al edificio —fachada, cubierta, ascensor, instalaciones comunes— y no a la reforma interior de un piso. Si tu comunidad está preparando una rehabilitación, coordinar tu reforma con ella puede evitar repetir trabajos, por ejemplo en ventanas o bajantes.',
+          'El Plan Rehabilita está planteado para actuaciones en edificios residenciales, y las deducciones del IRPF piden obras que mejoren la eficiencia energética acreditada con certificados. Una reforma interior que solo cambia acabados, como pintar o cambiar suelos, no suele encajar en ninguna de las dos.',
+          'Si tu comunidad está preparando una rehabilitación, coordinar tu reforma con ella puede evitar repetir trabajos, por ejemplo en ventanas o en instalaciones. Y si la obra puede dar derecho a una deducción, pide el certificado de eficiencia energética de antes de la obra antes de empezar.',
         ],
       },
       {
-        titulo: 'Dónde mirar si tu vivienda está fuera de Madrid capital',
+        titulo: 'Si tu vivienda está fuera de Madrid capital',
         parrafos: [
-          'Algunos ayuntamientos de la Comunidad convocan sus propias ayudas para rehabilitación o accesibilidad. Consulta la sede electrónica de tu municipio y el Boletín Oficial de la Comunidad de Madrid.',
+          'El Plan Rehabilita es del Ayuntamiento de Madrid. Si vives en otro municipio de la Comunidad, consulta la sede electrónica de tu ayuntamiento y el Boletín Oficial de la Comunidad de Madrid. Las deducciones del IRPF, en cambio, son estatales y valen en cualquier municipio.',
         ],
       },
     ],
     fuentes: [
       {
-        texto: 'Subvenciones Plan Rehabilita 2026 (Sede electrónica del Ayuntamiento de Madrid)',
+        texto: 'El Ayuntamiento abre el plazo de ayudas del Plan Rehabilita 2026, nota de prensa del 2/6/2026 (consultada el 9/11/2026)',
+        url: 'https://www.madrid.es/portales/munimadrid/es/Inicio/Actualidad/Noticias/El-Ayuntamiento-abre-el-plazo-de-ayudas-del-Plan-Rehabilita-2026-dotado-con-50-millones-de-euros/?vgnextfmt=default&vgnextoid=84416bfe7878e910VgnVCM100000891ecb1aRCRD&vgnextchannel=a12149fa40ec9410VgnVCM100000171f5a0aRCRD',
+      },
+      {
+        texto: 'Subvenciones Plan Rehabilita 2026, sede electrónica del Ayuntamiento de Madrid',
         url: 'https://sede.madrid.es/portal/site/tramites/menuitem.62876cb64654a55e2dbd7003a8a409a0/?vgnextoid=eb1a7964cb93e910VgnVCM100000891ecb1aRCRD&vgnextchannel=2a8ca38813180210VgnVCM100000c90da8c0RCRD&vgnextfmt=default',
       },
       {
-        texto: 'Plan Rehabilita: portal de rehabilitación del Ayuntamiento de Madrid',
-        url: 'https://transforma.madrid.es/rehabilita/',
+        texto: 'Deducciones por obras de mejora de la eficiencia energética de viviendas, Agencia Tributaria (página actualizada el 9/4/2026; consultada el 9/11/2026)',
+        url: 'https://sede.agenciatributaria.gob.es/Sede/vivienda-otros-inmuebles/deducciones-obras-mejora-eficiencia-energetica-viviendas.html',
       },
       {
-        texto: 'Ayudas a la rehabilitación energética de edificios residenciales y viviendas (PRTR), Comunidad de Madrid',
-        url: 'https://www.comunidad.madrid/vivienda/ayudas-actuaciones-rehabilitacion-energetica-edificios-residenciales-viviendas-prtr',
-      },
-      {
-        texto: 'Ayudas a la rehabilitación de edificios (Sede electrónica de la Comunidad de Madrid)',
-        url: 'https://sede.comunidad.madrid/ayudas-becas-subvenciones/ayudas-rehabilitacion-edificio',
+        texto: 'Novedades del Real Decreto-ley 7/2026 en el IRPF, Agencia Tributaria (consultada el 9/11/2026)',
+        url: 'https://www3.agenciatributaria.gob.es/Sede/irpf/novedades-impuesto/novedades-normativa-2026/principales-novedades-tributarias-introducidas-real-marzo.html',
       },
     ],
     faqs: [
       {
         pregunta: '¿Hay ayudas para reformar mi piso por dentro?',
         respuesta:
-          'Las ayudas de rehabilitación que hemos consultado se dirigen sobre todo a edificios y a mejoras de eficiencia energética, no a la reforma interior de un piso. Revisa cada convocatoria vigente.',
+          'Las que hemos comprobado se dirigen a edificios (Plan Rehabilita) o a obras de eficiencia energética (deducciones del IRPF). Una reforma que solo cambia acabados interiores no suele encajar. Revisa cada convocatoria vigente.',
+      },
+      {
+        pregunta: '¿Hasta cuándo puedo hacer obras con deducción del IRPF?',
+        respuesta:
+          'Según la Agencia Tributaria, hasta el 31 de diciembre de 2026 para las obras en la vivienda, con el certificado de eficiencia energética expedido antes del 1 de enero de 2027, y hasta el 31 de diciembre de 2027 para las de edificios residenciales.',
       },
       {
         pregunta: '¿Sigue abierto el Plan Rehabilita 2026?',
         respuesta:
-          'Según la sede electrónica del Ayuntamiento de Madrid, el plazo de solicitudes terminaba el 30 de septiembre de 2026. Comprueba en la sede si se ha abierto una nueva convocatoria.',
-      },
-      {
-        pregunta: '¿Puedo empezar la obra y pedir la ayuda después?',
-        respuesta:
-          'Muchas convocatorias exigen solicitar la ayuda antes de empezar. Consulta las bases de la convocatoria vigente antes de firmar el presupuesto.',
+          'Las solicitudes se podían presentar desde el 3 de junio de 2026. Comprueba en la sede electrónica del Ayuntamiento de Madrid si la convocatoria sigue abierta o si se ha publicado una nueva.',
       },
     ],
     servicio: {
       nombre: 'Información sobre ayudas para reformas en Madrid',
-      descripcion: 'Ayudas de rehabilitación y eficiencia energética en Madrid.',
+      descripcion: 'Plan Rehabilita y deducciones del IRPF por eficiencia energética en Madrid.',
     },
     servicioFormulario: '',
     imagen: '/images/edificio-clasico-madrid.webp',

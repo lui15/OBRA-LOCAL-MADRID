@@ -12,6 +12,7 @@ import { Icono } from '../compartido/icono';
 import { Revision } from '../compartido/revision';
 import { BloqueOpiniones } from '../compartido/bloque-opiniones';
 import { opinionesDe } from '../datos/opiniones';
+import { MAS_PEDIDOS, cifra } from '../datos/precios';
 import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { TarjetaServicio } from '../compartido/tarjeta-servicio';
@@ -52,6 +53,9 @@ import { SeoService } from '../seo.service';
 export class InicioPage {
   /** Opiniones de la portada (las que tienen "/" en sus páginas). */
   readonly opiniones = opinionesDe('/');
+  /** Precios de partida del titular: baño, cocina e integral. */
+  readonly masPedidos = MAS_PEDIDOS;
+  readonly cifra = cifra;
   readonly navegacion = inject(NavegacionService);
   readonly presupuesto = inject(PresupuestoService);
 
