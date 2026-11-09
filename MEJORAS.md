@@ -100,7 +100,21 @@ Rama `mejora-maximo-nivel`, creada desde `mejoras-competencia`. Fecha: 9 de novi
   - Condiciones: Supabase y EmailJS interceptados con respuestas simuladas; Google Analytics bloqueado.
   - Se ha probado: los 9 tipos de obra, la validación, la recarga a mitad, el éxito y el fallo con su alternativa por WhatsApp, el paso 1 preseleccionado y la zona rellena.
   - Mismo destino: los mismos parámetros de EmailJS y la misma plantilla.
-- **Lighthouse en el móvil** (portada y `/precios/`):
-  - Accesibilidad 100, buenas prácticas 100 y SEO 100.
-  - Rendimiento 72–86: no es fiable, porque durante la prueba el equipo tenía un juego abierto (CPU al 53 %). Lo confirma que páginas sin cambios, como Getafe, pasaron de 60 ms de TBT a más de 1 s.
-  - Hay que repetirlo con el equipo libre o con PageSpeed Insights después de desplegar.
+- **Lighthouse en el móvil** (repetido con el equipo libre, CPU al 16 %):
+  - Accesibilidad, buenas prácticas y SEO: 100 en todas las páginas medidas.
+  - Rendimiento, por página:
+
+| Página | Rendimiento | LCP | TBT | CLS |
+|---|---|---|---|---|
+| Portada | 97–99 | 1,0 s | 140–210 ms | 0 |
+| /precios/ | 98–99 | 0,9 s | 130–170 ms | 0 |
+| /reformas-getafe/ | 100 | 0,9 s | 20 ms | 0 |
+| /opiniones/ | 90–95 | 2,6–3,2 s | 150–190 ms | 0 |
+| /calculadora-reforma/ | 92–93 | 3,2–3,4 s | 70–80 ms | 0,03 |
+| Servicios (baños, integrales) | 90–92 | 3,4–3,5 s | 30–80 ms | 0 |
+
+  - En las páginas con foto principal, el LCP simulado (3G lento) supera los 2,5 s porque la foto es el elemento más grande de la primera pantalla.
+  - Lo que se probó y se descartó:
+    - Montserrat sin precarga: no mejoraba esas páginas y empeoraba la portada.
+    - Variantes de 640 px: el móvil de Lighthouse pide unos 720 px y sigue usando la de 800.
+  - Siguiente paso: medirlo con datos reales de usuarios (PageSpeed Insights) después de desplegar.
