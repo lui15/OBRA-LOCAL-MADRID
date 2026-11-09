@@ -149,7 +149,9 @@ function tramo(p: Precio, calidad: Calidad, veces = 1): { minimo: number; maximo
   };
 }
 
-export function calcularReforma(e: EntradaCalculadora): ResultadoCalculo | null {
+export function calcularReforma(entrada: EntradaCalculadora): ResultadoCalculo | null {
+  // Mientras se escribe puede llegar cualquier número: el cálculo siempre usa valores válidos.
+  const e = { ...entrada, m2: Math.min(400, Math.max(20, Math.round(entrada.m2) || 20)), banos: Math.min(4, Math.max(0, Math.round(entrada.banos) || 0)) };
   const lineas: LineaCalculo[] = [];
   const sinPrecio: string[] = [];
   const avisos: string[] = [];

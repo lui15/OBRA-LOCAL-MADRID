@@ -4,7 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Migas } from '../compartido/migas';
 import { SITE_URL } from '../datos/contacto';
 import { PROYECTOS } from '../datos/proyectos';
-import { buscarPagina, nodoMigas, nodoNegocio, nodoPagina, urlDePagina } from '../landing/landing-data';
+import { buscarFicha, nodoMigas, nodoNegocio, nodoPagina, urlDePagina } from '../landing/fichas';
 import { SeoService } from '../seo.service';
 
 /** Plantilla de una obra: antes y después, barrio, m², plazo, trabajos, precio y servicio. */
@@ -51,8 +51,9 @@ import { SeoService } from '../seo.service';
 })
 export class ProyectoPage {
   readonly proyecto = PROYECTOS.find((p) => p.slug === inject(ActivatedRoute).snapshot.paramMap.get('slug'));
-  readonly servicioUrl = this.proyecto ? urlDePagina(buscarPagina(this.proyecto.servicioPath)) : '/';
-  readonly servicioEtiqueta = this.proyecto ? buscarPagina(this.proyecto.servicioPath).etiqueta : '';
+  private readonly servicioFicha = this.proyecto ? buscarFicha(this.proyecto.servicioPath) : undefined;
+  readonly servicioUrl = this.servicioFicha ? urlDePagina(this.servicioFicha) : '/';
+  readonly servicioEtiqueta = this.servicioFicha?.etiqueta ?? '';
   readonly migas = [
     { etiqueta: 'Inicio', url: '/' },
     { etiqueta: 'Proyectos', url: '/proyectos/' },

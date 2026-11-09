@@ -183,102 +183,280 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     imagen: '/images/obra-en-curso.webp',
     imagenAlt: 'Vivienda en Madrid durante una reforma',
     modulo: 'servicios',
-    relacionadas: ['precios', 'zonas', 'como-trabajamos', 'preguntas-frecuentes'],
+    relacionadas: [
+      'calculadora-reforma',
+      'guias',
+      'precios',
+      'zonas',
+      'como-trabajamos',
+      'preguntas-frecuentes',
+    ],
   },
 
   /* ---------------------------- PRECIOS ---------------------------- */
   {
     path: 'precios',
     tipo: 'hub',
-    title: 'Precios de reformas en Madrid | ObraLocal Madrid',
+    title: 'Precios de reformas en Madrid 2026 | ObraLocal Madrid',
     description:
-      'Precios orientativos de reformas en Madrid por servicio: baños, cocinas, integrales, pintura, albañilería y pladur. Qué influye en el coste de cada obra.',
+      'Precios de reformas en Madrid 2026: €/m² por tipo, presupuesto de ejemplo de un piso de 80 m² por partidas, plazos, qué encarece la obra y cómo ahorrar.',
     etiqueta: 'Precios orientativos',
-    resumen: 'Rangos orientativos por servicio y factores que influyen en el coste.',
-    h1: { antes: 'Precios de', resaltado: 'reformas', despues: 'en Madrid' },
-    puntos: [
-      'Rangos por cada servicio',
-      'Precios desde 150 €',
-      'Importes orientativos',
-      'Presupuesto sin compromiso',
-    ],
-    whatsapp: 'Hola, quiero que me orientéis sobre el precio de una reforma en Madrid',
-    kicker: 'PRECIOS ORIENTATIVOS',
+    resumen: 'Guía de precios: €/m², ejemplo por partidas, plazos y qué influye en el coste.',
+    h1: { antes: 'Precios de', resaltado: 'reformas', despues: 'en Madrid 2026' },
+    puntos: ['Rangos por servicio', 'Precios desde 150 €', 'Ejemplo por partidas', 'Calculadora incluida'],
+    whatsapp: 'Hola, quiero que me orientéis sobre el precio de una reforma',
+    kicker: 'GUÍA DE PRECIOS 2026',
     intro:
-      'Aquí tienes los rangos de precio de todos nuestros servicios, para que puedas hacerte una idea antes de pedir presupuesto. Son orientativos, no precios cerrados: una reforma depende de muchos factores, y lo honesto es explicarte cuáles son y cómo afectan al resultado final.',
+      'Esta es nuestra guía de precios de reformas en Madrid. Encontrarás el precio por metro cuadrado de cada tipo de reforma, un presupuesto de ejemplo de un piso de 80 m² organizado por partidas, los rangos orientativos de cada servicio, qué encarece una obra en Madrid y cómo ajustar el presupuesto. Todos los importes salen de nuestros precios de referencia; los datos que aún no tenemos confirmados aparecen marcados como pendientes en lugar de inventados.',
     secciones: [
       {
-        titulo: 'Qué influye en el precio',
+        titulo: 'Cómo leer esta guía',
         parrafos: [
-          'Dos baños de 4 m² pueden tener presupuestos muy distintos, y ambos ser correctos. Estos seis factores explican la mayor parte de las diferencias.',
+          'Una reforma no tiene un precio fijo por metro cuadrado. Dos baños de la misma superficie pueden costar el doble uno que otro según lo que se derribe, las instalaciones que haya que rehacer y los materiales que se elijan. Por eso damos rangos: el extremo bajo corresponde a trabajos sencillos con materiales básicos, y el alto, a obras más complejas o con calidades altas.',
+          'Las tablas de arriba muestran el precio por metro cuadrado que se deduce de nuestros rangos, un presupuesto de ejemplo y los plazos. Más abajo tienes los rangos de cada servicio tal como los usamos para orientar a nuestros clientes, y la calculadora te permite aplicarlos a tu caso.',
+          'Ninguna de estas cifras es un presupuesto. El precio final de tu obra debe confirmar cantidades, materiales, mano de obra, impuestos y exclusiones después de ver la vivienda.',
+        ],
+      },
+      {
+        titulo: 'Precio por metro cuadrado: qué significa y qué no',
+        parrafos: [
+          'El precio por metro cuadrado es útil para hacerse una idea, pero tiene trampa. En una reforma integral, los metros que más cuestan son los de cocina y baños, porque concentran instalaciones, revestimientos y equipamiento. Un piso de 80 m² con dos baños costará más por metro que otro de la misma superficie con uno solo.',
+          'Además, en los trabajos pequeños el precio por metro sube: una reparación de 2 m² necesita el mismo desplazamiento, la misma protección y casi la misma preparación que una de 10 m². Por eso, en la tabla, los rangos de albañilería o alisado son amplios: el extremo alto corresponde a superficies pequeñas.',
+          'La columna «deducido de nuestros precios» se calcula dividiendo los importes de cada rango entre los metros cuadrados que cubre. Para cocina, baño y pintura nuestros rangos no se expresan en metros, así que no damos esa cifra. Las columnas por calidad están pendientes de confirmar.',
+        ],
+      },
+      {
+        titulo: 'Qué incluye cada partida de una reforma integral',
+        parrafos: [
+          'El presupuesto de ejemplo de 80 m² se organiza en las mismas partidas que debería tener cualquier presupuesto serio. Saber qué entra en cada una te ayuda a comparar ofertas y a detectar lo que falta.',
         ],
         subsecciones: [
           {
-            titulo: 'Metros cuadrados',
-            texto: 'Marcan la cantidad de material y de mano de obra, pero no lo son todo: un baño pequeño concentra más oficios por metro que un salón grande.',
+            titulo: 'Demolición y desescombro',
+            texto:
+              'Protección de la vivienda y de las zonas comunes, retirada de tabiques, alicatados, suelos, sanitarios y muebles que no se conservan, y gestión de los escombros. Incluye el coste del contenedor o de las sacas y, si hace falta, el permiso para ocupar la vía pública.',
           },
           {
-            titulo: 'Estado previo',
-            texto: 'Humedades, paredes irregulares o suelos desnivelados añaden trabajo que no se ve en el resultado final, pero que determina cuánto durará.',
+            titulo: 'Albañilería',
+            texto:
+              'Nuevos tabiques, cierre y apertura de huecos, recrecidos de suelo, enfoscados y enlucidos, y ayudas de albañilería a los demás oficios: abrir y cerrar rozas para las instalaciones.',
           },
           {
-            titulo: 'Materiales',
-            texto: 'El mismo metro de suelo o azulejo puede variar mucho de precio. La colocación también cambia: los grandes formatos y los diseños con muchos cortes requieren más tiempo.',
+            titulo: 'Fontanería',
+            texto:
+              'Red nueva de agua fría y caliente, desagües hasta la bajante, tomas para cocina, baños y lavadora, y en su caso cambio del calentador o la caldera.',
           },
           {
-            titulo: 'Fontanería y electricidad',
-            texto: 'Renovar una instalación antigua o mover tomas de agua y puntos de luz significa más obra. Mantenerlos en su sitio es una de las formas más eficaces de contener el presupuesto.',
+            titulo: 'Electricidad',
+            texto:
+              'Cuadro eléctrico, circuitos, cableado, mecanismos y puntos de luz. En pisos antiguos suele renovarse por completo. Al terminar, la instalación debe documentarse con el certificado que corresponda.',
           },
           {
-            titulo: 'Licencias y trámites',
-            texto: 'Tasas e impuesto de obras dependen del municipio y del tipo de actuación. Las licencias se valoran aparte, así que conviene confirmar qué corresponde a tu obra.',
+            titulo: 'Alicatado y solados',
+            texto:
+              'Revestimientos cerámicos de baños y cocina, impermeabilización de las zonas húmedas y suelos de toda la vivienda, ya sean cerámicos, laminados o de madera.',
           },
           {
-            titulo: 'Retirada de escombros',
-            texto: 'No es igual un edificio con ascensor amplio que un cuarto sin ascensor en una calle estrecha. Bajar escombros y conseguir permiso para un contenedor también tiene un coste.',
+            titulo: 'Carpintería',
+            texto:
+              'Puertas interiores, armarios empotrados, rodapiés y, si se cambian, ventanas. Es una partida en la que la gama elegida cambia mucho el importe.',
           },
+          {
+            titulo: 'Pintura',
+            texto:
+              'Preparación de paredes y techos, imprimación y pintura final de toda la vivienda. Si hay gotelé, quitarlo o cubrirlo forma parte de esta partida o de la de albañilería.',
+          },
+          {
+            titulo: 'Gestión y licencia',
+            texto:
+              'Tramitación municipal que corresponda —en Madrid capital, declaración responsable o licencia según la Ordenanza 6/2022—, tasas, coordinación de oficios y documentación final de la obra.',
+          },
+        ],
+      },
+      {
+        titulo: 'Rangos de referencia por servicio',
+        parrafos: [
+          'Además del ejemplo por partidas, usamos rangos de referencia para cada tipo de trabajo, desde una reparación pequeña hasta la reforma completa. Los tienes detallados más abajo, servicio a servicio. Como resumen: una reforma integral de 40 a 60 m² va de 15.000 a 25.000 €, de 60 a 90 m² de 25.000 a 45.000 €, y a partir de 90 m² de 45.000 a 80.000 €. Un baño completo va de 3.500 a 7.000 € y una cocina completa con muebles e instalaciones, de 9.000 a 15.000 €.',
+          'En trabajos más pequeños, pintar una habitación amplia con preparación va de 500 a 900 €, un tabique o techo de pladur de 7 a 15 m² de 600 a 1.200 €, y alisar de 10 a 20 m² de pared, de 400 a 800 €.',
+        ],
+      },
+      {
+        titulo: 'Qué hay detrás de cada rango',
+        parrafos: [
+          'Cada servicio tiene tres escalones, del trabajo más pequeño al más amplio. Esto es lo que suele haber detrás de cada uno.',
+        ],
+        subsecciones: [
+          {
+            titulo: 'Baño',
+            texto:
+              'El escalón más bajo, de 600 a 1.200 €, es un cambio puntual: grifería, mueble o sanitarios sin tocar paredes. El intermedio, de 1.500 a 3.000 €, renueva revestimientos y sanitarios sin cambiar la distribución. El alto, de 3.500 a 7.000 €, es el baño completo: demolición, instalaciones, impermeabilización, revestimientos y mampara.',
+          },
+          {
+            titulo: 'Cocina',
+            texto:
+              'De 1.500 a 3.000 € para un cambio de encimera con ajustes; de 4.000 a 8.000 € para una cocina parcial con muebles y encimera; y de 9.000 a 15.000 € para una cocina completa con muebles e instalaciones. Los electrodomésticos, las encimeras de piedra y los cambios de distribución pueden aumentar el coste.',
+          },
+          {
+            titulo: 'Pintura',
+            texto:
+              'De 200 a 400 € para una habitación pequeña con pintura sencilla, de 500 a 900 € para una habitación amplia con preparación y de 1.000 a 1.800 € para varias estancias. Quitar gotelé, reparar humedades o productos especiales se valoran aparte.',
+          },
+          {
+            titulo: 'Pladur',
+            texto:
+              'De 250 a 550 € para un techo sencillo de 3 a 6 m², de 600 a 1.200 € para un techo o tabique de 7 a 15 m² y de 1.500 a 3.000 € para superficies de 16 a 30 m². La altura, el aislamiento y los focos empotrados modifican el precio.',
+          },
+          {
+            titulo: 'Paredes y alisado',
+            texto:
+              'De 150 a 350 € para un alisado localizado de 5 a 10 m², de 400 a 800 € para alisado con preparación de 10 a 20 m² y de 1.000 a 2.000 € para alisado con pintura de 20 a 40 m². Depende del estado de la pared y de las capas de gotelé.',
+          },
+          {
+            titulo: 'Albañilería',
+            texto:
+              'De 150 a 300 € para una reparación localizada de 1 a 2 m², de 400 a 800 € para reparación y revestimiento de 5 a 10 m² y de 1.200 a 2.500 € para trabajos amplios de 20 a 40 m². Las demoliciones estructurales, los refuerzos, las licencias y los residuos especiales se valoran aparte.',
+          },
+        ],
+      },
+      {
+        titulo: 'Combinaciones habituales y su rango',
+        parrafos: [
+          'Muchas reformas no son integrales, sino una combinación de trabajos. Sumando nuestros rangos, estas son algunas de las más frecuentes en Madrid:',
+          'Baño completo y pintura de la vivienda: entre 4.500 y 8.800 €. Cocina completa y baño completo: entre 12.500 y 22.000 €. Cocina completa, baño completo y pintura: entre 13.500 y 23.800 €. Alisar de 20 a 40 m² de pared con pintura y renovar un baño de forma parcial: entre 2.500 y 5.000 €.',
+          'Si a esas combinaciones les añades cambios de distribución o una renovación completa de las instalaciones, lo más probable es que el caso se acerque más a una reforma integral. La calculadora hace estas sumas por ti.',
+        ],
+      },
+      {
+        titulo: 'Plazos: de qué dependen',
+        parrafos: [
+          'Todavía no publicamos plazos por tipo de reforma porque queremos darlos con datos de obras reales; por eso la tabla de plazos aparece pendiente. Lo que sí podemos explicar es qué los alarga o los acorta.',
+        ],
+        lista: [
+          'La superficie y el número de oficios que intervienen',
+          'Los tiempos de secado de morteros, masillas y pinturas, que no conviene acortar',
+          'Los materiales con plazo de entrega largo, como carpintería a medida o encimeras de piedra',
+          'El trámite municipal, que debe estar resuelto antes de empezar',
+          'Los imprevistos al abrir paredes y suelos en edificios antiguos',
+          'Los cambios de decisión a mitad de obra',
+        ],
+      },
+      {
+        titulo: 'Qué encarece una reforma en Madrid',
+        parrafos: [
+          'Algunos factores son propios de Madrid y explican por qué dos pisos iguales pueden tener presupuestos muy distintos.',
+        ],
+        subsecciones: [
+          {
+            titulo: 'Edificios antiguos',
+            texto:
+              'En fincas con muchos años es habitual encontrar instalaciones de plomo o sin toma de tierra, paredes irregulares, forjados de madera y humedades ocultas. También pueden aparecer bajantes de fibrocemento, cuya retirada debe hacer una empresa inscrita en el registro de empresas con riesgo de amianto. Todo ello suma trabajo que no se ve en el resultado final.',
+          },
+          {
+            titulo: 'Edificios sin ascensor',
+            texto:
+              'Subir sacos, azulejos y sanitarios a un cuarto sin ascensor y bajar los escombros a mano lleva tiempo, y ese tiempo se refleja en la mano de obra. Un ascensor muy pequeño también limita el tamaño de lo que puede subirse.',
+          },
+          {
+            titulo: 'Contenedor en la vía pública',
+            texto:
+              'Colocar un contenedor en la calle requiere autorización municipal y tiene un coste. En calles estrechas o con mucho tráfico a veces no es posible, y hay que trabajar con sacas que se retiran con más frecuencia.',
+          },
+          {
+            titulo: 'Horarios de la comunidad',
+            texto:
+              'Las ordenanzas municipales limitan las horas en que se pueden hacer obras ruidosas, y muchas comunidades añaden sus propias normas. Menos horas útiles al día significan más días de obra.',
+          },
+          {
+            titulo: 'Edificios protegidos',
+            texto:
+              'Si la finca tiene algún nivel de protección, cambiar fachada, ventanas o elementos originales puede requerir más trámites, materiales específicos o directamente no estar permitido.',
+          },
+          {
+            titulo: 'Zonas con tráfico restringido',
+            texto:
+              'En algunas zonas de la ciudad, el acceso de vehículos de carga tiene restricciones, lo que obliga a planificar mejor las entregas de material.',
+          },
+        ],
+      },
+      {
+        titulo: 'Consejos para ahorrar sin perder calidad',
+        parrafos: [
+          'Hay formas de contener el presupuesto que no comprometen el resultado. Y hay recortes que salen caros a los pocos años.',
+        ],
+        lista: [
+          'Mantén cocina y baños en su posición: mover desagües es de lo que más encarece',
+          'Conserva lo que esté bien: un suelo que admite pulido, puertas que se pueden lacar',
+          'Decide pronto los materiales para no pagar urgencias ni parar la obra',
+          'No recortes en lo que queda oculto: instalaciones, impermeabilización y preparación de paredes',
+          'Haz la obra de una vez si vas a tocar instalaciones: por fases se rompe dos veces',
+          'Reserva un margen para imprevistos, sobre todo en edificios antiguos',
+          'Compara presupuestos con el mismo alcance y desglosados por partidas',
         ],
       },
       {
         titulo: 'Cómo comparar presupuestos sin equivocarte',
         parrafos: [
-          'Un precio más bajo no siempre es más barato. A menudo solo significa que el presupuesto incluye menos cosas. Para comparar de forma justa, comprueba estos puntos en cada oferta.',
-        ],
-        lista: [
-          'Cantidades y mediciones de cada partida',
-          'Marca, modelo o gama de los materiales',
-          'Mano de obra y número de manos o capas',
-          'Retirada de escombros y protección de zonas comunes',
-          'Impuestos: si el IVA está incluido y a qué tipo',
-          'Exclusiones y cómo se valoran los imprevistos',
-          'Plazos y forma de pago',
-        ],
-      },
-      {
-        titulo: 'Cómo ajustar el presupuesto sin perder calidad',
-        parrafos: [
-          'Si la cifra se aleja de lo previsto, no es obligatorio renunciar a la reforma. Las medidas más eficaces son mantener los puntos de agua donde están, conservar lo que esté en buen estado y elegir bien dónde gastar más. Un azulejo más sencillo se puede cambiar con el tiempo; una tubería mal resuelta, no.',
-          'Lo que no conviene recortar es lo que queda oculto: impermeabilización, instalaciones y preparación de superficies. Ahorrar en esas partidas suele salir caro a medio plazo. También puedes plantear la obra por fases, siempre que se deje hecho primero lo que iría detrás de los acabados.',
+          'Un precio más bajo no siempre es más barato: a menudo solo significa que incluye menos cosas. Pon las ofertas una al lado de otra, partida por partida, y comprueba en cada una las cantidades, la gama de los materiales, la retirada de escombros, la protección de las zonas comunes, los impuestos, las exclusiones, el calendario y la forma de pago. Tenemos una guía completa sobre qué pedir en un presupuesto y cómo comparar.',
         ],
       },
       {
         titulo: 'Impuestos, tasas y otros gastos',
         parrafos: [
           'Además del precio de la obra, ten en cuenta posibles tasas municipales y el impuesto sobre construcciones, instalaciones y obras, que dependen del municipio y del trámite. Las obras de renovación de una vivienda habitual pueden tributar al IVA reducido del 10 % si cumplen ciertas condiciones, entre ellas la antigüedad de la vivienda y el peso de los materiales en el total. Confirma estos datos en tu presupuesto.',
-          'También conviene reservar un margen para imprevistos, sobre todo en edificios antiguos, donde lo que hay detrás de las paredes no se conoce hasta que se abren. Demoliciones estructurales, refuerzos, licencias y residuos especiales suelen valorarse aparte.',
+          'Si tu edificio está preparando una rehabilitación, puede haber ayudas públicas: tienes el estado de las convocatorias y sus fuentes oficiales en nuestra página de ayudas para reformas.',
+        ],
+      },
+      {
+        titulo: 'Cuándo pedir presupuesto',
+        parrafos: [
+          'Lo ideal es pedir presupuesto con margen respecto a la fecha en la que quieres empezar, sobre todo si hay materiales por encargo o trámites municipales. Ten a mano las medidas aproximadas, unas fotos del estado actual y una idea de las calidades que te gustan: con eso la primera orientación será mucho más precisa. Si el edificio es antiguo, no tiene ascensor o está protegido, dilo desde el principio: son datos que cambian el presupuesto.',
+          'Si todavía estás comparando opciones, la calculadora te da un primer rango en un minuto y, si encaja con lo que buscas, abre el formulario con tus datos ya rellenos para pedir el presupuesto por partidas.',
+        ],
+      },
+      {
+        titulo: 'De dónde salen estos precios',
+        parrafos: [
+          'Los rangos de esta página son los precios de referencia que usamos para orientar a quien nos pide presupuesto, organizados por servicio y por tamaño del trabajo. Son los mismos que verás en cada página de servicio y los que usa la calculadora, de modo que no se contradicen entre sí.',
+          'No son el resultado de una encuesta de mercado ni la media de otras empresas: son nuestros. PENDIENTE("explicar con qué obras y en qué fecha se calcularon los rangos de referencia"). Los precios por metro cuadrado se deducen de esos rangos con una división sencilla, y lo indicamos así en la tabla. Lo que todavía no tenemos —precios por calidad, importes por partida y plazos— está marcado como pendiente.',
+          'Revisamos los precios periódicamente. La fecha de la última revisión aparece al principio de la página.',
         ],
       },
     ],
     faqs: [
+      {
+        pregunta: '¿Cuánto cuesta pintar un piso en Madrid?',
+        respuesta:
+          'Nuestro rango para pintar varias estancias de una vivienda va de 1.000 a 1.800 €. Si hay gotelé o humedades, la preparación se valora aparte.',
+      },
+      {
+        pregunta: '¿Cuánto cuesta reformar una cocina en Madrid?',
+        respuesta:
+          'Como referencia: cambio de encimera y ajustes, de 1.500 a 3.000 €; cocina parcial con muebles y encimera, de 4.000 a 8.000 €; y cocina completa con muebles e instalaciones, de 9.000 a 15.000 €.',
+      },
       {
         pregunta: '¿Los precios son definitivos?',
         respuesta:
           'No. Son orientativos. El precio final debe confirmar las cantidades, los materiales, la mano de obra, los impuestos y las exclusiones.',
       },
       {
+        pregunta: '¿Cuánto cuesta una reforma integral en Madrid?',
+        respuesta:
+          'Como referencia: de 40 a 60 m², de 15.000 a 25.000 €; de 60 a 90 m², de 25.000 a 45.000 €; y a partir de 90 m², de 45.000 a 80.000 €. Son precios orientativos.',
+      },
+      {
         pregunta: '¿Por qué no dais un precio cerrado por metro cuadrado?',
         respuesta:
           'Porque el metro cuadrado no refleja el estado de las instalaciones, las calidades ni el acceso. Un baño y un salón de la misma superficie no tienen nada que ver en coste. Por eso damos rangos por tipo de trabajo.',
+      },
+      {
+        pregunta: '¿Cuánto cuesta reformar un baño en Madrid?',
+        respuesta:
+          'Como referencia, un cambio puntual de grifería o mueble va de 600 a 1.200 €, una reforma parcial de 1.500 a 3.000 € y un baño completo con demolición de 3.500 a 7.000 €.',
+      },
+      {
+        pregunta: '¿Los precios incluyen IVA?',
+        respuesta:
+          'Nuestros rangos son orientativos y el presupuesto de tu obra debe indicar si el IVA está incluido y a qué tipo. Las obras de renovación de una vivienda habitual pueden tributar al 10 % si cumplen ciertos requisitos.',
       },
       {
         pregunta: '¿Qué datos necesitáis para orientarme mejor?',
@@ -288,13 +466,13 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     ],
     servicio: {
       nombre: 'Precios de reformas en Madrid',
-      descripcion: 'Rangos orientativos por servicio y factores que influyen en el coste.',
+      descripcion: 'Guía de precios de reformas en Madrid: €/m², partidas, plazos y factores de coste.',
     },
     servicioFormulario: '',
     imagen: '/images/planos-mesa.webp',
     imagenAlt: 'Plano de una vivienda sobre una mesa para calcular una reforma',
     modulo: 'precios',
-    relacionadas: ['servicios', 'reformas-integrales-madrid', 'reforma-banos-madrid', 'como-trabajamos'],
+    relacionadas: ['calculadora-reforma', 'cuanto-cuesta-reformar-piso-70-m2-madrid', 'que-pedir-presupuesto-reforma', 'reformas-integrales-madrid', 'ayudas-reformas-madrid'],
   },
 
   /* ---------------------------- ZONAS ---------------------------- */
@@ -402,7 +580,13 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     imagen: '/images/edificios-madrid.webp',
     imagenAlt: 'Bloques residenciales en Madrid',
     modulo: 'zonas',
-    relacionadas: ['servicios', 'precios', 'reformas-integrales-madrid', 'como-trabajamos'],
+    relacionadas: [
+      'licencia-obra-madrid',
+      'servicios',
+      'precios',
+      'reformas-integrales-madrid',
+      'como-trabajamos',
+    ],
   },
 
   /* ---------------------------- CÓMO TRABAJAMOS ---------------------------- */
@@ -519,7 +703,14 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     imagen: '/images/medicion-pared.webp',
     imagenAlt: 'Medición de una pared con cinta métrica antes de presupuestar',
     modulo: 'proceso',
-    relacionadas: ['servicios', 'precios', 'preguntas-frecuentes', 'reformas-integrales-madrid'],
+    relacionadas: [
+      'orden-trabajos-reforma-integral',
+      'que-pedir-presupuesto-reforma',
+      'servicios',
+      'precios',
+      'preguntas-frecuentes',
+      'reformas-integrales-madrid',
+    ],
   },
 
   /* ---------------------------- PREGUNTAS FRECUENTES ---------------------------- */
@@ -690,6 +881,13 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     servicioFormulario: '',
     imagen: '/images/piso-en-obra.webp',
     imagenAlt: 'Piso en obra con escalera y materiales',
-    relacionadas: ['como-trabajamos', 'precios', 'servicios', 'zonas'],
+    relacionadas: [
+      'licencia-obra-madrid',
+      'ayudas-reformas-madrid',
+      'guias',
+      'como-trabajamos',
+      'precios',
+      'servicios',
+    ],
   },
 ];

@@ -54,7 +54,7 @@
 .hero h1 {
   margin: 20px 0;
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: clamp(36px, 4.3vw, 58px);
   font-weight: 800;
   letter-spacing: -2.5px;
@@ -346,7 +346,7 @@
 .seo-head h2 {
   margin: 14px 0;
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 800;
   line-height: 1.15;

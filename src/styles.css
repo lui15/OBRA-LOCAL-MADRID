@@ -14,6 +14,30 @@
   font-display: swap;
 }
 
+/* Igual para el texto: Arial con las medidas de Inter, para que los párrafos no cambien de líneas al cargar. */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('ArialMT');
+  font-weight: 400 800;
+  font-style: normal;
+  size-adjust: 101.9%;
+  ascent-override: 95%;
+  descent-override: 23.7%;
+  line-gap-override: 0%;
+}
+
+/* Mientras llega Montserrat: Arial ajustada a sus medidas, para que los títulos no salten al cambiar de fuente. */
+@font-face {
+  font-family: 'Montserrat Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Arial');
+  font-weight: 800;
+  font-style: normal;
+  size-adjust: 96.7%;
+  ascent-override: 100%;
+  descent-override: 26%;
+  line-gap-override: 0%;
+}
+
 /* Tokens y estilos globales. Cada componente tiene su propio CSS. */
 
 :root {
@@ -62,7 +86,7 @@ body {
   min-width: 320px;
   background: #fff;
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
 }
 
 button,
@@ -200,7 +224,8 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--orange);
+  /* Texto pequeño: el naranja de marca no llega al contraste AA; este tono sí (5,2:1). */
+  color: #b84800;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.6px;
@@ -237,7 +262,7 @@ textarea:focus-visible {
 .section-heading h2 {
   margin: 14px 0;
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 800;
   letter-spacing: -1.3px;
@@ -345,6 +370,18 @@ textarea:focus-visible {
 .rise {
   animation: riseIn 0.7s var(--ease-out) backwards;
   animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* Igual, sin opacidad: para textos que pueden ser el elemento principal (LCP) de la página. */
+.rise-suave {
+  animation: riseSuave 0.7s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+@keyframes riseSuave {
+  from {
+    transform: translateY(14px);
+  }
 }
 
 /* Accesibilidad: movimiento reducido */

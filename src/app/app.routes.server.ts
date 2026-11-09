@@ -1,7 +1,7 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
 import { PROYECTOS_PUBLICADOS } from './datos/proyectos';
-import { BORRADORES, PAGINAS } from './landing/landing-data';
+import { FICHAS } from './landing/fichas';
 
 /** Las obras solo se prerenderizan cuando hay alguna publicada. Antes, solo se ven en local. */
 const rutasProyectos: ServerRoute[] = PROYECTOS_PUBLICADOS.length
@@ -19,9 +19,13 @@ const rutasProyectos: ServerRoute[] = PROYECTOS_PUBLICADOS.length
     ];
 
 export const serverRoutes: ServerRoute[] = [
-  ...PAGINAS.map((pagina): ServerRoute => ({ path: pagina.path, renderMode: RenderMode.Prerender })),
-  // Borradores: se renderizan al vuelo en local, con noindex. No se generan para el hosting.
-  ...BORRADORES.map((pagina): ServerRoute => ({ path: pagina.path, renderMode: RenderMode.Server })),
+  // Publicadas: se prerenderizan. Borradores: se renderizan al vuelo en local, con noindex.
+  ...FICHAS.map(
+    (f): ServerRoute =>
+      f.borrador
+        ? { path: f.path, renderMode: RenderMode.Server }
+        : { path: f.path, renderMode: RenderMode.Prerender },
+  ),
   ...rutasProyectos,
   { path: 'aviso-legal', renderMode: RenderMode.Prerender },
   { path: 'politica-privacidad', renderMode: RenderMode.Prerender },

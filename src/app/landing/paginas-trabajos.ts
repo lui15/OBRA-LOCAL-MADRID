@@ -126,6 +126,8 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     imagen: '/images/plato-ducha.webp',
     imagenAlt: 'Ducha de obra con plato y mampara de vidrio',
     relacionadas: [
+      'que-pedir-presupuesto-reforma',
+      'precios',
       'reforma-banos-madrid',
       'albanileria-madrid',
       'reformas-integrales-madrid',
@@ -262,6 +264,8 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     imagen: '/images/alisando-pared.webp',
     imagenAlt: 'Mano alisando una pared con llana después de quitar el gotelé',
     relacionadas: [
+      'alisar-paredes-o-quitar-gotele',
+      'precios',
       'alisado-paredes-madrid',
       'pintores-madrid',
       'pladur-madrid',
@@ -394,11 +398,12 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     imagen: '/images/piso-reformado.webp',
     imagenAlt: 'Piso reformado con paredes blancas y suelo de madera',
     relacionadas: [
+      'cuanto-cuesta-reformar-piso-70-m2-madrid',
+      'orden-trabajos-reforma-integral',
+      'calculadora-reforma',
       'reformas-integrales-madrid',
       'reforma-banos-madrid',
       'reforma-cocinas-madrid',
-      'como-trabajamos',
-      'precios',
     ],
   },
 ];

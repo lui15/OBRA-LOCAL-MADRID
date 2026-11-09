@@ -5,7 +5,7 @@
 .final-cta h2 {
   margin: 14px 0;
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 800;
   letter-spacing: -1.3px;

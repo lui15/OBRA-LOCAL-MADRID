@@ -37,6 +37,17 @@ export class CalculadoraReforma {
     return Number.isFinite(n) ? Math.min(maximo, Math.max(minimo, n)) : minimo;
   }
 
+  /** Mientras se escribe no se corrige el número: el cálculo usa un valor dentro de los límites. */
+  libre(evento: Event): number {
+    const n = Number((evento.target as HTMLInputElement).value);
+    return Number.isFinite(n) ? n : 0;
+  }
+
+  /** Al salir del campo, muestra el valor que se está usando. */
+  fijar(evento: Event, valor: number): void {
+    (evento.target as HTMLInputElement).value = String(valor);
+  }
+
   valor(evento: Event): string {
     return (evento.target as HTMLSelectElement).value;
   }
@@ -49,19 +60,20 @@ export class CalculadoraReforma {
   pedirPresupuesto(): void {
     const e = this.entrada();
     const r = this.resultado();
+    const m2 = Math.min(400, Math.max(20, Math.round(e.m2)));
     const partes = [
-      `Piso de ${e.m2} m²`,
-      e.redistribucion ? 'con redistribución' : 'sin redistribución',
-      e.cocina !== 'no' ? `cocina ${e.cocina}` : '',
-      e.banos > 0 ? `${e.banos} ${e.banos === 1 ? 'baño' : 'baños'} (${e.tipoBano})` : '',
-      e.pintura ? 'pintura' : '',
-      e.suelos ? 'suelos' : '',
+      `Piso de ${m2} m²`,
+      e.redistribucion ? 'reforma integral con redistribución' : 'sin redistribución',
+      !e.redistribucion && e.cocina !== 'no' ? `cocina ${e.cocina}` : '',
+      !e.redistribucion && e.banos > 0 ? `${e.banos} ${e.banos === 1 ? 'baño' : 'baños'} (${e.tipoBano})` : '',
+      !e.redistribucion && e.pintura ? 'pintura' : '',
+      !e.redistribucion && e.suelos ? 'suelos' : '',
       `calidad ${e.calidad === 'basica' ? 'básica' : e.calidad}`,
     ].filter(Boolean);
     const rango = r ? ` Rango orientativo de la calculadora: ${formatearPrecio(r.minimo)}–${formatearPrecio(r.maximo)}.` : '';
 
     this.presupuesto.abrir(r?.servicio ?? 'Reformas integrales', 'calculadora', {
-      metros: String(e.m2),
+      metros: String(m2),
       descripcion: `Calculadora de reforma: ${partes.join(', ')}.${rango} Quiero el presupuesto por partidas.`,
     });
   }

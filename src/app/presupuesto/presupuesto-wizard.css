@@ -1,7 +1,7 @@
 .quote-intro h2 {
   margin: 14px 0;
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 800;
   letter-spacing: -1.3px;
@@ -236,7 +236,7 @@
 .wizard-success h3 {
   margin: 12px 0 8px;
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: 24px;
   font-weight: 800;
   letter-spacing: -0.5px;

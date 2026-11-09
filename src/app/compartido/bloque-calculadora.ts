@@ -42,7 +42,7 @@ import { RouterLink } from '@angular/router';
     .titulo {
       margin: 8px 0 6px;
       color: var(--navy-dark);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
       font-size: clamp(20px, 2.2vw, 26px);
       font-weight: 800;
     }

@@ -33,7 +33,7 @@ import { esPendiente } from '../datos/revision';
     h2 {
       margin: 0 0 20px;
       color: var(--navy-dark);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
       font-size: clamp(22px, 2.4vw, 28px);
       font-weight: 800;
     }

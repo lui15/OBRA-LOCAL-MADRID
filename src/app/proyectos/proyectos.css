@@ -9,7 +9,7 @@
 h1 {
   margin: 20px 0 12px;
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: clamp(28px, 3.6vw, 44px);
   font-weight: 800;
 }

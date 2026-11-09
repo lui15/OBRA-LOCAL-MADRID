@@ -1,4 +1,5 @@
 import { PaginaSeo } from './pagina-seo';
+import { ZONAS_AMPLIADAS } from './paginas-zonas-ampliadas';
 
 /**
  * Páginas por zona. Para añadir una zona, añade aquí un objeto con contenido propio:
@@ -561,4 +562,5 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       'zonas',
     ],
   },
+  ...ZONAS_AMPLIADAS,
 ];

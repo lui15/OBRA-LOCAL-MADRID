@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { Migas } from '../compartido/migas';
 import { SITE_URL } from '../datos/contacto';
 import { PROYECTOS, PROYECTOS_PUBLICADOS } from '../datos/proyectos';
-import { nodoMigas, nodoNegocio, nodoPagina } from '../landing/landing-data';
+import { nodoMigas, nodoNegocio, nodoPagina } from '../landing/fichas';
 import { SeoService } from '../seo.service';
 
 /** Índice de obras. Mientras no haya obras publicadas es noindex y no se enlaza. */

@@ -8,11 +8,11 @@
         {{ pagina.kicker }}
       </span>
 
-      <h1 class="rise" style="--i: 2">
+      <h1 class="rise-suave" style="--i: 2">
         {{ pagina.h1.antes }} <em>{{ pagina.h1.resaltado }}</em> {{ pagina.h1.despues }}
       </h1>
 
-      <p class="lp-intro rise" style="--i: 3">{{ pagina.intro }}</p>
+      <p class="lp-intro rise-suave" style="--i: 3">{{ pagina.intro }}</p>
 
       <div class="lp-acciones rise" style="--i: 4">
         <button
@@ -58,6 +58,9 @@
   </div>
 </section>
 
+<!-- Bajo la cabecera, cada bloque se hidrata al entrar en pantalla: el HTML ya llega completo del servidor. -->
+
+@defer (hydrate on viewport) {
 @if (pagina.borrador || pagina.aviso) {
   <div class="container lp-avisos">
     @if (pagina.borrador) {
@@ -70,8 +73,11 @@
     }
   </div>
 }
+}
 
 <!-- ================= TABLAS DE PRECIOS (solo /precios/) ================= -->
+
+@defer (hydrate on viewport) {
 @if (pagina.modulo === 'precios') {
   <section class="section lp-banda" id="tablas" aria-labelledby="tabla-m2">
     <div class="container">
@@ -170,8 +176,11 @@
   </section>
   <app-bloque-calculadora />
 }
+}
 
 <!-- ================= CONTENIDO ================= -->
+
+@defer (hydrate on viewport) {
 <div class="section lp-contenido">
   <div class="container">
     @for (seccion of pagina.secciones; track seccion.titulo) {
@@ -218,7 +227,9 @@
     }
   </div>
 </div>
+}
 
+@defer (hydrate on viewport) {
 @if (pagina.fuentes?.length) {
   <section class="section lp-fuentes" aria-labelledby="fuentes-titulo">
     <div class="container">
@@ -231,12 +242,17 @@
     </div>
   </section>
 }
+}
 
+@defer (hydrate on viewport) {
 @if (esServicio) {
   <app-bloque-confianza />
 }
+}
 
 <!-- ================= PRECIOS DEL SERVICIO ================= -->
+
+@defer (hydrate on viewport) {
 @if (servicioCatalogo; as s) {
   <section class="section lp-banda" id="precios">
     <div class="container">
@@ -257,8 +273,11 @@
     </div>
   </section>
 }
+}
 
 <!-- ================= ZONAS: SERVICIOS Y PRECIOS ================= -->
+
+@defer (hydrate on viewport) {
 @if (pagina.tipo === 'zona') {
   <section class="section lp-banda" id="precios">
     <div class="container">
@@ -275,8 +294,11 @@
     </div>
   </section>
 }
+}
 
 <!-- ================= MÓDULOS DE LOS ÍNDICES ================= -->
+
+@defer (hydrate on viewport) {
 @if (obras.length) {
   <section class="section" id="obras" aria-labelledby="obras-titulo">
     <div class="container">
@@ -297,7 +319,9 @@
     </div>
   </section>
 }
+}
 
+@defer (hydrate on viewport) {
 @switch (pagina.modulo) {
   @case ('calculadora') {
     <section class="section lp-banda" id="calculadora">
@@ -432,7 +456,9 @@
     </section>
   }
 }
+}
 
+@defer (hydrate on viewport) {
 @if (guias.length) {
   <section class="section" aria-labelledby="guias-titulo">
     <div class="container">
@@ -448,7 +474,9 @@
     </div>
   </section>
 }
+}
 
+@defer (hydrate on viewport) {
 @if (esServicio) {
   <app-bloque-calculadora />
   <nav class="lp-zonas container" aria-labelledby="zonas-servicio">
@@ -460,8 +488,11 @@
     </ul>
   </nav>
 }
+}
 
 <!-- ================= PÁGINAS RELACIONADAS ================= -->
+
+@defer (hydrate on viewport) {
 <section class="section lp-relacionadas" aria-labelledby="relacionadas-titulo">
   <div class="container">
     <div class="section-heading" appReveal>
@@ -474,8 +505,11 @@
     </ul>
   </div>
 </section>
+}
 
 <!-- ================= PREGUNTAS ================= -->
+
+@defer (hydrate on viewport) {
 @if (pagina.gruposFaq?.length) {
   @for (grupo of pagina.gruposFaq; track grupo.titulo) {
     <section class="section lp-grupo-faq">
@@ -493,5 +527,8 @@
     [servicio]="pagina.servicioFormulario"
   />
 }
+}
 
+@defer (hydrate on viewport) {
 <app-cta-presupuesto [servicio]="pagina.servicioFormulario" />
+}

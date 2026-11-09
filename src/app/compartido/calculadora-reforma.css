@@ -102,7 +102,7 @@ select:disabled {
 }
 
 .rango {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: clamp(26px, 3vw, 34px);
   font-weight: 800;
   line-height: 1.15;

@@ -1,16 +1,17 @@
 import { Route, Routes } from '@angular/router';
 
-import { TODAS_LAS_PAGINAS } from './landing/landing-data';
+import { resolverPagina } from './landing/cargar-pagina';
+import { FICHAS } from './landing/fichas';
 
-const rutasLanding: Routes = TODAS_LAS_PAGINAS.map(
-  (pagina): Route => ({
-    path: pagina.path,
+const rutasLanding: Routes = FICHAS.map(
+  (ficha): Route => ({
+    path: ficha.path,
     pathMatch: 'full',
     loadComponent: () =>
-      pagina.tipo === 'inicio'
+      ficha.tipo === 'inicio'
         ? import('./inicio/inicio-page').then((m) => m.InicioPage)
         : import('./landing/landing-page').then((m) => m.LandingPage),
-    data: { slug: pagina.path },
+    resolve: { pagina: resolverPagina(ficha.path, ficha.grupo) },
   }),
 );
 

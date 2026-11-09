@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Migas } from '../compartido/migas';
 import { Revision } from '../compartido/revision';
-import { Miga, nodoMigas } from '../landing/landing-data';
+import { Miga, nodoMigas } from '../landing/fichas';
 import { SeoService } from '../seo.service';
 import { LEGAL } from './legal-data';
 

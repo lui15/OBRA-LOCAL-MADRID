@@ -64,7 +64,7 @@
   top: 19px;
   right: 22px;
   color: #dce4ed;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: 31px;
   font-weight: 800;
   transition: color 0.3s ease;

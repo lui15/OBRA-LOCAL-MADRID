@@ -9,7 +9,8 @@
         min="20"
         max="400"
         [value]="e.m2"
-        (input)="cambiar('m2', numero($event, 20, 400))"
+        (input)="cambiar('m2', libre($event))"
+        (blur)="cambiar('m2', numero($event, 20, 400)); fijar($event, entrada().m2)"
       />
     </label>
 
@@ -41,6 +42,7 @@
             max="4"
             [value]="e.banos"
             (input)="cambiar('banos', numero($event, 0, 4))"
+            (blur)="fijar($event, entrada().banos)"
           />
         </label>
         <label class="campo">

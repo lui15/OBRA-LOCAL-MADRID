@@ -1,4 +1,5 @@
 import { PaginaSeo } from './pagina-seo';
+import { SERVICIOS_BORRADOR } from './paginas-servicios-borrador';
 
 /** Páginas de cada servicio del catálogo. */
 export const PAGINAS_SERVICIOS: PaginaSeo[] = [
@@ -118,11 +119,12 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     imagen: '/images/reformas-integrales.webp',
     imagenAlt: 'Vivienda en Madrid durante una reforma integral',
     relacionadas: [
+      'orden-trabajos-reforma-integral',
+      'cuanto-cuesta-reformar-piso-70-m2-madrid',
+      'calculadora-reforma',
       'reforma-piso-completo-madrid',
       'reforma-banos-madrid',
       'reforma-cocinas-madrid',
-      'albanileria-madrid',
-      'precios',
     ],
   },
 
@@ -245,11 +247,12 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     imagen: '/images/reforma-bano.webp',
     imagenAlt: 'Baño reformado con revestimientos nuevos en una vivienda de Madrid',
     relacionadas: [
+      'que-pedir-presupuesto-reforma',
+      'calculadora-reforma',
       'cambiar-banera-por-plato-ducha-madrid',
       'reforma-cocinas-madrid',
       'reformas-integrales-madrid',
       'albanileria-madrid',
-      'precios',
     ],
   },
 
@@ -377,11 +380,12 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     imagen: '/images/cocina-nueva.webp',
     imagenAlt: 'Cocina nueva con isla central y muebles claros',
     relacionadas: [
+      'que-pedir-presupuesto-reforma',
+      'calculadora-reforma',
       'reforma-banos-madrid',
       'reformas-integrales-madrid',
       'albanileria-madrid',
       'pintores-madrid',
-      'precios',
     ],
   },
 
@@ -514,11 +518,12 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     imagen: '/images/albanil-ladrillos.webp',
     imagenAlt: 'Mano de albañil colocando un ladrillo con mortero',
     relacionadas: [
+      'orden-trabajos-reforma-integral',
+      'calculadora-reforma',
       'reformas-integrales-madrid',
       'pladur-madrid',
       'alisado-paredes-madrid',
       'reforma-banos-madrid',
-      'precios',
     ],
   },
 
@@ -647,11 +652,12 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     imagen: '/images/pintor-rodillo.webp',
     imagenAlt: 'Pintor de espaldas pintando una pared con rodillo',
     relacionadas: [
+      'alisar-paredes-o-quitar-gotele',
+      'calculadora-reforma',
       'quitar-gotele-madrid',
       'alisado-paredes-madrid',
       'pladur-madrid',
       'reformas-integrales-madrid',
-      'precios',
     ],
   },
 
@@ -778,11 +784,12 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     imagen: '/images/tabique-pladur.webp',
     imagenAlt: 'Montaje de un tabique de pladur en una vivienda',
     relacionadas: [
+      'alisar-paredes-o-quitar-gotele',
+      'calculadora-reforma',
       'albanileria-madrid',
       'alisado-paredes-madrid',
       'pintores-madrid',
       'reformas-integrales-madrid',
-      'precios',
     ],
   },
 
@@ -922,11 +929,13 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     imagen: '/images/enlucido.webp',
     imagenAlt: 'Enlucido de una pared con llana',
     relacionadas: [
+      'alisar-paredes-o-quitar-gotele',
+      'calculadora-reforma',
       'quitar-gotele-madrid',
       'pintores-madrid',
       'pladur-madrid',
       'albanileria-madrid',
-      'precios',
     ],
   },
+  ...SERVICIOS_BORRADOR,
 ];

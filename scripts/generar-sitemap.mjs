@@ -17,7 +17,7 @@ async function cargarDatos() {
     await build({
       stdin: {
         contents: `
-          export { PAGINAS, TODAS_LAS_PAGINAS, ULTIMA_REVISION, buscarPagina } from './src/app/landing/landing-data.ts';
+          export { PAGINAS, PAGINAS_POR_GRUPO, TODAS_LAS_PAGINAS, ULTIMA_REVISION } from './src/app/landing/landing-data.ts';
           export { PROYECTOS_PUBLICADOS } from './src/app/datos/proyectos.ts';
           export { SITE_URL } from './src/app/datos/contacto.ts';
         `,
@@ -90,7 +90,18 @@ function revisar(PAGINAS, todas = new Set()) {
 }
 
 try {
-  const { PAGINAS, TODAS_LAS_PAGINAS, PROYECTOS_PUBLICADOS, ULTIMA_REVISION, SITE_URL } = await cargarDatos();
+  const { PAGINAS, PAGINAS_POR_GRUPO, TODAS_LAS_PAGINAS, PROYECTOS_PUBLICADOS, ULTIMA_REVISION, SITE_URL } = await cargarDatos();
+
+  // Fichas ligeras para menús, tarjetas, migas y rutas: se derivan de los datos completos.
+  const CAMPOS = ['path', 'tipo', 'padre', 'borrador', 'title', 'etiqueta', 'resumen', 'zona', 'imagen', 'imagenAlt', 'servicioCatalogo', 'preciosSoloReferencia', 'modulo', 'relacionadas'];
+  const fichas = Object.entries(PAGINAS_POR_GRUPO).flatMap(([grupo, paginas]) =>
+    paginas.map((p) => Object.fromEntries([['grupo', grupo], ...CAMPOS.filter((c) => p[c] !== undefined).map((c) => [c, p[c]])])),
+  );
+  writeFileSync(
+    join(raiz, 'src/app/landing/fichas.generado.ts'),
+    `// Generado por scripts/generar-sitemap.mjs a partir de los archivos paginas-*.ts. No editar a mano.\nimport type { FichaPagina } from './ficha';\n\nexport const FICHAS: FichaPagina[] = ${JSON.stringify(fichas, null, 2)};\n`,
+  );
+  console.log(`fichas.generado.ts: ${fichas.length} páginas`);
 
   // URL con barra final, que es la que sirve el hosting sin redirección.
   const rutas = [

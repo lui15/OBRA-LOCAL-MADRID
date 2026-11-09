@@ -29,16 +29,16 @@ import { ContextoPagina } from '../layout/contexto-pagina.service';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
 import { SeoService } from '../seo.service';
 import {
-  PAGINAS,
-  buscarPagina,
-  crearJsonLd,
+  FICHAS_PUBLICADAS,
   guiasSobre,
   migasDe,
   paginaDeServicio,
   precioCabecera,
   relacionadasDe,
   urlDePagina,
-} from './landing-data';
+} from './fichas';
+import { crearJsonLd } from './json-ld';
+import { PaginaSeo } from './pagina-seo';
 
 /** Plantilla de todas las URL de contenido. Cada una se define con un objeto de datos. */
 @Component({
@@ -66,10 +66,10 @@ import {
 export class LandingPage {
   readonly presupuesto = inject(PresupuestoService);
 
-  readonly pagina = buscarPagina(inject(ActivatedRoute).snapshot.data['slug']);
+  readonly pagina: PaginaSeo = inject(ActivatedRoute).snapshot.data['pagina'];
   readonly migas = migasDe(this.pagina);
   readonly relacionadas = relacionadasDe(this.pagina);
-  readonly guias = this.pagina.tipo === 'guia' ? [] : guiasSobre(this.pagina);
+  readonly guias = this.pagina.tipo === 'guia' ? [] : guiasSobre(this.pagina.path);
   readonly obras = this.pagina.tipo === 'zona' ? proyectosDeZona(this.pagina.path) : [];
   readonly esServicio = this.pagina.tipo === 'servicio' || this.pagina.tipo === 'trabajo';
   readonly servicioCatalogo = buscarServicio(this.pagina.servicioCatalogo ?? '');
@@ -79,10 +79,10 @@ export class LandingPage {
   readonly desdeTexto = this.desde === null ? '' : formatearPrecio(this.desde);
 
   /** Índices: todo lo que cuelga de ellos. */
-  readonly paginasServicio = PAGINAS.filter((p) => p.tipo === 'servicio');
-  readonly paginasTrabajo = PAGINAS.filter((p) => p.tipo === 'trabajo');
-  readonly paginasZona = PAGINAS.filter((p) => p.tipo === 'zona');
-  readonly paginasGuia = PAGINAS.filter((p) => p.tipo === 'guia');
+  readonly paginasServicio = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'servicio');
+  readonly paginasTrabajo = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'trabajo');
+  readonly paginasZona = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'zona');
+  readonly paginasGuia = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'guia');
   readonly tablaM2 = TABLA_EURO_M2;
   readonly ejemplo = EJEMPLO_80M2;
   readonly plazos = PLAZOS;
