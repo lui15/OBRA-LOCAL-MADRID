@@ -12,6 +12,9 @@ import { BloqueCalculadora } from '../compartido/bloque-calculadora';
 import { BloqueConfianza } from '../compartido/bloque-confianza';
 import { CalculadoraReforma } from '../compartido/calculadora-reforma';
 import { Revision } from '../compartido/revision';
+import { BloqueOpiniones } from '../compartido/bloque-opiniones';
+import { ListadoOpiniones } from '../compartido/listado-opiniones';
+import { opinionesDe } from '../datos/opiniones';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { EJEMPLO_80M2, PLAZOS, TABLA_EURO_M2 } from '../datos/precios-guia';
 import { proyectosDeZona } from '../datos/proyectos';
@@ -58,6 +61,8 @@ import { PaginaSeo } from './pagina-seo';
     BloqueConfianza,
     CalculadoraReforma,
     Revision,
+    BloqueOpiniones,
+    ListadoOpiniones,
   ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
@@ -70,6 +75,14 @@ export class LandingPage {
   readonly migas = migasDe(this.pagina);
   readonly relacionadas = relacionadasDe(this.pagina);
   readonly guias = this.pagina.tipo === 'guia' ? [] : guiasSobre(this.pagina.path);
+  /** Opiniones de la página; en las de servicio, si no tiene propias, 2 generales. */
+  readonly opiniones =
+    this.pagina.modulo === 'opiniones'
+      ? []
+      : opinionesDe(
+          this.pagina.path ? `/${this.pagina.path}/` : '/',
+          this.pagina.tipo === 'servicio' || this.pagina.tipo === 'trabajo',
+        );
   readonly obras = this.pagina.tipo === 'zona' ? proyectosDeZona(this.pagina.path) : [];
   readonly esServicio = this.pagina.tipo === 'servicio' || this.pagina.tipo === 'trabajo';
   readonly servicioCatalogo = buscarServicio(this.pagina.servicioCatalogo ?? '');

@@ -713,6 +713,91 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     ],
   },
 
+  /* ---------------------------- OPINIONES ---------------------------- */
+  {
+    path: 'opiniones',
+    tipo: 'hub',
+    title: 'Opiniones de clientes de reformas | ObraLocal Madrid',
+    description:
+      'Opiniones de clientes que reformaron con ObraLocal Madrid: baños, cocinas, pisos completos, pintura, pladur y humedades. Publicadas completas, sin editar.',
+    etiqueta: 'Opiniones',
+    resumen: 'Lo que cuentan los clientes que ya reformaron con nosotros, sin editar.',
+    h1: { antes: 'Opiniones de', resaltado: 'nuestros clientes', despues: '' },
+    puntos: [
+      'Publicadas completas, sin editar',
+      'Con el tipo de obra de cada cliente',
+      'Filtro por baños, cocinas, integrales…',
+      'Nombre e inicial del apellido',
+    ],
+    whatsapp: 'Hola, he leído las opiniones y quiero pedir presupuesto para una reforma',
+    kicker: 'OPINIONES',
+    intro:
+      'Antes de dejar tu casa en manos de una empresa de reformas quieres saber cómo ha ido a otros. Aquí tienes las opiniones de clientes que contrataron su obra con ObraLocal Madrid, tal y como nos las dieron: con sus estrellas, su texto completo y el tipo de obra que hicieron. Puedes filtrarlas por baños, cocinas, reformas integrales, pintura, pladur o albañilería.',
+    secciones: [
+      {
+        titulo: 'Qué cuentan los clientes',
+        parrafos: [
+          'Cuando alguien reforma su casa le preocupan sobre todo tres cosas: que el precio se dispare, que la obra no termine cuando se dijo y que nadie conteste al teléfono cuando surge una duda. Las opiniones de esta página hablan precisamente de eso, con palabras de cada cliente.',
+          'Sobre el precio, Enrique S. destaca un «presupuesto detallado sin sorpresas al final» y Manuel T. cuenta que el suelo y la pintura de toda su casa quedaron «dentro del presupuesto acordado». Sobre los plazos, Fernando R. dice que en su baño «cumplieron los plazos al pie de la letra», Adrián V. que fueron «muy serios con las fechas de entrega» y Alberto V. que dejaron su local «listo para abrir a tiempo». Sobre la comunicación, Sofía N. explica que les mantenían «informados día a día del avance del proyecto».',
+          'También hay una opinión de cuatro estrellas. Isabel B. está contenta con el alicatado, pero cuenta que hubo que corregir un detalle en un remate y que se solucionó rápido. La publicamos igual que las demás, porque una reforma tiene detalles que ajustar y lo que importa es cómo se resuelven.',
+        ],
+      },
+      {
+        titulo: 'Cómo publicamos las opiniones',
+        parrafos: [
+          'Cada opinión es de un cliente que contrató la obra. La publicamos completa: no cortamos frases, no corregimos el texto y no cambiamos las estrellas. Por protección de datos solo mostramos el nombre y la inicial del apellido, junto con el tipo de obra para que sepas a qué trabajo se refiere.',
+          'La nota media que ves arriba no está escrita a mano: se calcula con todas las opiniones de esta página, así que cambia en cuanto se añade una nueva.',
+        ],
+      },
+      {
+        titulo: 'Qué mirar en las opiniones de una empresa de reformas',
+        parrafos: [
+          'Las opiniones ayudan a decidir, pero conviene leerlas con criterio, sean nuestras o de cualquier otra empresa. Estas son las preguntas que te recomendamos hacerte:',
+        ],
+        lista: [
+          'Si hablan de obras parecidas a la tuya. Una buena opinión sobre pintura dice poco de cómo se lleva una reforma integral, y al revés.',
+          'Si mencionan hechos concretos, como el plazo, el presupuesto o la limpieza, y no solo adjetivos.',
+          'Si hay alguna opinión con menos estrellas y qué cuenta. Ver cómo se resolvió un problema es muy útil.',
+          'Si la empresa explica cómo publica las opiniones y si las edita.',
+          'Si, además de opiniones, te da un presupuesto detallado por escrito antes de empezar. Es lo que de verdad te protege.',
+        ],
+      },
+      {
+        titulo: 'Por qué no verás estrellas de esta página en Google',
+        parrafos: [
+          'Google no muestra en sus resultados las estrellas de las opiniones que una empresa publica en su propia web. Por eso no las marcamos para que aparezcan en el buscador. Las opiniones que Google enseña junto al nombre de una empresa son las que los clientes dejan directamente en su ficha de Google.',
+          'Si ya has reformado con nosotros y quieres contar tu experiencia, escríbenos por WhatsApp. Si estás pensando en reformar, cuéntanos tu caso: te damos un presupuesto detallado y cerrado por escrito antes de empezar.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        pregunta: '¿Las opiniones están editadas?',
+        respuesta:
+          'No. Publicamos cada opinión completa, con su texto y sus estrellas tal y como nos las dio el cliente. Solo mostramos el nombre y la inicial del apellido por protección de datos.',
+      },
+      {
+        pregunta: '¿Quién puede dejar una opinión?',
+        respuesta:
+          'Las opiniones de esta página son de clientes que contrataron la obra con ObraLocal Madrid. Si has reformado con nosotros, puedes enviarnos la tuya por WhatsApp.',
+      },
+      {
+        pregunta: '¿Por qué no aparecen estas estrellas en Google?',
+        respuesta:
+          'Porque Google no muestra en sus resultados las estrellas de opiniones que una empresa publica en su propia web. Las estrellas que aparecen en Google son las de la ficha de Google de la empresa.',
+      },
+    ],
+    servicio: {
+      nombre: 'Opiniones de clientes',
+      descripcion: 'Opiniones de clientes que reformaron con ObraLocal Madrid.',
+    },
+    servicioFormulario: '',
+    imagen: '/images/piso-reformado.webp',
+    imagenAlt: 'Salón de un piso reformado, luminoso y con suelo de madera',
+    modulo: 'opiniones',
+    relacionadas: ['como-trabajamos', 'precios', 'servicios', 'reformas-integrales-madrid', 'reforma-banos-madrid', 'calculadora-reforma'],
+  },
+
   /* ---------------------------- PREGUNTAS FRECUENTES ---------------------------- */
   {
     path: 'preguntas-frecuentes',

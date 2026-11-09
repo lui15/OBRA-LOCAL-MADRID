@@ -323,6 +323,9 @@
 
 @defer (hydrate on viewport) {
 @switch (pagina.modulo) {
+  @case ('opiniones') {
+    <app-listado-opiniones />
+  }
   @case ('calculadora') {
     <section class="section lp-banda" id="calculadora">
       <div class="container">
@@ -526,6 +529,14 @@
     texto="Si tu duda no aparece, cuéntanosla en tu solicitud."
     [servicio]="pagina.servicioFormulario"
   />
+}
+}
+
+<!-- ================= OPINIONES (antes del formulario) ================= -->
+
+@defer (hydrate on viewport) {
+@if (opiniones.length) {
+  <app-bloque-opiniones [opiniones]="opiniones" />
 }
 }
 

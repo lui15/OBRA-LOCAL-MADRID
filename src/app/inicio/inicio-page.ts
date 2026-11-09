@@ -10,6 +10,8 @@ import { BloqueCalculadora } from '../compartido/bloque-calculadora';
 import { BloqueConfianza } from '../compartido/bloque-confianza';
 import { Icono } from '../compartido/icono';
 import { Revision } from '../compartido/revision';
+import { BloqueOpiniones } from '../compartido/bloque-opiniones';
+import { opinionesDe } from '../datos/opiniones';
 import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { TarjetaServicio } from '../compartido/tarjeta-servicio';
@@ -28,6 +30,7 @@ import { SeoService } from '../seo.service';
   selector: 'app-inicio',
   standalone: true,
   imports: [
+    BloqueOpiniones,
     RouterLink,
     RevealDirective,
     CtaPresupuesto,
@@ -47,6 +50,8 @@ import { SeoService } from '../seo.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InicioPage {
+  /** Opiniones de la portada (las que tienen "/" en sus páginas). */
+  readonly opiniones = opinionesDe('/');
   readonly navegacion = inject(NavegacionService);
   readonly presupuesto = inject(PresupuestoService);
 

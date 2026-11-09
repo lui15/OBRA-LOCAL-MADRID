@@ -95,6 +95,25 @@ export const FICHAS: FichaPagina[] = [
   },
   {
     "grupo": "hub",
+    "path": "opiniones",
+    "tipo": "hub",
+    "title": "Opiniones de clientes de reformas | ObraLocal Madrid",
+    "etiqueta": "Opiniones",
+    "resumen": "Lo que cuentan los clientes que ya reformaron con nosotros, sin editar.",
+    "imagen": "/images/piso-reformado.webp",
+    "imagenAlt": "Salón de un piso reformado, luminoso y con suelo de madera",
+    "modulo": "opiniones",
+    "relacionadas": [
+      "como-trabajamos",
+      "precios",
+      "servicios",
+      "reformas-integrales-madrid",
+      "reforma-banos-madrid",
+      "calculadora-reforma"
+    ]
+  },
+  {
+    "grupo": "hub",
     "path": "preguntas-frecuentes",
     "tipo": "hub",
     "title": "Preguntas frecuentes sobre reformas | ObraLocal Madrid",

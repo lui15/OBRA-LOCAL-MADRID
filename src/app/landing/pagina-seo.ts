@@ -12,7 +12,7 @@ export type TipoPagina =
   | 'guia'
   | 'herramienta';
 
-export type ModuloPagina = 'servicios' | 'precios' | 'zonas' | 'proceso' | 'calculadora' | 'guias';
+export type ModuloPagina = 'servicios' | 'precios' | 'zonas' | 'proceso' | 'calculadora' | 'guias' | 'opiniones';
 
 export interface SubseccionPagina {
   titulo: string;
