@@ -1,16 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  DestroyRef,
-  ElementRef,
-  PLATFORM_ID,
-  afterNextRender,
-  inject,
-  input,
-  signal,
-  viewChild,
-} from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { NOTA_OPINIONES, Opinion, resumenOpiniones } from '../datos/opiniones';
@@ -18,9 +6,9 @@ import { TarjetaOpinion } from './tarjeta-opinion';
 
 /**
  * Opiniones de una página, con el resumen calculado y la nota legal.
- * En la portada es un carrusel táctil con scroll-snap (sin librerías) que avanza solo: se para al
- * tocarlo, al pasar el ratón o al usarlo con el teclado, fuera de pantalla y con movimiento reducido,
- * y tiene un botón de pausa (WCAG 2.2.2).
+ * En la portada pasan solas como una cinta continua (solo CSS, sin JavaScript): la lista va
+ * dos veces seguidas y se desplaza la mitad, así el bucle no tiene saltos. Se detiene mientras
+ * se deja el dedo o el ratón encima, para poder leer, y no se mueve con movimiento reducido.
  */
 @Component({
   selector: 'app-bloque-opiniones',
@@ -29,60 +17,40 @@ import { TarjetaOpinion } from './tarjeta-opinion';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (opiniones().length) {
-      <section class="section bo" [class.bo-carrusel]="carrusel()" aria-labelledby="opiniones-titulo">
+      <section class="section bo" [class.bo-cinta]="carrusel()" aria-labelledby="opiniones-titulo">
         <div class="container">
           <div class="bo-cabecera">
-            <div>
-              <span class="eyebrow">OPINIONES DE CLIENTES</span>
-              <h2 id="opiniones-titulo">{{ titulo() }}</h2>
-              <p class="bo-resumen">
-                <span class="bo-media" aria-hidden="true">★★★★★</span>
-                {{ resumen.texto }}
-              </p>
-            </div>
-            @if (carrusel()) {
-              <div class="bo-controles">
-                <button
-                  type="button"
-                  class="bo-pausa"
-                  [attr.aria-label]="pausado() ? 'Reproducir el carrusel de opiniones' : 'Pausar el carrusel de opiniones'"
-                  [attr.aria-pressed]="pausado()"
-                  (click)="alternarPausa()"
-                >
-                  @if (pausado()) {
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
-                  } @else {
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zm5 0h3v14h-3z" /></svg>
-                  }
-                </button>
-              <div class="bo-flechas">
-                <button type="button" aria-label="Opinión anterior" (click)="mover(-1)">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
-                </button>
-                <button type="button" aria-label="Opinión siguiente" (click)="mover(1)">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
-                </button>
-              </div>
-              </div>
-            }
+            <span class="eyebrow">OPINIONES DE CLIENTES</span>
+            <h2 id="opiniones-titulo">{{ titulo() }}</h2>
+            <p class="bo-resumen">
+              <span class="bo-media" aria-hidden="true">★★★★★</span>
+              {{ resumen.texto }}
+            </p>
           </div>
 
-          <ul
-            #pista
-            class="bo-lista"
-            [attr.tabindex]="carrusel() ? 0 : null"
-            [attr.aria-label]="carrusel() ? 'Opiniones, desliza para ver más' : null"
-            (pointerdown)="interaccion()"
-            (wheel)="interaccion()"
-            (mouseenter)="enCima = true"
-            (mouseleave)="enCima = false"
-            (focusin)="conFoco = true"
-            (focusout)="conFoco = false"
-          >
-            @for (o of opiniones(); track o.nombre) {
-              <li><app-tarjeta-opinion [opinion]="o" /></li>
-            }
-          </ul>
+          @if (carrusel()) {
+            <div class="bo-ventana">
+              <div class="bo-pista" [style.--duracion]="duracion()">
+                <ul class="bo-fila">
+                  @for (o of opiniones(); track o.nombre) {
+                    <li><app-tarjeta-opinion [opinion]="o" /></li>
+                  }
+                </ul>
+                <!-- Copia para que la cinta no tenga saltos: los lectores de pantalla no la leen. -->
+                <ul class="bo-fila" aria-hidden="true" inert>
+                  @for (o of opiniones(); track o.nombre) {
+                    <li><app-tarjeta-opinion [opinion]="o" /></li>
+                  }
+                </ul>
+              </div>
+            </div>
+          } @else {
+            <ul class="bo-lista">
+              @for (o of opiniones(); track o.nombre) {
+                <li><app-tarjeta-opinion [opinion]="o" /></li>
+              }
+            </ul>
+          }
 
           <p class="bo-nota">{{ nota }}</p>
           @if (enlaceTodas()) {
@@ -94,10 +62,6 @@ import { TarjetaOpinion } from './tarjeta-opinion';
   `,
   styles: `
     .bo-cabecera {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 20px;
       margin-bottom: 26px;
     }
     h2 {
@@ -126,6 +90,8 @@ import { TarjetaOpinion } from './tarjeta-opinion';
       font-weight: 800;
       letter-spacing: 1px;
     }
+
+    /* Rejilla normal (páginas de servicio) */
     .bo-lista {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -134,57 +100,54 @@ import { TarjetaOpinion } from './tarjeta-opinion';
       padding: 0;
       list-style: none;
     }
-    .bo-carrusel .bo-lista {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: min(85%, 360px);
-      grid-template-columns: none;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
-      scroll-padding-inline: 2px;
-      padding: 4px 2px 14px;
-      scrollbar-width: thin;
+
+    /* Cinta continua (portada) */
+    .bo-ventana {
+      overflow: hidden;
+      padding: 4px 0 14px;
+      /* Bordes difuminados, como un rótulo que pasa */
+      mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
     }
-    .bo-carrusel .bo-lista > li {
-      scroll-snap-align: start;
-    }
-    .bo-lista:focus-visible {
-      outline: 3px solid var(--navy);
-      outline-offset: 4px;
-      border-radius: 12px;
-    }
-    .bo-controles,
-    .bo-flechas {
+    .bo-pista {
       display: flex;
-      gap: 8px;
+      width: max-content;
+      animation: cinta var(--duracion, 60s) linear infinite;
     }
-    .bo-pausa,
-    .bo-flechas button {
-      display: grid;
-      place-items: center;
-      width: 46px;
-      height: 46px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      color: var(--navy-dark);
-      background: white;
-      cursor: pointer;
+    .bo-ventana:hover .bo-pista,
+    .bo-ventana:active .bo-pista {
+      animation-play-state: paused;
     }
-    .bo-pausa svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
+    .bo-fila {
+      display: flex;
+      gap: 16px;
+      margin: 0;
+      /* El mismo hueco al final que entre tarjetas: así las dos copias encajan sin salto. */
+      padding: 0 16px 0 0;
+      list-style: none;
     }
-    .bo-flechas svg {
-      width: 22px;
-      height: 22px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .bo-fila > li {
+      flex: none;
+      width: min(80vw, 340px);
     }
+    @keyframes cinta {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+    /* Con movimiento reducido, la cinta se queda quieta y se puede deslizar con el dedo. */
+    @media (prefers-reduced-motion: reduce) {
+      .bo-ventana {
+        overflow-x: auto;
+        mask-image: none;
+      }
+      .bo-pista {
+        animation: none;
+      }
+      .bo-fila[aria-hidden='true'] {
+        display: none;
+      }
+    }
+
     .bo-nota {
       margin: 18px 0 0;
       color: #4f5f71;
@@ -199,14 +162,6 @@ import { TarjetaOpinion } from './tarjeta-opinion';
       color: #b84800;
       font-weight: 700;
     }
-    @media (max-width: 640px) {
-      .bo-flechas {
-        display: none;
-      }
-      .bo-cabecera {
-        align-items: flex-start;
-      }
-    }
   `,
 })
 export class BloqueOpiniones {
@@ -214,72 +169,11 @@ export class BloqueOpiniones {
   readonly titulo = input('Lo que dicen nuestros clientes');
   readonly carrusel = input(false);
   readonly enlaceTodas = input(true);
+  /** Segundos que tarda cada opinión en pasar. */
+  readonly segundosPorOpinion = input(6);
 
   readonly nota = NOTA_OPINIONES;
   /** El resumen es siempre el de todas las opiniones, no solo las de la página. */
   readonly resumen = resumenOpiniones();
-
-  /** Segundos entre una opinión y la siguiente. */
-  readonly intervalo = input(5);
-
-  private readonly pista = viewChild<ElementRef<HTMLElement>>('pista');
-  private readonly esNavegador = isPlatformBrowser(inject(PLATFORM_ID));
-
-  /** Pausa elegida con el botón (o por movimiento reducido). */
-  readonly pausado = signal(false);
-  enCima = false;
-  conFoco = false;
-  private visible = false;
-  /** Tras tocar o arrastrar el carrusel, espera antes de volver a avanzar solo. */
-  private esperaHasta = 0;
-
-  constructor() {
-    afterNextRender(() => {
-      if (!this.carrusel()) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) this.pausado.set(true);
-      const el = this.pista()?.nativeElement;
-      if (!el) return;
-
-      // Solo avanza mientras se ve en pantalla.
-      const observador = new IntersectionObserver(([e]) => (this.visible = e.isIntersecting), { threshold: 0.4 });
-      observador.observe(el);
-      const temporizador = setInterval(() => this.avanzarSolo(), this.intervalo() * 1000);
-      this.destroyRef.onDestroy(() => {
-        clearInterval(temporizador);
-        observador.disconnect();
-      });
-    });
-  }
-
-  private readonly destroyRef = inject(DestroyRef);
-
-  alternarPausa(): void {
-    this.pausado.update((p) => !p);
-  }
-
-  interaccion(): void {
-    this.esperaHasta = Date.now() + 8000;
-  }
-
-  private avanzarSolo(): void {
-    if (this.pausado() || !this.visible || this.enCima || this.conFoco || document.hidden) return;
-    if (Date.now() < this.esperaHasta) return;
-    this.mover(1, true);
-  }
-
-  /** Avanza o retrocede una tarjeta. Al llegar al final, vuelve al principio. */
-  mover(sentido: 1 | -1, automatico = false): void {
-    const el = this.pista()?.nativeElement;
-    if (!el || !this.esNavegador) return;
-    if (!automatico) this.interaccion();
-    const tarjeta = el.querySelector('li');
-    const paso = (tarjeta?.getBoundingClientRect().width ?? 300) + 16;
-    const reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const comportamiento: ScrollBehavior = reducir ? 'auto' : 'smooth';
-    const alFinal = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
-    const alPrincipio = el.scrollLeft <= 4;
-    if (sentido === 1 && alFinal) el.scrollTo({ left: 0, behavior: comportamiento });
-    else if (sentido === -1 && alPrincipio) el.scrollTo({ left: el.scrollWidth, behavior: comportamiento });
-    else el.scrollBy({ left: paso * sentido, behavior: comportamiento });
-  }
+  readonly duracion = computed(() => `${this.opiniones().length * this.segundosPorOpinion()}s`);
 }
