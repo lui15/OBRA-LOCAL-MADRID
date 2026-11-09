@@ -1,516 +1,443 @@
-@if (presupuestoAbierto) {
-<div
-  class="quote-modal-backdrop"
- 
-  [class.is-closing]="cerrandoPresupuesto"
-  (click)="cerrarPresupuesto()"
-  role="presentation"
->
+@if (abierto()) {
+  <div class="pw-fondo" (click)="cerrar()" aria-hidden="true"></div>
+
   <section
-    class="quote-section quote-modal"
-    id="presupuesto"
-    #modalPresupuesto
-    tabindex="-1"
+    #dialogo
+    class="pw"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="titulo-presupuesto"
-    (click)="$event.stopPropagation()"
+    aria-labelledby="pw-titulo"
+    tabindex="-1"
+    data-ubicacion="formulario"
   >
-    <button
-      class="quote-modal-close"
-      type="button"
-      aria-label="Cerrar formulario de presupuesto"
-      [disabled]="enviandoSolicitud"
-      (click)="cerrarPresupuesto()"
-    >
-      ×
-    </button>
-
-    <div class="container quote-container">
-      <div class="quote-intro">
-        <span class="eyebrow eyebrow-light">TU PROYECTO EMPIEZA AQUÍ</span>
-        <h2 id="titulo-presupuesto">Vamos a preparar tu presupuesto.</h2>
-
-        <p>Te guiaremos pregunta a pregunta. Completa lo que sepas y continúa.</p>
-
-        <div class="quote-side-benefit">
-          <span>✓</span>
-          <div>
-            <strong>Fácil de completar</strong>
-            <small>Solo 3 pasos rápidos</small>
-          </div>
-        </div>
-
-        <div class="quote-side-benefit">
-          <span>✓</span>
-          <div>
-            <strong>Puedes volver atrás</strong>
-            <small>Cambia tus respuestas cuando quieras</small>
-          </div>
-        </div>
-
-        <div class="quote-side-benefit">
-          <span>✓</span>
-          <div>
-            <strong>Te llamamos nosotros</strong>
-            <small>Al teléfono que nos indiques</small>
-          </div>
-        </div>
-
-        <div class="quote-side-disclaimer">
-          Los precios publicados son orientativos. La solicitud no equivale a un presupuesto
-          cerrado.
-        </div>
+    <header class="pw-cabecera">
+      @if (estado() !== 'exito') {
+        @if (paso() > 0 || estado() === 'error') {
+          <button type="button" class="pw-atras" (click)="atras()" [disabled]="estado() === 'enviando'">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
+            Atrás
+          </button>
+        }
+        <p class="pw-paso">Paso {{ paso() + 1 }} de {{ totalPasos }}</p>
+      } @else {
+        <p class="pw-paso">Solicitud enviada</p>
+      }
+      <button type="button" class="pw-cerrar" (click)="cerrar()" aria-label="Cerrar el formulario">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+      </button>
+      <div
+        class="pw-barra"
+        role="progressbar"
+        aria-label="Progreso del formulario"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [attr.aria-valuenow]="estado() === 'exito' ? 100 : porcentaje()"
+      >
+        <span [style.transform]="'scaleX(' + (estado() === 'exito' ? 1 : porcentaje() / 100) + ')'"></span>
       </div>
+    </header>
 
-      <div class="wizard-wrap">
-        <!-- FORMULARIO ANTES DEL ENVÍO -->
-        @if (!confirmacionEnvio) {
-<div class="wizard-card">
-          <div class="wizard-top">
-            <div class="wizard-brand">
-              <span>⌂</span> TU SOLICITUD
-              <small>· OBRA LOCAL MADRID</small>
+    <div #cuerpo class="pw-cuerpo">
+      @switch (estado()) {
+        @case ('exito') {
+          <div class="pw-exito">
+            <div class="pw-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 12.5 10 17l9-10" /></svg>
             </div>
-
-            <span class="wizard-counter">
-              PASO {{ pasoActual + 1 }} DE {{ pasos.length }}
-            </span>
-          </div>
-
-          <div class="wizard-progress">
-            <div class="wizard-progress-fill" [style.--p]="porcentajeProgreso / 100"></div>
-          </div>
-
-          <div class="wizard-step-labels">
-            @for (item of pasos; track item.numero; let i = $index) {
-<button
-              type="button"
-             
-              [class.active]="i === pasoActual"
-              [class.completed]="i < pasoActual"
-              [disabled]="i >= pasoActual || enviandoSolicitud"
-              (click)="irAlPaso(i)"
+            <h2 id="pw-titulo" tabindex="-1" data-titulo-paso>¡Gracias, {{ enviado()?.nombre }}!</h2>
+            <p class="pw-exito-texto">Te escribimos por WhatsApp al <strong class="pw-nowrap">{{ enviado()?.telefono }}</strong>.</p>
+            <a
+              class="pw-boton pw-boton-wa"
+              [href]="enviado()?.fotos"
+              target="_blank"
+              rel="noopener"
+              (click)="medirFotos()"
             >
-              <span>{{ i < pasoActual ? '✓' : item.numero }}</span>
-              <small>{{ item.titulo }}</small>
-            </button>
-}
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19L4 20Z M9 9.5c.2 2.6 2.6 5 5.5 5.5l1-1.6-2-1-1 .8a4 4 0 0 1-1.7-1.7l.8-1-1-2L9 9.5Z" />
+              </svg>
+              Envíanos fotos del espacio por WhatsApp
+            </a>
+            <p class="pw-ayuda">Con fotos preparamos antes el presupuesto y evitamos visitas que no hacen falta.</p>
           </div>
+        }
 
-          <div
-            class="wizard-content"
-           
-            [attr.data-direccion]="direccionPaso"
-          >
-@switch (pasoActual) {
-            <!-- PASO 1: DATOS PERSONALES -->
-            @case (0) {
-<section class="wizard-panel">
-              <span class="panel-kicker">PRIMERO, CONOZCÁMONOS</span>
-              <h3>¿Cómo podemos contactar contigo?</h3>
-
-              <p class="panel-description">
-                Necesitamos algunos datos básicos para identificar tu solicitud.
-              </p>
-
-              <div class="field-stack">
-                <label class="field">
-                  <span>Nombre y apellidos <b>*</b></span>
-
-                  <input
-                    name="nombre"
-                    [(ngModel)]="respuesta.nombre"
-                    placeholder="Ej. María García"
-                    autocomplete="name"
-                  />
-
-                  @if (intentoContinuar && !respuesta.nombre.trim()) {
-<small
-                   
-                    class="field-error"
-                  >
-                    Escribe tu nombre.
-                  </small>
-}
-                </label>
-
-                <label class="field">
-                  <span>Teléfono <b>*</b></span>
-
-                  <input
-                    name="telefono"
-                    [(ngModel)]="respuesta.telefono"
-                    type="tel"
-                    placeholder="Ej. 612 345 678"
-                    autocomplete="tel"
-                  />
-
-                  @if (intentoContinuar && !telefonoValido()) {
-<small class="field-error">
-                    Introduce un teléfono válido.
-                  </small>
-}
-                </label>
-
-                <label class="field">
-                  <span>
-                    Correo electrónico
-                    <small class="optional">OPCIONAL</small>
-                  </span>
-
-                  <input
-                    name="correo"
-                    [(ngModel)]="respuesta.correo"
-                    type="email"
-                    placeholder="nombre@correo.com"
-                    autocomplete="email"
-                  />
-
-                  @if (intentoContinuar && respuesta.correo && !correoValido()) {
-<small
-                   
-                    class="field-error"
-                  >
-                    Revisa el correo electrónico.
-                  </small>
-}
-                </label>
-              </div>
-              <p class="legal-note">
-                Usaremos tus datos para gestionar tu solicitud. Más información en la
-                <a href="/politica-privacidad" target="_blank" rel="noopener">política de privacidad</a>.
-              </p>
-            </section>
-}
-
-            <!-- PASO 2: PROYECTO -->
-            @case (1) {
-<section class="wizard-panel">
-              <span class="panel-kicker">CUÉNTANOS QUÉ VAMOS A HACER</span>
-              <h3>¿Qué tipo de trabajo necesitas?</h3>
-
-              <p class="panel-description">
-                Selecciona el servicio y la zona donde se realizará.
-              </p>
-
-              <div class="service-options">
-                @for (servicio of servicios; track servicio.numero; let i = $index) {
-<button
-                  type="button"
-                  class="service-option"
-                 
-                  [style.--i]="i"
-                  [class.selected]="respuesta.servicio === servicio.nombre"
-                  (click)="respuesta.servicio = servicio.nombre"
-                >
-                  <img [src]="miniatura(servicio.imagen)" alt="" width="39" height="39" loading="lazy" decoding="async" />
-
-                  <span>{{ servicio.nombre }}</span>
-
-                  <i>
-                    {{ respuesta.servicio === servicio.nombre ? '✓' : '+' }}
-                  </i>
-                </button>
-}
-              </div>
-
-              @if (intentoContinuar && !respuesta.servicio) {
-<small class="field-error">
-                Selecciona un tipo de trabajo.
-              </small>
-}
-
-              <div class="field-stack field-space">
-                <div class="field">
-                  <span>¿En qué zona se realizará? <b>*</b></span>
-
-                  <div class="zone-options">
-                    @for (zona of zonas; track zona; let i = $index) {
-<button
-                      type="button"
-                     
-                      [style.--i]="i"
-                      [class.selected]="respuesta.zona === zona"
-                      (click)="respuesta.zona = zona"
-                    >
-                      {{ zona }}
-                    </button>
-}
-                  </div>
-
-                  @if (intentoContinuar && !respuesta.zona) {
-<small class="field-error">
-                    Selecciona una zona.
-                  </small>
-}
-                </div>
-
-                <label class="field">
-                  <span>
-                    Metros cuadrados aproximados
-                    <small class="optional">OPCIONAL</small>
-                  </span>
-
-                  <div class="input-suffix">
-                    <input
-                      name="metros"
-                      [(ngModel)]="respuesta.metros"
-                      type="number"
-                      min="0"
-                      placeholder="Ej. 25"
-                    />
-                    <span>m²</span>
-                  </div>
-                </label>
-
-                <label class="field">
-                  <span>¿Dónde se realizará?</span>
-
-                  <select name="tipoInmueble" [(ngModel)]="respuesta.tipoInmueble">
-                    <option value="">Selecciona el tipo de inmueble</option>
-                    @for (tipo of tiposInmueble; track tipo) {
-<option
-                     
-                      [value]="tipo"
-                    >
-                      {{ tipo }}
-                    </option>
-}
-                  </select>
-                </label>
-              </div>
-            </section>
-}
-
-            <!-- PASO 3: DETALLES (ÚLTIMO PASO, SE ENVÍA DESDE AQUÍ) -->
-            @case (2) {
-<section class="wizard-panel">
-              <span class="panel-kicker">ÚLTIMO PASO</span>
-              <h3>Cuéntanos cómo está el espacio.</h3>
-
-              <p class="panel-description">
-                La descripción del trabajo es obligatoria. Los demás campos son opcionales. Al
-                terminar, pulsa «Enviar mi solicitud».
-              </p>
-
-              <div class="field-stack">
-                <label class="field">
-                  <span>Estado actual</span>
-
-                  <select name="estado" [(ngModel)]="respuesta.estado">
-                    <option value="">Selecciona una opción</option>
-                    @for (estado of estados; track estado) {
-<option
-                     
-                      [value]="estado"
-                    >
-                      {{ estado }}
-                    </option>
-}
-                  </select>
-                </label>
-
-                <label class="field">
-                  <span>Materiales y acabados</span>
-
-                  <select name="materiales" [(ngModel)]="respuesta.materiales">
-                    <option value="">Todavía no lo he decidido</option>
-                    @for (material of materiales; track material) {
-<option
-                     
-                      [value]="material"
-                    >
-                      {{ material }}
-                    </option>
-}
-                  </select>
-                </label>
-
-                <label class="field">
-                  <span>¿Cuándo te gustaría empezar?</span>
-
-                  <select name="plazo" [(ngModel)]="respuesta.plazo">
-                    <option value="">Selecciona tu plazo</option>
-                    @for (plazo of plazos; track plazo) {
-<option
-                     
-                      [value]="plazo"
-                    >
-                      {{ plazo }}
-                    </option>
-}
-                  </select>
-                </label>
-
-                <label class="field">
-                  <span>¿Qué presupuesto tienes pensado?</span>
-
-                  <select name="presupuesto" [(ngModel)]="respuesta.presupuesto">
-                    <option value="">Prefiero no indicarlo</option>
-                    @for (presupuesto of presupuestos; track presupuesto) {
-<option
-                     
-                      [value]="presupuesto"
-                    >
-                      {{ presupuesto }}
-                    </option>
-}
-                  </select>
-                </label>
-
-                <label class="field">
-                  <span>Describe el trabajo con tus palabras <b>*</b></span>
-
-                  <textarea
-                    name="descripcion"
-                    [(ngModel)]="respuesta.descripcion"
-                    rows="4"
-                    placeholder="Qué quieres hacer, medidas, acabados y detalles importantes..."
-                  ></textarea>
-
-                  @if (intentoContinuar && !respuesta.descripcion.trim()) {
-<small
-                   
-                    class="field-error"
-                  >
-                    Describe el trabajo antes de enviar.
-                  </small>
-}
-                </label>
-              </div>
-            </section>
-}
-          }
-</div>
-
-          <!-- Campo trampa anti-spam (invisible para las personas) -->
-          <input
-            class="hp"
-            type="text"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
-            [(ngModel)]="honeypot"
-            [ngModelOptions]="{ standalone: true }"
-          />
-
-          <!-- MENSAJES DE ESTADO DEL ENVÍO -->
-          @if (errorEnvio) {
-<div class="mensaje-error" role="alert" aria-live="assertive">
-            <strong>No se ha podido confirmar el envío.</strong>
-            <p>{{ errorEnvio }}</p>
-          </div>
-}
-
-          @if (enviandoSolicitud) {
-<div
-            class="mensaje-enviando"
-           
-            role="status"
-            aria-live="polite"
-          >
-            Estamos enviando tu solicitud. Espera un momento, por favor.
-          </div>
-}
-
-          <div class="wizard-footer">
-            @if (pasoActual > 0) {
-<button
-              class="wizard-back"
-              type="button"
-             
-              [disabled]="enviandoSolicitud"
-              (click)="anterior()"
-            >
-              ← Volver
-            </button>
-}
-
-            <span class="wizard-footer-hint"> * Campos obligatorios </span>
-
-            @if (pasoActual < ultimoPaso) {
-<button
-              class="button button-orange wizard-next"
-              type="button"
-             
-              [disabled]="enviandoSolicitud"
-              (click)="siguiente()"
-            >
-              Continuar <span>→</span>
-            </button>
-}
-
-            @if (pasoActual === ultimoPaso) {
-<button
-              class="button button-orange wizard-next"
-              type="button"
-             
-              [disabled]="enviandoSolicitud"
-              (click)="enviarSolicitud()"
-            >
-              @if (!enviandoSolicitud) {
-
-                Enviar mi solicitud <span>✓</span>
-              
-}
-
-              @if (enviandoSolicitud) {
- Enviando solicitud… 
-}
-            </button>
-}
-          </div>
-        </div>
-}
-
-        <!-- CONFIRMACIÓN DE ENVÍO -->
-        @if (confirmacionEnvio) {
-<div data-ubicacion="exito" class="wizard-success confirmacion-envio"
-         
-          role="status"
-          aria-live="polite"
-        >
-          <div class="success-check">✓</div>
-
-          <span class="panel-kicker">SOLICITUD ENVIADA</span>
-
-          <h3>¡Solicitud enviada correctamente!</h3>
-
-          <p>
-            Hemos recibido tu solicitud de presupuesto. Gracias por confiar en ObraLocal Madrid.
-            Tus datos se han enviado correctamente.
-          </p>
-
-          <div class="success-details">
-            <strong>¿Qué ocurre ahora?</strong>
+        @case ('error') {
+          <div class="pw-fallo" role="alert">
+            <h2 id="pw-titulo" tabindex="-1" data-titulo-paso>No hemos podido enviar tu solicitud</h2>
             <p>
-              Revisaremos la información que nos has facilitado y nos pondremos en contacto
-              contigo en el teléfono que nos has indicado.
+              No se ha perdido nada: puedes volver a intentarlo o enviárnosla por WhatsApp con todo lo que has
+              rellenado.
+            </p>
+            <a class="pw-boton pw-boton-wa" [href]="whatsapp()" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 19L4 20Z M9 9.5c.2 2.6 2.6 5 5.5 5.5l1-1.6-2-1-1 .8a4 4 0 0 1-1.7-1.7l.8-1-1-2L9 9.5Z" />
+              </svg>
+              Envíala por WhatsApp
+            </a>
+            <button type="button" class="pw-boton pw-boton-secundario" (click)="reintentar()">Volver a intentarlo</button>
+            <p class="pw-ayuda">
+              También puedes llamarnos al <a class="pw-nowrap" [href]="telefonoNegocio">{{ telefonoVisible }}</a>.
             </p>
           </div>
+        }
 
-          <div class="success-contacto">
-            <p>¿Prefieres adelantarte? Puedes llamarnos o escribirnos:</p>
-            <a class="button button-outline" [href]="telefono">Llamar al {{ telefonoVisible }}</a>
-            <a class="button button-outline" [href]="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        @default {
+          <div class="pw-paso-contenido" [class.atras]="direccion() === 'atras'" [attr.data-paso]="paso()">
+            @switch (paso()) {
+              <!-- 1. ¿Qué quieres reformar? -->
+              @case (0) {
+                <h2 id="pw-titulo" tabindex="-1" data-titulo-paso>{{ titulos[0] }}</h2>
+                <p class="pw-sub">Elige una opción. Tardas menos de un minuto.</p>
+                <div class="pw-obras" role="group" aria-labelledby="pw-titulo" [class.grupo-error]="errores().obra">
+                  @for (o of obras; track o.id) {
+                    <button
+                      type="button"
+                      class="pw-obra"
+                      [class.elegida]="datos().obra === o.id"
+                      [attr.aria-pressed]="datos().obra === o.id"
+                      (click)="elegirObra(o.id)"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path [attr.d]="o.icono" /></svg>
+                      <span>{{ o.nombre }}</span>
+                    </button>
+                  }
+                </div>
+                @if (errores().obra) {
+                  <p class="pw-error" role="alert">{{ errores().obra }}</p>
+                }
+              }
+
+              <!-- 2. ¿Cómo es? -->
+              @case (1) {
+                @let q = preguntas();
+                <h2 id="pw-titulo" tabindex="-1" data-titulo-paso>{{ titulos[1] }}</h2>
+                <p class="pw-sub">{{ obra()?.nombre }} · todo con botones, sin escribir.</p>
+
+                @if (q) {
+                  @if (q.metros.tramos.length) {
+                    <fieldset class="pw-grupo" [class.grupo-error]="errores().metros">
+                      <legend>{{ q.metros.titulo }}</legend>
+                      <div class="pw-chips">
+                        @for (t of q.metros.tramos; track t.texto) {
+                          <button
+                            type="button"
+                            class="pw-chip"
+                            [attr.aria-pressed]="datos().metros === t.texto"
+                            (click)="cambiar('metros', datos().metros === t.texto && !q.metros.obligatorio ? '' : t.texto)"
+                          >
+                            {{ t.texto }}
+                          </button>
+                        }
+                      </div>
+                      @if (errores().metros) {
+                        <p class="pw-error">{{ errores().metros }}</p>
+                      }
+                    </fieldset>
+                  }
+
+                  @if (q.extra; as extra) {
+                    <fieldset class="pw-grupo" [class.grupo-error]="errores()[extra.clave]">
+                      <legend>{{ extra.titulo }}</legend>
+                      <div class="pw-chips">
+                        @for (op of extra.opciones; track op) {
+                          <button
+                            type="button"
+                            class="pw-chip"
+                            [attr.aria-pressed]="datos()[extra.clave] === op"
+                            (click)="cambiar(extra.clave, op)"
+                          >
+                            {{ op }}
+                          </button>
+                        }
+                      </div>
+                      @if (errores()[extra.clave]) {
+                        <p class="pw-error">{{ errores()[extra.clave] }}</p>
+                      }
+                    </fieldset>
+                  }
+
+                  @if (q.opciones; as opciones) {
+                    <fieldset class="pw-grupo">
+                      <legend>{{ opciones.titulo }}</legend>
+                      <div class="pw-casillas">
+                        @for (op of opciones.lista; track op) {
+                          <label class="pw-casilla">
+                            <input
+                              type="checkbox"
+                              [checked]="datos().opciones.includes(op)"
+                              (change)="alternarOpcion(op, marcado($event))"
+                            />
+                            <span>{{ op }}</span>
+                          </label>
+                        }
+                      </div>
+                    </fieldset>
+                  }
+
+                  <fieldset class="pw-grupo" [class.grupo-error]="errores().calidad">
+                    <legend>¿Qué calidad buscas?</legend>
+                    <div class="pw-calidades">
+                      @for (c of calidades; track c.id) {
+                        <button
+                          type="button"
+                          class="pw-calidad"
+                          [attr.aria-pressed]="datos().calidad === c.id"
+                          (click)="cambiar('calidad', c.id)"
+                        >
+                          <strong>{{ c.nombre }}</strong>
+                          <small>{{ calidadExplicada(c.id) }}</small>
+                        </button>
+                      }
+                    </div>
+                    @if (errores().calidad) {
+                      <p class="pw-error">{{ errores().calidad }}</p>
+                    }
+                  </fieldset>
+
+                  @if (q.comentario) {
+                    <div class="pw-grupo">
+                      <label class="pw-etiqueta" for="pw-comentario">En pocas palabras (opcional)</label>
+                      <input
+                        id="pw-comentario"
+                        class="pw-campo"
+                        type="text"
+                        maxlength="140"
+                        placeholder="Ej.: techo del salón con focos"
+                        [value]="datos().comentario"
+                        (input)="cambiar('comentario', texto($event))"
+                      />
+                    </div>
+                  }
+
+                  <div class="pw-precio" aria-live="polite">
+                    @if (estimacion(); as est) {
+                      <p class="pw-precio-cifra">{{ est.texto }}</p>
+                    } @else {
+                      <p class="pw-precio-cifra pw-precio-vacio">
+                        {{ datos().obra === 'otro' ? 'Te damos el precio cuando veamos tu caso.' : 'Elige las opciones y verás un precio orientativo.' }}
+                      </p>
+                    }
+                    <p class="pw-precio-nota">{{ notaPrecios }}</p>
+                  </div>
+                }
+              }
+
+              <!-- 3. ¿Dónde y cuándo? -->
+              @case (2) {
+                <h2 id="pw-titulo" tabindex="-1" data-titulo-paso>{{ titulos[2] }}</h2>
+                <p class="pw-sub">Trabajamos en Madrid capital y en los municipios de alrededor.</p>
+
+                <div class="pw-grupo" [class.grupo-error]="errores().zona">
+                  <label class="pw-etiqueta" for="pw-zona">Municipio o barrio</label>
+                  <input
+                    id="pw-zona"
+                    class="pw-campo"
+                    type="text"
+                    list="pw-zonas"
+                    autocomplete="address-level2"
+                    enterkeyhint="next"
+                    placeholder="Ej.: Chamberí, Getafe…"
+                    [value]="datos().zona"
+                    [attr.aria-invalid]="errores().zona ? true : null"
+                    [attr.aria-describedby]="errores().zona ? 'pw-zona-error' : null"
+                    (input)="cambiar('zona', texto($event))"
+                  />
+                  <datalist id="pw-zonas">
+                    @for (z of sugerenciasZona; track z) {
+                      <option [value]="z"></option>
+                    }
+                  </datalist>
+                  @if (errores().zona) {
+                    <p class="pw-error" id="pw-zona-error">{{ errores().zona }}</p>
+                  }
+                </div>
+
+                <fieldset class="pw-grupo" [class.grupo-error]="errores().cuando">
+                  <legend>¿Cuándo quieres empezar?</legend>
+                  <div class="pw-chips">
+                    @for (c of cuandoOpciones; track c) {
+                      <button type="button" class="pw-chip" [attr.aria-pressed]="datos().cuando === c" (click)="cambiar('cuando', c)">
+                        {{ c }}
+                      </button>
+                    }
+                  </div>
+                  @if (errores().cuando) {
+                    <p class="pw-error">{{ errores().cuando }}</p>
+                  }
+                </fieldset>
+
+                <fieldset class="pw-grupo" [class.grupo-error]="errores().tipoInmueble">
+                  <legend>¿Es vivienda o local?</legend>
+                  <div class="pw-chips">
+                    @for (i of inmuebles; track i) {
+                      <button
+                        type="button"
+                        class="pw-chip"
+                        [attr.aria-pressed]="datos().tipoInmueble === i"
+                        (click)="cambiar('tipoInmueble', i)"
+                      >
+                        {{ i }}
+                      </button>
+                    }
+                  </div>
+                  @if (errores().tipoInmueble) {
+                    <p class="pw-error">{{ errores().tipoInmueble }}</p>
+                  }
+                </fieldset>
+              }
+
+              <!-- 4. Contacto -->
+              @case (3) {
+                <h2 id="pw-titulo" tabindex="-1" data-titulo-paso>{{ titulos[3] }}</h2>
+                <p class="pw-sub">Te escribimos por WhatsApp o te llamamos. No compartimos tus datos con nadie más.</p>
+
+                <div class="pw-grupo">
+                  <label class="pw-etiqueta" for="pw-nombre">Nombre</label>
+                  <input
+                    id="pw-nombre"
+                    class="pw-campo"
+                    type="text"
+                    autocomplete="given-name"
+                    enterkeyhint="next"
+                    maxlength="80"
+                    [value]="datos().nombre"
+                    [attr.aria-invalid]="errores().nombre ? true : null"
+                    [attr.aria-describedby]="errores().nombre ? 'pw-nombre-error' : null"
+                    (input)="cambiar('nombre', texto($event))"
+                    (blur)="validarCampo('nombre')"
+                  />
+                  @if (errores().nombre) {
+                    <p class="pw-error" id="pw-nombre-error">{{ errores().nombre }}</p>
+                  }
+                </div>
+
+                <div class="pw-grupo">
+                  <label class="pw-etiqueta" for="pw-telefono">Teléfono</label>
+                  <div class="pw-telefono" [class.invalido]="errores().telefono">
+                    <span aria-hidden="true">+34</span>
+                    <input
+                      id="pw-telefono"
+                      class="pw-campo"
+                      type="tel"
+                      inputmode="tel"
+                      autocomplete="tel"
+                      enterkeyhint="next"
+                      maxlength="16"
+                      placeholder="612 345 678"
+                      aria-label="Teléfono (prefijo +34)"
+                      [value]="datos().telefono"
+                      [attr.aria-invalid]="errores().telefono ? true : null"
+                      [attr.aria-describedby]="errores().telefono ? 'pw-telefono-error' : null"
+                      (input)="cambiar('telefono', texto($event))"
+                      (blur)="validarCampo('telefono')"
+                    />
+                  </div>
+                  @if (errores().telefono) {
+                    <p class="pw-error" id="pw-telefono-error">{{ errores().telefono }}</p>
+                  }
+                </div>
+
+                <div class="pw-grupo">
+                  <label class="pw-etiqueta" for="pw-correo">Correo <span class="pw-opcional">(opcional)</span></label>
+                  <input
+                    id="pw-correo"
+                    class="pw-campo"
+                    type="email"
+                    inputmode="email"
+                    autocomplete="email"
+                    enterkeyhint="next"
+                    maxlength="120"
+                    [value]="datos().correo"
+                    [attr.aria-invalid]="errores().correo ? true : null"
+                    [attr.aria-describedby]="errores().correo ? 'pw-correo-error' : null"
+                    (input)="cambiar('correo', texto($event))"
+                    (blur)="validarCampo('correo')"
+                  />
+                  @if (errores().correo) {
+                    <p class="pw-error" id="pw-correo-error">{{ errores().correo }}</p>
+                  }
+                </div>
+
+                <div class="pw-grupo">
+                  <label class="pw-etiqueta" for="pw-mensaje">Cuéntanos algo más <span class="pw-opcional">(opcional)</span></label>
+                  <textarea
+                    id="pw-mensaje"
+                    class="pw-campo"
+                    rows="3"
+                    maxlength="1000"
+                    [value]="datos().mensaje"
+                    (input)="cambiar('mensaje', texto($event))"
+                  ></textarea>
+                </div>
+
+                <!-- Campo trampa para robots: oculto para las personas y para los lectores de pantalla -->
+                <div class="pw-trampa" aria-hidden="true">
+                  <label for="pw-web">Web</label>
+                  <input id="pw-web" type="text" tabindex="-1" autocomplete="off" (input)="honeypot = texto($event)" />
+                </div>
+
+                <div class="pw-grupo" [class.grupo-error]="errores().privacidad">
+                  <label class="pw-casilla pw-privacidad">
+                    <input
+                      type="checkbox"
+                      [checked]="datos().privacidad"
+                      [attr.aria-invalid]="errores().privacidad ? true : null"
+                      [attr.aria-describedby]="errores().privacidad ? 'pw-privacidad-error' : null"
+                      (change)="cambiar('privacidad', marcado($event))"
+                    />
+                    <span>
+                      He leído y acepto la
+                      <a routerLink="/politica-privacidad/" target="_blank">política de privacidad</a>.
+                    </span>
+                  </label>
+                  @if (errores().privacidad) {
+                    <p class="pw-error" id="pw-privacidad-error">{{ errores().privacidad }}</p>
+                  }
+                </div>
+
+                @if (estimacion(); as est) {
+                  <p class="pw-recordatorio">{{ obra()?.nombre }} · {{ est.corto }} (orientativo)</p>
+                }
+              }
+            }
           </div>
-
-          <button class="button button-outline" type="button" (click)="editarSolicitud()">
-            Revisar mis respuestas
-          </button>
-
-          <button class="button button-orange" type="button" (click)="nuevaSolicitud()">
-            Crear otra solicitud
-          </button>
-
-          <button class="wizard-back" type="button" (click)="cerrarPresupuesto()">
-            Cerrar ventana
-          </button>
-        </div>
-}
-      </div>
+        }
+      }
     </div>
+
+    <footer class="pw-pie">
+      @switch (estado()) {
+        @case ('exito') {
+          <button type="button" class="pw-boton pw-boton-principal" (click)="cerrar()">Cerrar</button>
+        }
+        @case ('error') {}
+        @default {
+          @if (paso() === 1 && estimacion(); as est) {
+            <p class="pw-pie-precio" aria-hidden="true">Orientativo: <strong>{{ est.corto }}</strong></p>
+          }
+          @if (paso() > 0) {
+            <button
+              type="button"
+              class="pw-boton pw-boton-principal"
+              [disabled]="estado() === 'enviando'"
+              [attr.aria-busy]="estado() === 'enviando'"
+              (click)="siguiente()"
+            >
+              @if (estado() === 'enviando') {
+                <span class="pw-girando" aria-hidden="true"></span> Enviando…
+              } @else if (paso() === totalPasos - 1) {
+                Enviar solicitud
+              } @else {
+                Siguiente
+              }
+            </button>
+          }
+          <a class="pw-wa" [href]="whatsapp()" target="_blank" rel="noopener">
+            ¿Prefieres escribirnos? <strong>Abrir WhatsApp</strong>
+          </a>
+        }
+      }
+    </footer>
   </section>
-</div>
 }

@@ -99,7 +99,11 @@ export class LandingPage {
   readonly fotoTarjeta = tarjetaDe;
 
   constructor() {
-    inject(ContextoPagina).fijar(this.pagina.servicioFormulario, this.pagina.whatsapp);
+    inject(ContextoPagina).fijar(
+      this.pagina.servicioFormulario,
+      this.pagina.whatsapp,
+      this.pagina.tipo === 'zona' ? (this.pagina.zona ?? '') : '',
+    );
 
     inject(SeoService).update({
       title: this.pagina.title,

@@ -16,6 +16,8 @@ export interface RespuestaPresupuesto {
   plazo: string;
   presupuesto: string;
   descripcion: string;
+  /** Campos del formulario para la columna details (valores planos, que el panel muestra como etiquetas). */
+  detalles: Record<string, unknown>;
 }
 
 interface SolicitudCentral {
@@ -144,15 +146,8 @@ export class PresupuestoEnvioService {
       email: r.correo.trim() || null,
       service: r.servicio,
       description: r.descripcion.trim() || null,
-      details: {
-        zona: r.zona,
-        metros: r.metros ? Number(r.metros) : null,
-        tipo_inmueble: r.tipoInmueble || null,
-        estado: r.estado || null,
-        materiales: r.materiales || null,
-        plazo: r.plazo || null,
-        presupuesto_previsto: r.presupuesto || null,
-      },
+      // Sin claves vacías: el panel ya las oculta y así el registro queda limpio.
+      details: Object.fromEntries(Object.entries(r.detalles).filter(([, v]) => v !== null && v !== '')),
     };
   }
 

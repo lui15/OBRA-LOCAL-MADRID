@@ -43,6 +43,8 @@ export class App {
     afterNextRender(() => {
       analitica.iniciar();
       consentimiento.iniciar();
+      // Si se recargó con el formulario a medias, se abre donde estaba.
+      this.presupuesto.reanudar();
     });
   }
 
