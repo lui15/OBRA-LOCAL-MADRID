@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 
 import { ConsentimientoService } from '../compartido/consentimiento.service';
 import { Icono } from '../compartido/icono';
-import { ENLACE_TELEFONO, NEGOCIO } from '../datos/contacto';
+import { EMPRESA, ENLACE_TELEFONO, NEGOCIO } from '../datos/contacto';
 import { ContextoPagina } from './contexto-pagina.service';
 import { PAGINAS, urlDePagina } from '../landing/landing-data';
 
@@ -25,5 +25,6 @@ export class SiteFooter {
 
   readonly servicios = PAGINAS.filter((p) => p.tipo === 'servicio');
   readonly trabajos = PAGINAS.filter((p) => p.tipo === 'trabajo');
-  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona');
+  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona').slice(0, 8);
+  readonly empresa = EMPRESA;
 }

@@ -320,3 +320,8 @@
     display: none;
   }
 }
+
+.mega-col li a.mega-mas {
+  color: #b84800;
+  font-weight: 700;
+}

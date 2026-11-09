@@ -8,7 +8,14 @@ import { FaqSeccion } from '../compartido/faq-seccion';
 import { GuiaPrecios } from '../compartido/guia-precios';
 import { Icono } from '../compartido/icono';
 import { Migas } from '../compartido/migas';
+import { BloqueCalculadora } from '../compartido/bloque-calculadora';
+import { BloqueConfianza } from '../compartido/bloque-confianza';
+import { CalculadoraReforma } from '../compartido/calculadora-reforma';
+import { Revision } from '../compartido/revision';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
+import { EJEMPLO_80M2, PLAZOS, TABLA_EURO_M2 } from '../datos/precios-guia';
+import { proyectosDeZona } from '../datos/proyectos';
+import { esPendiente } from '../datos/revision';
 import {
   SERVICIOS,
   ZONAS,
@@ -25,9 +32,11 @@ import {
   PAGINAS,
   buscarPagina,
   crearJsonLd,
+  guiasSobre,
   migasDe,
   paginaDeServicio,
   precioCabecera,
+  relacionadasDe,
   urlDePagina,
 } from './landing-data';
 
@@ -45,6 +54,10 @@ import {
     Icono,
     Migas,
     TarjetaPagina,
+    BloqueCalculadora,
+    BloqueConfianza,
+    CalculadoraReforma,
+    Revision,
   ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
@@ -55,7 +68,10 @@ export class LandingPage {
 
   readonly pagina = buscarPagina(inject(ActivatedRoute).snapshot.data['slug']);
   readonly migas = migasDe(this.pagina);
-  readonly relacionadas = this.pagina.relacionadas.map((path) => buscarPagina(path));
+  readonly relacionadas = relacionadasDe(this.pagina);
+  readonly guias = this.pagina.tipo === 'guia' ? [] : guiasSobre(this.pagina);
+  readonly obras = this.pagina.tipo === 'zona' ? proyectosDeZona(this.pagina.path) : [];
+  readonly esServicio = this.pagina.tipo === 'servicio' || this.pagina.tipo === 'trabajo';
   readonly servicioCatalogo = buscarServicio(this.pagina.servicioCatalogo ?? '');
   readonly whatsapp = enlaceWhatsApp(this.pagina.whatsapp);
 
@@ -66,6 +82,12 @@ export class LandingPage {
   readonly paginasServicio = PAGINAS.filter((p) => p.tipo === 'servicio');
   readonly paginasTrabajo = PAGINAS.filter((p) => p.tipo === 'trabajo');
   readonly paginasZona = PAGINAS.filter((p) => p.tipo === 'zona');
+  readonly paginasGuia = PAGINAS.filter((p) => p.tipo === 'guia');
+  readonly tablaM2 = TABLA_EURO_M2;
+  readonly ejemplo = EJEMPLO_80M2;
+  readonly plazos = PLAZOS;
+  readonly formato = formatearPrecio;
+  readonly pendiente = esPendiente;
   readonly zonasPorNombre = ZONAS.filter((z) => z !== 'Otra zona de Madrid');
   readonly serviciosConPagina = SERVICIOS.map((s) => ({ s, pagina: paginaDeServicio(s) }));
   readonly pasos = PASOS_OBRA;
@@ -85,6 +107,7 @@ export class LandingPage {
       path: urlDePagina(this.pagina),
       imagenPrincipal: this.pagina.imagen,
       imagenSizes: '(max-width: 960px) 100vw, 520px',
+      noindex: Boolean(this.pagina.borrador),
       jsonLd: crearJsonLd(this.pagina),
     });
   }

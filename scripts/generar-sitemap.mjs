@@ -17,7 +17,8 @@ async function cargarDatos() {
     await build({
       stdin: {
         contents: `
-          export { PAGINAS, ULTIMA_REVISION, buscarPagina } from './src/app/landing/landing-data.ts';
+          export { PAGINAS, TODAS_LAS_PAGINAS, ULTIMA_REVISION, buscarPagina } from './src/app/landing/landing-data.ts';
+          export { PROYECTOS_PUBLICADOS } from './src/app/datos/proyectos.ts';
           export { SITE_URL } from './src/app/datos/contacto.ts';
         `,
         resolveDir: raiz,
@@ -37,9 +38,14 @@ async function cargarDatos() {
 
 const palabras = (texto) => texto.split(/\s+/).filter(Boolean).length;
 
+/** Mínimo de palabras de contenido propio según el tipo de página. */
+const MINIMO = { guia: 1200, zona: 600, servicio: 600, trabajo: 600, hub: 600, info: 600, herramienta: 300 };
+const minimoDe = (p) => (p.path === 'precios' ? 2500 : MINIMO[p.tipo] ?? 0);
+
 function textoDe(p) {
   return [
     p.intro,
+    p.aviso ?? '',
     ...p.secciones.flatMap((s) => [
       s.titulo,
       ...s.parrafos,
@@ -50,7 +56,7 @@ function textoDe(p) {
   ].join(' ');
 }
 
-function revisar(PAGINAS) {
+function revisar(PAGINAS, todas = new Set()) {
   const problemas = [];
   const paths = new Set();
   const titulos = new Set();
@@ -68,15 +74,15 @@ function revisar(PAGINAS) {
     if (p.puntos.length !== 4) problemas.push(`${url}: la franja no tiene 4 datos`);
     if (!p.whatsapp) problemas.push(`${url}: sin mensaje de WhatsApp`);
     // La portada tiene además su contenido propio en la plantilla.
-    if (p.tipo !== 'inicio' && palabras(textoDe(p)) < 600) {
-      problemas.push(`${url}: solo ${palabras(textoDe(p))} palabras`);
+    if (palabras(textoDe(p)) < minimoDe(p)) {
+      problemas.push(`${url}: solo ${palabras(textoDe(p))} palabras (mínimo ${minimoDe(p)})`);
     }
   }
 
   for (const p of PAGINAS) {
     if (p.padre !== undefined && !paths.has(p.padre)) problemas.push(`/${p.path}: padre inexistente`);
     for (const r of p.relacionadas) {
-      if (!paths.has(r)) problemas.push(`/${p.path}: relacionada inexistente (${r})`);
+      if (!paths.has(r) && !todas.has(r)) problemas.push(`/${p.path}: relacionada inexistente (${r})`);
     }
   }
 
@@ -84,23 +90,30 @@ function revisar(PAGINAS) {
 }
 
 try {
-  const { PAGINAS, ULTIMA_REVISION, SITE_URL } = await cargarDatos();
+  const { PAGINAS, TODAS_LAS_PAGINAS, PROYECTOS_PUBLICADOS, ULTIMA_REVISION, SITE_URL } = await cargarDatos();
 
-  const urls = PAGINAS.map(
-    (p) =>
-      `  <url>\n    <loc>${SITE_URL}/${p.path}</loc>\n    <lastmod>${ULTIMA_REVISION}</lastmod>\n  </url>`,
-  ).join('\n');
+  // URL con barra final, que es la que sirve el hosting sin redirección.
+  const rutas = [
+    ...PAGINAS.map((p) => (p.path ? `/${p.path}/` : '/')),
+    ...(PROYECTOS_PUBLICADOS.length ? ['/proyectos/', ...PROYECTOS_PUBLICADOS.map((p) => `/proyectos/${p.slug}/`)] : []),
+  ];
+  const urls = rutas
+    .map((r) => `  <url>\n    <loc>${SITE_URL}${r}</loc>\n    <lastmod>${ULTIMA_REVISION}</lastmod>\n  </url>`)
+    .join('\n');
 
   writeFileSync(
     join(raiz, 'public/sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
   );
-  console.log(`sitemap.xml: ${PAGINAS.length} URL`);
+  console.log(`sitemap.xml: ${rutas.length} URL`);
 
-  const problemas = revisar(PAGINAS);
+  const problemas = revisar(
+    TODAS_LAS_PAGINAS.filter((p) => !p.borrador),
+    new Set(TODAS_LAS_PAGINAS.map((p) => p.path)),
+  );
   for (const problema of problemas) console.warn(`AVISO ${problema}`);
   if (estricto) {
-    for (const p of PAGINAS) console.log(`${String(palabras(textoDe(p))).padStart(5)} palabras  /${p.path}`);
+    for (const p of TODAS_LAS_PAGINAS) console.log(`${String(palabras(textoDe(p))).padStart(5)} palabras  /${p.path}${p.borrador ? '  (borrador)' : ''}`);
     if (problemas.length) process.exit(1);
   }
 } catch (error) {

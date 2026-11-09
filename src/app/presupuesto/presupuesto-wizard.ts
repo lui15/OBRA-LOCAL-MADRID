@@ -260,6 +260,14 @@ export class PresupuestoWizard implements OnDestroy {
       this.respuesta.servicio = peticion.servicio;
     }
 
+    if (peticion.datos?.metros) {
+      this.respuesta.metros = peticion.datos.metros;
+    }
+
+    if (peticion.datos?.descripcion && !this.respuesta.descripcion.trim()) {
+      this.respuesta.descripcion = peticion.datos.descripcion;
+    }
+
     if (!this.presupuestoAbierto) {
       this.elementoPrevio = peticion.origen;
     }

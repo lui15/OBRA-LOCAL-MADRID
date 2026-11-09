@@ -45,12 +45,17 @@
       @for (p of zonas; track p.path) {
         <a [routerLink]="url(p)">{{ p.etiqueta }}</a>
       }
+      <a routerLink="/zonas">Todas las zonas →</a>
     </nav>
 
     <nav class="footer-column" aria-label="Empresa">
       <h3>Empresa</h3>
       <a routerLink="/como-trabajamos">Cómo trabajamos</a>
       <a routerLink="/precios">Precios</a>
+      <a routerLink="/calculadora-reforma">Calculadora de reforma</a>
+      <a routerLink="/guias">Guías</a>
+      <a routerLink="/licencia-obra-madrid">Licencia de obra</a>
+      <a routerLink="/ayudas-reformas-madrid">Ayudas para reformas</a>
       <a routerLink="/preguntas-frecuentes">Preguntas</a>
       <a routerLink="/aviso-legal">Aviso legal</a>
       <a routerLink="/politica-privacidad">Política de privacidad</a>
@@ -61,7 +66,7 @@
 
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <span>© {{ anio }} ObraLocal Madrid. Todos los derechos reservados.</span>
+      <span>© {{ anio }} ObraLocal Madrid · {{ empresa.razonSocial }} · CIF {{ empresa.cif }}</span>
       <span>Precios orientativos sujetos a valoración.</span>
     </div>
   </div>

@@ -9,7 +9,8 @@
     "test": "ng test",
     "serve:ssr:obra-local-madrid": "node dist/obra-local-madrid/server/server.mjs",
     "prebuild": "node scripts/generar-sitemap.mjs",
-    "seo:comprobar": "node scripts/generar-sitemap.mjs --comprobar"
+    "seo:comprobar": "node scripts/generar-sitemap.mjs --comprobar",
+    "pendientes": "node scripts/pendientes.mjs"
   },
   "prettier": {
     "printWidth": 100,

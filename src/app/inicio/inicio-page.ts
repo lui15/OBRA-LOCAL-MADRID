@@ -6,7 +6,10 @@ import { CtaPresupuesto } from '../compartido/cta-presupuesto';
 import { FaqAcordeon } from '../compartido/faq-acordeon';
 import { FaqSeccion } from '../compartido/faq-seccion';
 import { Garantias } from '../compartido/garantias';
+import { BloqueCalculadora } from '../compartido/bloque-calculadora';
+import { BloqueConfianza } from '../compartido/bloque-confianza';
 import { Icono } from '../compartido/icono';
+import { Revision } from '../compartido/revision';
 import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { TarjetaServicio } from '../compartido/tarjeta-servicio';
@@ -16,7 +19,6 @@ import { ContextoPagina } from '../layout/contexto-pagina.service';
 import { PREGUNTAS_PORTADA, SERVICIOS } from '../datos/catalogo-servicios';
 import {
   PAGINAS,
-  PaginaSeo,
   buscarPagina,
   crearJsonLd,
   urlDePagina,
@@ -39,6 +41,9 @@ import { SeoService } from '../seo.service';
     TarjetaPagina,
     TarjetaServicio,
     Icono,
+    BloqueCalculadora,
+    BloqueConfianza,
+    Revision,
   ],
   templateUrl: './inicio-page.html',
   styleUrl: './inicio-page.css',
@@ -59,11 +64,9 @@ export class InicioPage {
   readonly seccion = this.pagina.secciones[0];
   readonly whatsapp = enlaceWhatsApp(this.pagina.whatsapp);
   /** Enlazado interno: primero los índices, después todo lo demás. */
-  readonly otrasPaginas = PAGINAS.filter((p) => p !== this.pagina && !this.esIntencion(p));
-
-  private esIntencion(p: PaginaSeo): boolean {
-    return p.tipo === 'trabajo';
-  }
+  readonly otrasPaginas = PAGINAS.filter(
+    (p) => p !== this.pagina && (p.tipo === 'hub' || p.tipo === 'herramienta' || p.tipo === 'servicio'),
+  );
 
   constructor() {
     inject(ContextoPagina).fijar('', this.pagina.whatsapp);

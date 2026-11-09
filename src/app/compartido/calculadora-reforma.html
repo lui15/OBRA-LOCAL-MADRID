@@ -1,0 +1,107 @@
+@let e = entrada();
+<div class="calc">
+  <form class="calc-form" (submit)="$event.preventDefault()" aria-label="Datos de tu reforma">
+    <label class="campo">
+      <span>Metros cuadrados del piso</span>
+      <input
+        type="number"
+        inputmode="numeric"
+        min="20"
+        max="400"
+        [value]="e.m2"
+        (input)="cambiar('m2', numero($event, 20, 400))"
+      />
+    </label>
+
+    <fieldset class="campo">
+      <legend>¿Vas a cambiar la distribución?</legend>
+      <div class="opciones">
+        <label><input type="radio" name="redistribucion" [checked]="!e.redistribucion" (change)="cambiar('redistribucion', false)" /> No</label>
+        <label><input type="radio" name="redistribucion" [checked]="e.redistribucion" (change)="cambiar('redistribucion', true)" /> Sí, tirar o mover tabiques</label>
+      </div>
+    </fieldset>
+
+    @if (!e.redistribucion) {
+      <label class="campo">
+        <span>Cocina</span>
+        <select [value]="e.cocina" (change)="cambiar('cocina', $any(valor($event)))">
+          <option value="no">No la toco</option>
+          <option value="parcial">Parcial: muebles y encimera</option>
+          <option value="completa">Completa: muebles e instalaciones</option>
+        </select>
+      </label>
+
+      <div class="fila">
+        <label class="campo">
+          <span>Número de baños</span>
+          <input
+            type="number"
+            inputmode="numeric"
+            min="0"
+            max="4"
+            [value]="e.banos"
+            (input)="cambiar('banos', numero($event, 0, 4))"
+          />
+        </label>
+        <label class="campo">
+          <span>Tipo de reforma del baño</span>
+          <select [value]="e.tipoBano" [disabled]="e.banos === 0" (change)="cambiar('tipoBano', $any(valor($event)))">
+            <option value="parcial">Parcial, sin cambiar distribución</option>
+            <option value="completo">Completo, con demolición</option>
+          </select>
+        </label>
+      </div>
+
+      <fieldset class="campo">
+        <legend>Otros trabajos</legend>
+        <div class="opciones">
+          <label><input type="checkbox" [checked]="e.pintura" (change)="cambiar('pintura', marcado($event))" /> Pintura de la vivienda</label>
+          <label><input type="checkbox" [checked]="e.suelos" (change)="cambiar('suelos', marcado($event))" /> Suelos</label>
+        </div>
+      </fieldset>
+    }
+
+    <label class="campo">
+      <span>Calidad de materiales</span>
+      <select [value]="e.calidad" (change)="cambiar('calidad', $any(valor($event)))">
+        <option value="basica">Básica</option>
+        <option value="media">Media</option>
+        <option value="alta">Alta</option>
+      </select>
+    </label>
+  </form>
+
+  <div class="calc-resultado" aria-live="polite">
+    @if (resultado(); as r) {
+      <span class="etiqueta">Rango orientativo</span>
+      <strong class="rango">{{ formato(r.minimo) }} – {{ formato(r.maximo) }}</strong>
+      <p class="plazo" [class.pendiente]="pendiente(r.plazo)">Plazo orientativo: {{ r.plazo }}</p>
+
+      <ul class="lineas">
+        @for (l of r.lineas; track l.concepto) {
+          <li>
+            <span>{{ l.concepto }}</span>
+            <span>{{ formato(l.minimo) }}–{{ formato(l.maximo) }}</span>
+          </li>
+        }
+        @for (s of r.sinPrecio; track s) {
+          <li class="pendiente"><span>{{ s }}</span></li>
+        }
+      </ul>
+
+      @for (a of r.avisos; track a) {
+        <p class="aviso">{{ a }}</p>
+      }
+    } @else {
+      <p class="aviso">Elige al menos un trabajo para ver un rango.</p>
+    }
+
+    <button type="button" class="button button-orange" (click)="pedirPresupuesto()">
+      Quiero mi presupuesto por partidas <span>↗</span>
+    </button>
+    <p class="nota">
+      Es una orientación hecha con nuestros precios de referencia, no un presupuesto. La calidad
+      no cambia los precios: indica en qué parte del rango se sitúa tu reforma.
+    </p>
+  </div>
+</div>

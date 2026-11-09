@@ -26,6 +26,8 @@
           <app-icono nombre="whatsapp" /> WhatsApp
         </a>
       </div>
+
+      <app-revision class="rise" style="--i: 5" />
     </div>
 
     <figure class="lp-hero-foto">
@@ -55,6 +57,119 @@
     </ul>
   </div>
 </section>
+
+@if (pagina.borrador || pagina.aviso) {
+  <div class="container lp-avisos">
+    @if (pagina.borrador) {
+      <p class="lp-aviso lp-aviso-borrador" role="note">
+        BORRADOR (no publicado, noindex): {{ pagina.borrador }}
+      </p>
+    }
+    @if (pagina.aviso) {
+      <p class="lp-aviso" role="note"><strong>Importante:</strong> {{ pagina.aviso }}</p>
+    }
+  </div>
+}
+
+<!-- ================= TABLAS DE PRECIOS (solo /precios/) ================= -->
+@if (pagina.modulo === 'precios') {
+  <section class="section lp-banda" id="tablas" aria-labelledby="tabla-m2">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <span class="eyebrow eyebrow-oscura">€/M² EN MADRID</span>
+        <h2 id="tabla-m2">Precio por metro cuadrado según el tipo de reforma</h2>
+        <p>
+          La primera columna se calcula con nuestros precios de referencia. Por calidades aún no
+          tenemos datos confirmados.
+        </p>
+      </div>
+      <div class="lp-tabla-scroll">
+        <table class="lp-tabla">
+          <caption>Rangos orientativos en €/m², IVA no especificado</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tipo de reforma</th>
+              <th scope="col">Deducido de nuestros precios</th>
+              <th scope="col">Calidad básica</th>
+              <th scope="col">Calidad media</th>
+              <th scope="col">Calidad alta</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (f of tablaM2; track f.tipo) {
+              <tr>
+                <th scope="row">{{ f.tipo }}</th>
+                <td [class.pendiente]="pendiente(f.deducido)">{{ f.deducido }}</td>
+                <td class="pendiente">{{ f.basica }}</td>
+                <td class="pendiente">{{ f.media }}</td>
+                <td class="pendiente">{{ f.alta }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-heading lp-subindice" appReveal>
+        <span class="eyebrow eyebrow-oscura">PRESUPUESTO DE EJEMPLO</span>
+        <h2>Reforma integral de un piso de 80 m² en Madrid, por partidas</h2>
+        <p>
+          El total sale de nuestro rango para pisos de {{ ejemplo.total.medidas }}. El reparto por
+          partidas está pendiente de confirmar.
+        </p>
+      </div>
+      <div class="lp-tabla-scroll">
+        <table class="lp-tabla">
+          <caption>Piso de 80 m² con reforma integral</caption>
+          <thead>
+            <tr>
+              <th scope="col">Partida</th>
+              <th scope="col">Importe orientativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (p of ejemplo.partidas; track p.partida) {
+              <tr>
+                <th scope="row">{{ p.partida }}</th>
+                <td class="pendiente">{{ p.importe }}</td>
+              </tr>
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total orientativo</th>
+              <td>{{ formato(ejemplo.total.minimo) }}–{{ formato(ejemplo.total.maximo) }}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="section-heading lp-subindice" appReveal>
+        <span class="eyebrow eyebrow-oscura">PLAZOS</span>
+        <h2>Cuánto dura cada tipo de reforma</h2>
+      </div>
+      <div class="lp-tabla-scroll">
+        <table class="lp-tabla">
+          <caption>Plazos orientativos por tipo de reforma</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tipo de reforma</th>
+              <th scope="col">Plazo orientativo</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (p of plazos; track p.tipo) {
+              <tr>
+                <th scope="row">{{ p.tipo }}</th>
+                <td class="pendiente">{{ p.plazo }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <app-bloque-calculadora />
+}
 
 <!-- ================= CONTENIDO ================= -->
 <div class="section lp-contenido">
@@ -104,6 +219,23 @@
   </div>
 </div>
 
+@if (pagina.fuentes?.length) {
+  <section class="section lp-fuentes" aria-labelledby="fuentes-titulo">
+    <div class="container">
+      <h2 id="fuentes-titulo">Fuentes oficiales</h2>
+      <ul>
+        @for (f of pagina.fuentes; track f.url) {
+          <li><a [href]="f.url" target="_blank" rel="noopener">{{ f.texto }}</a></li>
+        }
+      </ul>
+    </div>
+  </section>
+}
+
+@if (esServicio) {
+  <app-bloque-confianza />
+}
+
 <!-- ================= PRECIOS DEL SERVICIO ================= -->
 @if (servicioCatalogo; as s) {
   <section class="section lp-banda" id="precios">
@@ -145,7 +277,50 @@
 }
 
 <!-- ================= MÓDULOS DE LOS ÍNDICES ================= -->
+@if (obras.length) {
+  <section class="section" id="obras" aria-labelledby="obras-titulo">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <h2 id="obras-titulo">Obras en {{ pagina.zona }}</h2>
+      </div>
+      <ul class="lp-tarjetas">
+        @for (o of obras; track o.slug) {
+          <li>
+            <a class="lp-obra" [routerLink]="'/proyectos/' + o.slug">
+              <img [src]="o.fotos[0].despues" [alt]="o.fotos[0].alt" width="800" height="600" loading="lazy" />
+              <strong>{{ o.titulo }}</strong>
+              <span>{{ o.barrio }} · {{ o.m2 }}</span>
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+}
+
 @switch (pagina.modulo) {
+  @case ('calculadora') {
+    <section class="section lp-banda" id="calculadora">
+      <div class="container">
+        <app-calculadora-reforma />
+      </div>
+    </section>
+  }
+  @case ('guias') {
+    <section class="section lp-banda" id="guias">
+      <div class="container">
+        <div class="section-heading" appReveal>
+          <span class="eyebrow eyebrow-oscura">GUÍAS</span>
+          <h2>Todas las guías</h2>
+        </div>
+        <ul class="lp-tarjetas">
+          @for (p of paginasGuia; track p.path) {
+            <li><app-tarjeta-pagina [pagina]="p" /></li>
+          }
+        </ul>
+      </div>
+    </section>
+  }
   @case ('servicios') {
     <section class="section lp-banda" id="catalogo">
       <div class="container">
@@ -256,6 +431,34 @@
       </div>
     </section>
   }
+}
+
+@if (guias.length) {
+  <section class="section" aria-labelledby="guias-titulo">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <span class="eyebrow eyebrow-oscura">GUÍAS</span>
+        <h2 id="guias-titulo">Para leer antes de empezar</h2>
+      </div>
+      <ul class="lp-tarjetas">
+        @for (g of guias; track g.path) {
+          <li><app-tarjeta-pagina [pagina]="g" /></li>
+        }
+      </ul>
+    </div>
+  </section>
+}
+
+@if (esServicio) {
+  <app-bloque-calculadora />
+  <nav class="lp-zonas container" aria-labelledby="zonas-servicio">
+    <h2 id="zonas-servicio">Dónde hacemos {{ pagina.etiqueta.toLowerCase() }}</h2>
+    <ul class="lp-chips lp-chips-izq">
+      @for (z of paginasZona; track z.path) {
+        <li><a [routerLink]="url(z)">{{ z.zona }}</a></li>
+      }
+    </ul>
+  </nav>
 }
 
 <!-- ================= PÁGINAS RELACIONADAS ================= -->

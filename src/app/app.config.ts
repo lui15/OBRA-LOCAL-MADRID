@@ -4,10 +4,11 @@ import {
   provideZonelessChangeDetection,
 } from '@angular/core';
 
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import { UrlSerializer, provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 import { routes } from './app.routes';
+import { SerializadorBarraFinal } from './barra-final.serializer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,5 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
     provideClientHydration(withEventReplay()),
+    { provide: UrlSerializer, useClass: SerializadorBarraFinal },
   ],
 };

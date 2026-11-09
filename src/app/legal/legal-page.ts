@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Migas } from '../compartido/migas';
+import { Revision } from '../compartido/revision';
 import { Miga, nodoMigas } from '../landing/landing-data';
 import { SeoService } from '../seo.service';
 import { LEGAL } from './legal-data';
@@ -9,19 +10,20 @@ import { LEGAL } from './legal-data';
 type TipoLegal = 'aviso' | 'privacidad' | 'cookies';
 
 const TITULOS: Record<TipoLegal, { titulo: string; path: string }> = {
-  aviso: { titulo: 'Aviso legal', path: '/aviso-legal' },
-  privacidad: { titulo: 'Política de privacidad', path: '/politica-privacidad' },
-  cookies: { titulo: 'Política de cookies', path: '/politica-cookies' },
+  aviso: { titulo: 'Aviso legal', path: '/aviso-legal/' },
+  privacidad: { titulo: 'Política de privacidad', path: '/politica-privacidad/' },
+  cookies: { titulo: 'Política de cookies', path: '/politica-cookies/' },
 };
 
 @Component({
   selector: 'app-legal',
   standalone: true,
-  imports: [Migas],
+  imports: [Migas, Revision],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="legal">
       <app-migas [migas]="migas" />
+      <app-revision />
 
       @if (tipo === 'aviso') {
         <h1>Aviso legal</h1>

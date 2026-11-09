@@ -18,12 +18,21 @@ export const NEGOCIO = {
   correoSolicitudes: 'tramoreforma@gmail.com',
 };
 
+/** Persona que revisa el contenido. Se muestra en cada página. */
+export const RESPONSABLE_OBRA = 'PENDIENTE("nombre del responsable de obra")';
+
+/** Datos de la empresa para el pie y los textos legales. */
+export const EMPRESA = {
+  razonSocial: 'PENDIENTE("razón social")',
+  cif: 'PENDIENTE("CIF")',
+};
+
 /** Dominio final, sin barra al final. */
 export const SITE_URL = 'https://obralocalmadrid.es';
 
 export const ENLACE_TELEFONO = `tel:${NEGOCIO.telefono}`;
 
-export const MENSAJE_GENERAL = 'Hola, quiero presupuesto para una reforma en Madrid';
+export const MENSAJE_GENERAL = 'Hola, quiero pedir presupuesto para una reforma';
 
 /** Enlace de WhatsApp con el mensaje ya escrito. */
 export function enlaceWhatsApp(mensaje: string = MENSAJE_GENERAL): string {

@@ -8,6 +8,8 @@ export interface PeticionPresupuesto {
   ubicacion: string;
   /** Elemento que recupera el foco al cerrar. */
   origen: HTMLElement | null;
+  /** Datos que llegan ya rellenos, por ejemplo desde la calculadora. */
+  datos?: { metros?: string; descripcion?: string };
 }
 
 /** Abre el formulario de presupuesto desde cualquier página o componente. */
@@ -19,12 +21,13 @@ export class PresupuestoService {
   /** Última petición; cada apertura crea un objeto nuevo y el formulario reacciona a él. */
   readonly peticion = signal<PeticionPresupuesto | null>(null);
 
-  abrir(servicio = '', ubicacion = 'pagina'): void {
+  abrir(servicio = '', ubicacion = 'pagina', datos?: PeticionPresupuesto['datos']): void {
     const activo = this.doc.activeElement;
     this.peticion.set({
       servicio,
       ubicacion,
       origen: activo instanceof HTMLElement ? activo : null,
+      datos,
     });
     this.abierto.set(true);
   }

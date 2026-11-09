@@ -40,11 +40,14 @@ export class SiteHeader {
 
   readonly servicios = PAGINAS.filter((p) => p.tipo === 'servicio');
   readonly trabajos = PAGINAS.filter((p) => p.tipo === 'trabajo');
-  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona');
+  /** El mega menú muestra las primeras zonas y enlaza al índice completo. */
+  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona').slice(0, 8);
+  readonly todasLasZonas = PAGINAS.filter((p) => p.tipo === 'zona');
 
   readonly enlaces = [
     { ruta: '/precios', texto: 'Precios' },
     { ruta: '/zonas', texto: 'Zonas' },
+    { ruta: '/guias', texto: 'Guías' },
     { ruta: '/como-trabajamos', texto: 'Cómo trabajamos' },
     { ruta: '/preguntas-frecuentes', texto: 'Preguntas' },
   ];

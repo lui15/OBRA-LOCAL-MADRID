@@ -1,8 +1,8 @@
 import { Route, Routes } from '@angular/router';
 
-import { PAGINAS } from './landing/landing-data';
+import { TODAS_LAS_PAGINAS } from './landing/landing-data';
 
-const rutasLanding: Routes = PAGINAS.map(
+const rutasLanding: Routes = TODAS_LAS_PAGINAS.map(
   (pagina): Route => ({
     path: pagina.path,
     pathMatch: 'full',
@@ -16,6 +16,15 @@ const rutasLanding: Routes = PAGINAS.map(
 
 export const routes: Routes = [
   ...rutasLanding,
+  {
+    path: 'proyectos',
+    pathMatch: 'full',
+    loadComponent: () => import('./proyectos/proyectos-page').then((m) => m.ProyectosPage),
+  },
+  {
+    path: 'proyectos/:slug',
+    loadComponent: () => import('./proyectos/proyecto-page').then((m) => m.ProyectoPage),
+  },
   {
     path: 'aviso-legal',
     loadComponent: () => import('./legal/legal-page').then((m) => m.LegalPage),
