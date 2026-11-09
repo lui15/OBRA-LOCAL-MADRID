@@ -4,7 +4,20 @@ import { EMPRESA } from '../datos/contacto';
  * Datos de los textos legales. Titular, NIF, domicilio y correo son los de ArmaMuebles (mismo titular).
  * Son un borrador: conviene que los revise un profesional.
  */
-export const LEGAL = {
+export const LEGAL: {
+  nombre: string;
+  dominio: string;
+  actividad: string;
+  titular: string;
+  nif: string;
+  domicilio: string;
+  correo: string;
+  registro: string;
+  conservacion: string;
+  datos: string;
+  proveedores: string[];
+  comunicacion: string;
+} = {
   nombre: 'ObraLocal Madrid',
   dominio: 'obralocalmadrid.es',
   actividad: 'servicios de reformas y obras en Madrid y alrededores',

@@ -11,7 +11,7 @@ import { BloqueConfianza } from '../compartido/bloque-confianza';
 import { Icono } from '../compartido/icono';
 import { Revision } from '../compartido/revision';
 import { BloqueOpiniones } from '../compartido/bloque-opiniones';
-import { opinionesDe } from '../datos/opiniones';
+import { OPINIONES, opinionesDe } from '../datos/opiniones';
 import { MAS_PEDIDOS, cifra } from '../datos/precios';
 import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
@@ -51,8 +51,8 @@ import { SeoService } from '../seo.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InicioPage {
-  /** Opiniones de la portada (las que tienen "/" en sus páginas). */
-  readonly opiniones = opinionesDe('/');
+  /** Carrusel de la portada: primero las de la portada y después el resto, para que vayan pasando. */
+  readonly opiniones = [...opinionesDe('/'), ...OPINIONES.filter((o) => !o.paginas.includes('/'))];
   /** Precios de partida del titular: baño, cocina e integral. */
   readonly masPedidos = MAS_PEDIDOS;
   readonly cifra = cifra;
