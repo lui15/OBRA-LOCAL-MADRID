@@ -1,4 +1,5 @@
-import { SERVICIOS, Servicio, ZONAS, buscarServicio } from '../datos/catalogo-servicios';
+import { Servicio, ZONAS } from '../datos/catalogo-servicios';
+import { FILAS, FilaPrecio, MAS_PEDIDOS, cifra, preciosDePagina, valorDesde } from '../datos/precios';
 import { NEGOCIO, SITE_URL } from '../datos/contacto';
 import { ULTIMA_REVISION } from '../datos/revision';
 import type { FichaPagina } from './ficha';
@@ -57,23 +58,22 @@ export function migasDe(p: Basica): Miga[] {
   return [{ etiqueta: 'Inicio', url: '/' }, ...cadena.map((c) => ({ etiqueta: c.etiqueta, url: urlDePagina(c) }))];
 }
 
-const MINIMO_CATALOGO = Math.min(...SERVICIOS.flatMap((s) => s.precios.map((x) => x.minimo)));
-
-/** Precio más bajo que se publica como oferta de la página, o null si no procede. */
-export function precioDesde(p: Basica): number | null {
+/** Precio principal de la página (cabecera, tarjetas y datos estructurados), o null si no procede. */
+export function precioPrincipal(p: Basica): FilaPrecio | null {
   if (p.preciosSoloReferencia || p.borrador) return null;
-  if (p.servicioCatalogo) {
-    const precios = buscarServicio(p.servicioCatalogo)?.precios ?? [];
-    return precios.length ? Math.min(...precios.map((x) => x.minimo)) : null;
-  }
-  return p.tipo === 'zona' ? MINIMO_CATALOGO : null;
+  return preciosDePagina(p.path, p.servicioCatalogo)[0] ?? null;
 }
 
-/** Etiqueta «desde X €» de la cabecera; en los índices de servicios y precios, el más bajo. */
-export function precioCabecera(p: Basica): number | null {
-  const desde = precioDesde(p);
-  if (desde !== null || (p.modulo !== 'servicios' && p.modulo !== 'precios')) return desde;
-  return MINIMO_CATALOGO;
+/** Trabajo completo más barato de la web (sin contar precios por m², hora o unidad). */
+const MINIMO_TOTAL = Math.min(...FILAS.filter((f) => !f.unidad).map((f) => f.minimo));
+
+/** Etiqueta de la cabecera: «Desde 5.000 €», «Baño desde 5.000 €» en las zonas. */
+export function precioCabecera(p: Basica): { etiqueta: string; valor: string } | null {
+  const f = precioPrincipal(p);
+  if (f) return { etiqueta: 'Desde', valor: valorDesde(f) };
+  if (p.tipo === 'zona') return { etiqueta: 'Baño desde', valor: `${cifra(MAS_PEDIDOS[0].desde)} €` };
+  if (p.modulo === 'servicios' || p.modulo === 'precios') return { etiqueta: 'Desde', valor: `${cifra(MINIMO_TOTAL)} €` };
+  return null;
 }
 
 /* ------------------------------------------------------------ nodos de datos estructurados */

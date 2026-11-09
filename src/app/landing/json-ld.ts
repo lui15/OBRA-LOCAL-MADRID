@@ -1,5 +1,6 @@
 import { SITE_URL } from '../datos/contacto';
 import { ULTIMA_REVISION } from '../datos/revision';
+import { extremosFilas, preciosDePagina } from '../datos/precios';
 import {
   ID_NEGOCIO,
   migasDe,
@@ -7,7 +8,7 @@ import {
   nodoNegocio,
   nodoPagina,
   nodoWeb,
-  precioDesde,
+  precioPrincipal,
   urlDePagina,
 } from './fichas';
 import { Faq, PaginaSeo } from './pagina-seo';
@@ -29,7 +30,8 @@ export function crearJsonLd(p: PaginaSeo, faqs: readonly Faq[] = faqsDe(p)): obj
   if (p.tipo !== 'inicio') nodos.push(nodoMigas(migasDe(p)));
 
   if (p.tipo === 'servicio' || p.tipo === 'trabajo' || p.tipo === 'zona') {
-    const desde = precioDesde(p);
+    const principal = precioPrincipal(p);
+    const extremos = principal ? extremosFilas(preciosDePagina(p.path, p.servicioCatalogo)) : null;
     nodos.push({
       '@type': 'Service',
       name: p.servicio.nombre,
@@ -38,13 +40,28 @@ export function crearJsonLd(p: PaginaSeo, faqs: readonly Faq[] = faqsDe(p)): obj
       url,
       provider: { '@id': ID_NEGOCIO },
       areaServed: p.zona ? { '@type': 'Place', name: p.zona } : { '@type': 'City', name: 'Madrid' },
-      ...(desde !== null
+      ...(principal && extremos
         ? {
             offers: {
               '@type': 'Offer',
               url,
               priceCurrency: 'EUR',
-              priceSpecification: { '@type': 'PriceSpecification', minPrice: desde, priceCurrency: 'EUR' },
+              priceSpecification: principal.unidad
+                ? {
+                    '@type': 'UnitPriceSpecification',
+                    minPrice: extremos.minimo,
+                    maxPrice: extremos.maximo,
+                    priceCurrency: 'EUR',
+                    unitText: principal.unidad.replace('€', '').replace('/', '').trim() || principal.unidad,
+                    valueAddedTaxIncluded: true,
+                  }
+                : {
+                    '@type': 'PriceSpecification',
+                    minPrice: extremos.minimo,
+                    maxPrice: extremos.maximo,
+                    priceCurrency: 'EUR',
+                    valueAddedTaxIncluded: true,
+                  },
             },
           }
         : {}),

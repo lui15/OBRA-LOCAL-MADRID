@@ -62,7 +62,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Bloques del crecimiento industrial y barrios nuevos del norte y el sur.',
     intro:
       'Getafe creció muy deprisa a partir de los años sesenta, de la mano de su industria, y eso se nota en su vivienda: muchos bloques de esa época en el Centro, Juan de la Cierva, Las Margaritas o San Isidro, y barrios mucho más recientes como Getafe Norte, El Bercial, Los Molinos o Buenavista. Una reforma aquí empieza por saber en cuál de los dos mundos está tu piso.',
-    puntos: ['Desde 150 €', 'Bloques de los años 60 y 70', 'Barrios nuevos al norte y al sur', 'Ayuntamiento de Getafe'],
+    puntos: ['Baño desde 5.000 €', 'Bloques de los años 60 y 70', 'Barrios nuevos al norte y al sur', 'Ayuntamiento de Getafe'],
     imagen: img('edificios-madrid'),
     imagenAlt: 'Bloques residenciales en el sur de Madrid',
     secciones: [
@@ -136,7 +136,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso en Getafe?',
         respuesta:
-          'Como referencia general, una reforma de 60 a 90 m² va de 25.000 a 45.000 € y un baño completo de 3.500 a 7.000 €. Son precios orientativos que dependen del estado del piso y de las calidades.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido, y un baño completo cuesta 5.500–10.000 € en calidad media. El importe depende del estado del piso y de las calidades.',
       },
       {
         pregunta: '¿Necesito licencia para reformar en Getafe?',
@@ -157,7 +157,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Zarzaquemada, San Nicasio y los desarrollos de Arroyo Culebro y Solagua.',
     intro:
       'Zarzaquemada es uno de los grandes conjuntos de vivienda de los años sesenta y setenta del sur de Madrid, y buena parte de las reformas de Leganés se concentran en pisos así: muchos metros de bloque, distribuciones repetidas y un potencial grande de mejora. A su lado conviven barrios como San Nicasio, El Carrascal, La Fortuna y los desarrollos más nuevos de Arroyo Culebro, Valdepelayo o Solagua.',
-    puntos: ['Desde 150 €', 'Grandes conjuntos de bloques', 'Distribuciones repetidas', 'Ayuntamiento de Leganés'],
+    puntos: ['Baño desde 5.000 €', 'Grandes conjuntos de bloques', 'Distribuciones repetidas', 'Ayuntamiento de Leganés'],
     imagen: img('edificio-ladrillo-madrid'),
     imagenAlt: 'Edificio residencial de ladrillo',
     secciones: [
@@ -228,7 +228,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma integral en Leganés?',
         respuesta:
-          'Como referencia general, de 40 a 60 m² va de 15.000 a 25.000 € y de 60 a 90 m² de 25.000 a 45.000 €. Son precios orientativos.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 60 m² en calidad media, 39.000–51.000 €.',
       },
     ],
     relacionadas: ['reformas-getafe', 'reformas-alcorcon', 'reforma-piso-completo-madrid', 'calculadora-reforma', 'zonas'],
@@ -244,7 +244,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Parques residenciales de los setenta, Ensanche Sur y chalets de Campodón.',
     intro:
       'Alcorcón se organizó en buena parte en grandes «parques» residenciales: Parque Lisboa, Parque Ondarreta o San José de Valderas, con bloques de los años setenta rodeados de zonas verdes. A ellos se suman el Ensanche Sur, mucho más reciente, y la zona de chalets de Campodón. Cada uno pide un enfoque de reforma distinto.',
-    puntos: ['Desde 150 €', 'Parques residenciales', 'Ensanche Sur', 'Chalets en Campodón'],
+    puntos: ['Baño desde 5.000 €', 'Parques residenciales', 'Ensanche Sur', 'Chalets en Campodón'],
     imagen: img('sala-vacia'),
     imagenAlt: 'Habitación renovada con paredes lisas',
     secciones: [
@@ -335,7 +335,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Centro, Villafontana, Móstoles Sur y los chalets de Parque Coimbra.',
     intro:
       'Móstoles pasó de pueblo a gran ciudad en pocas décadas, y su vivienda lo refleja: bloques del Centro y Villafontana levantados durante ese crecimiento, barrios recientes como Móstoles Sur y urbanizaciones de chalets como Parque Coimbra. Conocer la época del edificio es la mejor forma de anticipar qué necesita tu reforma.',
-    puntos: ['Desde 150 €', 'Bloques del crecimiento urbano', 'Móstoles Sur', 'Chalets en Parque Coimbra'],
+    puntos: ['Baño desde 5.000 €', 'Bloques del crecimiento urbano', 'Móstoles Sur', 'Chalets en Parque Coimbra'],
     imagen: img('piso-reformado'),
     imagenAlt: 'Piso reformado con suelo de madera',
     secciones: [
@@ -415,7 +415,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 80 m² en Móstoles?',
         respuesta:
-          'Como referencia general, una reforma de 60 a 90 m² va de 25.000 a 45.000 €. Es un precio orientativo que depende del estado y las calidades.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. El importe depende del estado y de las calidades.',
       },
     ],
     relacionadas: ['reformas-alcorcon', 'reformas-integrales-madrid', 'calculadora-reforma', 'precios', 'zonas'],
@@ -431,7 +431,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Pueblo, Estación, Avenida de Europa y chalets de Somosaguas o Monteclaro.',
     intro:
       'Pozuelo de Alarcón mezcla un casco urbano con pisos de varias épocas (el Pueblo y la Estación), zonas residenciales más recientes alrededor de la Avenida de Europa y grandes urbanizaciones de vivienda unifamiliar como Somosaguas o Monteclaro. Las reformas aquí suelen ser amplias y con calidades altas, y la organización de la obra importa tanto como el proyecto.',
-    puntos: ['Desde 150 €', 'Pisos y viviendas unifamiliares', 'Urbanizaciones con normas propias', 'Ayuntamiento de Pozuelo'],
+    puntos: ['Baño desde 5.000 €', 'Pisos y viviendas unifamiliares', 'Urbanizaciones con normas propias', 'Ayuntamiento de Pozuelo'],
     imagen: img('cocina-abierta'),
     imagenAlt: 'Cocina abierta al comedor en una vivienda amplia',
     secciones: [
@@ -523,7 +523,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Centro, Las Matas y urbanizaciones de chalets como El Pinar o Molino de la Hoz.',
     intro:
       'Las Rozas es un municipio repartido en varios núcleos: el centro urbano, Las Matas y un buen número de urbanizaciones de vivienda unifamiliar, como El Pinar o Molino de la Hoz. Hay pisos, adosados y chalets de distintas épocas, y por eso aquí la pregunta clave antes de reformar es qué tipo de vivienda tienes.',
-    puntos: ['Desde 150 €', 'Pisos, adosados y chalets', 'Varios núcleos urbanos', 'Ayuntamiento de Las Rozas'],
+    puntos: ['Baño desde 5.000 €', 'Pisos, adosados y chalets', 'Varios núcleos urbanos', 'Ayuntamiento de Las Rozas'],
     imagen: img('reformas-integrales'),
     imagenAlt: 'Vivienda durante una reforma integral',
     secciones: [
@@ -598,7 +598,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un chalet en Las Rozas?',
         respuesta:
-          'Depende mucho de la superficie y de si hay obra exterior. Nuestro rango para reformas de más de 90 m² va de 45.000 a 80.000 € como referencia; los chalets grandes pueden quedar fuera.',
+          'Depende mucho de la superficie y de si hay obra exterior. Como referencia, la reforma integral de una vivienda cuesta 500–1.200 €/m² según la calidad; la obra exterior de un chalet se presupuesta aparte.',
       },
     ],
     relacionadas: ['reformas-majadahonda', 'reformas-pozuelo-de-alarcon', 'pladur-madrid', 'reformas-integrales-madrid', 'zonas'],
@@ -614,7 +614,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Casco, urbanizaciones de pisos con zonas comunes y chalets.',
     intro:
       'Majadahonda combina un casco con pisos de varias décadas, urbanizaciones de bloques con zonas comunes, como Los Satélites o Roza Martín, y vivienda unifamiliar en el entorno del Monte del Pilar. Muchas de sus viviendas se compraron hace años y ahora necesitan una actualización completa, con cambios de distribución pensados para la vida actual.',
-    puntos: ['Desde 150 €', 'Urbanizaciones con zonas comunes', 'Pisos amplios', 'Ayuntamiento de Majadahonda'],
+    puntos: ['Baño desde 5.000 €', 'Urbanizaciones con zonas comunes', 'Pisos amplios', 'Ayuntamiento de Majadahonda'],
     imagen: img('reformas-integrales-ejemplo'),
     imagenAlt: 'Piso amplio en obra',
     secciones: [
@@ -697,7 +697,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso grande en Majadahonda?',
         respuesta:
-          'Nuestro rango orientativo para reformas de más de 90 m² va de 45.000 a 80.000 €. Las calidades y los cambios de distribución marcan dónde se sitúa cada caso.',
+          'La reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta. Las calidades y los cambios de distribución marcan dónde se sitúa cada caso.',
       },
     ],
     relacionadas: ['reformas-las-rozas', 'reformas-pozuelo-de-alarcon', 'reforma-cocinas-madrid', 'reforma-piso-completo-madrid', 'zonas'],
@@ -713,7 +713,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Pisos clásicos de Argüelles, bloques de Valdezarza y chalets de Aravaca.',
     intro:
       'Moncloa-Aravaca es uno de los distritos más variados de Madrid: los edificios clásicos de Argüelles, junto a la calle Princesa; los bloques de mediados del siglo XX de Valdezarza; y la vivienda unifamiliar de Aravaca, El Plantío o Valdemarín, al otro lado de la Casa de Campo. Reformar en Argüelles y reformar en Aravaca se parecen poco.',
-    puntos: ['Desde 150 €', 'Fincas clásicas en Argüelles', 'Chalets en Aravaca', 'Ordenanza de Madrid capital'],
+    puntos: ['Baño desde 5.000 €', 'Fincas clásicas en Argüelles', 'Chalets en Aravaca', 'Ordenanza de Madrid capital'],
     imagen: img('edificio-clasico-madrid'),
     imagenAlt: 'Fachadas clásicas de edificios residenciales en Madrid',
     secciones: [
@@ -811,7 +811,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Pisos pequeños, edificios de varias épocas y calles estrechas.',
     intro:
       'Tetuán es un distrito de contrastes: junto a los grandes edificios de oficinas cercanos a la Castellana, barrios como Bellas Vistas, Cuatro Caminos, Valdeacederas, Berruguete o Almenara conservan calles estrechas y una mezcla de edificios de muchas épocas. Abundan los pisos pequeños, que con una buena reforma pueden ganar mucho.',
-    puntos: ['Desde 150 €', 'Pisos pequeños', 'Calles estrechas', 'Ordenanza de Madrid capital'],
+    puntos: ['Baño desde 5.000 €', 'Pisos pequeños', 'Calles estrechas', 'Ordenanza de Madrid capital'],
     imagen: img('piso-en-obra'),
     imagenAlt: 'Piso pequeño durante la reforma',
     secciones: [
@@ -900,7 +900,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso pequeño en Tetuán?',
         respuesta:
-          'Como referencia general, una reforma de 40 a 60 m² va de 15.000 a 25.000 €. Es un precio orientativo que depende del estado y de lo que se quiera cambiar.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 50 m² en calidad media, 32.500–42.500 €. Depende del estado y de lo que se quiera cambiar.',
       },
     ],
     relacionadas: ['reformas-chamartin', 'reformas-chamberi', 'quitar-gotele-madrid', 'calculadora-reforma', 'zonas'],
@@ -916,7 +916,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Delicias, Acacias, Legazpi e Imperial, junto a Madrid Río.',
     intro:
       'Arganzuela fue durante décadas un distrito ligado al ferrocarril y a la industria, y su vivienda lo refleja: edificios de principios y mediados del siglo XX en Delicias, Acacias, Chopera o Imperial, y desarrollos más recientes en zonas como Legazpi. La renovación del entorno del río ha hecho que muchos de esos pisos se estén reformando a fondo.',
-    puntos: ['Desde 150 €', 'Edificios de principios y mediados del XX', 'Entorno de Madrid Río', 'Ordenanza de Madrid capital'],
+    puntos: ['Baño desde 5.000 €', 'Edificios de principios y mediados del XX', 'Entorno de Madrid Río', 'Ordenanza de Madrid capital'],
     imagen: img('edificio-esquina'),
     imagenAlt: 'Balcones de un edificio residencial clásico',
     secciones: [
@@ -1000,7 +1000,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma integral en Arganzuela?',
         respuesta:
-          'Como referencia general, de 60 a 90 m² va de 25.000 a 45.000 €. Es un precio orientativo.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido.',
       },
     ],
     relacionadas: ['reformas-retiro', 'reformas-latina', 'reformas-integrales-madrid', 'pladur-madrid', 'zonas'],
@@ -1016,7 +1016,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Pisos amplios, colonias históricas como El Viso y comunidades exigentes.',
     intro:
       'Chamartín reúne barrios como Hispanoamérica, Nueva España, Castilla, Prosperidad, Ciudad Jardín y El Viso. Predominan los pisos amplios en edificios de la segunda mitad del siglo XX, junto a colonias históricas de viviendas unifamiliares. Son reformas de nivel medio-alto, en las que el detalle y la coordinación con la comunidad importan.',
-    puntos: ['Desde 150 €', 'Pisos amplios', 'Colonias históricas', 'Ordenanza de Madrid capital'],
+    puntos: ['Baño desde 5.000 €', 'Pisos amplios', 'Colonias históricas', 'Ordenanza de Madrid capital'],
     imagen: img('cocina-nueva'),
     imagenAlt: 'Cocina renovada en un piso amplio',
     secciones: [
@@ -1079,7 +1079,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma integral de un piso grande?',
         respuesta:
-          'Nuestro rango orientativo para más de 90 m² va de 45.000 a 80.000 €. Las calidades y los cambios de distribución marcan dónde se sitúa cada caso.',
+          'La reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta. Las calidades y los cambios de distribución marcan dónde se sitúa cada caso.',
       },
       {
         pregunta: '¿Qué debe describir un presupuesto de calidad alta?',
@@ -1115,7 +1115,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Aluche, Lucero, Los Cármenes y Puerta del Ángel: bloques de los 50 a los 70.',
     intro:
       'Latina es uno de los distritos más poblados de Madrid y gran parte de su vivienda se construyó entre los años cincuenta y setenta: los grandes conjuntos de Aluche, los barrios de Lucero y Los Cármenes, y la zona más antigua de Puerta del Ángel. Son pisos con mucha vida por delante si se renuevan bien.',
-    puntos: ['Desde 150 €', 'Bloques de los años 50 a 70', 'Grandes conjuntos en Aluche', 'Ordenanza de Madrid capital'],
+    puntos: ['Baño desde 5.000 €', 'Bloques de los años 50 a 70', 'Grandes conjuntos en Aluche', 'Ordenanza de Madrid capital'],
     imagen: img('edificios-madrid'),
     imagenAlt: 'Bloques residenciales en Madrid',
     secciones: [
@@ -1198,7 +1198,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 70 m² en Latina?',
         respuesta:
-          'Como referencia general, una reforma de 60 a 90 m² va de 25.000 a 45.000 €. Tienes un desglose de qué influye en nuestra guía sobre un piso de 70 m².',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Tienes un desglose de qué influye en nuestra guía sobre un piso de 70 m².',
       },
     ],
     relacionadas: ['reformas-carabanchel', 'reformas-arganzuela', 'reforma-piso-completo-madrid', 'quitar-gotele-madrid', 'zonas'],
@@ -1214,7 +1214,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Ventas, Pueblo Nuevo, Quintana, Concepción y el eje de Arturo Soria.',
     intro:
       'El distrito toma su nombre del proyecto de Ciudad Lineal de Arturo Soria, de finales del siglo XIX, y todavía conserva en el entorno de esa calle algunas viviendas unifamiliares y colonias. Pero la mayor parte de su vivienda son bloques de pisos de mediados del siglo XX en barrios como Ventas, Pueblo Nuevo, Quintana, Concepción o San Pascual.',
-    puntos: ['Desde 150 €', 'Bloques de mediados del XX', 'Viviendas unifamiliares en Arturo Soria', 'Ordenanza de Madrid capital'],
+    puntos: ['Baño desde 5.000 €', 'Bloques de mediados del XX', 'Viviendas unifamiliares en Arturo Soria', 'Ordenanza de Madrid capital'],
     imagen: img('reforma-cocina'),
     imagenAlt: 'Cocina renovada en un piso de Madrid',
     secciones: [
@@ -1297,7 +1297,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un baño en Ciudad Lineal?',
         respuesta:
-          'Como referencia, una reforma parcial va de 1.500 a 3.000 € y un baño completo de 3.500 a 7.000 €. Son precios orientativos.',
+          'Como referencia, cambiar la bañera por un plato de ducha cuesta 1.000–2.200 € y un baño completo 5.500–10.000 € en calidad media, IVA incluido.',
       },
     ],
     relacionadas: ['reformas-chamartin', 'reforma-cocinas-madrid', 'reforma-banos-madrid', 'calculadora-reforma', 'zonas'],
@@ -1313,7 +1313,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
     resumen: 'Puente de Vallecas, Villa de Vallecas y el Ensanche de Vallecas.',
     intro:
       'Vallecas son en realidad dos distritos: Puente de Vallecas, con barrios como Entrevías, San Diego, Palomeras, Portazgo o Numancia, y Villa de Vallecas, que incluye el casco histórico, Santa Eugenia y el Ensanche de Vallecas. Entre ellos hay vivienda de casi todas las épocas, desde edificios antiguos hasta promociones muy recientes.',
-    puntos: ['Desde 150 €', 'Dos distritos', 'Vivienda de muchas épocas', 'Ordenanza de Madrid capital'],
+    puntos: ['Baño desde 5.000 €', 'Dos distritos', 'Vivienda de muchas épocas', 'Ordenanza de Madrid capital'],
     imagen: img('edificio-ladrillo-madrid'),
     imagenAlt: 'Edificio de viviendas de ladrillo',
     secciones: [
@@ -1396,7 +1396,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta quitar el gotelé en un piso de Vallecas?',
         respuesta:
-          'Como referencia de nuestro servicio de paredes, un alisado de 10 a 20 m² con preparación va de 400 a 800 €. Depende del estado de la pared.',
+          'Como referencia, alisar paredes sin gotelé cuesta 10–16 €/m², y quitar el gotelé, alisar y pintar, 14–22 €/m² de pared. Depende del estado de la pared.',
       },
     ],
     relacionadas: ['reformas-retiro', 'quitar-gotele-madrid', 'pladur-madrid', 'precios', 'zonas'],

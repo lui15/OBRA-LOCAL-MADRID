@@ -6,31 +6,37 @@
       <input
         type="number"
         inputmode="numeric"
-        min="20"
-        max="400"
+        [min]="limites.m2[0]"
+        [max]="limites.m2[1]"
         [value]="e.m2"
         (input)="cambiar('m2', libre($event))"
-        (blur)="cambiar('m2', numero($event, 20, 400)); fijar($event, entrada().m2)"
+        (blur)="cambiar('m2', numero($event, limites.m2[0], limites.m2[1])); fijar($event, entrada().m2)"
       />
     </label>
 
     <fieldset class="campo">
-      <legend>¿Vas a cambiar la distribución?</legend>
+      <legend>¿Qué vas a hacer?</legend>
       <div class="opciones">
-        <label><input type="radio" name="redistribucion" [checked]="!e.redistribucion" (change)="cambiar('redistribucion', false)" /> No</label>
-        <label><input type="radio" name="redistribucion" [checked]="e.redistribucion" (change)="cambiar('redistribucion', true)" /> Sí, tirar o mover tabiques</label>
+        <label>
+          <input type="radio" name="redistribucion" [checked]="e.redistribucion" (change)="cambiar('redistribucion', true)" />
+          Reforma integral (cambiar distribución, instalaciones y acabados)
+        </label>
+        <label>
+          <input type="radio" name="redistribucion" [checked]="!e.redistribucion" (change)="cambiar('redistribucion', false)" />
+          Solo algunas partes: cocina, baños, pintura o suelos
+        </label>
       </div>
     </fieldset>
 
     @if (!e.redistribucion) {
-      <label class="campo">
-        <span>Cocina</span>
-        <select [value]="e.cocina" (change)="cambiar('cocina', $any(valor($event)))">
-          <option value="no">No la toco</option>
-          <option value="parcial">Parcial: muebles y encimera</option>
-          <option value="completa">Completa: muebles e instalaciones</option>
-        </select>
-      </label>
+      <fieldset class="campo">
+        <legend>Partes de la reforma</legend>
+        <div class="opciones">
+          <label><input type="checkbox" [checked]="e.cocina" (change)="cambiar('cocina', marcado($event))" /> Cocina completa</label>
+          <label><input type="checkbox" [checked]="e.pintura" (change)="cambiar('pintura', marcado($event))" /> Pintura de paredes y techos</label>
+          <label><input type="checkbox" [checked]="e.suelos" (change)="cambiar('suelos', marcado($event))" /> Suelos nuevos</label>
+        </div>
+      </fieldset>
 
       <div class="fila">
         <label class="campo">
@@ -38,56 +44,48 @@
           <input
             type="number"
             inputmode="numeric"
-            min="0"
-            max="4"
+            [min]="limites.banos[0]"
+            [max]="limites.banos[1]"
             [value]="e.banos"
-            (input)="cambiar('banos', numero($event, 0, 4))"
+            (input)="cambiar('banos', numero($event, limites.banos[0], limites.banos[1]))"
             (blur)="fijar($event, entrada().banos)"
           />
         </label>
-        <label class="campo">
-          <span>Tipo de reforma del baño</span>
-          <select [value]="e.tipoBano" [disabled]="e.banos === 0" (change)="cambiar('tipoBano', $any(valor($event)))">
-            <option value="parcial">Parcial, sin cambiar distribución</option>
-            <option value="completo">Completo, con demolición</option>
-          </select>
-        </label>
+        <fieldset class="campo" [disabled]="e.banos === 0">
+          <legend>En el baño</legend>
+          <div class="opciones">
+            <label><input type="radio" name="soloPlato" [checked]="!e.soloPlato" (change)="cambiar('soloPlato', false)" /> Baño completo</label>
+            <label><input type="radio" name="soloPlato" [checked]="e.soloPlato" (change)="cambiar('soloPlato', true)" /> Solo cambiar bañera por plato</label>
+          </div>
+        </fieldset>
       </div>
-
-      <fieldset class="campo">
-        <legend>Otros trabajos</legend>
-        <div class="opciones">
-          <label><input type="checkbox" [checked]="e.pintura" (change)="cambiar('pintura', marcado($event))" /> Pintura de la vivienda</label>
-          <label><input type="checkbox" [checked]="e.suelos" (change)="cambiar('suelos', marcado($event))" /> Suelos</label>
-        </div>
-      </fieldset>
     }
 
-    <label class="campo">
-      <span>Calidad de materiales</span>
-      <select [value]="e.calidad" (change)="cambiar('calidad', $any(valor($event)))">
-        <option value="basica">Básica</option>
-        <option value="media">Media</option>
-        <option value="alta">Alta</option>
-      </select>
-    </label>
+    <fieldset class="campo">
+      <legend>Calidad de materiales</legend>
+      <div class="opciones">
+        @for (c of calidades; track c.id) {
+          <label>
+            <input type="radio" name="calidad" [checked]="e.calidad === c.id" (change)="cambiar('calidad', c.id)" />
+            <span><strong>{{ c.nombre }}</strong> · {{ c.explicacion }}</span>
+          </label>
+        }
+      </div>
+    </fieldset>
   </form>
 
   <div class="calc-resultado" aria-live="polite">
     @if (resultado(); as r) {
-      <span class="etiqueta">Rango orientativo</span>
-      <strong class="rango">{{ formato(r.minimo) }} – {{ formato(r.maximo) }}</strong>
-      <p class="plazo" [class.pendiente]="pendiente(r.plazo)">Plazo orientativo: {{ r.plazo }}</p>
+      <span class="etiqueta">Precio orientativo</span>
+      <strong class="rango">{{ euros(r.minimo) }} – {{ euros(r.maximo) }}</strong>
+      <p class="plazo">Plazo orientativo: {{ r.plazo }}</p>
 
       <ul class="lineas">
         @for (l of r.lineas; track l.concepto) {
           <li>
-            <span>{{ l.concepto }}</span>
-            <span>{{ formato(l.minimo) }}–{{ formato(l.maximo) }}</span>
+            <span>{{ l.concepto }} <small>· {{ l.plazo }}</small></span>
+            <span>{{ euros(l.minimo) }} – {{ euros(l.maximo) }}</span>
           </li>
-        }
-        @for (s of r.sinPrecio; track s) {
-          <li class="pendiente"><span>{{ s }}</span></li>
         }
       </ul>
 
@@ -95,15 +93,12 @@
         <p class="aviso">{{ a }}</p>
       }
     } @else {
-      <p class="aviso">Elige al menos un trabajo para ver un rango.</p>
+      <p class="aviso">Elige al menos una parte de la reforma para ver el precio.</p>
     }
 
     <button type="button" class="button button-orange" (click)="pedirPresupuesto()">
-      Quiero mi presupuesto por partidas <span>↗</span>
+      Pide tu presupuesto cerrado <span aria-hidden="true">↗</span>
     </button>
-    <p class="nota">
-      Es una orientación hecha con nuestros precios de referencia, no un presupuesto. La calidad
-      no cambia los precios: indica en qué parte del rango se sitúa tu reforma.
-    </p>
+    <p class="nota">{{ nota }}</p>
   </div>
 </div>

@@ -42,9 +42,9 @@ export const FICHAS: FichaPagina[] = [
     "grupo": "hub",
     "path": "precios",
     "tipo": "hub",
-    "title": "Precios de reformas en Madrid 2026 | ObraLocal Madrid",
-    "etiqueta": "Precios orientativos",
-    "resumen": "Guía de precios: €/m², ejemplo por partidas, plazos y qué influye en el coste.",
+    "title": "Precios de reformas en Madrid 2026: baño desde 5.000 €",
+    "etiqueta": "Precios",
+    "resumen": "Precios por m² y por trabajo, un piso de 80 m² por partidas, plazos y ejemplos.",
     "imagen": "/images/planos-mesa.webp",
     "imagenAlt": "Plano de una vivienda sobre una mesa para calcular una reforma",
     "modulo": "precios",
@@ -53,7 +53,8 @@ export const FICHAS: FichaPagina[] = [
       "cuanto-cuesta-reformar-piso-70-m2-madrid",
       "que-pedir-presupuesto-reforma",
       "reformas-integrales-madrid",
-      "ayudas-reformas-madrid"
+      "reforma-banos-madrid",
+      "licencia-obra-madrid"
     ]
   },
   {
@@ -417,7 +418,6 @@ export const FICHAS: FichaPagina[] = [
     "imagen": "/images/plato-ducha.webp",
     "imagenAlt": "Ducha de obra con plato y mampara de vidrio",
     "servicioCatalogo": "Reforma de baño",
-    "preciosSoloReferencia": true,
     "relacionadas": [
       "que-pedir-presupuesto-reforma",
       "precios",
@@ -902,7 +902,7 @@ export const FICHAS: FichaPagina[] = [
     "path": "cuanto-cuesta-reformar-piso-70-m2-madrid",
     "tipo": "guia",
     "padre": "guias",
-    "title": "Cuánto cuesta reformar un piso de 70 m² en Madrid",
+    "title": "Reformar un piso de 70 m² en Madrid: desde 35.000 €",
     "etiqueta": "Cuánto cuesta reformar un piso de 70 m²",
     "resumen": "Rangos con y sin redistribución, y qué hace subir o bajar el precio.",
     "imagen": "/images/piso-reformado.webp",

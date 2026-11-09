@@ -122,7 +122,6 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Reforma de baño',
     servicioFormulario: 'Reforma de baño',
-    preciosSoloReferencia: true,
     imagen: '/images/plato-ducha.webp',
     imagenAlt: 'Ducha de obra con plato y mampara de vidrio',
     relacionadas: [
@@ -147,7 +146,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     resumen: 'Raspar, cubrir o trasdosar: qué método encaja con tu pared.',
     h1: { antes: 'Quitar', resaltado: 'gotelé', despues: 'en Madrid' },
     puntos: [
-      'Desde 150 €',
+      'Desde 14 €/m²',
       'Raspar, cubrir o trasdosar',
       'Paredes y techos',
       'Listo para pintar',
@@ -237,7 +236,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta quitar el gotelé en Madrid?',
         respuesta:
-          'Como referencia de nuestro servicio de paredes: un alisado localizado de 5 a 10 m² va de 150 a 350 €, de 10 a 20 m² con preparación de 400 a 800 €, y de 20 a 40 m² con pintura de 1.000 a 2.000 €. Son precios orientativos, que cambian según la pared.',
+          'Quitar el gotelé, alisar y pintar cuesta 14–22 €/m² de pared, IVA incluido. En un piso completo se hace en 1–2 semanas. Si la pared no tiene gotelé y solo hay que alisarla, son 10–16 €/m².',
       },
       {
         pregunta: '¿Es mejor raspar o tapar el gotelé?',
@@ -285,7 +284,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     resumen: 'Qué revisar al comprar un piso y cómo priorizar el presupuesto.',
     h1: { antes: 'Reforma de', resaltado: 'piso completo', despues: 'en Madrid' },
     puntos: [
-      'Desde 15.000 €',
+      'Desde 500 €/m²',
       'Si acabas de comprar',
       'Prioridades de obra',
       'Comunidad y logística',
@@ -371,7 +370,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso completo en Madrid?',
         respuesta:
-          'Como referencia: de 40 a 60 m² va de 15.000 a 25.000 €, de 60 a 90 m² de 25.000 a 45.000 €, y a partir de 90 m² de 45.000 a 80.000 €. Son precios orientativos que dependen de las calidades, las instalaciones y la distribución.',
+          'Reformar un piso completo cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Si hay que renovar instalaciones, la eléctrica completa de un piso de 80 m² cuesta 3.500–7.000 € y la fontanería 2.500–5.000 €. Un piso de 70–80 m² se reforma en 8–12 semanas.',
       },
       {
         pregunta: '¿Por dónde empiezo si acabo de comprar un piso?',

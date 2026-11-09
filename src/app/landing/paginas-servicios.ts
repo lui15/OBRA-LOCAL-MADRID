@@ -15,7 +15,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     resumen: 'Renovación completa o parcial de viviendas y locales, ordenada por partidas.',
     h1: { antes: 'Reformas', resaltado: 'integrales', despues: 'en Madrid' },
     puntos: [
-      'Desde 15.000 €',
+      'Desde 500 €/m²',
       'Presupuesto por partidas',
       'Viviendas y locales',
       'Distribución e instalaciones',
@@ -92,7 +92,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 80 m² en Madrid?',
         respuesta:
-          'Como referencia, una reforma de 60 a 90 m² en varias estancias va de 25.000 a 45.000 €. Es un precio orientativo: el importe final debe confirmar cantidades, calidades, mano de obra, impuestos y exclusiones.',
+          'Una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En un piso de 80 m² en calidad media, desglosado por partidas, queda entre 44.000 y 73.500 €. Un piso de 70–80 m² se reforma en 8–12 semanas. Te damos el presupuesto cerrado por escrito cuando vemos tu caso.',
       },
       {
         pregunta: '¿Puedo vivir en casa durante una reforma integral?',
@@ -140,7 +140,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     resumen: 'Azulejos, sanitarios, muebles, grifería e instalaciones, por partes o por completo.',
     h1: { antes: 'Reforma de', resaltado: 'baños', despues: 'en Madrid' },
     puntos: [
-      'Desde 600 €',
+      'Baño completo desde 5.000 €',
       'Parcial o completa',
       'Impermeabilización incluida en la valoración',
       'Cambio de bañera por ducha',
@@ -225,7 +225,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un baño en Madrid?',
         respuesta:
-          'Como referencia: un cambio puntual de grifería o mueble va de 600 a 1.200 €, una reforma parcial sin cambiar la distribución de 1.500 a 3.000 €, y un baño completo con demolición de 3.500 a 7.000 €. Son precios orientativos que deben confirmarse con una valoración.',
+          'Un baño completo de 4 a 6 m² cuesta entre 5.500 y 10.000 € en calidad media, IVA incluido: en básica parte de 5.000 € y en alta puede llegar a 13.000 €. Se hace en 2–3 semanas. Si solo quieres cambiar la bañera por un plato de ducha, son 1.000–2.200 € en 1–2 días.',
       },
       {
         pregunta: '¿Se puede alicatar encima del azulejo antiguo?',
@@ -268,7 +268,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     resumen: 'Muebles, encimeras, revestimientos e instalaciones de agua y luz.',
     h1: { antes: 'Reforma de', resaltado: 'cocinas', despues: 'en Madrid' },
     puntos: [
-      'Desde 1.500 €',
+      'Desde 8.000 €',
       'Muebles y encimeras',
       'Agua y electricidad',
       'Cambio puntual o cocina completa',
@@ -358,7 +358,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar una cocina en Madrid?',
         respuesta:
-          'Como referencia: un cambio puntual de encimera y ajustes va de 1.500 a 3.000 €, una cocina parcial con muebles y encimera de 4.000 a 8.000 €, y una cocina completa con muebles e instalaciones de 9.000 a 15.000 €. Son precios orientativos.',
+          'Una cocina completa de 8 a 12 m² cuesta entre 8.000 y 18.000 €, sin electrodomésticos e IVA incluido. Se hace en 3–4 semanas. Cada punto de luz empotrado en el techo suma 25–40 €.',
       },
       {
         pregunta: '¿Puedo cambiar la encimera sin cambiar los muebles?',
@@ -401,7 +401,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     resumen: 'Tabiques, enfoscados, alicatados, solados, huecos y reparaciones de obra.',
     h1: { antes: '', resaltado: 'Albañilería', despues: 'en Madrid' },
     puntos: [
-      'Desde 150 €',
+      'Oficial desde 25 €/h',
       'Arreglos pequeños y obra',
       'Tabiques, alicatados y solados',
       'Retirada de escombros valorada',
@@ -491,7 +491,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta un trabajo de albañilería en Madrid?',
         respuesta:
-          'Depende de la superficie. Como referencia: una reparación localizada de 1 a 2 m² va de 150 a 300 €, una reparación con revestimiento de 5 a 10 m² de 400 a 800 €, y un trabajo amplio de 20 a 40 m² de 1.200 a 2.500 €. Son precios orientativos.',
+          'Depende del trabajo. La hora de oficial de albañilería cuesta 25–35 €, el alicatado 35–60 €/m² y el tratamiento de humedades 30–60 €/m², desde 400 € (2–5 días). En una reforma integral de 80 m², la albañilería y la tabiquería suponen 6.000–10.000 €. IVA incluido.',
       },
       {
         pregunta: '¿Atendéis trabajos pequeños?',
@@ -539,7 +539,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     resumen: 'Pintura de paredes y techos, preparación de superficies y acabados.',
     h1: { antes: '', resaltado: 'Pintores', despues: 'en Madrid' },
     puntos: [
-      'Desde 200 €',
+      'Desde 8 €/m²',
       'Paredes y techos',
       'Preparación del soporte',
       'Puertas y marcos',
@@ -625,7 +625,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta pintar una habitación en Madrid?',
         respuesta:
-          'Como referencia, una habitación pequeña con pintura sencilla va de 200 a 400 € y una habitación amplia con preparación de 500 a 900 €. Para varias estancias, de 1.000 a 1.800 €. Son precios orientativos.',
+          'La pintura cuesta 8–14 €/m² de pared. Pintar paredes y techos de un piso de 80 m² cuesta entre 1.400 y 2.600 € y se hace en 3–5 días. Si hay gotelé, quitarlo, alisar y pintar sube a 14–22 €/m² de pared. IVA incluido.',
       },
       {
         pregunta: '¿También quitáis el gotelé?',
@@ -673,7 +673,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     resumen: 'Tabiques, falsos techos, trasdosados y aislamiento térmico y acústico.',
     h1: { antes: '', resaltado: 'Pladur', despues: 'en Madrid' },
     puntos: [
-      'Desde 250 €',
+      'Desde 30 €/m²',
       'Tabiques y falsos techos',
       'Trasdosados',
       'Aislamiento térmico y acústico',
@@ -757,7 +757,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta un tabique o techo de pladur en Madrid?',
         respuesta:
-          'Como referencia: un techo sencillo de 3 a 6 m² va de 250 a 550 €, un techo o tabique de 7 a 15 m² de 600 a 1.200 €, y una superficie amplia de 16 a 30 m² de 1.500 a 3.000 €. Son precios orientativos.',
+          'Un tabique de pladur cuesta 35–55 €/m² y un falso techo 30–50 €/m²; el falso techo de un piso completo se hace en 1–2 semanas. Cada punto de luz empotrado suma 25–40 €. IVA incluido.',
       },
       {
         pregunta: '¿Se puede poner pladur en un baño?',
@@ -805,7 +805,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     resumen: 'Reparación, alisado, enlucido y renovación de paredes.',
     h1: { antes: 'Alisado de', resaltado: 'paredes', despues: 'en Madrid' },
     puntos: [
-      'Desde 150 €',
+      'Desde 10 €/m²',
       'Grietas y agujeros',
       'Enlucido y revestimiento',
       'Listas para pintar o empapelar',
@@ -902,7 +902,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta alisar una pared en Madrid?',
         respuesta:
-          'Como referencia: un alisado localizado de 5 a 10 m² va de 150 a 350 €, un alisado con preparación de 10 a 20 m² de 400 a 800 €, y un alisado con pintura de 20 a 40 m² de 1.000 a 2.000 €. Son precios orientativos.',
+          'Alisar paredes sin gotelé cuesta 10–16 €/m². Si hay gotelé, quitarlo, alisar y pintar cuesta 14–22 €/m² de pared, y un piso completo se hace en 1–2 semanas. IVA incluido.',
       },
       {
         pregunta: '¿Se puede alisar sin hacer obra en toda la casa?',

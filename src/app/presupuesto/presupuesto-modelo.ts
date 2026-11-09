@@ -154,7 +154,7 @@ export function tramoPara(obra: IdObra, metros: string): string {
   if (tramos.some((t) => t.texto === metros)) return metros;
   const n = Number(metros);
   if (!Number.isFinite(n) || n <= 0) return '';
-  return (tramos.find((t) => n < (t.max ?? Infinity)) ?? tramos[tramos.length - 1])?.texto ?? '';
+  return (tramos.find((t) => n <= (t.max ?? Infinity)) ?? tramos[tramos.length - 1])?.texto ?? '';
 }
 
 export function explicacionCalidad(obra: IdObra | '', calidad: Calidad): string {

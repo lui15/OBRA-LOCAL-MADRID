@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { formatearPrecio } from '../datos/catalogo-servicios';
+import { desdeFila } from '../datos/precios';
 import { altoDe, anchoDe, srcsetDe, tarjetaDe } from '../datos/imagenes';
-import { FichaPagina, precioDesde, urlDePagina } from '../landing/fichas';
+import { FichaPagina, precioPrincipal, urlDePagina } from '../landing/fichas';
 
 /** Tarjeta compacta que enlaza a una página, con foto y «desde X €» si procede. */
 @Component({
@@ -137,7 +137,7 @@ export class TarjetaPagina {
   readonly textoPrecio = computed(() => {
     const p = this.pagina();
     if (p.tipo !== 'servicio' && p.tipo !== 'trabajo') return null;
-    const desde = precioDesde(p);
-    return desde === null ? 'Precio según valoración' : `Desde ${formatearPrecio(desde)}`;
+    const principal = precioPrincipal(p);
+    return principal ? desdeFila(principal) : 'Precio según valoración';
   });
 }

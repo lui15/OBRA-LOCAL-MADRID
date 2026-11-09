@@ -16,7 +16,8 @@ import { BloqueOpiniones } from '../compartido/bloque-opiniones';
 import { ListadoOpiniones } from '../compartido/listado-opiniones';
 import { opinionesDe } from '../datos/opiniones';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
-import { EJEMPLO_80M2, PLAZOS, TABLA_EURO_M2 } from '../datos/precios-guia';
+import { MAS_PEDIDOS, NOTA_PRECIOS, cifra, preciosDePagina } from '../datos/precios';
+import { PreciosReferencia } from '../compartido/precios-referencia';
 import { proyectosDeZona } from '../datos/proyectos';
 import { esPendiente } from '../datos/revision';
 import {
@@ -63,6 +64,7 @@ import { PaginaSeo } from './pagina-seo';
     Revision,
     BloqueOpiniones,
     ListadoOpiniones,
+    PreciosReferencia,
   ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
@@ -89,16 +91,17 @@ export class LandingPage {
   readonly whatsapp = enlaceWhatsApp(this.pagina.whatsapp);
 
   readonly desde = precioCabecera(this.pagina);
-  readonly desdeTexto = this.desde === null ? '' : formatearPrecio(this.desde);
 
   /** Índices: todo lo que cuelga de ellos. */
   readonly paginasServicio = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'servicio');
   readonly paginasTrabajo = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'trabajo');
   readonly paginasZona = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'zona');
   readonly paginasGuia = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'guia');
-  readonly tablaM2 = TABLA_EURO_M2;
-  readonly ejemplo = EJEMPLO_80M2;
-  readonly plazos = PLAZOS;
+  /** Precios del trabajo concreto de la página (o de su servicio). */
+  readonly filasPrecio = this.pagina.preciosSoloReferencia ? [] : preciosDePagina(this.pagina.path, this.pagina.servicioCatalogo);
+  readonly masPedidos = MAS_PEDIDOS;
+  readonly notaPrecios = NOTA_PRECIOS;
+  readonly cifra = cifra;
   readonly formato = formatearPrecio;
   readonly pendiente = esPendiente;
   readonly zonasPorNombre = ZONAS.filter((z) => z !== 'Otra zona de Madrid');

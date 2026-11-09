@@ -40,7 +40,8 @@ const palabras = (texto) => texto.split(/\s+/).filter(Boolean).length;
 
 /** Mínimo de palabras de contenido propio según el tipo de página. */
 const MINIMO = { guia: 1200, zona: 600, servicio: 600, trabajo: 600, hub: 600, info: 600, herramienta: 300 };
-const minimoDe = (p) => (p.path === 'precios' ? 2500 : MINIMO[p.tipo] ?? 0);
+// /precios/: además del texto, las tablas, el desglose, los plazos y los ejemplos salen de datos/precios.ts.
+const minimoDe = (p) => (p.path === 'precios' ? 900 : MINIMO[p.tipo] ?? 0);
 
 function textoDe(p) {
   return [

@@ -185,3 +185,108 @@ export function textoPrecio(p: PrecioTrabajo): string {
 export function redondear100(n: number): number {
   return Math.round(n / 100) * 100;
 }
+
+/* ------------------------------------------------------------ filas por servicio y por página */
+
+/** Una fila de precio tal como se muestra: trabajo, rango con unidad, plazo y aclaración. */
+export interface FilaPrecio {
+  id: string;
+  trabajo: string;
+  minimo: number;
+  maximo: number;
+  unidad?: string;
+  detalle?: string;
+  plazo?: string;
+}
+
+const integral = precioM2('integral');
+const FILAS_INTEGRAL: FilaPrecio[] = CALIDADES.map((c) => ({
+  id: `integral-${c.id}`,
+  trabajo: `Reforma integral, calidad ${c.nombre.toLowerCase()}`,
+  ...integral.calidades[c.id],
+  unidad: '€/m²',
+  detalle: `Piso de 80 m²: ${rango({ minimo: integral.calidades[c.id].minimo * 80, maximo: integral.calidades[c.id].maximo * 80 })}`,
+  plazo: `${PLAZO_INTEGRAL_TOTAL} (70–80 m²)`,
+}));
+
+const FILAS_M2: FilaPrecio[] = PRECIOS_M2.filter((p) => p.id !== 'integral').flatMap((p) =>
+  CALIDADES.map((c) => ({
+    id: `${p.id}-${c.id}`,
+    trabajo: `${p.trabajo}, calidad ${c.nombre.toLowerCase()}`,
+    ...p.calidades[c.id],
+    unidad: '€/m²',
+  })),
+);
+
+/** Todas las filas: trabajos sueltos y precios por m² según calidad. */
+export const FILAS: FilaPrecio[] = [...PRECIOS_TRABAJO, ...FILAS_INTEGRAL, ...FILAS_M2];
+
+export function fila(id: string): FilaPrecio {
+  const f = FILAS.find((x) => x.id === id);
+  if (!f) throw new Error(`Precio desconocido: ${id}`);
+  return f;
+}
+
+/** Precios de cada servicio del catálogo. El primero es el principal (cabecera y datos estructurados). */
+export const PRECIOS_SERVICIO: Record<string, string[]> = {
+  'Reformas integrales': ['integral-basica', 'integral-media', 'integral-alta'],
+  'Reforma de baño': ['bano', 'banera-plato'],
+  'Reforma de cocinas': ['cocina'],
+  Pintura: ['pintura-piso', 'pintura-m2'],
+  Paredes: ['alisado', 'gotele'],
+  Pladur: ['tabique-pladur', 'techo-pladur', 'punto-luz'],
+  Albañilería: ['albanileria-hora', 'alicatado', 'humedades'],
+};
+
+/** Páginas cuyo trabajo concreto tiene sus propios precios (si no, se usan los de su servicio). */
+export const PRECIOS_PAGINA: Record<string, string[]> = {
+  'cambiar-banera-por-plato-ducha-madrid': ['banera-plato', 'bano'],
+  'quitar-gotele-madrid': ['gotele', 'alisado', 'pintura-m2'],
+  'reforma-piso-completo-madrid': ['integral-basica', 'integral-media', 'integral-alta', 'electricidad', 'fontaneria'],
+};
+
+export function filasDe(ids: string[]): FilaPrecio[] {
+  return ids.map(fila);
+}
+
+/** Precios de una página: los suyos o los de su servicio. */
+export function preciosDePagina(path: string, servicioCatalogo?: string): FilaPrecio[] {
+  const ids = PRECIOS_PAGINA[path] ?? (servicioCatalogo ? PRECIOS_SERVICIO[servicioCatalogo] : undefined);
+  return ids ? filasDe(ids) : [];
+}
+
+/** Rango con su unidad: «5.500–10.000 €», «500–650 €/m²». */
+export function textoFila(f: FilaPrecio): string {
+  return rango(f, f.unidad ?? '€');
+}
+
+/** Mínimo y máximo de una fila. El baño completo va de 5.000 € (básica) a 13.000 € (alta). */
+export function extremosFila(f: FilaPrecio): Rango {
+  return f.id === 'bano' ? { minimo: BANO_BASICA_DESDE, maximo: BANO_ALTA_HASTA } : { minimo: f.minimo, maximo: f.maximo };
+}
+
+/** Mínimo y máximo de la fila principal y de sus otras calidades (p. ej. las tres de una integral). */
+export function extremosFilas(filas: FilaPrecio[]): Rango | null {
+  if (!filas.length) return null;
+  // Solo el mismo trabajo en sus distintas calidades: «integral-basica», «integral-media»…
+  const trabajo = filas[0].id.split('-')[0];
+  const mismas = filas.filter((f) => f.unidad === filas[0].unidad && f.id.split('-')[0] === trabajo).map(extremosFila);
+  return { minimo: Math.min(...mismas.map((r) => r.minimo)), maximo: Math.max(...mismas.map((r) => r.maximo)) };
+}
+
+/** Precio de partida sin la palabra «Desde»: «5.000 €», «500 €/m²». */
+export function valorDesde(f: FilaPrecio): string {
+  return `${cifra(extremosFila(f).minimo)} ${f.unidad ?? '€'}`;
+}
+
+/** «Desde 5.000 €», «Desde 500 €/m²». */
+export function desdeFila(f: FilaPrecio): string {
+  return `Desde ${valorDesde(f)}`;
+}
+
+/** Los tres trabajos más pedidos, con su precio de partida (páginas de zona y portada). */
+export const MAS_PEDIDOS: { trabajo: string; fila: FilaPrecio; desde: number; unidad: string; ruta: string }[] = [
+  { trabajo: 'Baño completo', fila: fila('bano'), desde: BANO_BASICA_DESDE, unidad: '€', ruta: '/reforma-banos-madrid/' },
+  { trabajo: 'Cocina completa', fila: fila('cocina'), desde: fila('cocina').minimo, unidad: '€', ruta: '/reforma-cocinas-madrid/' },
+  { trabajo: 'Reforma integral', fila: fila('integral-basica'), desde: fila('integral-basica').minimo, unidad: '€/m²', ruta: '/reformas-integrales-madrid/' },
+];

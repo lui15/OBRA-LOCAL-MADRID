@@ -590,3 +590,51 @@ h1 em {
 .lp-obra span {
   padding-inline: 14px;
 }
+
+/* Zonas: precio de partida de los tres trabajos más pedidos */
+.lp-mas-pedidos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 12px;
+  margin: 0 0 34px;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-mas-pedidos a {
+  display: grid;
+  gap: 4px;
+  min-height: 44px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: inherit;
+  background: white;
+  text-decoration: none;
+}
+
+.lp-mas-pedidos span {
+  color: #4f5f71;
+  font-size: 15px;
+}
+
+.lp-mas-pedidos strong {
+  color: var(--navy-dark);
+  font-size: 22px;
+}
+
+.lp-mas-pedidos a:hover strong {
+  color: #b84800;
+}
+
+.lp-subtitulo-zona {
+  margin: 0 0 16px;
+  color: var(--navy-dark);
+  font-size: 20px;
+}
+
+.lp-ver-todo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}

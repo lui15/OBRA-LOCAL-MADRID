@@ -1,12 +1,8 @@
-/** Catálogo único de servicios, precios orientativos y opciones del formulario. */
+/** Catálogo de servicios. Los precios salen de datos/precios.ts. */
+import { FilaPrecio, PRECIOS_SERVICIO, euros, filasDe } from './precios';
 
-export interface Precio {
-  tamano: string;
-  medidas: string;
-  detalle: string;
-  minimo: number;
-  maximo: number;
-}
+/** Una fila de precio: se define en datos/precios.ts. */
+export type Precio = FilaPrecio;
 
 export interface Servicio {
   numero: number;
@@ -45,29 +41,7 @@ export const SERVICIOS: Servicio[] = [
     ],
     ejemplo: 'Reparación de pared',
     ejemploImagen: '/images/albanileria-ejemplo.webp',
-    precios: [
-      {
-        tamano: 'Pequeño',
-        medidas: '1–2 m²',
-        detalle: 'Reparación localizada',
-        minimo: 150,
-        maximo: 300,
-      },
-      {
-        tamano: 'Mediano',
-        medidas: '5–10 m²',
-        detalle: 'Reparación y revestimiento',
-        minimo: 400,
-        maximo: 800,
-      },
-      {
-        tamano: 'Grande',
-        medidas: '20–40 m²',
-        detalle: 'Trabajo amplio de albañilería',
-        minimo: 1200,
-        maximo: 2500,
-      },
-    ],
+    precios: filasDe(PRECIOS_SERVICIO['Albañilería']),
     nota: 'Demoliciones estructurales, refuerzos, licencias y residuos especiales se valoran aparte.',
   },
   {
@@ -92,29 +66,7 @@ export const SERVICIOS: Servicio[] = [
     ],
     ejemplo: 'Pintar una habitación',
     ejemploImagen: '/images/pintura-ejemplo.webp',
-    precios: [
-      {
-        tamano: 'Pequeño',
-        medidas: 'Habitación pequeña',
-        detalle: 'Pintura sencilla',
-        minimo: 200,
-        maximo: 400,
-      },
-      {
-        tamano: 'Mediano',
-        medidas: 'Una habitación amplia',
-        detalle: 'Preparación y pintura',
-        minimo: 500,
-        maximo: 900,
-      },
-      {
-        tamano: 'Grande',
-        medidas: 'Varias estancias',
-        detalle: 'Pintura de vivienda',
-        minimo: 1000,
-        maximo: 1800,
-      },
-    ],
+    precios: filasDe(PRECIOS_SERVICIO['Pintura']),
     nota: 'Quitar gotelé, alisar, reparar humedades o aplicar productos especiales puede aumentar el coste.',
   },
   {
@@ -139,29 +91,7 @@ export const SERVICIOS: Servicio[] = [
     ],
     ejemplo: 'Renovación de baño',
     ejemploImagen: '/images/reforma-bano-ejemplo.webp',
-    precios: [
-      {
-        tamano: 'Pequeño',
-        medidas: 'Cambio puntual',
-        detalle: 'Grifería o mueble',
-        minimo: 600,
-        maximo: 1200,
-      },
-      {
-        tamano: 'Mediano',
-        medidas: 'Reforma parcial',
-        detalle: 'Sin cambiar distribución',
-        minimo: 1500,
-        maximo: 3000,
-      },
-      {
-        tamano: 'Grande',
-        medidas: 'Baño completo',
-        detalle: 'Demolición y renovación',
-        minimo: 3500,
-        maximo: 7000,
-      },
-    ],
+    precios: filasDe(PRECIOS_SERVICIO['Reforma de baño']),
     nota: 'El coste depende de los materiales, instalaciones ocultas, impermeabilización y mampara.',
   },
   {
@@ -186,29 +116,7 @@ export const SERVICIOS: Servicio[] = [
     ],
     ejemplo: 'Cambio de encimera y muebles',
     ejemploImagen: '/images/reforma-cocina-ejemplo.webp',
-    precios: [
-      {
-        tamano: 'Pequeño',
-        medidas: 'Cambio puntual',
-        detalle: 'Encimera y ajustes',
-        minimo: 1500,
-        maximo: 3000,
-      },
-      {
-        tamano: 'Mediano',
-        medidas: 'Cocina parcial',
-        detalle: 'Muebles y encimera',
-        minimo: 4000,
-        maximo: 8000,
-      },
-      {
-        tamano: 'Grande',
-        medidas: 'Cocina completa',
-        detalle: 'Muebles e instalaciones',
-        minimo: 9000,
-        maximo: 15000,
-      },
-    ],
+    precios: filasDe(PRECIOS_SERVICIO['Reforma de cocinas']),
     nota: 'Electrodomésticos, encimeras de piedra y cambios de distribución pueden aumentar el coste.',
   },
   {
@@ -233,29 +141,7 @@ export const SERVICIOS: Servicio[] = [
     ],
     ejemplo: 'Reforma de vivienda',
     ejemploImagen: '/images/reformas-integrales-ejemplo.webp',
-    precios: [
-      {
-        tamano: 'Pequeña',
-        medidas: '40–60 m²',
-        detalle: 'Renovación parcial',
-        minimo: 15000,
-        maximo: 25000,
-      },
-      {
-        tamano: 'Mediana',
-        medidas: '60–90 m²',
-        detalle: 'Varias estancias',
-        minimo: 25000,
-        maximo: 45000,
-      },
-      {
-        tamano: 'Grande',
-        medidas: '90 m² o más',
-        detalle: 'Reforma amplia',
-        minimo: 45000,
-        maximo: 80000,
-      },
-    ],
+    precios: filasDe(PRECIOS_SERVICIO['Reformas integrales']),
     nota: 'El presupuesto debe separar partidas, calidades, exclusiones, impuestos y trabajos adicionales.',
   },
   {
@@ -280,29 +166,7 @@ export const SERVICIOS: Servicio[] = [
     ],
     ejemplo: 'Falso techo',
     ejemploImagen: '/images/pladur-ejemplo.webp',
-    precios: [
-      {
-        tamano: 'Pequeño',
-        medidas: '3–6 m²',
-        detalle: 'Techo sencillo',
-        minimo: 250,
-        maximo: 550,
-      },
-      {
-        tamano: 'Mediano',
-        medidas: '7–15 m²',
-        detalle: 'Techo o tabique',
-        minimo: 600,
-        maximo: 1200,
-      },
-      {
-        tamano: 'Grande',
-        medidas: '16–30 m²',
-        detalle: 'Superficie amplia',
-        minimo: 1500,
-        maximo: 3000,
-      },
-    ],
+    precios: filasDe(PRECIOS_SERVICIO['Pladur']),
     nota: 'Altura, aislamiento, focos empotrados y acabado de pintura pueden modificar el precio.',
   },
   {
@@ -327,29 +191,7 @@ export const SERVICIOS: Servicio[] = [
     ],
     ejemplo: 'Alisar y pintar una pared',
     ejemploImagen: '/images/paredes-ejemplo.webp',
-    precios: [
-      {
-        tamano: 'Pequeño',
-        medidas: '5–10 m²',
-        detalle: 'Alisado localizado',
-        minimo: 150,
-        maximo: 350,
-      },
-      {
-        tamano: 'Mediano',
-        medidas: '10–20 m²',
-        detalle: 'Alisado y preparación',
-        minimo: 400,
-        maximo: 800,
-      },
-      {
-        tamano: 'Grande',
-        medidas: '20–40 m²',
-        detalle: 'Alisado y pintura',
-        minimo: 1000,
-        maximo: 2000,
-      },
-    ],
+    precios: filasDe(PRECIOS_SERVICIO['Paredes']),
     nota: 'El precio depende del estado de la pared, las capas de gotelé, la preparación y el acabado final.',
   },
 ];
@@ -395,57 +237,9 @@ export const ZONAS = [
   'Otra zona de Madrid',
 ];
 
-export const TIPOS_INMUEBLE = [
-  'Piso o apartamento',
-  'Casa o chalet',
-  'Local comercial',
-  'Oficina',
-  'Comunidad de vecinos',
-  'Otro',
-];
-
-export const ESTADOS = [
-  'Buen estado, quiero renovar',
-  'Necesita reparaciones',
-  'Hay que retirar materiales antiguos',
-  'Hay humedad o desperfectos importantes',
-  'No lo sé, necesito asesoramiento',
-];
-
-export const MATERIALES = [
-  'Económicos y funcionales',
-  'Calidad media',
-  'Gama alta',
-  'Quiero que me asesoren',
-  'Ya tengo los materiales',
-];
-
-export const PLAZOS = [
-  'Lo antes posible',
-  'En las próximas 2–4 semanas',
-  'En 1–3 meses',
-  'Más adelante',
-  'Solo estoy comparando precios',
-];
-
-export const PRESUPUESTOS = [
-  'Menos de 500 €',
-  '500–1.500 €',
-  '1.500–3.000 €',
-  '3.000–6.000 €',
-  '6.000–15.000 €',
-  'Más de 15.000 €',
-  'Necesito orientación',
-];
-
-const FORMATO_EUROS = new Intl.NumberFormat('es-ES', {
-  style: 'currency',
-  currency: 'EUR',
-  maximumFractionDigits: 0,
-});
-
+/** 5500 → «5.500 €». */
 export function formatearPrecio(precio: number): string {
-  return FORMATO_EUROS.format(precio);
+  return euros(precio);
 }
 
 export function buscarServicio(nombre: string): Servicio | undefined {

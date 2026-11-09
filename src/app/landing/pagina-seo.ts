@@ -23,6 +23,8 @@ export interface SubseccionPagina {
 }
 
 export interface SeccionPagina {
+  /** Ancla de la sección (para índices de página). */
+  id?: string;
   /** Se pinta como H2. */
   titulo: string;
   parrafos: string[];

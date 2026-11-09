@@ -60,7 +60,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en Madrid?',
         respuesta:
-          'Depende del alcance. Como referencia, un baño completo va de 3.500 a 7.000 € y una reforma integral de 60–90 m², de 25.000 a 45.000 €. Son precios orientativos: el precio final debe confirmar cantidades, materiales, mano de obra, impuestos y exclusiones.',
+          'Depende del alcance. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, una cocina completa 8.000–18.000 € y una reforma integral 500–1.200 €/m² según la calidad, IVA incluido. Te damos el presupuesto cerrado por escrito cuando vemos tu caso.',
       },
       {
         pregunta: '¿Cómo pido presupuesto?',
@@ -91,7 +91,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     h1: { antes: 'Servicios de', resaltado: 'reformas', despues: 'en Madrid' },
     puntos: [
       '7 servicios de reforma',
-      'Precios desde 150 €',
+      'Baño desde 5.000 €',
       'Viviendas, locales y comunidades',
       'Madrid y alrededores',
     ],
@@ -197,282 +197,155 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: 'precios',
     tipo: 'hub',
-    title: 'Precios de reformas en Madrid 2026 | ObraLocal Madrid',
+    title: 'Precios de reformas en Madrid 2026: baño desde 5.000 €',
     description:
-      'Precios de reformas en Madrid 2026: €/m² por tipo, presupuesto de ejemplo de un piso de 80 m² por partidas, plazos, qué encarece la obra y cómo ahorrar.',
-    etiqueta: 'Precios orientativos',
-    resumen: 'Guía de precios: €/m², ejemplo por partidas, plazos y qué influye en el coste.',
-    h1: { antes: 'Precios de', resaltado: 'reformas', despues: 'en Madrid 2026' },
-    puntos: ['Rangos por servicio', 'Precios desde 150 €', 'Ejemplo por partidas', 'Calculadora incluida'],
+      'Cuánto cuesta una reforma en Madrid en 2026: baño 5.500–10.000 €, cocina 8.000–18.000 €, piso 500–1.200 €/m². Tablas, plazos y ejemplos por partidas.',
+    etiqueta: 'Precios',
+    resumen: 'Precios por m² y por trabajo, un piso de 80 m² por partidas, plazos y ejemplos.',
+    h1: { antes: '¿Cuánto cuesta una', resaltado: 'reforma en Madrid', despues: 'en 2026?' },
+    puntos: ['Baño: 5.500–10.000 €', 'Cocina: 8.000–18.000 €', 'Piso: 500–1.200 €/m²', 'IVA incluido'],
     whatsapp: 'Hola, quiero que me orientéis sobre el precio de una reforma',
-    kicker: 'GUÍA DE PRECIOS 2026',
+    kicker: 'PRECIOS 2026',
     intro:
-      'Esta es nuestra guía de precios de reformas en Madrid. Encontrarás el precio por metro cuadrado de cada tipo de reforma, un presupuesto de ejemplo de un piso de 80 m² organizado por partidas, los rangos orientativos de cada servicio, qué encarece una obra en Madrid y cómo ajustar el presupuesto. Todos los importes salen de nuestros precios de referencia; los datos que aún no tenemos confirmados aparecen marcados como pendientes en lugar de inventados.',
+      'Un baño, entre 5.500 y 10.000 €. Una cocina, entre 8.000 y 18.000 €. Un piso completo, entre 500 y 1.200 €/m² según calidad. Debajo tienes el precio por metro cuadrado de cada calidad, el precio y el plazo de cada trabajo, una reforma de 80 m² desglosada por partidas, cuánto dura cada fase y tres presupuestos de ejemplo hechos paso a paso.',
     secciones: [
       {
-        titulo: 'Cómo leer esta guía',
+        id: 'que-sube',
+        titulo: 'Qué hace subir el precio',
         parrafos: [
-          'Una reforma no tiene un precio fijo por metro cuadrado. Dos baños de la misma superficie pueden costar el doble uno que otro según lo que se derribe, las instalaciones que haya que rehacer y los materiales que se elijan. Por eso damos rangos: el extremo bajo corresponde a trabajos sencillos con materiales básicos, y el alto, a obras más complejas o con calidades altas.',
-          'Las tablas de arriba muestran el precio por metro cuadrado que se deduce de nuestros rangos, un presupuesto de ejemplo y los plazos. Más abajo tienes los rangos de cada servicio tal como los usamos para orientar a nuestros clientes, y la calculadora te permite aplicarlos a tu caso.',
-          'Ninguna de estas cifras es un presupuesto. El precio final de tu obra debe confirmar cantidades, materiales, mano de obra, impuestos y exclusiones después de ver la vivienda.',
-        ],
-      },
-      {
-        titulo: 'Precio por metro cuadrado: qué significa y qué no',
-        parrafos: [
-          'El precio por metro cuadrado es útil para hacerse una idea, pero tiene trampa. En una reforma integral, los metros que más cuestan son los de cocina y baños, porque concentran instalaciones, revestimientos y equipamiento. Un piso de 80 m² con dos baños costará más por metro que otro de la misma superficie con uno solo.',
-          'Además, en los trabajos pequeños el precio por metro sube: una reparación de 2 m² necesita el mismo desplazamiento, la misma protección y casi la misma preparación que una de 10 m². Por eso, en la tabla, los rangos de albañilería o alisado son amplios: el extremo alto corresponde a superficies pequeñas.',
-          'La columna «deducido de nuestros precios» se calcula dividiendo los importes de cada rango entre los metros cuadrados que cubre. Para cocina, baño y pintura nuestros rangos no se expresan en metros, así que no damos esa cifra. Las columnas por calidad están pendientes de confirmar.',
-        ],
-      },
-      {
-        titulo: 'Qué incluye cada partida de una reforma integral',
-        parrafos: [
-          'El presupuesto de ejemplo de 80 m² se organiza en las mismas partidas que debería tener cualquier presupuesto serio. Saber qué entra en cada una te ayuda a comparar ofertas y a detectar lo que falta.',
+          'Dos pisos con los mismos metros pueden tener presupuestos muy distintos. Estas son las seis cosas que más mueven la cifra final, cada una con lo que suele costar.',
         ],
         subsecciones: [
           {
-            titulo: 'Demolición y desescombro',
+            titulo: 'El estado de la vivienda',
             texto:
-              'Protección de la vivienda y de las zonas comunes, retirada de tabiques, alicatados, suelos, sanitarios y muebles que no se conservan, y gestión de los escombros. Incluye el coste del contenedor o de las sacas y, si hace falta, el permiso para ocupar la vía pública.',
+              'Si hay humedades, primero hay que tratarlas: entre 30 y 60 €/m², desde 400 €. Si las paredes están en mal estado, alisarlas cuesta 10–16 €/m², y si tienen gotelé, quitarlo, alisar y pintar sube a 14–22 €/m² de pared.',
           },
           {
-            titulo: 'Albañilería',
+            titulo: 'Instalaciones antiguas',
             texto:
-              'Nuevos tabiques, cierre y apertura de huecos, recrecidos de suelo, enfoscados y enlucidos, y ayudas de albañilería a los demás oficios: abrir y cerrar rozas para las instalaciones.',
+              'En muchas fincas antiguas de Madrid la instalación eléctrica y las tuberías no se han cambiado nunca. Renovar toda la instalación eléctrica de un piso de 80 m² cuesta 3.500–7.000 € y la fontanería completa, 2.500–5.000 €. Lo sabemos al ver la vivienda, antes de darte el presupuesto cerrado.',
           },
           {
-            titulo: 'Fontanería',
+            titulo: 'Cambiar la distribución',
             texto:
-              'Red nueva de agua fría y caliente, desagües hasta la bajante, tomas para cocina, baños y lavadora, y en su caso cambio del calentador o la caldera.',
+              'Mover o levantar tabiques añade demolición, albañilería y a veces instalaciones nuevas. En un piso de 80 m², la albañilería y la tabiquería suponen 6.000–10.000 €. Un tabique nuevo de pladur cuesta 35–55 €/m².',
           },
           {
-            titulo: 'Electricidad',
+            titulo: 'La calidad de los materiales',
             texto:
-              'Cuadro eléctrico, circuitos, cableado, mecanismos y puntos de luz. En pisos antiguos suele renovarse por completo. Al terminar, la instalación debe documentarse con el certificado que corresponda.',
+              'Es la diferencia más grande. Una reforma integral en calidad básica cuesta 500–650 €/m²; en calidad alta, 850–1.200 €/m². En un piso de 80 m², eso va de 40.000–52.000 € a 68.000–96.000 €.',
           },
           {
-            titulo: 'Alicatado y solados',
+            titulo: 'La planta y el acceso',
             texto:
-              'Revestimientos cerámicos de baños y cocina, impermeabilización de las zonas húmedas y suelos de toda la vivienda, ya sean cerámicos, laminados o de madera.',
+              'La demolición y el desescombro de un piso de 80 m² cuestan 3.000–5.000 €. Sin ascensor, o con un portal estrecho, bajar escombros y subir material lleva más horas, y la hora de oficial de albañilería cuesta 25–35 €. También influye dónde se puede poner el contenedor.',
           },
           {
-            titulo: 'Carpintería',
+            titulo: 'La licencia y el ICIO',
             texto:
-              'Puertas interiores, armarios empotrados, rodapiés y, si se cambian, ventanas. Es una partida en la que la gama elegida cambia mucho el importe.',
-          },
-          {
-            titulo: 'Pintura',
-            texto:
-              'Preparación de paredes y techos, imprimación y pintura final de toda la vivienda. Si hay gotelé, quitarlo o cubrirlo forma parte de esta partida o de la de albañilería.',
-          },
-          {
-            titulo: 'Gestión y licencia',
-            texto:
-              'Tramitación municipal que corresponda —en Madrid capital, declaración responsable o licencia según la Ordenanza 6/2022—, tasas, coordinación de oficios y documentación final de la obra.',
+              'En Madrid capital, las obras que necesitan declaración responsable o licencia pagan el Impuesto sobre Construcciones, Instalaciones y Obras (ICIO): el 3,75 % del presupuesto de ejecución material en las obras iniciadas desde el 1 de enero de 2024. En una obra de 50.000 € de ejecución material, son 1.875 €. En la página de licencias te explicamos cuándo hace falta cada trámite.',
           },
         ],
       },
       {
-        titulo: 'Rangos de referencia por servicio',
-        parrafos: [
-          'Además del ejemplo por partidas, usamos rangos de referencia para cada tipo de trabajo, desde una reparación pequeña hasta la reforma completa. Los tienes detallados más abajo, servicio a servicio. Como resumen: una reforma integral de 40 a 60 m² va de 15.000 a 25.000 €, de 60 a 90 m² de 25.000 a 45.000 €, y a partir de 90 m² de 45.000 a 80.000 €. Un baño completo va de 3.500 a 7.000 € y una cocina completa con muebles e instalaciones, de 9.000 a 15.000 €.',
-          'En trabajos más pequeños, pintar una habitación amplia con preparación va de 500 a 900 €, un tabique o techo de pladur de 7 a 15 m² de 600 a 1.200 €, y alisar de 10 a 20 m² de pared, de 400 a 800 €.',
+        id: 'ahorrar',
+        titulo: 'Cómo ahorrar sin perder calidad',
+        parrafos: ['Seis decisiones que bajan el presupuesto sin que se note en el resultado:'],
+        lista: [
+          'Mantén la distribución si te funciona. Te ahorras gran parte de la albañilería y la tabiquería, que en un piso de 80 m² son 6.000–10.000 €.',
+          'Si el baño está bien y solo te molesta la bañera, cámbiala por un plato de ducha: 1.000–2.200 € en 1–2 días, frente a 5.500–10.000 € de un baño completo.',
+          'Reparte la calidad: gasta más en lo que usas todos los días, como la grifería, la encimera o el suelo, y elige calidad básica en lo que menos se ve.',
+          'Haz los trabajos en una sola obra. Si vas a quitar el gotelé y a cambiar el suelo, hacerlo a la vez evita proteger, ensuciar y limpiar la casa dos veces.',
+          'Elige los materiales antes de empezar. Cada cambio durante la obra se presupuesta aparte y lo apruebas por escrito, así que decidir antes evita sorpresas.',
+          'Mándanos fotos y medidas al pedir presupuesto. Cuanto más sabemos al principio, más ajustado es el presupuesto y menos imprevistos aparecen después.',
         ],
       },
       {
-        titulo: 'Qué hay detrás de cada rango',
+        titulo: 'Qué incluye el precio por metro cuadrado',
         parrafos: [
-          'Cada servicio tiene tres escalones, del trabajo más pequeño al más amplio. Esto es lo que suele haber detrás de cada uno.',
-        ],
-        subsecciones: [
-          {
-            titulo: 'Baño',
-            texto:
-              'El escalón más bajo, de 600 a 1.200 €, es un cambio puntual: grifería, mueble o sanitarios sin tocar paredes. El intermedio, de 1.500 a 3.000 €, renueva revestimientos y sanitarios sin cambiar la distribución. El alto, de 3.500 a 7.000 €, es el baño completo: demolición, instalaciones, impermeabilización, revestimientos y mampara.',
-          },
-          {
-            titulo: 'Cocina',
-            texto:
-              'De 1.500 a 3.000 € para un cambio de encimera con ajustes; de 4.000 a 8.000 € para una cocina parcial con muebles y encimera; y de 9.000 a 15.000 € para una cocina completa con muebles e instalaciones. Los electrodomésticos, las encimeras de piedra y los cambios de distribución pueden aumentar el coste.',
-          },
-          {
-            titulo: 'Pintura',
-            texto:
-              'De 200 a 400 € para una habitación pequeña con pintura sencilla, de 500 a 900 € para una habitación amplia con preparación y de 1.000 a 1.800 € para varias estancias. Quitar gotelé, reparar humedades o productos especiales se valoran aparte.',
-          },
-          {
-            titulo: 'Pladur',
-            texto:
-              'De 250 a 550 € para un techo sencillo de 3 a 6 m², de 600 a 1.200 € para un techo o tabique de 7 a 15 m² y de 1.500 a 3.000 € para superficies de 16 a 30 m². La altura, el aislamiento y los focos empotrados modifican el precio.',
-          },
-          {
-            titulo: 'Paredes y alisado',
-            texto:
-              'De 150 a 350 € para un alisado localizado de 5 a 10 m², de 400 a 800 € para alisado con preparación de 10 a 20 m² y de 1.000 a 2.000 € para alisado con pintura de 20 a 40 m². Depende del estado de la pared y de las capas de gotelé.',
-          },
-          {
-            titulo: 'Albañilería',
-            texto:
-              'De 150 a 300 € para una reparación localizada de 1 a 2 m², de 400 a 800 € para reparación y revestimiento de 5 a 10 m² y de 1.200 a 2.500 € para trabajos amplios de 20 a 40 m². Las demoliciones estructurales, los refuerzos, las licencias y los residuos especiales se valoran aparte.',
-          },
+          'El precio por m² se calcula sobre la superficie útil de la vivienda e incluye mano de obra y materiales con IVA. Es la forma más rápida de saber en qué cifra te mueves, pero no sustituye a un presupuesto: dos pisos de 80 m² pueden necesitar trabajos muy distintos.',
+          'Por eso, además del precio por m², te enseñamos la reforma desglosada por partidas. Un buen presupuesto separa cada partida, dice qué calidad de material incluye y qué queda fuera, para que puedas comparar con criterio.',
         ],
       },
       {
-        titulo: 'Combinaciones habituales y su rango',
+        titulo: 'Cómo comparar presupuestos de reforma',
         parrafos: [
-          'Muchas reformas no son integrales, sino una combinación de trabajos. Sumando nuestros rangos, estas son algunas de las más frecuentes en Madrid:',
-          'Baño completo y pintura de la vivienda: entre 4.500 y 8.800 €. Cocina completa y baño completo: entre 12.500 y 22.000 €. Cocina completa, baño completo y pintura: entre 13.500 y 23.800 €. Alisar de 20 a 40 m² de pared con pintura y renovar un baño de forma parcial: entre 2.500 y 5.000 €.',
-          'Si a esas combinaciones les añades cambios de distribución o una renovación completa de las instalaciones, lo más probable es que el caso se acerque más a una reforma integral. La calculadora hace estas sumas por ti.',
-        ],
-      },
-      {
-        titulo: 'Plazos: de qué dependen',
-        parrafos: [
-          'Todavía no publicamos plazos por tipo de reforma porque queremos darlos con datos de obras reales; por eso la tabla de plazos aparece pendiente. Lo que sí podemos explicar es qué los alarga o los acorta.',
+          'Antes de comparar dos cifras, comprueba que hablan de lo mismo. Un presupuesto más barato puede no incluir el desescombro, las ventanas o la licencia.',
         ],
         lista: [
-          'La superficie y el número de oficios que intervienen',
-          'Los tiempos de secado de morteros, masillas y pinturas, que no conviene acortar',
-          'Los materiales con plazo de entrega largo, como carpintería a medida o encimeras de piedra',
-          'El trámite municipal, que debe estar resuelto antes de empezar',
-          'Los imprevistos al abrir paredes y suelos en edificios antiguos',
-          'Los cambios de decisión a mitad de obra',
+          'Que esté separado por partidas, con medidas y unidades.',
+          'Que diga la calidad o la marca de los materiales principales.',
+          'Que indique si el IVA está incluido.',
+          'Que diga el plazo de la obra y qué pasa si hay que cambiar algo.',
+          'Que diga claramente qué no incluye.',
         ],
       },
       {
-        titulo: 'Qué encarece una reforma en Madrid',
+        titulo: 'Impuestos y tasas',
         parrafos: [
-          'Algunos factores son propios de Madrid y explican por qué dos pisos iguales pueden tener presupuestos muy distintos.',
-        ],
-        subsecciones: [
-          {
-            titulo: 'Edificios antiguos',
-            texto:
-              'En fincas con muchos años es habitual encontrar instalaciones de plomo o sin toma de tierra, paredes irregulares, forjados de madera y humedades ocultas. También pueden aparecer bajantes de fibrocemento, cuya retirada debe hacer una empresa inscrita en el registro de empresas con riesgo de amianto. Todo ello suma trabajo que no se ve en el resultado final.',
-          },
-          {
-            titulo: 'Edificios sin ascensor',
-            texto:
-              'Subir sacos, azulejos y sanitarios a un cuarto sin ascensor y bajar los escombros a mano lleva tiempo, y ese tiempo se refleja en la mano de obra. Un ascensor muy pequeño también limita el tamaño de lo que puede subirse.',
-          },
-          {
-            titulo: 'Contenedor en la vía pública',
-            texto:
-              'Colocar un contenedor en la calle requiere autorización municipal y tiene un coste. En calles estrechas o con mucho tráfico a veces no es posible, y hay que trabajar con sacas que se retiran con más frecuencia.',
-          },
-          {
-            titulo: 'Horarios de la comunidad',
-            texto:
-              'Las ordenanzas municipales limitan las horas en que se pueden hacer obras ruidosas, y muchas comunidades añaden sus propias normas. Menos horas útiles al día significan más días de obra.',
-          },
-          {
-            titulo: 'Edificios protegidos',
-            texto:
-              'Si la finca tiene algún nivel de protección, cambiar fachada, ventanas o elementos originales puede requerir más trámites, materiales específicos o directamente no estar permitido.',
-          },
-          {
-            titulo: 'Zonas con tráfico restringido',
-            texto:
-              'En algunas zonas de la ciudad, el acceso de vehículos de carga tiene restricciones, lo que obliga a planificar mejor las entregas de material.',
-          },
-        ],
-      },
-      {
-        titulo: 'Consejos para ahorrar sin perder calidad',
-        parrafos: [
-          'Hay formas de contener el presupuesto que no comprometen el resultado. Y hay recortes que salen caros a los pocos años.',
-        ],
-        lista: [
-          'Mantén cocina y baños en su posición: mover desagües es de lo que más encarece',
-          'Conserva lo que esté bien: un suelo que admite pulido, puertas que se pueden lacar',
-          'Decide pronto los materiales para no pagar urgencias ni parar la obra',
-          'No recortes en lo que queda oculto: instalaciones, impermeabilización y preparación de paredes',
-          'Haz la obra de una vez si vas a tocar instalaciones: por fases se rompe dos veces',
-          'Reserva un margen para imprevistos, sobre todo en edificios antiguos',
-          'Compara presupuestos con el mismo alcance y desglosados por partidas',
-        ],
-      },
-      {
-        titulo: 'Cómo comparar presupuestos sin equivocarte',
-        parrafos: [
-          'Un precio más bajo no siempre es más barato: a menudo solo significa que incluye menos cosas. Pon las ofertas una al lado de otra, partida por partida, y comprueba en cada una las cantidades, la gama de los materiales, la retirada de escombros, la protección de las zonas comunes, los impuestos, las exclusiones, el calendario y la forma de pago. Tenemos una guía completa sobre qué pedir en un presupuesto y cómo comparar.',
-        ],
-      },
-      {
-        titulo: 'Impuestos, tasas y otros gastos',
-        parrafos: [
-          'Además del precio de la obra, ten en cuenta posibles tasas municipales y el impuesto sobre construcciones, instalaciones y obras, que dependen del municipio y del trámite. Las obras de renovación de una vivienda habitual pueden tributar al IVA reducido del 10 % si cumplen ciertas condiciones, entre ellas la antigüedad de la vivienda y el peso de los materiales en el total. Confirma estos datos en tu presupuesto.',
-          'Si tu edificio está preparando una rehabilitación, puede haber ayudas públicas: tienes el estado de las convocatorias y sus fuentes oficiales en nuestra página de ayudas para reformas.',
-        ],
-      },
-      {
-        titulo: 'Cuándo pedir presupuesto',
-        parrafos: [
-          'Lo ideal es pedir presupuesto con margen respecto a la fecha en la que quieres empezar, sobre todo si hay materiales por encargo o trámites municipales. Ten a mano las medidas aproximadas, unas fotos del estado actual y una idea de las calidades que te gustan: con eso la primera orientación será mucho más precisa. Si el edificio es antiguo, no tiene ascensor o está protegido, dilo desde el principio: son datos que cambian el presupuesto.',
-          'Si todavía estás comparando opciones, la calculadora te da un primer rango en un minuto y, si encaja con lo que buscas, abre el formulario con tus datos ya rellenos para pedir el presupuesto por partidas.',
+          'Los precios de esta página llevan el IVA incluido. Aparte quedan los tributos municipales de la obra cuando hacen falta: en Madrid capital, el ICIO del 3,75 % sobre el presupuesto de ejecución material y la tasa que corresponda al trámite. Cambiar los acabados interiores de una sola vivienda no protegida, como pintar o cambiar azulejos, no necesita licencia ni declaración responsable.',
         ],
       },
       {
         titulo: 'De dónde salen estos precios',
         parrafos: [
-          'Los rangos de esta página son los precios de referencia que usamos para orientar a quien nos pide presupuesto, organizados por servicio y por tamaño del trabajo. Son los mismos que verás en cada página de servicio y los que usa la calculadora, de modo que no se contradicen entre sí.',
-          'No son el resultado de una encuesta de mercado ni la media de otras empresas: son nuestros. PENDIENTE("explicar con qué obras y en qué fecha se calcularon los rangos de referencia"). Los precios por metro cuadrado se deducen de esos rangos con una división sencilla, y lo indicamos así en la tabla. Lo que todavía no tenemos —precios por calidad, importes por partida y plazos— está marcado como pendiente.',
-          'Revisamos los precios periódicamente. La fecha de la última revisión aparece al principio de la página.',
+          'Rangos orientativos de mercado en Madrid, actualizados en noviembre de 2026. El precio final depende del estado de la vivienda y de los materiales que elijas.',
+          'Cuando vemos tu caso, en persona o con fotos, te damos un presupuesto detallado y cerrado por escrito antes de empezar. Si durante la obra hace falta algún cambio, te lo presupuestamos y lo apruebas por escrito antes de hacerlo.',
         ],
       },
     ],
     faqs: [
       {
-        pregunta: '¿Cuánto cuesta pintar un piso en Madrid?',
+        pregunta: '¿Cuánto cuesta reformar un baño en Madrid?',
         respuesta:
-          'Nuestro rango para pintar varias estancias de una vivienda va de 1.000 a 1.800 €. Si hay gotelé o humedades, la preparación se valora aparte.',
+          'Un baño completo de 4 a 6 m² cuesta entre 5.500 y 10.000 € en calidad media, IVA incluido. En calidad básica parte de 5.000 € y en alta puede llegar a 13.000 €. Se hace en 2–3 semanas.',
       },
       {
         pregunta: '¿Cuánto cuesta reformar una cocina en Madrid?',
         respuesta:
-          'Como referencia: cambio de encimera y ajustes, de 1.500 a 3.000 €; cocina parcial con muebles y encimera, de 4.000 a 8.000 €; y cocina completa con muebles e instalaciones, de 9.000 a 15.000 €.',
+          'Una cocina completa de 8 a 12 m² cuesta entre 8.000 y 18.000 €, sin electrodomésticos. El plazo habitual es de 3–4 semanas.',
       },
       {
-        pregunta: '¿Los precios son definitivos?',
+        pregunta: '¿Cuánto cuesta la reforma integral de un piso?',
         respuesta:
-          'No. Son orientativos. El precio final debe confirmar las cantidades, los materiales, la mano de obra, los impuestos y las exclusiones.',
+          'Entre 500 y 1.200 €/m² según la calidad: 500–650 € en básica, 650–850 € en media y 850–1.200 € en alta. Desglosada por partidas, la reforma de un piso de 80 m² en calidad media queda entre 44.000 y 73.500 €, y dura 8–12 semanas.',
       },
       {
-        pregunta: '¿Cuánto cuesta una reforma integral en Madrid?',
+        pregunta: '¿Cuánto cuesta pintar un piso?',
         respuesta:
-          'Como referencia: de 40 a 60 m², de 15.000 a 25.000 €; de 60 a 90 m², de 25.000 a 45.000 €; y a partir de 90 m², de 45.000 a 80.000 €. Son precios orientativos.',
+          'Pintar paredes y techos de un piso de 80 m² cuesta entre 1.400 y 2.600 € y se hace en 3–5 días. Por superficie, la pintura cuesta 8–14 €/m² de pared.',
       },
       {
-        pregunta: '¿Por qué no dais un precio cerrado por metro cuadrado?',
+        pregunta: '¿Cuánto cuesta quitar el gotelé?',
         respuesta:
-          'Porque el metro cuadrado no refleja el estado de las instalaciones, las calidades ni el acceso. Un baño y un salón de la misma superficie no tienen nada que ver en coste. Por eso damos rangos por tipo de trabajo.',
-      },
-      {
-        pregunta: '¿Cuánto cuesta reformar un baño en Madrid?',
-        respuesta:
-          'Como referencia, un cambio puntual de grifería o mueble va de 600 a 1.200 €, una reforma parcial de 1.500 a 3.000 € y un baño completo con demolición de 3.500 a 7.000 €.',
+          'Quitar el gotelé, alisar y pintar cuesta 14–22 €/m² de pared. En un piso completo se hace en 1–2 semanas.',
       },
       {
         pregunta: '¿Los precios incluyen IVA?',
         respuesta:
-          'Nuestros rangos son orientativos y el presupuesto de tu obra debe indicar si el IVA está incluido y a qué tipo. Las obras de renovación de una vivienda habitual pueden tributar al 10 % si cumplen ciertos requisitos.',
+          'Sí. Todos los precios de esta página llevan el IVA incluido y son de mano de obra y materiales de gama media, salvo que se indique otra cosa.',
       },
       {
-        pregunta: '¿Qué datos necesitáis para orientarme mejor?',
+        pregunta: '¿El presupuesto que me dais es cerrado?',
         respuesta:
-          'El tipo de trabajo, la zona, las medidas aproximadas, el estado actual y los materiales que prefieres. Las fotografías ayudan a entender mejor la situación.',
+          'Sí. Te damos un presupuesto detallado y cerrado por escrito antes de empezar. Si durante la obra hace falta algún cambio, te lo presupuestamos y lo apruebas por escrito antes de hacerlo.',
+      },
+      {
+        pregunta: '¿Cuánto se paga de ICIO en Madrid?',
+        respuesta:
+          'En Madrid capital, el 3,75 % del presupuesto de ejecución material para las obras iniciadas desde el 1 de enero de 2024, según la Ordenanza Fiscal 7/2023. Solo se paga cuando la obra necesita licencia o declaración responsable.',
       },
     ],
     servicio: {
       nombre: 'Precios de reformas en Madrid',
-      descripcion: 'Guía de precios de reformas en Madrid: €/m², partidas, plazos y factores de coste.',
+      descripcion: 'Precios orientativos de reformas en Madrid en 2026: por m², por trabajo, por partidas y plazos.',
     },
     servicioFormulario: '',
     imagen: '/images/planos-mesa.webp',
     imagenAlt: 'Plano de una vivienda sobre una mesa para calcular una reforma',
     modulo: 'precios',
-    relacionadas: ['calculadora-reforma', 'cuanto-cuesta-reformar-piso-70-m2-madrid', 'que-pedir-presupuesto-reforma', 'reformas-integrales-madrid', 'ayudas-reformas-madrid'],
+    relacionadas: ['calculadora-reforma', 'cuanto-cuesta-reformar-piso-70-m2-madrid', 'que-pedir-presupuesto-reforma', 'reformas-integrales-madrid', 'reforma-banos-madrid', 'licencia-obra-madrid'],
   },
 
   /* ---------------------------- ZONAS ---------------------------- */
@@ -854,7 +727,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
           {
             pregunta: '¿Cuánto cuesta una reforma en Madrid?',
             respuesta:
-              'Depende del alcance. Como referencia, un baño completo va de 3.500 a 7.000 € y una reforma integral de 60 a 90 m², de 25.000 a 45.000 €. Tienes todos los rangos en nuestra página de precios.',
+              'Depende del alcance. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, una cocina completa 8.000–18.000 € y una reforma integral 500–1.200 €/m² según la calidad, IVA incluido. Tienes todos los precios en nuestra página de precios.',
           },
           {
             pregunta: '¿Por qué no dais un precio por metro cuadrado?',

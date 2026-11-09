@@ -111,13 +111,13 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     tipo: 'guia',
     padre: 'guias',
     publicado: PUBLICADO,
-    title: 'Cuánto cuesta reformar un piso de 70 m² en Madrid',
+    title: 'Reformar un piso de 70 m² en Madrid: desde 35.000 €',
     description:
-      'Cuánto cuesta reformar un piso de 70 m² en Madrid: rangos orientativos con y sin redistribución, qué lo encarece y cómo ajustar el presupuesto.',
+      'Cuánto cuesta reformar un piso de 70 m² en Madrid en 2026: de 35.000 a 84.000 € según calidad, escenarios sin obra integral, plazos y qué lo encarece.',
     etiqueta: 'Cuánto cuesta reformar un piso de 70 m²',
     resumen: 'Rangos con y sin redistribución, y qué hace subir o bajar el precio.',
     h1: { antes: 'Cuánto cuesta reformar un piso de', resaltado: '70 m²', despues: 'en Madrid' },
-    puntos: ['De 25.000 a 45.000 € en reforma integral', 'Escenarios con y sin redistribución', 'Qué lo encarece', 'Cómo ajustarlo'],
+    puntos: ['Integral: 35.000–84.000 €', 'Escenarios sin obra integral', 'Plazo: 8–12 semanas', 'Qué lo encarece'],
     whatsapp: 'Hola, quiero pedir presupuesto para reformar un piso de 70 m²',
     kicker: 'GUÍA DE PRECIOS',
     intro:
@@ -126,7 +126,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
       {
         titulo: 'La respuesta corta',
         parrafos: [
-          'Una reforma integral de un piso de entre 60 y 90 m², con redistribución, instalaciones y acabados, va de 25.000 a 45.000 € según nuestro rango de referencia. Un piso de 70 m² se sitúa dentro de esa horquilla.',
+          'Una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En un piso de 70 m² eso supone 35.000–45.500 € en básica, 45.500–59.500 € en media y 59.500–84.000 € en alta. Un piso de 70–80 m² se reforma en 8–12 semanas.',
           'Si no tocas la distribución y solo renuevas algunas estancias, el importe puede ser bastante menor. Más abajo tienes varios escenarios calculados con los mismos precios.',
           'Son cifras orientativas: el presupuesto real debe confirmar cantidades, materiales, mano de obra, impuestos y exclusiones.',
         ],
@@ -140,22 +140,22 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
           {
             titulo: 'Renovación ligera: pintura de toda la vivienda',
             texto:
-              'Nuestro rango para pintar una vivienda con varias estancias va de 1.000 a 1.800 €. Si hay gotelé, el alisado se presupuesta aparte: un alisado con preparación de 10 a 20 m² va de 400 a 800 €, y de 20 a 40 m² con pintura, de 1.000 a 2.000 €.',
+              'Pintar paredes y techos de un piso de 80 m² cuesta 1.400–2.600 €; en uno de 70 m², proporcionalmente, unos 1.200–2.300 €, en 3–5 días. Si hay gotelé, quitarlo, alisar y pintar cuesta 14–22 €/m² de pared y lleva 1–2 semanas.',
           },
           {
             titulo: 'Baño completo y pintura',
             texto:
-              'Un baño completo con demolición va de 3.500 a 7.000 €; sumando la pintura de la vivienda, el conjunto queda entre 4.500 y 8.800 €. Es una de las combinaciones más habituales cuando el resto del piso está razonablemente bien.',
+              'Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media; sumando la pintura del piso (1.200–2.300 €), el conjunto queda entre 6.700 y 12.300 €. Es una de las combinaciones más habituales cuando el resto del piso está razonablemente bien.',
           },
           {
             titulo: 'Cocina completa, baño completo y pintura',
             texto:
-              'Cocina completa con muebles e instalaciones, de 9.000 a 15.000 €; baño completo, de 3.500 a 7.000 €; y pintura, de 1.000 a 1.800 €. En total, entre 13.500 y 23.800 € sin cambiar la distribución.',
+              'Cocina completa de 8 a 12 m², sin electrodomésticos, 8.000–18.000 €; baño completo, 5.500–10.000 €; y pintura del piso, 1.200–2.300 €. En total, entre 14.700 y 30.300 € sin cambiar la distribución.',
           },
           {
             titulo: 'Reforma integral con redistribución',
             texto:
-              'Cuando se mueven tabiques y se renuevan todas las instalaciones, se usa el rango de reforma integral: de 25.000 a 45.000 € para 60–90 m². Incluye cocina, baños y acabados dentro de ese importe.',
+              'Cuando se mueven tabiques y se renuevan todas las instalaciones, se calcula como reforma integral: en 70 m², de 35.000 € en calidad básica a 84.000 € en alta. Incluye cocina, baño y acabados dentro de ese importe.',
           },
         ],
       },
@@ -197,7 +197,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
       {
         titulo: 'Plazos',
         parrafos: [
-          'El tiempo de obra depende de los metros, de los trámites, de la disponibilidad de materiales y de lo que aparezca al abrir. PENDIENTE("plazo orientativo de la reforma integral de un piso de 70 m²"). Pide siempre un calendario por fases y deja margen si tienes fecha de mudanza.',
+          'El tiempo de obra depende de los metros, de los trámites, de la disponibilidad de materiales y de lo que aparezca al abrir. Como referencia, la reforma integral de un piso de 70–80 m² dura 8–12 semanas. Pide siempre un calendario por fases y deja margen si tienes fecha de mudanza.',
         ],
       },
       {
@@ -210,8 +210,8 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
         titulo: 'Tres pisos de 70 m², tres presupuestos',
         parrafos: [
           'Para entender por qué el rango es amplio, piensa en tres pisos de la misma superficie en Madrid.',
-          'El primero es de los años setenta, en un bloque con ascensor, con la instalación eléctrica original, gotelé, un baño con bañera y cocina cerrada. Su dueña quiere abrir la cocina al salón y rehacer todo. Es una reforma integral con redistribución, y lo razonable es situarlo dentro del rango de 25.000 a 45.000 €, más cerca de la parte alta si elige materiales de calidad.',
-          'El segundo es de los años noventa, con instalaciones en buen estado y una distribución que funciona. Solo quiere renovar cocina y baño y pintar. Sin tocar tabiques ni instalaciones generales, el escenario de cocina completa, baño completo y pintura —entre 13.500 y 23.800 €— es el más parecido.',
+          'El primero es de los años setenta, en un bloque con ascensor, con la instalación eléctrica original, gotelé, un baño con bañera y cocina cerrada. Su dueña quiere abrir la cocina al salón y rehacer todo. Es una reforma integral con redistribución: en calidad media, 45.500–59.500 €, y en calidad alta, 59.500–84.000 €.',
+          'El segundo es de los años noventa, con instalaciones en buen estado y una distribución que funciona. Solo quiere renovar cocina y baño y pintar. Sin tocar tabiques ni instalaciones generales, el escenario de cocina completa, baño completo y pintura —entre 14.700 y 30.300 €— es el más parecido.',
           'El tercero es un piso antiguo en un cuarto sin ascensor, en una calle estrecha del centro, con techos altos y suelos que el propietario quiere conservar. Aunque la superficie sea la misma, la logística, la protección de los elementos originales y lo que puede aparecer al abrir paredes lo situarán en la parte alta del rango, o por encima.',
         ],
       },
@@ -241,7 +241,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 70 m² en Madrid?',
         respuesta:
-          'Con redistribución e instalaciones nuevas, nuestro rango de referencia para 60–90 m² va de 25.000 a 45.000 €. Sin cambiar la distribución, renovando cocina, baño y pintura, entre 13.500 y 23.800 €. Son precios orientativos.',
+          'Con redistribución e instalaciones nuevas, entre 35.000 € en calidad básica y 84.000 € en alta (45.500–59.500 € en media). Sin cambiar la distribución, renovando cocina, baño y pintura, entre 14.700 y 30.300 €. IVA incluido.',
       },
       {
         pregunta: '¿El precio incluye IVA?',
@@ -354,7 +354,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
       {
         titulo: 'Plazos',
         parrafos: [
-          'Cuánto dura cada fase depende de la superficie, del estado del edificio y de los materiales. PENDIENTE("duración orientativa de cada fase de una reforma integral"). Pide que tu presupuesto incluya un calendario por fases: así sabrás en qué punto está la obra y qué decisión toca en cada momento.',
+          'En un piso de 70–80 m², la reforma integral dura 8–12 semanas en total: demolición, 1 semana; instalaciones de electricidad y fontanería, 2–3 semanas; albañilería y tabiquería, 2–3 semanas; alicatados y suelos, 2 semanas; carpintería, 1 semana; pintura, 1 semana; y remates y limpieza, 3–5 días. Pide que tu presupuesto incluya un calendario por fases: así sabrás en qué punto está la obra y qué decisión toca en cada momento.',
         ],
       },
       {
@@ -589,7 +589,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     etiqueta: 'Alisar paredes o quitar gotelé',
     resumen: 'Diferencias, métodos y precios orientativos para tus paredes.',
     h1: { antes: 'Alisar paredes o', resaltado: 'quitar gotelé', despues: ': diferencias y precio' },
-    puntos: ['Desde 150 €', 'Raspar o cubrir', 'Cuándo trasdosar', 'Polvo y tiempos'],
+    puntos: ['Desde 10 €/m²', 'Raspar o cubrir', 'Cuándo trasdosar', 'Polvo y tiempos'],
     whatsapp: 'Hola, quiero pedir presupuesto para quitar el gotelé',
     kicker: 'GUÍA',
     intro:
@@ -639,7 +639,8 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
       {
         titulo: 'Cuánto cuesta',
         parrafos: [
-          'Nuestro servicio de paredes tiene estos rangos orientativos: un alisado localizado de 5 a 10 m² va de 150 a 350 €; un alisado con preparación de 10 a 20 m², de 400 a 800 €; y un alisado con pintura de 20 a 40 m², de 1.000 a 2.000 €. Si se trata solo de pintar una vivienda sin gotelé, la pintura de varias estancias va de 1.000 a 1.800 €.',
+          'Alisar paredes sin gotelé cuesta 10–16 €/m². Quitar el gotelé, alisar y pintar cuesta 14–22 €/m² de pared. Si se trata solo de pintar una vivienda sin gotelé, la pintura cuesta 8–14 €/m² de pared, y un piso de 80 m² con paredes y techos, 1.400–2.600 €. IVA incluido.',
+          'Un ejemplo: si las paredes de tu piso suman 180 m² (mídelo sumando el perímetro de cada habitación por su altura, sin puertas ni ventanas), quitar el gotelé, alisar y pintar costaría entre 2.520 y 3.960 €. Si las paredes no tienen gotelé y solo hay que alisarlas, entre 1.800 y 2.880 €.',
           'El precio final depende del estado de la pared, de las capas de gotelé y de pintura que haya debajo, de la preparación necesaria y del acabado final. Los techos suelen costar más que las paredes, por la dificultad de trabajar sobre la cabeza.',
         ],
       },
@@ -653,7 +654,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
         titulo: 'Polvo, tiempos y organización',
         parrafos: [
           'El lijado genera polvo fino que llega a cualquier rincón: hay que retirar o cubrir los muebles, sellar puertas y proteger el suelo. Con la vivienda vacía todo es más rápido y limpio. Si vas a cambiar el suelo, hazlo después de las paredes, no antes.',
-          'Cada capa de masilla necesita secarse antes de la siguiente, y acortar esos tiempos se nota en forma de grietas. Por eso una vivienda entera se suele organizar por estancias. PENDIENTE("tiempo orientativo para quitar el gotelé de una vivienda de 70 m²").',
+          'Cada capa de masilla necesita secarse antes de la siguiente, y acortar esos tiempos se nota en forma de grietas. Por eso una vivienda entera se suele organizar por estancias: quitar el gotelé, alisar y pintar un piso completo lleva 1–2 semanas.',
           'En edificios con comunidad, respeta los horarios de obra y avisa a los vecinos de los días de lijado.',
         ],
       },
@@ -716,7 +717,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta quitar el gotelé en Madrid?',
         respuesta:
-          'Como referencia de nuestro servicio de paredes: de 5 a 10 m², de 150 a 350 €; de 10 a 20 m² con preparación, de 400 a 800 €; y de 20 a 40 m² con pintura, de 1.000 a 2.000 €. Son precios orientativos.',
+          'Quitar el gotelé, alisar y pintar cuesta 14–22 €/m² de pared, y solo alisar, 10–16 €/m². En un piso completo son 1–2 semanas. IVA incluido.',
       },
       {
         pregunta: '¿Se puede quitar el gotelé con la casa amueblada?',
