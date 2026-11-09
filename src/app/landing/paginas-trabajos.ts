@@ -7,9 +7,9 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     path: 'cambiar-banera-por-plato-ducha-madrid',
     tipo: 'trabajo',
     padre: 'reforma-banos-madrid',
-    title: 'Cambiar bañera por plato de ducha, Madrid | ObraLocal Madrid',
+    title: 'Cambiar bañera por plato de ducha en Madrid: 1.000–2.200 €',
     description:
-      'Cambiar la bañera por un plato de ducha en Madrid: qué incluye, desagüe, impermeabilización, mampara y azulejos. Qué comprobar antes de pedir precio.',
+      'Cambiar la bañera por un plato de ducha en Madrid cuesta 1.000–2.200 € y se hace en 1–2 días. Qué incluye, desagüe, mampara y qué comprobar antes.',
     etiqueta: 'Cambiar bañera por plato de ducha',
     resumen: 'Qué implica el cambio, qué comprobar y qué influye en el precio.',
     h1: { antes: 'Cambiar bañera por', resaltado: 'plato de ducha', despues: 'en Madrid' },
@@ -122,10 +122,11 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     },
     servicioCatalogo: 'Reforma de baño',
     servicioFormulario: 'Reforma de baño',
-    preciosSoloReferencia: true,
     imagen: '/images/plato-ducha.webp',
     imagenAlt: 'Ducha de obra con plato y mampara de vidrio',
     relacionadas: [
+      'que-pedir-presupuesto-reforma',
+      'precios',
       'reforma-banos-madrid',
       'albanileria-madrid',
       'reformas-integrales-madrid',
@@ -138,14 +139,14 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     path: 'quitar-gotele-madrid',
     tipo: 'trabajo',
     padre: 'alisado-paredes-madrid',
-    title: 'Quitar gotelé en Madrid: precio y métodos | ObraLocal Madrid',
+    title: 'Quitar gotelé en Madrid: 14–22 €/m² con alisado y pintura',
     description:
-      'Quitar gotelé en Madrid: raspar, cubrir o trasdosar. Qué método conviene según la pared, qué precio orientativo tiene y qué comprobar antes de empezar.',
+      'Quitar gotelé en Madrid: 14–22 €/m² de pared con alisado y pintura, en 1–2 semanas para un piso completo. Raspar, cubrir o trasdosar: cuál conviene.',
     etiqueta: 'Quitar gotelé',
     resumen: 'Raspar, cubrir o trasdosar: qué método encaja con tu pared.',
     h1: { antes: 'Quitar', resaltado: 'gotelé', despues: 'en Madrid' },
     puntos: [
-      'Desde 150 €',
+      'Desde 14 €/m²',
       'Raspar, cubrir o trasdosar',
       'Paredes y techos',
       'Listo para pintar',
@@ -235,7 +236,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta quitar el gotelé en Madrid?',
         respuesta:
-          'Como referencia de nuestro servicio de paredes: un alisado localizado de 5 a 10 m² va de 150 a 350 €, de 10 a 20 m² con preparación de 400 a 800 €, y de 20 a 40 m² con pintura de 1.000 a 2.000 €. Son precios orientativos, que cambian según la pared.',
+          'Quitar el gotelé, alisar y pintar cuesta 14–22 €/m² de pared, IVA incluido. En un piso completo se hace en 1–2 semanas. Si la pared no tiene gotelé y solo hay que alisarla, son 10–16 €/m².',
       },
       {
         pregunta: '¿Es mejor raspar o tapar el gotelé?',
@@ -262,6 +263,8 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     imagen: '/images/alisando-pared.webp',
     imagenAlt: 'Mano alisando una pared con llana después de quitar el gotelé',
     relacionadas: [
+      'alisar-paredes-o-quitar-gotele',
+      'precios',
       'alisado-paredes-madrid',
       'pintores-madrid',
       'pladur-madrid',
@@ -274,14 +277,14 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     path: 'reforma-piso-completo-madrid',
     tipo: 'trabajo',
     padre: 'reformas-integrales-madrid',
-    title: 'Reforma de piso completo en Madrid | ObraLocal Madrid',
+    title: 'Reforma de piso completo en Madrid desde 500 €/m²',
     description:
-      'Reformar un piso completo en Madrid: precios orientativos por metros, qué revisar si lo acabas de comprar y cómo priorizar para ajustar el presupuesto.',
+      'Reformar un piso completo en Madrid: 500–1.200 €/m² según calidad y 8–12 semanas para 70–80 m². Qué revisar si lo acabas de comprar y cómo priorizar.',
     etiqueta: 'Reforma de piso completo',
     resumen: 'Qué revisar al comprar un piso y cómo priorizar el presupuesto.',
     h1: { antes: 'Reforma de', resaltado: 'piso completo', despues: 'en Madrid' },
     puntos: [
-      'Desde 15.000 €',
+      'Desde 500 €/m²',
       'Si acabas de comprar',
       'Prioridades de obra',
       'Comunidad y logística',
@@ -367,7 +370,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso completo en Madrid?',
         respuesta:
-          'Como referencia: de 40 a 60 m² va de 15.000 a 25.000 €, de 60 a 90 m² de 25.000 a 45.000 €, y a partir de 90 m² de 45.000 a 80.000 €. Son precios orientativos que dependen de las calidades, las instalaciones y la distribución.',
+          'Reformar un piso completo cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Si hay que renovar instalaciones, la eléctrica completa de un piso de 80 m² cuesta 3.500–7.000 € y la fontanería 2.500–5.000 €. Un piso de 70–80 m² se reforma en 8–12 semanas.',
       },
       {
         pregunta: '¿Por dónde empiezo si acabo de comprar un piso?',
@@ -394,11 +397,12 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     imagen: '/images/piso-reformado.webp',
     imagenAlt: 'Piso reformado con paredes blancas y suelo de madera',
     relacionadas: [
+      'cuanto-cuesta-reformar-piso-70-m2-madrid',
+      'orden-trabajos-reforma-integral',
+      'calculadora-reforma',
       'reformas-integrales-madrid',
       'reforma-banos-madrid',
       'reforma-cocinas-madrid',
-      'como-trabajamos',
-      'precios',
     ],
   },
 ];

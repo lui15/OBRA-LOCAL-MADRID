@@ -13,7 +13,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { Icono } from '../compartido/icono';
 import { ENLACE_TELEFONO, NEGOCIO } from '../datos/contacto';
-import { PAGINAS, urlDePagina } from '../landing/landing-data';
+import { FICHAS_PUBLICADAS, urlDePagina } from '../landing/fichas';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
 import { ContextoPagina } from './contexto-pagina.service';
 import { ScrollEstado } from './scroll-estado.service';
@@ -38,14 +38,18 @@ export class SiteHeader {
   readonly telefonoVisible = NEGOCIO.telefonoVisible;
   readonly url = urlDePagina;
 
-  readonly servicios = PAGINAS.filter((p) => p.tipo === 'servicio');
-  readonly trabajos = PAGINAS.filter((p) => p.tipo === 'trabajo');
-  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona');
+  readonly servicios = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'servicio');
+  readonly trabajos = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'trabajo');
+  /** El mega menú muestra las primeras zonas y enlaza al índice completo. */
+  readonly zonas = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'zona').slice(0, 8);
+  readonly todasLasZonas = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'zona');
 
   readonly enlaces = [
     { ruta: '/precios', texto: 'Precios' },
     { ruta: '/zonas', texto: 'Zonas' },
+    { ruta: '/guias', texto: 'Guías' },
     { ruta: '/como-trabajamos', texto: 'Cómo trabajamos' },
+    { ruta: '/opiniones', texto: 'Opiniones' },
     { ruta: '/preguntas-frecuentes', texto: 'Preguntas' },
   ];
 

@@ -2,26 +2,28 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Migas } from '../compartido/migas';
-import { Miga, nodoMigas } from '../landing/landing-data';
+import { Revision } from '../compartido/revision';
+import { Miga, nodoMigas } from '../landing/fichas';
 import { SeoService } from '../seo.service';
 import { LEGAL } from './legal-data';
 
 type TipoLegal = 'aviso' | 'privacidad' | 'cookies';
 
 const TITULOS: Record<TipoLegal, { titulo: string; path: string }> = {
-  aviso: { titulo: 'Aviso legal', path: '/aviso-legal' },
-  privacidad: { titulo: 'Política de privacidad', path: '/politica-privacidad' },
-  cookies: { titulo: 'Política de cookies', path: '/politica-cookies' },
+  aviso: { titulo: 'Aviso legal', path: '/aviso-legal/' },
+  privacidad: { titulo: 'Política de privacidad', path: '/politica-privacidad/' },
+  cookies: { titulo: 'Política de cookies', path: '/politica-cookies/' },
 };
 
 @Component({
   selector: 'app-legal',
   standalone: true,
-  imports: [Migas],
+  imports: [Migas, Revision],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="legal">
       <app-migas [migas]="migas" />
+      <app-revision />
 
       @if (tipo === 'aviso') {
         <h1>Aviso legal</h1>
@@ -140,8 +142,8 @@ const TITULOS: Record<TipoLegal, { titulo: string; path: string }> = {
 
         <h2>Quién puede tratarlos</h2>
         <p>
-          No vendemos tus datos. Para que la web funcione, algunos proveedores los tratan por
-          cuenta nuestra:
+          No vendemos tus datos. Para que la web funcione, estos encargados del tratamiento los
+          tratan por cuenta nuestra:
         </p>
         <ul>
           @for (proveedor of legal.proveedores; track proveedor) {
@@ -152,6 +154,7 @@ const TITULOS: Record<TipoLegal, { titulo: string; path: string }> = {
           Si alguno de ellos trata datos fuera del Espacio Económico Europeo, se hará con las
           garantías que exige el RGPD.
         </p>
+        <p>{{ legal.comunicacion }}</p>
 
         <h2>Tus derechos</h2>
         <p>

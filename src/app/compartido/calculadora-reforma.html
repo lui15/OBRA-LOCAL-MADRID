@@ -1,0 +1,104 @@
+@let e = entrada();
+<div class="calc">
+  <form class="calc-form" (submit)="$event.preventDefault()" aria-label="Datos de tu reforma">
+    <label class="campo">
+      <span>Metros cuadrados del piso</span>
+      <input
+        type="number"
+        inputmode="numeric"
+        [min]="limites.m2[0]"
+        [max]="limites.m2[1]"
+        [value]="e.m2"
+        (input)="cambiar('m2', libre($event))"
+        (blur)="cambiar('m2', numero($event, limites.m2[0], limites.m2[1])); fijar($event, entrada().m2)"
+      />
+    </label>
+
+    <fieldset class="campo">
+      <legend>¿Qué vas a hacer?</legend>
+      <div class="opciones">
+        <label>
+          <input type="radio" name="redistribucion" [checked]="e.redistribucion" (change)="cambiar('redistribucion', true)" />
+          Reforma integral (cambiar distribución, instalaciones y acabados)
+        </label>
+        <label>
+          <input type="radio" name="redistribucion" [checked]="!e.redistribucion" (change)="cambiar('redistribucion', false)" />
+          Solo algunas partes: cocina, baños, pintura o suelos
+        </label>
+      </div>
+    </fieldset>
+
+    @if (!e.redistribucion) {
+      <fieldset class="campo">
+        <legend>Partes de la reforma</legend>
+        <div class="opciones">
+          <label><input type="checkbox" [checked]="e.cocina" (change)="cambiar('cocina', marcado($event))" /> Cocina completa</label>
+          <label><input type="checkbox" [checked]="e.pintura" (change)="cambiar('pintura', marcado($event))" /> Pintura de paredes y techos</label>
+          <label><input type="checkbox" [checked]="e.suelos" (change)="cambiar('suelos', marcado($event))" /> Suelos nuevos</label>
+        </div>
+      </fieldset>
+
+      <div class="fila">
+        <label class="campo">
+          <span>Número de baños</span>
+          <input
+            type="number"
+            inputmode="numeric"
+            [min]="limites.banos[0]"
+            [max]="limites.banos[1]"
+            [value]="e.banos"
+            (input)="cambiar('banos', numero($event, limites.banos[0], limites.banos[1]))"
+            (blur)="fijar($event, entrada().banos)"
+          />
+        </label>
+        <fieldset class="campo" [disabled]="e.banos === 0">
+          <legend>En el baño</legend>
+          <div class="opciones">
+            <label><input type="radio" name="soloPlato" [checked]="!e.soloPlato" (change)="cambiar('soloPlato', false)" /> Baño completo</label>
+            <label><input type="radio" name="soloPlato" [checked]="e.soloPlato" (change)="cambiar('soloPlato', true)" /> Solo cambiar bañera por plato</label>
+          </div>
+        </fieldset>
+      </div>
+    }
+
+    <fieldset class="campo">
+      <legend>Calidad de materiales</legend>
+      <div class="opciones">
+        @for (c of calidades; track c.id) {
+          <label>
+            <input type="radio" name="calidad" [checked]="e.calidad === c.id" (change)="cambiar('calidad', c.id)" />
+            <span><strong>{{ c.nombre }}</strong> · {{ c.explicacion }}</span>
+          </label>
+        }
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="calc-resultado" aria-live="polite">
+    @if (resultado(); as r) {
+      <span class="etiqueta">Precio orientativo</span>
+      <strong class="rango">{{ euros(r.minimo) }} – {{ euros(r.maximo) }}</strong>
+      <p class="plazo">Plazo orientativo: {{ r.plazo }}</p>
+
+      <ul class="lineas">
+        @for (l of r.lineas; track l.concepto) {
+          <li>
+            <span>{{ l.concepto }} <small>· {{ l.plazo }}</small></span>
+            <span>{{ euros(l.minimo) }} – {{ euros(l.maximo) }}</span>
+          </li>
+        }
+      </ul>
+
+      @for (a of r.avisos; track a) {
+        <p class="aviso">{{ a }}</p>
+      }
+    } @else {
+      <p class="aviso">Elige al menos una parte de la reforma para ver el precio.</p>
+    }
+
+    <button type="button" class="button button-orange" (click)="pedirPresupuesto()">
+      Pide tu presupuesto cerrado <span aria-hidden="true">↗</span>
+    </button>
+    <p class="nota">{{ nota }}</p>
+  </div>
+</div>

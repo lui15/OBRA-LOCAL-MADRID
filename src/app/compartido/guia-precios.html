@@ -2,26 +2,25 @@
   <div class="prices-heading">
     <div>
       <span class="eyebrow">GUÍA DE PRECIOS</span>
-      <h4>¿Cuánto puede costar?</h4>
+      <h4>¿Cuánto cuesta?</h4>
     </div>
-    <small>Importes orientativos</small>
+    <small>Orientativos, IVA incluido</small>
   </div>
 }
 
 <div class="price-grid" appReveal>
-  @for (precio of precios(); track precio.tamano) {
+  @for (precio of precios(); track precio.id) {
     <div class="price-card">
-      <span class="price-size">{{ precio.tamano }}</span>
-
-      <strong> {{ formato(precio.minimo) }}–{{ formato(precio.maximo) }} </strong>
-
-      <small>{{ precio.medidas }}</small>
-      <span>{{ precio.detalle }}</span>
+      <span class="price-size">{{ precio.trabajo }}</span>
+      <strong>{{ texto(precio) }}</strong>
+      @if (precio.plazo) {
+        <small>Plazo: {{ precio.plazo }}</small>
+      }
+      @if (precio.detalle) {
+        <span>{{ precio.detalle }}</span>
+      }
     </div>
   }
 </div>
 
-<p class="price-disclaimer">
-  El presupuesto final depende de las medidas, los materiales, la mano de obra y los trabajos
-  incluidos.
-</p>
+<p class="price-disclaimer">{{ nota }}</p>

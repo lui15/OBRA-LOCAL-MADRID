@@ -1,0 +1,100 @@
+:host {
+  display: block;
+}
+
+.pagina {
+  padding-block: 32px 72px;
+}
+
+h1 {
+  margin: 20px 0 12px;
+  color: var(--navy-dark);
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+}
+
+h1 em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.aviso {
+  padding: 12px 16px;
+  border: 1px dashed #d98a4f;
+  border-radius: 10px;
+  background: #fff6ef;
+  color: #7a3b0e;
+  font-size: 14px;
+}
+
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista a {
+  display: grid;
+  gap: 6px;
+  padding-bottom: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.lista img,
+.antes-despues img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.lista strong,
+.lista span {
+  padding-inline: 14px;
+}
+
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.ficha div {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+dt {
+  color: #566679;
+  font-size: 12px;
+}
+
+dd {
+  margin: 4px 0 0;
+  font-weight: 700;
+}
+
+.antes-despues {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 6px;
+  color: #566679;
+  font-size: 13px;
+}

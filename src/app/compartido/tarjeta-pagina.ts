@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { formatearPrecio } from '../datos/catalogo-servicios';
+import { desdeFila } from '../datos/precios';
 import { altoDe, anchoDe, srcsetDe, tarjetaDe } from '../datos/imagenes';
-import { PaginaSeo, precioDesde, urlDePagina } from '../landing/landing-data';
+import { FichaPagina, precioPrincipal, urlDePagina } from '../landing/fichas';
 
 /** Tarjeta compacta que enlaza a una página, con foto y «desde X €» si procede. */
 @Component({
@@ -78,7 +78,7 @@ import { PaginaSeo, precioDesde, urlDePagina } from '../landing/landing-data';
     h3 {
       margin: 0;
       color: var(--navy-dark);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
       font-size: 16px;
       font-weight: 800;
       line-height: 1.3;
@@ -126,7 +126,7 @@ import { PaginaSeo, precioDesde, urlDePagina } from '../landing/landing-data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TarjetaPagina {
-  readonly pagina = input.required<PaginaSeo>();
+  readonly pagina = input.required<FichaPagina>();
 
   readonly url = urlDePagina;
   readonly foto = tarjetaDe;
@@ -137,7 +137,7 @@ export class TarjetaPagina {
   readonly textoPrecio = computed(() => {
     const p = this.pagina();
     if (p.tipo !== 'servicio' && p.tipo !== 'trabajo') return null;
-    const desde = precioDesde(p);
-    return desde === null ? 'Precio según valoración' : `Desde ${formatearPrecio(desde)}`;
+    const principal = precioPrincipal(p);
+    return principal ? desdeFila(principal) : 'Precio según valoración';
   });
 }

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import type { Miga } from '../landing/landing-data';
+import type { Miga } from '../landing/fichas';
 
 @Component({
   selector: 'app-migas',

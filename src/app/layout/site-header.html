@@ -63,6 +63,9 @@
                     <a [routerLink]="url(p)" (click)="cerrarTodo()">{{ p.etiqueta }}</a>
                   </li>
                 }
+                <li>
+                  <a class="mega-mas" routerLink="/zonas" (click)="cerrarTodo()">Ver todas las zonas →</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -127,7 +130,7 @@
     <details class="mm-grupo">
       <summary>Por zona</summary>
       <a routerLink="/zonas" (click)="cerrarTodo()">Todas las zonas</a>
-      @for (p of zonas; track p.path) {
+      @for (p of todasLasZonas; track p.path) {
         <a [routerLink]="url(p)" (click)="cerrarTodo()">{{ p.etiqueta }}</a>
       }
     </details>

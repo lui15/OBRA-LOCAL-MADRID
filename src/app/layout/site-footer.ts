@@ -3,9 +3,9 @@ import { RouterLink } from '@angular/router';
 
 import { ConsentimientoService } from '../compartido/consentimiento.service';
 import { Icono } from '../compartido/icono';
-import { ENLACE_TELEFONO, NEGOCIO } from '../datos/contacto';
+import { EMPRESA, ENLACE_TELEFONO, NEGOCIO } from '../datos/contacto';
 import { ContextoPagina } from './contexto-pagina.service';
-import { PAGINAS, urlDePagina } from '../landing/landing-data';
+import { FICHAS_PUBLICADAS, urlDePagina } from '../landing/fichas';
 
 @Component({
   selector: 'app-site-footer',
@@ -23,7 +23,8 @@ export class SiteFooter {
   readonly contexto = inject(ContextoPagina);
   readonly url = urlDePagina;
 
-  readonly servicios = PAGINAS.filter((p) => p.tipo === 'servicio');
-  readonly trabajos = PAGINAS.filter((p) => p.tipo === 'trabajo');
-  readonly zonas = PAGINAS.filter((p) => p.tipo === 'zona');
+  readonly servicios = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'servicio');
+  readonly trabajos = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'trabajo');
+  readonly zonas = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'zona').slice(0, 8);
+  readonly empresa = EMPRESA;
 }

@@ -8,19 +8,21 @@
 
       <h1>{{ pagina.h1.antes }}<br /><span>{{ pagina.h1.resaltado }}</span></h1>
 
-      <p class="hero-description">
-        Albañilería, pintura, baños, cocinas, pladur y reformas integrales. Encuentra
-        orientación para tu obra y prepara tu presupuesto paso a paso.
-      </p>
+      <ul class="hero-precios" aria-label="Precios de partida">
+        @for (m of masPedidos; track m.ruta) {
+          <li>
+            <a [routerLink]="m.ruta">
+              <span>{{ m.trabajo }}</span>
+              <strong>desde {{ cifra(m.desde) }} {{ m.unidad }}</strong>
+            </a>
+          </li>
+        }
+      </ul>
 
       <div class="hero-actions">
-        <button class="button button-orange" type="button" (click)="presupuesto.abrir('', 'hero')">
-          Cuéntanos tu proyecto <span>↗</span>
-        </button>
-
-        <button class="button button-outline" type="button" (click)="navegacion.irA('servicios')">
-          Explorar servicios
-        </button>
+        <a class="button button-orange" routerLink="/calculadora-reforma/">
+          Calcular mi reforma <span aria-hidden="true">↗</span>
+        </a>
 
         <a class="button button-outline" [href]="whatsapp" target="_blank" rel="noopener">
           <app-icono nombre="whatsapp" /> WhatsApp
@@ -28,10 +30,12 @@
       </div>
 
       <div class="hero-benefits">
-        <span>✓ Precios orientativos</span>
-        <span>✓ Solicitud paso a paso</span>
+        <span>✓ Presupuesto cerrado por escrito</span>
+        <span>✓ Un único interlocutor</span>
         <span>✓ Madrid y alrededores</span>
       </div>
+
+      <app-revision />
     </div>
 
     <div class="hero-image" appReveal>
@@ -56,13 +60,16 @@
       <div class="hero-floating">
         <span class="floating-check">✓</span>
         <div>
-          <strong>Planifica tu reforma</strong>
-          <small>Empieza con información clara</small>
+          <strong>Presupuesto cerrado</strong>
+          <small>Por escrito, antes de empezar</small>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Opiniones, pronto: carrusel táctil con scroll-snap -->
+<app-bloque-opiniones [opiniones]="opiniones" [carrusel]="true" />
 
 <app-garantias />
 
@@ -85,7 +92,11 @@
   </div>
 </section>
 
+<app-bloque-confianza />
+
 <app-proceso-trabajo />
+
+<app-bloque-calculadora />
 
 <section class="section bloque-portada" id="trabajos">
   <div class="container">

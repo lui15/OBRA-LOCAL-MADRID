@@ -8,11 +8,11 @@
         {{ pagina.kicker }}
       </span>
 
-      <h1 class="rise" style="--i: 2">
+      <h1 class="rise-suave" style="--i: 2">
         {{ pagina.h1.antes }} <em>{{ pagina.h1.resaltado }}</em> {{ pagina.h1.despues }}
       </h1>
 
-      <p class="lp-intro rise" style="--i: 3">{{ pagina.intro }}</p>
+      <p class="lp-intro rise-suave" style="--i: 3">{{ pagina.intro }}</p>
 
       <div class="lp-acciones rise" style="--i: 4">
         <button
@@ -26,6 +26,8 @@
           <app-icono nombre="whatsapp" /> WhatsApp
         </a>
       </div>
+
+      <app-revision class="rise" style="--i: 5" />
     </div>
 
     <figure class="lp-hero-foto">
@@ -38,10 +40,10 @@
         [attr.height]="alto(pagina.imagen)"
         fetchpriority="high"
       />
-      @if (desde !== null) {
+      @if (desde; as d) {
         <figcaption class="lp-precio">
-          <small>Desde</small>
-          <strong>{{ desdeTexto }}</strong>
+          <small>{{ d.etiqueta }}</small>
+          <strong>{{ d.valor }}</strong>
         </figcaption>
       }
     </figure>
@@ -56,11 +58,64 @@
   </div>
 </section>
 
+<!-- Bajo la cabecera, cada bloque se hidrata al entrar en pantalla: el HTML ya llega completo del servidor. -->
+
+@defer (hydrate on viewport) {
+@if (pagina.borrador || pagina.aviso) {
+  <div class="container lp-avisos">
+    @if (pagina.borrador) {
+      <p class="lp-aviso lp-aviso-borrador" role="note">
+        BORRADOR (no publicado, noindex): {{ pagina.borrador }}
+      </p>
+    }
+    @if (pagina.aviso) {
+      <p class="lp-aviso" role="note"><strong>Importante:</strong> {{ pagina.aviso }}</p>
+    }
+  </div>
+}
+}
+
+<!-- ================= TABLAS DE PRECIOS (solo /precios/) ================= -->
+
+@defer (hydrate on viewport) {
+@if (pagina.modulo === 'precios') {
+  <app-precios-referencia />
+}
+}
+
+<!-- ================= PRECIOS DEL SERVICIO ================= -->
+
+@defer (hydrate on viewport) {
+@if (servicioCatalogo; as s) {
+  <section class="section lp-banda" id="precios">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <span class="eyebrow eyebrow-oscura">GUÍA DE PRECIOS</span>
+        @if (pagina.preciosSoloReferencia) {
+          <h2>Precios de referencia: {{ s.nombre.toLowerCase() }}</h2>
+          <p>Son los rangos del servicio completo, no el precio de este trabajo concreto.</p>
+        } @else {
+          <h2>¿Cuánto cuesta?</h2>
+          <p>{{ s.nota }}</p>
+        }
+      </div>
+      <app-guia-precios [precios]="filasPrecio.length ? filasPrecio : s.precios" [conCabecera]="false" />
+      <p class="lp-ver-todo">
+        <a routerLink="/precios">Ver todos los precios de reformas en Madrid →</a>
+        <a routerLink="/calculadora-reforma">Calcular mi reforma →</a>
+      </p>
+    </div>
+  </section>
+}
+}
+
 <!-- ================= CONTENIDO ================= -->
+
+@defer (hydrate on viewport) {
 <div class="section lp-contenido">
   <div class="container">
     @for (seccion of pagina.secciones; track seccion.titulo) {
-      <section class="lp-seccion">
+      <section class="lp-seccion" [attr.id]="seccion.id ?? null">
         <h2>{{ seccion.titulo }}</h2>
 
         @for (parrafo of seccion.parrafos; track parrafo) {
@@ -103,38 +158,51 @@
     }
   </div>
 </div>
+}
 
-<!-- ================= PRECIOS DEL SERVICIO ================= -->
-@if (servicioCatalogo; as s) {
-  <section class="section lp-banda" id="precios">
+@defer (hydrate on viewport) {
+@if (pagina.fuentes?.length) {
+  <section class="section lp-fuentes" aria-labelledby="fuentes-titulo">
     <div class="container">
-      <div class="section-heading" appReveal>
-        <span class="eyebrow eyebrow-oscura">GUÍA DE PRECIOS</span>
-        @if (pagina.preciosSoloReferencia) {
-          <h2>Precios de referencia: {{ s.nombre.toLowerCase() }}</h2>
-          <p>Son los rangos del servicio completo, no el precio de este trabajo concreto.</p>
-        } @else {
-          <h2>¿Cuánto puede costar?</h2>
-          <p>{{ s.nota }}</p>
+      <h2 id="fuentes-titulo">Fuentes oficiales</h2>
+      <ul>
+        @for (f of pagina.fuentes; track f.url) {
+          <li><a [href]="f.url" target="_blank" rel="noopener">{{ f.texto }}</a></li>
         }
-      </div>
-      <app-guia-precios [precios]="s.precios" [conCabecera]="false" />
-      <p class="lp-ver-todo">
-        <a routerLink="/precios">Ver los precios de todos los servicios →</a>
-      </p>
+      </ul>
     </div>
   </section>
 }
+}
+
+@defer (hydrate on viewport) {
+@if (esServicio) {
+  <app-bloque-confianza />
+}
+}
 
 <!-- ================= ZONAS: SERVICIOS Y PRECIOS ================= -->
+
+@defer (hydrate on viewport) {
 @if (pagina.tipo === 'zona') {
   <section class="section lp-banda" id="precios">
     <div class="container">
       <div class="section-heading" appReveal>
         <span class="eyebrow eyebrow-oscura">PRECIOS ORIENTATIVOS</span>
-        <h2>Qué podemos hacer en tu vivienda</h2>
-        <p>Precio de partida de cada servicio. El importe final se confirma con la valoración.</p>
+        <h2>Cuánto cuesta reformar en {{ pagina.zona }}</h2>
+        <p>Precio de partida de los tres trabajos que más nos piden. {{ notaPrecios }}</p>
       </div>
+      <ul class="lp-mas-pedidos">
+        @for (m of masPedidos; track m.ruta) {
+          <li>
+            <a [routerLink]="m.ruta">
+              <span>{{ m.trabajo }}</span>
+              <strong>Desde {{ cifra(m.desde) }} {{ m.unidad }}</strong>
+            </a>
+          </li>
+        }
+      </ul>
+      <h3 class="lp-subtitulo-zona">Todos los servicios en {{ pagina.zona }}</h3>
       <ul class="lp-tarjetas">
         @for (p of paginasServicio; track p.path) {
           <li><app-tarjeta-pagina [pagina]="p" /></li>
@@ -143,9 +211,60 @@
     </div>
   </section>
 }
+}
 
 <!-- ================= MÓDULOS DE LOS ÍNDICES ================= -->
+
+@defer (hydrate on viewport) {
+@if (obras.length) {
+  <section class="section" id="obras" aria-labelledby="obras-titulo">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <h2 id="obras-titulo">Obras en {{ pagina.zona }}</h2>
+      </div>
+      <ul class="lp-tarjetas">
+        @for (o of obras; track o.slug) {
+          <li>
+            <a class="lp-obra" [routerLink]="'/proyectos/' + o.slug">
+              <img [src]="o.fotos[0].despues" [alt]="o.fotos[0].alt" width="800" height="600" loading="lazy" />
+              <strong>{{ o.titulo }}</strong>
+              <span>{{ o.barrio }} · {{ o.m2 }}</span>
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+}
+}
+
+@defer (hydrate on viewport) {
 @switch (pagina.modulo) {
+  @case ('opiniones') {
+    <app-listado-opiniones />
+  }
+  @case ('calculadora') {
+    <section class="section lp-banda" id="calculadora">
+      <div class="container">
+        <app-calculadora-reforma />
+      </div>
+    </section>
+  }
+  @case ('guias') {
+    <section class="section lp-banda" id="guias">
+      <div class="container">
+        <div class="section-heading" appReveal>
+          <span class="eyebrow eyebrow-oscura">GUÍAS</span>
+          <h2>Todas las guías</h2>
+        </div>
+        <ul class="lp-tarjetas">
+          @for (p of paginasGuia; track p.path) {
+            <li><app-tarjeta-pagina [pagina]="p" /></li>
+          }
+        </ul>
+      </div>
+    </section>
+  }
   @case ('servicios') {
     <section class="section lp-banda" id="catalogo">
       <div class="container">
@@ -227,7 +346,7 @@
       <div class="container">
         <div class="section-heading" appReveal>
           <span class="eyebrow eyebrow-oscura">PASO A PASO</span>
-          <h2>Los seis pasos de tu reforma</h2>
+          <h2>Los cinco pasos de tu reforma</h2>
         </div>
         <ol class="lp-pasos">
           @for (paso of pasos; track paso.titulo; let i = $index) {
@@ -257,22 +376,78 @@
     </section>
   }
 }
+}
 
-<!-- ================= PÁGINAS RELACIONADAS ================= -->
-<section class="section lp-relacionadas" aria-labelledby="relacionadas-titulo">
-  <div class="container">
-    <div class="section-heading" appReveal>
-      <h2 id="relacionadas-titulo">También te puede interesar</h2>
+@defer (hydrate on viewport) {
+@if (guias.length) {
+  <section class="section" aria-labelledby="guias-titulo">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <span class="eyebrow eyebrow-oscura">GUÍAS</span>
+        <h2 id="guias-titulo">Para leer antes de empezar</h2>
+      </div>
+      <ul class="lp-tarjetas">
+        @for (g of guias; track g.path) {
+          <li><app-tarjeta-pagina [pagina]="g" /></li>
+        }
+      </ul>
     </div>
-    <ul class="lp-tarjetas">
-      @for (r of relacionadas; track r.path) {
-        <li><app-tarjeta-pagina [pagina]="r" /></li>
+  </section>
+}
+}
+
+@defer (hydrate on viewport) {
+@if (esServicio) {
+  <app-bloque-calculadora />
+  <nav class="lp-zonas container" aria-labelledby="zonas-servicio">
+    <h2 id="zonas-servicio">Dónde hacemos {{ pagina.etiqueta.toLowerCase() }}</h2>
+    <ul class="lp-chips lp-chips-izq">
+      @for (z of paginasZona; track z.path) {
+        <li><a [routerLink]="url(z)">{{ z.zona }}</a></li>
       }
     </ul>
-  </div>
-</section>
+  </nav>
+}
+}
+
+<!-- ================= PROCESO (servicios) ================= -->
+
+@defer (hydrate on viewport) {
+@if (pagina.tipo === 'servicio' || pagina.tipo === 'trabajo') {
+  <section class="section lp-proceso-corto" aria-labelledby="proceso-titulo">
+    <div class="container">
+      <div class="section-heading" appReveal>
+        <span class="eyebrow eyebrow-oscura">CÓMO TRABAJAMOS</span>
+        <h2 id="proceso-titulo">Así hacemos tu {{ pagina.etiqueta.toLowerCase() }}</h2>
+      </div>
+      <ol class="lp-pasos-cortos">
+        @for (p of pasos; track p.titulo; let i = $index) {
+          <li>
+            <span class="lp-paso-num" aria-hidden="true">{{ i + 1 }}</span>
+            <div>
+              <h3>{{ p.titulo }}</h3>
+              <p>{{ p.texto }}</p>
+            </div>
+          </li>
+        }
+      </ol>
+      <p class="lp-ver-todo"><a routerLink="/como-trabajamos">Ver cómo trabajamos →</a></p>
+    </div>
+  </section>
+}
+}
+
+<!-- ================= OPINIONES (antes del formulario) ================= -->
+
+@defer (hydrate on viewport) {
+@if (opiniones.length) {
+  <app-bloque-opiniones [opiniones]="opiniones" />
+}
+}
 
 <!-- ================= PREGUNTAS ================= -->
+
+@defer (hydrate on viewport) {
 @if (pagina.gruposFaq?.length) {
   @for (grupo of pagina.gruposFaq; track grupo.titulo) {
     <section class="section lp-grupo-faq">
@@ -290,5 +465,25 @@
     [servicio]="pagina.servicioFormulario"
   />
 }
+}
 
+@defer (hydrate on viewport) {
 <app-cta-presupuesto [servicio]="pagina.servicioFormulario" />
+}
+
+<!-- ================= PÁGINAS RELACIONADAS ================= -->
+
+@defer (hydrate on viewport) {
+<section class="section lp-relacionadas" aria-labelledby="relacionadas-titulo">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <h2 id="relacionadas-titulo">También te puede interesar</h2>
+    </div>
+    <ul class="lp-tarjetas">
+      @for (r of relacionadas; track r.path) {
+        <li><app-tarjeta-pagina [pagina]="r" /></li>
+      }
+    </ul>
+  </div>
+</section>
+}

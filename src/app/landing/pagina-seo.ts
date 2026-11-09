@@ -2,8 +2,17 @@ import type { Faq } from '../compartido/faq-acordeon';
 
 export type { Faq };
 
-export type TipoPagina = 'inicio' | 'hub' | 'servicio' | 'trabajo' | 'zona';
-export type ModuloPagina = 'servicios' | 'precios' | 'zonas' | 'proceso';
+export type TipoPagina =
+  | 'inicio'
+  | 'hub'
+  | 'servicio'
+  | 'trabajo'
+  | 'zona'
+  | 'info'
+  | 'guia'
+  | 'herramienta';
+
+export type ModuloPagina = 'servicios' | 'precios' | 'zonas' | 'proceso' | 'calculadora' | 'guias' | 'opiniones';
 
 export interface SubseccionPagina {
   titulo: string;
@@ -14,6 +23,8 @@ export interface SubseccionPagina {
 }
 
 export interface SeccionPagina {
+  /** Ancla de la sección (para índices de página). */
+  id?: string;
   /** Se pinta como H2. */
   titulo: string;
   parrafos: string[];
@@ -24,11 +35,16 @@ export interface SeccionPagina {
 
 /** Una URL de contenido. Añadir una página es añadir un objeto en su archivo. */
 export interface PaginaSeo {
-  /** Ruta sin barra inicial. '' es la página de inicio. */
+  /** Ruta sin barras. '' es la página de inicio. La URL pública lleva barra final. */
   path: string;
   tipo: TipoPagina;
   /** Página de la que cuelga en las migas de pan, por su path. */
   padre?: string;
+  /**
+   * Página todavía no publicable (por ejemplo, un servicio sin confirmar). Indica el motivo.
+   * Se puede ver en local, pero no se prerenderiza, no va al sitemap ni a los menús y es noindex.
+   */
+  borrador?: string;
   /** Máximo 60 caracteres. */
   title: string;
   /** Máximo 155 caracteres. */
@@ -45,7 +61,11 @@ export interface PaginaSeo {
   whatsapp: string;
   kicker: string;
   intro: string;
+  /** Aviso destacado bajo la cabecera (por ejemplo, «Revisa la convocatoria vigente»). */
+  aviso?: string;
   secciones: SeccionPagina[];
+  /** Fuentes oficiales que se citan, con enlace. */
+  fuentes?: { texto: string; url: string }[];
   faqs: Faq[];
   /** En lugar de faqs: preguntas agrupadas por tema. */
   gruposFaq?: { titulo: string; faqs: Faq[] }[];
@@ -62,9 +82,11 @@ export interface PaginaSeo {
   preciosSoloReferencia?: boolean;
   /** Zona a la que se dirige la página, para los datos estructurados. */
   zona?: string;
+  /** Solo guías: fecha de publicación (AAAA-MM-DD). */
+  publicado?: string;
   imagen: string;
   imagenAlt: string;
-  /** Sección especial de las páginas índice. */
+  /** Sección especial de las páginas índice o de herramientas. */
   modulo?: ModuloPagina;
   /** Páginas relacionadas, por su path. */
   relacionadas: string[];

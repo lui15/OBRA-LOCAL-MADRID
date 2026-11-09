@@ -1,0 +1,175 @@
+<section class="section pr" aria-label="Precios de referencia">
+  <div class="container">
+    <nav class="pr-indice" aria-labelledby="pr-indice-titulo">
+      <h2 id="pr-indice-titulo">En esta página</h2>
+      <ol>
+        @for (i of indice; track i.id) {
+          <li><a [href]="'#' + i.id">{{ i.texto }}</a></li>
+        }
+      </ol>
+    </nav>
+
+    <p class="pr-nota">{{ nota }}</p>
+
+    <!-- 1. Por m² y calidad -->
+    <section class="pr-bloque" id="por-m2" aria-labelledby="por-m2-titulo">
+      <h2 id="por-m2-titulo">Precio por m² según la calidad</h2>
+      <p>
+        IVA incluido, con mano de obra y materiales. La calidad básica usa materiales sencillos y
+        resistentes; la media, buenos materiales y acabados cuidados; la alta, materiales de gama alta
+        y acabados a medida.
+      </p>
+
+      <table class="pr-tabla pr-solo-ancho">
+        <caption>Precio por m² en Madrid, 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Trabajo</th>
+            @for (c of calidades; track c.id) {
+              <th scope="col">{{ c.nombre }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for (f of m2; track f.id) {
+            <tr>
+              <th scope="row">{{ f.trabajo }}</th>
+              @for (c of calidades; track c.id) {
+                <td>{{ rango(f.calidades[c.id], '€/m²') }}</td>
+              }
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <!-- En el móvil: pestañas de calidad y tarjetas, sin scroll horizontal -->
+      <div class="pr-solo-movil">
+        <div class="pr-pestanas" role="group" aria-label="Calidad">
+          @for (c of calidades; track c.id) {
+            <button type="button" [attr.aria-pressed]="calidad() === c.id" (click)="calidad.set(c.id)">{{ c.nombre }}</button>
+          }
+        </div>
+        <ul class="pr-tarjetas">
+          @for (f of m2; track f.id) {
+            <li>
+              <span>{{ f.trabajo }}</span>
+              <strong>{{ rango(f.calidades[calidad()], '€/m²') }}</strong>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. Por trabajo -->
+    <section class="pr-bloque" id="por-trabajo" aria-labelledby="por-trabajo-titulo">
+      <h2 id="por-trabajo-titulo">Precio y plazo por trabajo</h2>
+      <p>Mano de obra y materiales de gama media, IVA incluido, salvo que se indique otra cosa.</p>
+      <table class="pr-tabla pr-apilable">
+        <caption>Precios por trabajo en Madrid, 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Trabajo</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Plazo habitual</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (t of trabajos; track t.id) {
+            <tr>
+              <th scope="row">{{ t.trabajo }}</th>
+              <td data-etiqueta="Precio">
+                {{ texto(t) }}
+                @if (t.detalle) {
+                  <small>{{ t.detalle }}</small>
+                }
+              </td>
+              <td data-etiqueta="Plazo">{{ t.plazo ?? '—' }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3. Desglose del piso de 80 m² -->
+    <section class="pr-bloque" id="desglose" aria-labelledby="desglose-titulo">
+      <h2 id="desglose-titulo">Reforma integral de un piso de 80 m², por partidas</h2>
+      <p>
+        Calidad media. Sumando las partidas, el total queda entre
+        <strong>{{ cifra(total80.minimo) }} y {{ cifra(total80.maximo) }} €</strong>. Es un rango más amplio
+        que multiplicar 80 m² por {{ cifra(integralMedia.minimo) }}–{{ cifra(integralMedia.maximo) }} €/m²
+        ({{ cifra(integralMedia.minimo * 80) }}–{{ cifra(integralMedia.maximo * 80) }} €), porque cada partida
+        tiene su propio margen. Tu presupuesto concreta el importe de cada una.
+      </p>
+      <table class="pr-tabla pr-barras">
+        <caption>Desglose orientativo de un piso de 80 m² en calidad media</caption>
+        <thead>
+          <tr>
+            <th scope="col">Partida</th>
+            <th scope="col">Importe</th>
+            <th scope="col" class="pr-col-barra"><span class="visualmente-oculto">Gráfico</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (p of desglose; track p.partida) {
+            <tr>
+              <th scope="row">{{ p.partida }}</th>
+              <td>
+                {{ rango(p) }}
+                <span class="pr-barra pr-barra-movil" aria-hidden="true"><span [style.margin-left.%]="inicio(p)" [style.width.%]="ancho(p)"></span></span>
+              </td>
+              <td class="pr-col-barra" aria-hidden="true">
+                <span class="pr-barra"><span [style.margin-left.%]="inicio(p)" [style.width.%]="ancho(p)"></span></span>
+              </td>
+            </tr>
+          }
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Total</th>
+            <td>{{ rango(total80) }}</td>
+            <td class="pr-col-barra"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- 4. Plazos -->
+    <section class="pr-bloque" id="plazos" aria-labelledby="plazos-titulo">
+      <h2 id="plazos-titulo">Cuánto dura una reforma integral: {{ plazoTotal }}</h2>
+      <p>Para un piso de 70–80 m². Las fases van en este orden porque cada una prepara la siguiente.</p>
+      <ol class="pr-linea">
+        @for (f of fases; track f.fase; let i = $index) {
+          <li>
+            <span class="pr-num" aria-hidden="true">{{ i + 1 }}</span>
+            <div>
+              <strong>{{ f.fase }}</strong>
+              <span>{{ f.plazo }}</span>
+            </div>
+          </li>
+        }
+      </ol>
+    </section>
+
+    <!-- 5. Ejemplos -->
+    <section class="pr-bloque" id="ejemplos" aria-labelledby="ejemplos-titulo">
+      <h2 id="ejemplos-titulo">Tres presupuestos de ejemplo, paso a paso</h2>
+      <div class="pr-ejemplos">
+        @for (e of ejemplos; track e.id) {
+          <article class="pr-ejemplo" [attr.aria-labelledby]="e.id">
+            <h3 [id]="e.id">{{ e.titulo }}</h3>
+            <ol>
+              @for (p of e.pasos; track p) {
+                <li>{{ p }}</li>
+              }
+            </ol>
+            <p class="pr-ejemplo-total">
+              <span>Total orientativo</span>
+              <strong>{{ e.total }}</strong>
+              <small>Plazo: {{ e.plazo }}</small>
+            </p>
+          </article>
+        }
+      </div>
+    </section>
+  </div>
+</section>

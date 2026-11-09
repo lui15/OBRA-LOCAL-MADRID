@@ -124,7 +124,7 @@
   padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: 15px;
   font-weight: 800;
 }
@@ -251,7 +251,7 @@
   display: block;
   padding: 7px 0;
   color: var(--navy-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
   font-size: clamp(22px, 6vw, 28px);
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -319,4 +319,9 @@
   .header-acciones .nav-button {
     display: none;
   }
+}
+
+.mega-col li a.mega-mas {
+  color: #b84800;
+  font-weight: 700;
 }

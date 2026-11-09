@@ -6,22 +6,22 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: '',
     tipo: 'inicio',
-    title: 'Empresa de reformas en Madrid | ObraLocal Madrid',
+    title: 'Reformas en Madrid con presupuesto cerrado | ObraLocal',
     description:
-      'Reformas en Madrid y alrededores: albañilería, pintura, baños, cocinas, pladur y reformas integrales. Precios orientativos y presupuesto paso a paso.',
+      'Reformas en Madrid con presupuesto cerrado por escrito: baño desde 5.000 €, cocina desde 8.000 € e integral desde 500 €/m². Un único interlocutor.',
     etiqueta: 'Reformas en Madrid',
     resumen: 'Reformas de viviendas y locales en Madrid y alrededores.',
-    h1: { antes: 'Reformas en Madrid.', resaltado: 'Tu proyecto, bien hecho.', despues: '' },
+    h1: { antes: 'Reformas en Madrid', resaltado: 'con presupuesto cerrado por escrito', despues: '' },
     puntos: [
+      'Presupuesto cerrado por escrito',
+      'Un único interlocutor',
+      'Precios publicados',
       'Madrid y alrededores',
-      'Precios orientativos',
-      'Solicitud paso a paso',
-      'Presupuesto sin compromiso',
     ],
     whatsapp: 'Hola, quiero presupuesto para una reforma en Madrid',
     kicker: 'REFORMAS EN MADRID',
     intro:
-      'En ObraLocal Madrid preparamos contigo tu reforma, desde un arreglo puntual hasta la renovación completa de una vivienda o un local en Madrid y alrededores.',
+      'En ObraLocal Madrid hacemos tu reforma con nuestro equipo de albañiles, fontaneros, electricistas, pintores y pladuristas, con un presupuesto detallado y cerrado por escrito y un único interlocutor durante toda la obra, en Madrid y alrededores.',
     secciones: [
       {
         titulo: 'Reformas en Madrid capital y en toda la Comunidad',
@@ -60,7 +60,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en Madrid?',
         respuesta:
-          'Depende del alcance. Como referencia, un baño completo va de 3.500 a 7.000 € y una reforma integral de 60–90 m², de 25.000 a 45.000 €. Son precios orientativos: el precio final debe confirmar cantidades, materiales, mano de obra, impuestos y exclusiones.',
+          'Depende del alcance. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, una cocina completa 8.000–18.000 € y una reforma integral 500–1.200 €/m² según la calidad, IVA incluido. Te damos el presupuesto cerrado por escrito cuando vemos tu caso.',
       },
       {
         pregunta: '¿Cómo pido presupuesto?',
@@ -91,7 +91,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     h1: { antes: 'Servicios de', resaltado: 'reformas', despues: 'en Madrid' },
     puntos: [
       '7 servicios de reforma',
-      'Precios desde 150 €',
+      'Baño desde 5.000 €',
       'Viviendas, locales y comunidades',
       'Madrid y alrededores',
     ],
@@ -183,118 +183,169 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     imagen: '/images/obra-en-curso.webp',
     imagenAlt: 'Vivienda en Madrid durante una reforma',
     modulo: 'servicios',
-    relacionadas: ['precios', 'zonas', 'como-trabajamos', 'preguntas-frecuentes'],
+    relacionadas: [
+      'calculadora-reforma',
+      'guias',
+      'precios',
+      'zonas',
+      'como-trabajamos',
+      'preguntas-frecuentes',
+    ],
   },
 
   /* ---------------------------- PRECIOS ---------------------------- */
   {
     path: 'precios',
     tipo: 'hub',
-    title: 'Precios de reformas en Madrid | ObraLocal Madrid',
+    title: 'Precios de reformas en Madrid 2026: baño desde 5.000 €',
     description:
-      'Precios orientativos de reformas en Madrid por servicio: baños, cocinas, integrales, pintura, albañilería y pladur. Qué influye en el coste de cada obra.',
-    etiqueta: 'Precios orientativos',
-    resumen: 'Rangos orientativos por servicio y factores que influyen en el coste.',
-    h1: { antes: 'Precios de', resaltado: 'reformas', despues: 'en Madrid' },
-    puntos: [
-      'Rangos por cada servicio',
-      'Precios desde 150 €',
-      'Importes orientativos',
-      'Presupuesto sin compromiso',
-    ],
-    whatsapp: 'Hola, quiero que me orientéis sobre el precio de una reforma en Madrid',
-    kicker: 'PRECIOS ORIENTATIVOS',
+      'Cuánto cuesta una reforma en Madrid en 2026: baño 5.500–10.000 €, cocina 8.000–18.000 €, piso 500–1.200 €/m². Tablas, plazos y ejemplos por partidas.',
+    etiqueta: 'Precios',
+    resumen: 'Precios por m² y por trabajo, un piso de 80 m² por partidas, plazos y ejemplos.',
+    h1: { antes: '¿Cuánto cuesta una', resaltado: 'reforma en Madrid', despues: 'en 2026?' },
+    puntos: ['Baño: 5.500–10.000 €', 'Cocina: 8.000–18.000 €', 'Piso: 500–1.200 €/m²', 'IVA incluido'],
+    whatsapp: 'Hola, quiero que me orientéis sobre el precio de una reforma',
+    kicker: 'PRECIOS 2026',
     intro:
-      'Aquí tienes los rangos de precio de todos nuestros servicios, para que puedas hacerte una idea antes de pedir presupuesto. Son orientativos, no precios cerrados: una reforma depende de muchos factores, y lo honesto es explicarte cuáles son y cómo afectan al resultado final.',
+      'Un baño, entre 5.500 y 10.000 €. Una cocina, entre 8.000 y 18.000 €. Un piso completo, entre 500 y 1.200 €/m² según calidad. Debajo tienes el precio por metro cuadrado de cada calidad, el precio y el plazo de cada trabajo, una reforma de 80 m² desglosada por partidas, cuánto dura cada fase y tres presupuestos de ejemplo hechos paso a paso.',
     secciones: [
       {
-        titulo: 'Qué influye en el precio',
+        id: 'que-sube',
+        titulo: 'Qué hace subir el precio',
         parrafos: [
-          'Dos baños de 4 m² pueden tener presupuestos muy distintos, y ambos ser correctos. Estos seis factores explican la mayor parte de las diferencias.',
+          'Dos pisos con los mismos metros pueden tener presupuestos muy distintos. Estas son las seis cosas que más mueven la cifra final, cada una con lo que suele costar.',
         ],
         subsecciones: [
           {
-            titulo: 'Metros cuadrados',
-            texto: 'Marcan la cantidad de material y de mano de obra, pero no lo son todo: un baño pequeño concentra más oficios por metro que un salón grande.',
+            titulo: 'El estado de la vivienda',
+            texto:
+              'Si hay humedades, primero hay que tratarlas: entre 30 y 60 €/m², desde 400 €. Si las paredes están en mal estado, alisarlas cuesta 10–16 €/m², y si tienen gotelé, quitarlo, alisar y pintar sube a 14–22 €/m² de pared.',
           },
           {
-            titulo: 'Estado previo',
-            texto: 'Humedades, paredes irregulares o suelos desnivelados añaden trabajo que no se ve en el resultado final, pero que determina cuánto durará.',
+            titulo: 'Instalaciones antiguas',
+            texto:
+              'En muchas fincas antiguas de Madrid la instalación eléctrica y las tuberías no se han cambiado nunca. Renovar toda la instalación eléctrica de un piso de 80 m² cuesta 3.500–7.000 € y la fontanería completa, 2.500–5.000 €. Lo sabemos al ver la vivienda, antes de darte el presupuesto cerrado.',
           },
           {
-            titulo: 'Materiales',
-            texto: 'El mismo metro de suelo o azulejo puede variar mucho de precio. La colocación también cambia: los grandes formatos y los diseños con muchos cortes requieren más tiempo.',
+            titulo: 'Cambiar la distribución',
+            texto:
+              'Mover o levantar tabiques añade demolición, albañilería y a veces instalaciones nuevas. En un piso de 80 m², la albañilería y la tabiquería suponen 6.000–10.000 €. Un tabique nuevo de pladur cuesta 35–55 €/m².',
           },
           {
-            titulo: 'Fontanería y electricidad',
-            texto: 'Renovar una instalación antigua o mover tomas de agua y puntos de luz significa más obra. Mantenerlos en su sitio es una de las formas más eficaces de contener el presupuesto.',
+            titulo: 'La calidad de los materiales',
+            texto:
+              'Es la diferencia más grande. Una reforma integral en calidad básica cuesta 500–650 €/m²; en calidad alta, 850–1.200 €/m². En un piso de 80 m², eso va de 40.000–52.000 € a 68.000–96.000 €.',
           },
           {
-            titulo: 'Licencias y trámites',
-            texto: 'Tasas e impuesto de obras dependen del municipio y del tipo de actuación. Las licencias se valoran aparte, así que conviene confirmar qué corresponde a tu obra.',
+            titulo: 'La planta y el acceso',
+            texto:
+              'La demolición y el desescombro de un piso de 80 m² cuestan 3.000–5.000 €. Sin ascensor, o con un portal estrecho, bajar escombros y subir material lleva más horas, y la hora de oficial de albañilería cuesta 25–35 €. También influye dónde se puede poner el contenedor.',
           },
           {
-            titulo: 'Retirada de escombros',
-            texto: 'No es igual un edificio con ascensor amplio que un cuarto sin ascensor en una calle estrecha. Bajar escombros y conseguir permiso para un contenedor también tiene un coste.',
+            titulo: 'La licencia y el ICIO',
+            texto:
+              'En Madrid capital, las obras que necesitan declaración responsable o licencia pagan el Impuesto sobre Construcciones, Instalaciones y Obras (ICIO): el 3,75 % del presupuesto de ejecución material en las obras iniciadas desde el 1 de enero de 2024. En una obra de 50.000 € de ejecución material, son 1.875 €. En la página de licencias te explicamos cuándo hace falta cada trámite.',
           },
         ],
       },
       {
-        titulo: 'Cómo comparar presupuestos sin equivocarte',
+        id: 'ahorrar',
+        titulo: 'Cómo ahorrar sin perder calidad',
+        parrafos: ['Seis decisiones que bajan el presupuesto sin que se note en el resultado:'],
+        lista: [
+          'Mantén la distribución si te funciona. Te ahorras gran parte de la albañilería y la tabiquería, que en un piso de 80 m² son 6.000–10.000 €.',
+          'Si el baño está bien y solo te molesta la bañera, cámbiala por un plato de ducha: 1.000–2.200 € en 1–2 días, frente a 5.500–10.000 € de un baño completo.',
+          'Reparte la calidad: gasta más en lo que usas todos los días, como la grifería, la encimera o el suelo, y elige calidad básica en lo que menos se ve.',
+          'Haz los trabajos en una sola obra. Si vas a quitar el gotelé y a cambiar el suelo, hacerlo a la vez evita proteger, ensuciar y limpiar la casa dos veces.',
+          'Elige los materiales antes de empezar. Cada cambio durante la obra se presupuesta aparte y lo apruebas por escrito, así que decidir antes evita sorpresas.',
+          'Mándanos fotos y medidas al pedir presupuesto. Cuanto más sabemos al principio, más ajustado es el presupuesto y menos imprevistos aparecen después.',
+        ],
+      },
+      {
+        titulo: 'Qué incluye el precio por metro cuadrado',
         parrafos: [
-          'Un precio más bajo no siempre es más barato. A menudo solo significa que el presupuesto incluye menos cosas. Para comparar de forma justa, comprueba estos puntos en cada oferta.',
+          'El precio por m² se calcula sobre la superficie útil de la vivienda e incluye mano de obra y materiales con IVA. Es la forma más rápida de saber en qué cifra te mueves, pero no sustituye a un presupuesto: dos pisos de 80 m² pueden necesitar trabajos muy distintos.',
+          'Por eso, además del precio por m², te enseñamos la reforma desglosada por partidas. Un buen presupuesto separa cada partida, dice qué calidad de material incluye y qué queda fuera, para que puedas comparar con criterio.',
+        ],
+      },
+      {
+        titulo: 'Cómo comparar presupuestos de reforma',
+        parrafos: [
+          'Antes de comparar dos cifras, comprueba que hablan de lo mismo. Un presupuesto más barato puede no incluir el desescombro, las ventanas o la licencia.',
         ],
         lista: [
-          'Cantidades y mediciones de cada partida',
-          'Marca, modelo o gama de los materiales',
-          'Mano de obra y número de manos o capas',
-          'Retirada de escombros y protección de zonas comunes',
-          'Impuestos: si el IVA está incluido y a qué tipo',
-          'Exclusiones y cómo se valoran los imprevistos',
-          'Plazos y forma de pago',
+          'Que esté separado por partidas, con medidas y unidades.',
+          'Que diga la calidad o la marca de los materiales principales.',
+          'Que indique si el IVA está incluido.',
+          'Que diga el plazo de la obra y qué pasa si hay que cambiar algo.',
+          'Que diga claramente qué no incluye.',
         ],
       },
       {
-        titulo: 'Cómo ajustar el presupuesto sin perder calidad',
+        titulo: 'Impuestos y tasas',
         parrafos: [
-          'Si la cifra se aleja de lo previsto, no es obligatorio renunciar a la reforma. Las medidas más eficaces son mantener los puntos de agua donde están, conservar lo que esté en buen estado y elegir bien dónde gastar más. Un azulejo más sencillo se puede cambiar con el tiempo; una tubería mal resuelta, no.',
-          'Lo que no conviene recortar es lo que queda oculto: impermeabilización, instalaciones y preparación de superficies. Ahorrar en esas partidas suele salir caro a medio plazo. También puedes plantear la obra por fases, siempre que se deje hecho primero lo que iría detrás de los acabados.',
+          'Los precios de esta página llevan el IVA incluido. Aparte quedan los tributos municipales de la obra cuando hacen falta: en Madrid capital, el ICIO del 3,75 % sobre el presupuesto de ejecución material y la tasa que corresponda al trámite. Cambiar los acabados interiores de una sola vivienda no protegida, como pintar o cambiar azulejos, no necesita licencia ni declaración responsable.',
         ],
       },
       {
-        titulo: 'Impuestos, tasas y otros gastos',
+        titulo: 'De dónde salen estos precios',
         parrafos: [
-          'Además del precio de la obra, ten en cuenta posibles tasas municipales y el impuesto sobre construcciones, instalaciones y obras, que dependen del municipio y del trámite. Las obras de renovación de una vivienda habitual pueden tributar al IVA reducido del 10 % si cumplen ciertas condiciones, entre ellas la antigüedad de la vivienda y el peso de los materiales en el total. Confirma estos datos en tu presupuesto.',
-          'También conviene reservar un margen para imprevistos, sobre todo en edificios antiguos, donde lo que hay detrás de las paredes no se conoce hasta que se abren. Demoliciones estructurales, refuerzos, licencias y residuos especiales suelen valorarse aparte.',
+          'Rangos orientativos de mercado en Madrid, actualizados en noviembre de 2026. El precio final depende del estado de la vivienda y de los materiales que elijas.',
+          'Cuando vemos tu caso, en persona o con fotos, te damos un presupuesto detallado y cerrado por escrito antes de empezar. Si durante la obra hace falta algún cambio, te lo presupuestamos y lo apruebas por escrito antes de hacerlo.',
         ],
       },
     ],
     faqs: [
       {
-        pregunta: '¿Los precios son definitivos?',
+        pregunta: '¿Cuánto cuesta reformar un baño en Madrid?',
         respuesta:
-          'No. Son orientativos. El precio final debe confirmar las cantidades, los materiales, la mano de obra, los impuestos y las exclusiones.',
+          'Un baño completo de 4 a 6 m² cuesta entre 5.500 y 10.000 € en calidad media, IVA incluido. En calidad básica parte de 5.000 € y en alta puede llegar a 13.000 €. Se hace en 2–3 semanas.',
       },
       {
-        pregunta: '¿Por qué no dais un precio cerrado por metro cuadrado?',
+        pregunta: '¿Cuánto cuesta reformar una cocina en Madrid?',
         respuesta:
-          'Porque el metro cuadrado no refleja el estado de las instalaciones, las calidades ni el acceso. Un baño y un salón de la misma superficie no tienen nada que ver en coste. Por eso damos rangos por tipo de trabajo.',
+          'Una cocina completa de 8 a 12 m² cuesta entre 8.000 y 18.000 €, sin electrodomésticos. El plazo habitual es de 3–4 semanas.',
       },
       {
-        pregunta: '¿Qué datos necesitáis para orientarme mejor?',
+        pregunta: '¿Cuánto cuesta la reforma integral de un piso?',
         respuesta:
-          'El tipo de trabajo, la zona, las medidas aproximadas, el estado actual y los materiales que prefieres. Las fotografías ayudan a entender mejor la situación.',
+          'Entre 500 y 1.200 €/m² según la calidad: 500–650 € en básica, 650–850 € en media y 850–1.200 € en alta. Desglosada por partidas, la reforma de un piso de 80 m² en calidad media queda entre 44.000 y 73.500 €, y dura 8–12 semanas.',
+      },
+      {
+        pregunta: '¿Cuánto cuesta pintar un piso?',
+        respuesta:
+          'Pintar paredes y techos de un piso de 80 m² cuesta entre 1.400 y 2.600 € y se hace en 3–5 días. Por superficie, la pintura cuesta 8–14 €/m² de pared.',
+      },
+      {
+        pregunta: '¿Cuánto cuesta quitar el gotelé?',
+        respuesta:
+          'Quitar el gotelé, alisar y pintar cuesta 14–22 €/m² de pared. En un piso completo se hace en 1–2 semanas.',
+      },
+      {
+        pregunta: '¿Los precios incluyen IVA?',
+        respuesta:
+          'Sí. Todos los precios de esta página llevan el IVA incluido y son de mano de obra y materiales de gama media, salvo que se indique otra cosa.',
+      },
+      {
+        pregunta: '¿El presupuesto que me dais es cerrado?',
+        respuesta:
+          'Sí. Te damos un presupuesto detallado y cerrado por escrito antes de empezar. Si durante la obra hace falta algún cambio, te lo presupuestamos y lo apruebas por escrito antes de hacerlo.',
+      },
+      {
+        pregunta: '¿Cuánto se paga de ICIO en Madrid?',
+        respuesta:
+          'En Madrid capital, el 3,75 % del presupuesto de ejecución material para las obras iniciadas desde el 1 de enero de 2024, según la Ordenanza Fiscal 7/2023. Solo se paga cuando la obra necesita licencia o declaración responsable.',
       },
     ],
     servicio: {
       nombre: 'Precios de reformas en Madrid',
-      descripcion: 'Rangos orientativos por servicio y factores que influyen en el coste.',
+      descripcion: 'Precios orientativos de reformas en Madrid en 2026: por m², por trabajo, por partidas y plazos.',
     },
     servicioFormulario: '',
     imagen: '/images/planos-mesa.webp',
     imagenAlt: 'Plano de una vivienda sobre una mesa para calcular una reforma',
     modulo: 'precios',
-    relacionadas: ['servicios', 'reformas-integrales-madrid', 'reforma-banos-madrid', 'como-trabajamos'],
+    relacionadas: ['calculadora-reforma', 'cuanto-cuesta-reformar-piso-70-m2-madrid', 'que-pedir-presupuesto-reforma', 'reformas-integrales-madrid', 'reforma-banos-madrid', 'licencia-obra-madrid'],
   },
 
   /* ---------------------------- ZONAS ---------------------------- */
@@ -402,7 +453,13 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     imagen: '/images/edificios-madrid.webp',
     imagenAlt: 'Bloques residenciales en Madrid',
     modulo: 'zonas',
-    relacionadas: ['servicios', 'precios', 'reformas-integrales-madrid', 'como-trabajamos'],
+    relacionadas: [
+      'licencia-obra-madrid',
+      'servicios',
+      'precios',
+      'reformas-integrales-madrid',
+      'como-trabajamos',
+    ],
   },
 
   /* ---------------------------- CÓMO TRABAJAMOS ---------------------------- */
@@ -411,25 +468,25 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     tipo: 'hub',
     title: 'Cómo trabajamos: pasos de una reforma | ObraLocal Madrid',
     description:
-      'Así funciona tu reforma con ObraLocal Madrid: seis pasos desde la solicitud hasta la revisión final. Qué preparar y qué revisar antes de aceptar.',
+      'Así funciona tu reforma con ObraLocal Madrid en cinco pasos: tu idea, la visita o las fotos, el presupuesto cerrado, la obra y la entrega final.',
     etiqueta: 'Cómo trabajamos',
     resumen: 'De tu solicitud a la llamada, y qué conviene preparar antes.',
     h1: { antes: 'Así funciona tu', resaltado: 'reforma', despues: 'con ObraLocal' },
     puntos: [
-      'Solicitud en menos de un minuto',
-      'Presupuesto sin compromiso',
-      'Fechas acordadas contigo',
-      'Revisión final de la obra',
+      'Nos cuentas tu idea',
+      'Visita o fotos',
+      'Presupuesto cerrado por escrito',
+      'Un único interlocutor',
     ],
     whatsapp: 'Hola, quiero saber cómo funciona una reforma con vosotros',
     kicker: 'CÓMO TRABAJAMOS',
     intro:
-      'Empezar una reforma genera muchas dudas: qué preparar, a quién avisar, qué mirar en un presupuesto. Aquí tienes los seis pasos de una reforma con nosotros, desde tu solicitud hasta la revisión final, y lo que te conviene tener a mano para que todo vaya mejor.',
+      'Empezar una reforma genera muchas dudas: qué preparar, a quién avisar, qué mirar en un presupuesto. Así trabajamos, en cinco pasos: nos cuentas tu idea, vemos el espacio, te damos un presupuesto detallado y cerrado por escrito, hacemos la obra con un único interlocutor y repasamos contigo el resultado.',
     secciones: [
       {
         titulo: 'Qué ocurre después de enviar tu solicitud',
         parrafos: [
-          'Revisamos la información que nos has facilitado y nos ponemos en contacto contigo en el teléfono que nos has indicado. Esa conversación sirve para aclarar dudas y entender mejor el trabajo. Enviar una solicitud no supone ningún compromiso de contratación, y no equivale a un presupuesto cerrado.',
+          'Revisamos lo que nos has contado y te escribimos por WhatsApp o te llamamos al teléfono que nos has indicado. Esa conversación sirve para aclarar dudas y entender bien el trabajo. Si nos mandas fotos del espacio, podemos avanzar el presupuesto. Enviar una solicitud no supone ningún compromiso de contratación.',
           'A partir de ahí, el trabajo se concreta: cantidades, materiales, mano de obra, plazos e impuestos deben quedar definidos antes de empezar. Si el trabajo lo requiere, se hará una valoración adaptada a lo que nos hayas contado.',
         ],
       },
@@ -508,7 +565,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       {
         pregunta: '¿Cómo me contactaréis?',
         respuesta:
-          'Te llamaremos al teléfono que nos hayas indicado en el formulario. También puedes añadir un correo electrónico, aunque es opcional.',
+          'Te escribimos por WhatsApp o te llamamos al teléfono que nos hayas indicado en el formulario. También puedes añadir un correo electrónico, aunque es opcional.',
       },
     ],
     servicio: {
@@ -519,7 +576,99 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     imagen: '/images/medicion-pared.webp',
     imagenAlt: 'Medición de una pared con cinta métrica antes de presupuestar',
     modulo: 'proceso',
-    relacionadas: ['servicios', 'precios', 'preguntas-frecuentes', 'reformas-integrales-madrid'],
+    relacionadas: [
+      'orden-trabajos-reforma-integral',
+      'que-pedir-presupuesto-reforma',
+      'servicios',
+      'precios',
+      'preguntas-frecuentes',
+      'reformas-integrales-madrid',
+    ],
+  },
+
+  /* ---------------------------- OPINIONES ---------------------------- */
+  {
+    path: 'opiniones',
+    tipo: 'hub',
+    title: 'Opiniones de clientes de reformas | ObraLocal Madrid',
+    description:
+      'Opiniones de clientes que reformaron con ObraLocal Madrid: baños, cocinas, pisos completos, pintura, pladur y humedades. Publicadas completas, sin editar.',
+    etiqueta: 'Opiniones',
+    resumen: 'Lo que cuentan los clientes que ya reformaron con nosotros, sin editar.',
+    h1: { antes: 'Opiniones de', resaltado: 'nuestros clientes', despues: '' },
+    puntos: [
+      'Publicadas completas, sin editar',
+      'Con el tipo de obra de cada cliente',
+      'Filtro por baños, cocinas, integrales…',
+      'Nombre e inicial del apellido',
+    ],
+    whatsapp: 'Hola, he leído las opiniones y quiero pedir presupuesto para una reforma',
+    kicker: 'OPINIONES',
+    intro:
+      'Antes de dejar tu casa en manos de una empresa de reformas quieres saber cómo ha ido a otros. Aquí tienes las opiniones de clientes que contrataron su obra con ObraLocal Madrid, tal y como nos las dieron: con sus estrellas, su texto completo y el tipo de obra que hicieron. Puedes filtrarlas por baños, cocinas, reformas integrales, pintura, pladur o albañilería.',
+    secciones: [
+      {
+        titulo: 'Qué cuentan los clientes',
+        parrafos: [
+          'Cuando alguien reforma su casa le preocupan sobre todo tres cosas: que el precio se dispare, que la obra no termine cuando se dijo y que nadie conteste al teléfono cuando surge una duda. Las opiniones de esta página hablan precisamente de eso, con palabras de cada cliente.',
+          'Sobre el precio, Enrique S. destaca un «presupuesto detallado sin sorpresas al final» y Manuel T. cuenta que el suelo y la pintura de toda su casa quedaron «dentro del presupuesto acordado». Sobre los plazos, Fernando R. dice que en su baño «cumplieron los plazos al pie de la letra», Adrián V. que fueron «muy serios con las fechas de entrega» y Alberto V. que dejaron su local «listo para abrir a tiempo». Sobre la comunicación, Sofía N. explica que les mantenían «informados día a día del avance del proyecto».',
+          'También hay una opinión de cuatro estrellas. Isabel B. está contenta con el alicatado, pero cuenta que hubo que corregir un detalle en un remate y que se solucionó rápido. La publicamos igual que las demás, porque una reforma tiene detalles que ajustar y lo que importa es cómo se resuelven.',
+        ],
+      },
+      {
+        titulo: 'Cómo publicamos las opiniones',
+        parrafos: [
+          'Cada opinión es de un cliente que contrató la obra. La publicamos completa: no cortamos frases, no corregimos el texto y no cambiamos las estrellas. Por protección de datos solo mostramos el nombre y la inicial del apellido, junto con el tipo de obra para que sepas a qué trabajo se refiere.',
+          'La nota media que ves arriba no está escrita a mano: se calcula con todas las opiniones de esta página, así que cambia en cuanto se añade una nueva.',
+        ],
+      },
+      {
+        titulo: 'Qué mirar en las opiniones de una empresa de reformas',
+        parrafos: [
+          'Las opiniones ayudan a decidir, pero conviene leerlas con criterio, sean nuestras o de cualquier otra empresa. Estas son las preguntas que te recomendamos hacerte:',
+        ],
+        lista: [
+          'Si hablan de obras parecidas a la tuya. Una buena opinión sobre pintura dice poco de cómo se lleva una reforma integral, y al revés.',
+          'Si mencionan hechos concretos, como el plazo, el presupuesto o la limpieza, y no solo adjetivos.',
+          'Si hay alguna opinión con menos estrellas y qué cuenta. Ver cómo se resolvió un problema es muy útil.',
+          'Si la empresa explica cómo publica las opiniones y si las edita.',
+          'Si, además de opiniones, te da un presupuesto detallado por escrito antes de empezar. Es lo que de verdad te protege.',
+        ],
+      },
+      {
+        titulo: 'Por qué no verás estrellas de esta página en Google',
+        parrafos: [
+          'Google no muestra en sus resultados las estrellas de las opiniones que una empresa publica en su propia web. Por eso no las marcamos para que aparezcan en el buscador. Las opiniones que Google enseña junto al nombre de una empresa son las que los clientes dejan directamente en su ficha de Google.',
+          'Si ya has reformado con nosotros y quieres contar tu experiencia, escríbenos por WhatsApp. Si estás pensando en reformar, cuéntanos tu caso: te damos un presupuesto detallado y cerrado por escrito antes de empezar.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        pregunta: '¿Las opiniones están editadas?',
+        respuesta:
+          'No. Publicamos cada opinión completa, con su texto y sus estrellas tal y como nos las dio el cliente. Solo mostramos el nombre y la inicial del apellido por protección de datos.',
+      },
+      {
+        pregunta: '¿Quién puede dejar una opinión?',
+        respuesta:
+          'Las opiniones de esta página son de clientes que contrataron la obra con ObraLocal Madrid. Si has reformado con nosotros, puedes enviarnos la tuya por WhatsApp.',
+      },
+      {
+        pregunta: '¿Por qué no aparecen estas estrellas en Google?',
+        respuesta:
+          'Porque Google no muestra en sus resultados las estrellas de opiniones que una empresa publica en su propia web. Las estrellas que aparecen en Google son las de la ficha de Google de la empresa.',
+      },
+    ],
+    servicio: {
+      nombre: 'Opiniones de clientes',
+      descripcion: 'Opiniones de clientes que reformaron con ObraLocal Madrid.',
+    },
+    servicioFormulario: '',
+    imagen: '/images/piso-reformado.webp',
+    imagenAlt: 'Salón de un piso reformado, luminoso y con suelo de madera',
+    modulo: 'opiniones',
+    relacionadas: ['como-trabajamos', 'precios', 'servicios', 'reformas-integrales-madrid', 'reforma-banos-madrid', 'calculadora-reforma'],
   },
 
   /* ---------------------------- PREGUNTAS FRECUENTES ---------------------------- */
@@ -578,7 +727,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
           {
             pregunta: '¿Cuánto cuesta una reforma en Madrid?',
             respuesta:
-              'Depende del alcance. Como referencia, un baño completo va de 3.500 a 7.000 € y una reforma integral de 60 a 90 m², de 25.000 a 45.000 €. Tienes todos los rangos en nuestra página de precios.',
+              'Depende del alcance. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, una cocina completa 8.000–18.000 € y una reforma integral 500–1.200 €/m² según la calidad, IVA incluido. Tienes todos los precios en nuestra página de precios.',
           },
           {
             pregunta: '¿Por qué no dais un precio por metro cuadrado?',
@@ -690,6 +839,13 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     servicioFormulario: '',
     imagen: '/images/piso-en-obra.webp',
     imagenAlt: 'Piso en obra con escalera y materiales',
-    relacionadas: ['como-trabajamos', 'precios', 'servicios', 'zonas'],
+    relacionadas: [
+      'licencia-obra-madrid',
+      'ayudas-reformas-madrid',
+      'guias',
+      'como-trabajamos',
+      'precios',
+      'servicios',
+    ],
   },
 ];

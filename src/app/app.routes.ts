@@ -1,21 +1,31 @@
 import { Route, Routes } from '@angular/router';
 
-import { PAGINAS } from './landing/landing-data';
+import { resolverPagina } from './landing/cargar-pagina';
+import { FICHAS } from './landing/fichas';
 
-const rutasLanding: Routes = PAGINAS.map(
-  (pagina): Route => ({
-    path: pagina.path,
+const rutasLanding: Routes = FICHAS.map(
+  (ficha): Route => ({
+    path: ficha.path,
     pathMatch: 'full',
     loadComponent: () =>
-      pagina.tipo === 'inicio'
+      ficha.tipo === 'inicio'
         ? import('./inicio/inicio-page').then((m) => m.InicioPage)
         : import('./landing/landing-page').then((m) => m.LandingPage),
-    data: { slug: pagina.path },
+    resolve: { pagina: resolverPagina(ficha.path, ficha.grupo) },
   }),
 );
 
 export const routes: Routes = [
   ...rutasLanding,
+  {
+    path: 'proyectos',
+    pathMatch: 'full',
+    loadComponent: () => import('./proyectos/proyectos-page').then((m) => m.ProyectosPage),
+  },
+  {
+    path: 'proyectos/:slug',
+    loadComponent: () => import('./proyectos/proyecto-page').then((m) => m.ProyectoPage),
+  },
   {
     path: 'aviso-legal',
     loadComponent: () => import('./legal/legal-page').then((m) => m.LegalPage),

@@ -1,4 +1,5 @@
 import { PaginaSeo } from './pagina-seo';
+import { ZONAS_AMPLIADAS } from './paginas-zonas-ampliadas';
 
 /**
  * Páginas por zona. Para añadir una zona, añade aquí un objeto con contenido propio:
@@ -10,7 +11,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-chamberi',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Chamberí, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Chamberí: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Chamberí: pisos antiguos, techos altos y edificios con protección. Trámites, horarios y comunidad de vecinos, con presupuesto paso a paso.',
     etiqueta: 'Reformas en Chamberí',
@@ -18,7 +19,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     zona: 'Chamberí',
     h1: { antes: 'Reformas en', resaltado: 'Chamberí', despues: '' },
     puntos: [
-      'Desde 150 €',
+      'Baño desde 5.000 €',
       'Fincas clásicas',
       'Techos altos',
       'Edificios con posible protección',
@@ -98,7 +99,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en Chamberí?',
         respuesta:
-          'Como referencia general, una reforma de 60 a 90 m² va de 25.000 a 45.000 €, y de más de 90 m² de 45.000 a 80.000 €. En fincas antiguas influyen mucho la altura de los techos, el estado de las instalaciones y el acceso. Son precios orientativos.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En fincas antiguas influyen mucho la altura de los techos, el estado de las instalaciones y el acceso.',
       },
     ],
     servicio: {
@@ -122,7 +123,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-salamanca',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en el barrio de Salamanca | ObraLocal Madrid',
+    title: 'Reformas en Salamanca: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en el distrito de Salamanca: fincas señoriales, normas de comunidad y fachadas protegidas. Qué revisar antes de empezar y presupuesto paso a paso.',
     etiqueta: 'Reformas en Salamanca',
@@ -130,7 +131,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     zona: 'Distrito de Salamanca',
     h1: { antes: 'Reformas en', resaltado: 'Salamanca', despues: '' },
     puntos: [
-      'Desde 150 €',
+      'Baño desde 5.000 €',
       'Fincas señoriales',
       'Normas de comunidad',
       'Calidades altas',
@@ -208,7 +209,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en el barrio de Salamanca?',
         respuesta:
-          'Como referencia general, una reforma a partir de 90 m² va de 45.000 a 80.000 €. Con calidades muy altas o instalaciones nuevas puede variar. Son precios orientativos, y el importe final depende de la valoración.',
+          'Como referencia, en un piso de más de 90 m² una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Con calidades muy altas o instalaciones nuevas, el importe se sitúa en la parte alta. El importe final se fija al ver la vivienda.',
       },
     ],
     servicio: {
@@ -232,7 +233,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-retiro',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Retiro, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Retiro: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Retiro: Jerónimos, Ibiza, Pacífico, Adelfas, Estrella y Niño Jesús. Edificios, permisos y trabajos frecuentes por barrio, con presupuesto.',
     etiqueta: 'Reformas en Retiro',
@@ -240,7 +241,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     zona: 'Retiro',
     h1: { antes: 'Reformas en', resaltado: 'Retiro', despues: '' },
     puntos: [
-      'Desde 150 €',
+      'Baño desde 5.000 €',
       'Seis barrios',
       'Clásicos y bloques',
       'Mejora de aislamiento',
@@ -315,7 +316,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso en Retiro?',
         respuesta:
-          'Como referencia general, una reforma de 60 a 90 m² va de 25.000 a 45.000 €, y un baño completo de 3.500 a 7.000 €. Son precios orientativos, y el importe final depende del edificio, de las instalaciones y de las calidades.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido, y un baño completo cuesta 5.500–10.000 € en calidad media. El importe final depende del edificio, de las instalaciones y de las calidades.',
       },
       {
         pregunta: '¿Necesito licencia para pintar o cambiar el suelo?',
@@ -344,7 +345,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-carabanchel',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Carabanchel, Madrid | ObraLocal Madrid',
+    title: 'Reformas en Carabanchel: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Carabanchel: pisos de los años 50 a 70, gotelé, bañeras e instalaciones antiguas. Qué priorizar, precios orientativos y presupuesto.',
     etiqueta: 'Reformas en Carabanchel',
@@ -352,7 +353,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     zona: 'Carabanchel',
     h1: { antes: 'Reformas en', resaltado: 'Carabanchel', despues: '' },
     puntos: [
-      'Desde 150 €',
+      'Baño desde 5.000 €',
       'Pisos compactos',
       'Instalaciones por renovar',
       'Gotelé y bañeras',
@@ -421,7 +422,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 60 m² en Carabanchel?',
         respuesta:
-          'Como referencia general, una reforma de 40 a 60 m² va de 15.000 a 25.000 €, y de 60 a 90 m² de 25.000 a 45.000 €. Son precios orientativos, y dependen de las instalaciones, de la distribución y de las calidades.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 50 m² en calidad media, 32.500–42.500 €. El importe depende de las instalaciones, de la distribución y de las calidades.',
       },
       {
         pregunta: 'Si no tengo ascensor, ¿es más caro?',
@@ -455,7 +456,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-alcobendas',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Alcobendas | ObraLocal Madrid',
+    title: 'Reformas en Alcobendas: baño desde 5.000 € | ObraLocal',
     description:
       'Reformas en Alcobendas: pisos del Centro, viviendas de Valdelasfuentes y chalets de La Moraleja. Trámites municipales, urbanizaciones y presupuesto.',
     etiqueta: 'Reformas en Alcobendas',
@@ -463,7 +464,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     zona: 'Alcobendas',
     h1: { antes: 'Reformas en', resaltado: 'Alcobendas', despues: '' },
     puntos: [
-      'Desde 150 €',
+      'Baño desde 5.000 €',
       'Pisos y chalets',
       'Urbanizaciones',
       'Trámites del Ayuntamiento de Alcobendas',
@@ -543,7 +544,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en Alcobendas?',
         respuesta:
-          'Como referencia general, una reforma de 60 a 90 m² va de 25.000 a 45.000 €, y de más de 90 m² de 45.000 a 80.000 €. Los chalets grandes o con obra exterior pueden quedar fuera de estos rangos. Son precios orientativos.',
+          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. La obra exterior de un chalet se presupuesta aparte, porque no entra en estos precios.',
       },
     ],
     servicio: {
@@ -561,4 +562,5 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       'zonas',
     ],
   },
+  ...ZONAS_AMPLIADAS,
 ];

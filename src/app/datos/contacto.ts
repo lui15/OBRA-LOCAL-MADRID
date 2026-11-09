@@ -12,10 +12,16 @@ export const NEGOCIO = {
   zonaServicio: 'Madrid y alrededores',
   /** URLs públicas de redes sociales. */
   redes: [] as string[],
-  /** TODO: horario confirmado para los datos estructurados. Ej.: ['Mo-Fr 08:00-20:00'] */
-  horario: [] as string[],
   /** Correo que recibe el aviso de cada solicitud. */
   correoSolicitudes: 'tramoreforma@gmail.com',
+};
+
+/** Titular de la web, para el pie y los textos legales (los mismos datos que en ArmaMuebles). */
+export const EMPRESA = {
+  razonSocial: 'Luis Pichardo',
+  nif: '61850512Q',
+  domicilio: 'San Mariano 90, Madrid',
+  correo: 'lpichardosanchez2@gmail.com',
 };
 
 /** Dominio final, sin barra al final. */
@@ -23,7 +29,7 @@ export const SITE_URL = 'https://obralocalmadrid.es';
 
 export const ENLACE_TELEFONO = `tel:${NEGOCIO.telefono}`;
 
-export const MENSAJE_GENERAL = 'Hola, quiero presupuesto para una reforma en Madrid';
+export const MENSAJE_GENERAL = 'Hola, quiero pedir presupuesto para una reforma';
 
 /** Enlace de WhatsApp con el mensaje ya escrito. */
 export function enlaceWhatsApp(mensaje: string = MENSAJE_GENERAL): string {

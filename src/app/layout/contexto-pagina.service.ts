@@ -8,6 +8,8 @@ import { MENSAJE_GENERAL, enlaceWhatsApp } from '../datos/contacto';
 export class ContextoPagina {
   readonly servicio = signal('');
   readonly mensaje = signal(MENSAJE_GENERAL);
+  /** Zona de la página (solo en páginas de zona): el formulario la trae ya rellena. */
+  readonly zona = signal('');
   readonly whatsapp = computed(() => enlaceWhatsApp(this.mensaje()));
 
   constructor() {
@@ -17,8 +19,9 @@ export class ContextoPagina {
     });
   }
 
-  fijar(servicio: string, mensaje: string): void {
+  fijar(servicio: string, mensaje: string, zona = ''): void {
     this.servicio.set(servicio);
     this.mensaje.set(mensaje);
+    this.zona.set(zona);
   }
 }
