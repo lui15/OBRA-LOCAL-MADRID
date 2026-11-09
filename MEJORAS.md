@@ -84,3 +84,23 @@ Rama `mejora-maximo-nivel`, creada desde `mejoras-competencia`. Fecha: 9 de novi
 4. **Precios:** un único archivo de precios con las tablas del encargo. `/precios/` rehecha; bloques «Cuánto cuesta» y `PriceSpecification` en los servicios; calculadora y guías con las mismas cifras.
 5. **Datos legales, eliminaciones, captación y SEO:** pendientes a 0, licencia y ayudas verificadas, proyectos fuera, metadatos, enlazado y sitemap.
 6. **Verificación:** build, pendientes = 0, pruebas del formulario a 375 y 414 px con todo bloqueado, capturas, Lighthouse e informe.
+
+## Fase 6. Verificación (9 de noviembre de 2026)
+
+- **Build:** `npm run build` sin errores ni avisos; 47 rutas prerenderizadas.
+- **Pendientes:** `npm run pendientes` devuelve 0. «PENDIENTE» no aparece en ningún archivo de `dist/` (ni HTML ni JS).
+- **SEO local:** las 44 URL del sitemap pasan la comprobación:
+  - 200 sin redirección, un H1, canónica con barra final;
+  - title y description únicos dentro de los límites (title < 60, description de 140 a 155);
+  - JSON-LD válido, sin `Review` ni `AggregateRating`;
+  - teléfono +34624671374;
+  - enlaces internos con barra final.
+- **Proyectos:** `/proyectos/` lleva noindex y `/proyectos/<cualquiera>/` devuelve 404.
+- **Formulario a 375 y 414 px:** 39 de 39 comprobaciones superadas en cada ancho.
+  - Condiciones: Supabase y EmailJS interceptados con respuestas simuladas; Google Analytics bloqueado.
+  - Se ha probado: los 9 tipos de obra, la validación, la recarga a mitad, el éxito y el fallo con su alternativa por WhatsApp, el paso 1 preseleccionado y la zona rellena.
+  - Mismo destino: los mismos parámetros de EmailJS y la misma plantilla.
+- **Lighthouse en el móvil** (portada y `/precios/`):
+  - Accesibilidad 100, buenas prácticas 100 y SEO 100.
+  - Rendimiento 72–86: no es fiable, porque durante la prueba el equipo tenía un juego abierto (CPU al 53 %). Lo confirma que páginas sin cambios, como Getafe, pasaron de 60 ms de TBT a más de 1 s.
+  - Hay que repetirlo con el equipo libre o con PageSpeed Insights después de desplegar.
