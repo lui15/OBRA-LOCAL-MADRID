@@ -473,15 +473,15 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     resumen: 'De tu solicitud a la llamada, y qué conviene preparar antes.',
     h1: { antes: 'Así funciona tu', resaltado: 'reforma', despues: 'con ObraLocal' },
     puntos: [
-      'Nos cuentas tu idea',
-      'Visita o fotos',
-      'Presupuesto cerrado por escrito',
-      'Un único interlocutor',
+      'Te atendemos solo nosotros',
+      'Visita sin compromiso',
+      'Presupuesto ajustado y detallado',
+      'Una sola persona de contacto',
     ],
     whatsapp: 'Hola, quiero saber cómo funciona una reforma con vosotros',
     kicker: 'CÓMO TRABAJAMOS',
     intro:
-      'Empezar una reforma genera muchas dudas: qué preparar, a quién avisar, qué mirar en un presupuesto. Así trabajamos, en cinco pasos: nos cuentas tu idea, vemos el espacio, te damos un presupuesto detallado y cerrado por escrito, hacemos la obra con un único interlocutor y repasamos contigo el resultado.',
+      'Empezar una reforma genera muchas dudas: qué preparar, a quién avisar, qué mirar en un presupuesto. Así trabajamos, en cuatro pasos: nos pides presupuesto, te respondemos solo nosotros, vamos a ver el espacio sin compromiso y te damos un presupuesto ajustado y detallado, y te acompañamos con una sola persona de contacto hasta la entrega.',
     secciones: [
       {
         titulo: 'Qué ocurre después de enviar tu solicitud',
@@ -501,31 +501,40 @@ export const PAGINAS_HUB: PaginaSeo[] = [
           'Tipo de inmueble, planta y si hay ascensor',
           'Materiales o acabados que te gustan',
           'Cuándo te gustaría empezar',
-          'El presupuesto que tienes pensado',
         ],
       },
       {
-        titulo: 'Cómo usar nuestro formulario de tres pasos',
+        titulo: 'Cómo es nuestro formulario',
         parrafos: [
-          'Lo hemos dividido para que no tengas que rellenar todo de una vez, y puedes volver atrás y cambiar tus respuestas antes de enviarla. Solo son obligatorios los datos imprescindibles para ayudarte: tu nombre, un teléfono, el servicio, la zona y una descripción del trabajo.',
+          'Lo hemos ordenado de lo fácil a lo personal: primero nos cuentas el proyecto y tus datos los dejas al final. Son cuatro pantallas, casi todo con botones, y puedes volver atrás cuando quieras. Si cierras la página a mitad, al volver sigue donde lo dejaste.',
+        ],
+        subsecciones: [
+          {
+            titulo: '1. Qué quieres reformar',
+            texto:
+              'Eliges el trabajo con un toque: piso completo, baño, cocina, pintura o gotelé, suelos, pladur y techos, albañilería o humedades, local u oficina, terraza u otro. Si abres el formulario desde la página de un servicio, ya viene elegido.',
+          },
+          {
+            titulo: '2. Cómo es',
+            texto:
+              'Unas pocas preguntas con botones según el trabajo: los metros aproximados, el estado o lo que quieres cambiar, y la calidad que buscas (básica, media o alta). No hace falta escribir nada.',
+          },
+          {
+            titulo: '3. Dónde y cuándo',
+            texto:
+              'El municipio o el barrio, con sugerencias mientras escribes, cuándo te gustaría empezar y si es una vivienda o un local. Si vienes de la página de tu zona, ya aparece rellena.',
+          },
+          {
+            titulo: '4. A quién enviamos el presupuesto',
+            texto:
+              'Tu nombre y tu teléfono, para escribirte por WhatsApp o llamarte. El correo y el apartado «Cuéntanos algo más» son opcionales. Usamos estos datos solo para gestionar tu solicitud, como explica nuestra política de privacidad.',
+          },
         ],
       },
       {
-        titulo: 'Primer paso: tus datos',
+        titulo: 'Después de enviarla: mándanos fotos',
         parrafos: [
-          'Te pedimos el nombre y un teléfono, porque te llamaremos a ese número. El correo electrónico es opcional. Usamos estos datos para gestionar tu solicitud, tal como se explica en nuestra política de privacidad.',
-        ],
-      },
-      {
-        titulo: 'Segundo paso: tu proyecto',
-        parrafos: [
-          'Eliges el tipo de trabajo y la zona. Si quieres, añades los metros cuadrados aproximados y el tipo de inmueble. Si has abierto el formulario desde la página de un servicio, ya aparece seleccionado. Si tu reforma combina varios trabajos, elige el principal y cuenta el resto en el paso siguiente.',
-        ],
-      },
-      {
-        titulo: 'Tercer paso: los detalles',
-        parrafos: [
-          'Nos indicas, si lo sabes, el estado actual, los materiales que prefieres, cuándo te gustaría empezar y el presupuesto que tienes pensado. Lo único obligatorio aquí es describir el trabajo con tus palabras: no hacen falta términos técnicos. Escribe qué quieres cambiar, qué problema tienes y cualquier detalle que creas importante, como la planta, si hay ascensor o si la vivienda está habitada.',
+          'Al terminar te aparece un botón para enviarnos fotos del espacio por WhatsApp. Con las fotos entendemos mejor el estado de la vivienda y preparamos la visita, que es sin compromiso. Si en algún momento falla el envío, el formulario te deja mandárnoslo todo por WhatsApp para que no se pierda nada.',
         ],
       },
       {

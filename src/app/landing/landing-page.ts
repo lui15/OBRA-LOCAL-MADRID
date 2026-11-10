@@ -18,6 +18,7 @@ import { opinionesDe } from '../datos/opiniones';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { MAS_PEDIDOS, NOTA_PRECIOS, cifra, preciosDePagina } from '../datos/precios';
 import { PreciosReferencia } from '../compartido/precios-referencia';
+import { AsiTrabajamos } from '../compartido/asi-trabajamos';
 import { proyectosDeZona } from '../datos/proyectos';
 import {
   SERVICIOS,
@@ -27,7 +28,6 @@ import {
 } from '../datos/catalogo-servicios';
 import { enlaceWhatsApp } from '../datos/contacto';
 import { altoDe, anchoDe, srcsetDe, tarjetaDe } from '../datos/imagenes';
-import { PASOS_OBRA } from '../datos/pasos-obra';
 import { ContextoPagina } from '../layout/contexto-pagina.service';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
 import { SeoService } from '../seo.service';
@@ -64,6 +64,7 @@ import { PaginaSeo } from './pagina-seo';
     BloqueOpiniones,
     ListadoOpiniones,
     PreciosReferencia,
+    AsiTrabajamos,
   ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
@@ -104,7 +105,6 @@ export class LandingPage {
   readonly formato = formatearPrecio;
   readonly zonasPorNombre = ZONAS.filter((z) => z !== 'Otra zona de Madrid');
   readonly serviciosConPagina = SERVICIOS.map((s) => ({ s, pagina: paginaDeServicio(s) }));
-  readonly pasos = PASOS_OBRA;
 
   readonly url = urlDePagina;
   readonly ancho = anchoDe;

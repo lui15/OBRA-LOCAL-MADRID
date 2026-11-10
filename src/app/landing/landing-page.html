@@ -75,6 +75,14 @@
 }
 }
 
+<!-- ================= ASÍ TRABAJAMOS (bloque principal de /como-trabajamos/) ================= -->
+
+@defer (hydrate on viewport) {
+@if (pagina.modulo === 'proceso') {
+  <app-asi-trabajamos [principal]="true" />
+}
+}
+
 <!-- ================= TABLAS DE PRECIOS (solo /precios/) ================= -->
 
 @defer (hydrate on viewport) {
@@ -341,40 +349,6 @@
       </div>
     </section>
   }
-  @case ('proceso') {
-    <section class="section lp-banda" id="pasos">
-      <div class="container">
-        <div class="section-heading" appReveal>
-          <span class="eyebrow eyebrow-oscura">PASO A PASO</span>
-          <h2>Los cinco pasos de tu reforma</h2>
-        </div>
-        <ol class="lp-pasos">
-          @for (paso of pasos; track paso.titulo; let i = $index) {
-            <li class="lp-paso" appReveal>
-              <img
-                [src]="fotoTarjeta(paso.imagen)"
-                [attr.srcset]="srcset(paso.imagen)"
-                sizes="(max-width: 560px) 60vw, 360px"
-                [alt]="paso.imagenAlt"
-                [attr.width]="ancho(paso.imagen)"
-                [attr.height]="alto(paso.imagen)"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="lp-paso-texto">
-                <span class="lp-paso-num">
-                  <app-icono [nombre]="paso.icono" />
-                  Paso {{ i + 1 }}
-                </span>
-                <h3>{{ paso.titulo }}</h3>
-                <p>{{ paso.texto }}</p>
-              </div>
-            </li>
-          }
-        </ol>
-      </div>
-    </section>
-  }
 }
 }
 
@@ -410,30 +384,11 @@
 }
 }
 
-<!-- ================= PROCESO (servicios) ================= -->
+<!-- ================= ASÍ TRABAJAMOS (servicios) ================= -->
 
 @defer (hydrate on viewport) {
 @if (pagina.tipo === 'servicio' || pagina.tipo === 'trabajo') {
-  <section class="section lp-proceso-corto" aria-labelledby="proceso-titulo">
-    <div class="container">
-      <div class="section-heading" appReveal>
-        <span class="eyebrow eyebrow-oscura">CÓMO TRABAJAMOS</span>
-        <h2 id="proceso-titulo">Así hacemos tu {{ pagina.etiqueta.toLowerCase() }}</h2>
-      </div>
-      <ol class="lp-pasos-cortos">
-        @for (p of pasos; track p.titulo; let i = $index) {
-          <li>
-            <span class="lp-paso-num" aria-hidden="true">{{ i + 1 }}</span>
-            <div>
-              <h3>{{ p.titulo }}</h3>
-              <p>{{ p.texto }}</p>
-            </div>
-          </li>
-        }
-      </ol>
-      <p class="lp-ver-todo"><a routerLink="/como-trabajamos">Ver cómo trabajamos →</a></p>
-    </div>
-  </section>
+  <app-asi-trabajamos [servicio]="pagina.servicioFormulario" />
 }
 }
 
