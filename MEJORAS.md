@@ -118,3 +118,26 @@ Rama `mejora-maximo-nivel`, creada desde `mejoras-competencia`. Fecha: 9 de novi
     - Montserrat sin precarga: no mejoraba esas páginas y empeoraba la portada.
     - Variantes de 640 px: el móvil de Lighthouse pide unos 720 px y sigue usando la de 800.
   - Siguiente paso: medirlo con datos reales de usuarios (PageSpeed Insights) después de desplegar.
+
+---
+
+# Encargo completo (rama `mejora-completa`, 10 de noviembre de 2026)
+
+## Fase 1. Auditoría: qué ya está hecho y qué falta
+
+Revisado a 375 px y a 1280 px (capturas de las fases anteriores repetidas sobre esta rama). Producción se sirve como web estática en Hostinger (cabeceras `platform: hostinger`, `Server: hcdn`), no con el servidor Node.
+
+| Punto | Estado | Qué falta |
+|---|---|---|
+| Teléfono y WhatsApp | Hecho, sin cambios | — |
+| Pendientes = 0 y sin «PENDIENTE» en dist | Hecho | — |
+| «Actualizado: mes año» sin «Revisado por» | Hecho | — |
+| Formulario: 4 pasos, contacto al final, sin precios, botón fijo, progreso guardado, WhatsApp en cada paso, éxito y fallo | Hecho | Tarjeta «Terraza»; textos de «cuándo» (1–3 meses · Más de 3 meses · Solo me informo); «Pide presupuesto» en la barra móvil; versión corta de «Así trabajamos» junto al formulario; atributos toolname |
+| `details` y analítica | Hecho | — |
+| Opiniones: datos, /opiniones/ con filtro, cinta en la portada, opiniones por servicio y nota | Hecho | Asignarlas a las páginas nuevas (suelos, alicatados, locales, humedades, terrazas); la de Marina pasa de /servicios/ a /reforma-terrazas-madrid/ |
+| «Así trabajamos» | Parcial: hay 5 pasos con otros textos | Bloque de 4 pasos con el texto del encargo en portada, /como-trabajamos/ y junto al formulario |
+| Titles | Hechos con gancho de precio | Rehacer: sin precios salvo /precios/, calculadora y guías de precios |
+| Descriptions | Hechas, 140–155 | Rehacer con ⭐ NOTA_GOOGLE y ventajas (140–158) |
+| Páginas nuevas (6 servicios, 6 guías y zonas) | Faltan | Crear; los borradores de locales, suelos, humedades y ventanas se rehacen como páginas publicadas |
+| robots.txt para asistentes, llms.txt, index.md, cabecera Link y negociación de Markdown | Faltan | Crear; en producción estática, con `.htaccess` de Hostinger |
+| Lighthouse | Hecho en la rama anterior (90–100) | Repetir al final |
