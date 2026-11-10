@@ -16,7 +16,7 @@ import {
 import { RouterLink } from '@angular/router';
 
 import { AnaliticaService } from '../compartido/analitica.service';
-import { CALIDADES, Calidad, NOTA_PRECIOS } from '../datos/precios';
+import { CALIDADES, Calidad } from '../datos/precios';
 import { ENLACE_TELEFONO, NEGOCIO, enlaceWhatsApp } from '../datos/contacto';
 import { FICHAS_PUBLICADAS } from '../landing/fichas';
 import { ZONAS } from '../datos/catalogo-servicios';
@@ -94,13 +94,18 @@ export class PresupuestoWizard implements OnDestroy {
   /** Campo trampa anti-spam: los usuarios no lo ven ni lo rellenan. */
   honeypot = '';
 
+  /**
+   * Lo que llega de la calculadora (con sus precios). No se muestra en el formulario: va solo en la
+   * solicitud, para el panel y el correo del negocio.
+   */
+  private notaInterna = '';
+
   readonly totalPasos = 4;
   readonly titulos = ['¿Qué quieres reformar?', '¿Cómo es?', '¿Dónde y cuándo?', '¿A quién enviamos el presupuesto?'];
   readonly obras = OBRAS;
   readonly calidades = CALIDADES;
   readonly cuandoOpciones = CUANDO;
   readonly inmuebles = INMUEBLES;
-  readonly notaPrecios = NOTA_PRECIOS;
   readonly telefonoNegocio = ENLACE_TELEFONO;
   readonly telefonoVisible = NEGOCIO.telefonoVisible;
   /** Zonas con página propia y municipios del catálogo, sin repetir. */
@@ -116,7 +121,6 @@ export class PresupuestoWizard implements OnDestroy {
     const o = this.datos().obra;
     return o ? PREGUNTAS[o] : null;
   });
-  readonly estimacion = computed(() => estimar(this.datos()));
   readonly whatsapp = computed(() => enlaceWhatsApp(mensajeWhatsApp(this.datos())));
   readonly porcentaje = computed(() => Math.round(((this.paso() + 1) / this.totalPasos) * 100));
 
@@ -165,7 +169,7 @@ export class PresupuestoWizard implements OnDestroy {
       if (peticion.zona) d.zona = peticion.zona;
       if (peticion.datos?.metros && preObra) d.metros = tramoPara(preObra, peticion.datos.metros);
       if (peticion.datos?.calidad) d.calidad = peticion.datos.calidad as Calidad;
-      if (peticion.datos?.descripcion) d.mensaje = peticion.datos.descripcion;
+      this.notaInterna = peticion.datos?.descripcion ?? '';
       this.datos.set(d);
       // Con el trabajo ya elegido se empieza en «¿Cómo es?».
       this.paso.set(preObra ? 1 : 0);
@@ -192,6 +196,7 @@ export class PresupuestoWizard implements OnDestroy {
     this.desbloquearScroll();
     this.presupuesto.cerrar();
     if (this.estado() === 'exito') {
+      this.notaInterna = '';
       this.borrarProgreso();
       this.datos.set(datosVacios());
       this.paso.set(0);
@@ -362,7 +367,7 @@ export class PresupuestoWizard implements OnDestroy {
       materiales: nombreCalidad(d.calidad),
       plazo: d.cuando,
       presupuesto: est?.corto ?? '',
-      descripcion: resumen(d),
+      descripcion: resumen(d, this.notaInterna),
       detalles: detalles(d, paginaOrigen, leerUtm()),
     };
 

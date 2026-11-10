@@ -210,16 +210,6 @@
                     </div>
                   }
 
-                  <div class="pw-precio" aria-live="polite">
-                    @if (estimacion(); as est) {
-                      <p class="pw-precio-cifra">{{ est.texto }}</p>
-                    } @else {
-                      <p class="pw-precio-cifra pw-precio-vacio">
-                        {{ datos().obra === 'otro' ? 'Te damos el precio cuando veamos tu caso.' : 'Elige las opciones y verás un precio orientativo.' }}
-                      </p>
-                    }
-                    <p class="pw-precio-nota">{{ notaPrecios }}</p>
-                  </div>
                 }
               }
 
@@ -396,9 +386,6 @@
                   }
                 </div>
 
-                @if (estimacion(); as est) {
-                  <p class="pw-recordatorio">{{ obra()?.nombre }} · {{ est.corto }} (orientativo)</p>
-                }
               }
             }
           </div>
@@ -413,9 +400,6 @@
         }
         @case ('error') {}
         @default {
-          @if (paso() === 1 && estimacion(); as est) {
-            <p class="pw-pie-precio" aria-hidden="true">Orientativo: <strong>{{ est.corto }}</strong></p>
-          }
           @if (paso() > 0) {
             <button
               type="button"

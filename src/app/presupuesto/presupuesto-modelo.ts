@@ -362,7 +362,7 @@ export function nombreCalidad(c: Calidad | ''): string {
   return CALIDADES.find((x) => x.id === c)?.nombre ?? '';
 }
 
-/** Líneas legibles con todo lo elegido (sin datos de contacto). */
+/** Líneas legibles con todo lo elegido (sin datos de contacto ni precio: se pueden mostrar al cliente). */
 export function lineasProyecto(d: DatosFormulario): string[] {
   const obra = obraDe(d.obra);
   const l: string[] = [];
@@ -377,19 +377,23 @@ export function lineasProyecto(d: DatosFormulario): string[] {
   if (d.zona.trim()) l.push(`Zona: ${d.zona.trim()}`);
   if (d.tipoInmueble) l.push(`Inmueble: ${d.tipoInmueble}`);
   if (d.cuando) l.push(`Cuándo: ${d.cuando}`);
-  const est = obra ? estimar(d) : null;
-  if (est) l.push(`Precio orientativo: ${est.corto}`);
   return l;
 }
 
-/** Descripción completa para la Central y el correo. */
-export function resumen(d: DatosFormulario): string {
+/**
+ * Descripción completa para la Central y el correo del negocio. Es interna: lleva el precio
+ * orientativo calculado y la nota de la calculadora, que el cliente no ve en el formulario.
+ */
+export function resumen(d: DatosFormulario, notaInterna = ''): string {
   const l = lineasProyecto(d);
+  const est = obraDe(d.obra) ? estimar(d) : null;
+  if (est) l.push(`Precio orientativo (interno): ${est.corto}`);
   if (d.mensaje.trim()) l.push(`Mensaje: ${d.mensaje.trim()}`);
+  if (notaInterna.trim()) l.push(notaInterna.trim());
   return l.join('\n');
 }
 
-/** Mensaje de WhatsApp con lo que ya se ha rellenado. */
+/** Mensaje de WhatsApp con lo que ya se ha rellenado. Sin precios: lo envía el cliente. */
 export function mensajeWhatsApp(d: DatosFormulario): string {
   const obra = obraDe(d.obra);
   const inicio = obra
@@ -415,7 +419,8 @@ export interface Utm {
 }
 
 /**
- * `details` de la tabla public.requests. Solo valores planos (texto, número o lista):
+ * `details` de la tabla public.requests. El precio orientativo se calcula aquí, en segundo plano,
+ * solo para el panel: el formulario no lo muestra. Solo valores planos (texto, número o lista):
  * el panel de gestión los muestra como etiquetas y no lee objetos anidados.
  */
 export function detalles(d: DatosFormulario, paginaOrigen: string, utm: Utm): Record<string, unknown> {

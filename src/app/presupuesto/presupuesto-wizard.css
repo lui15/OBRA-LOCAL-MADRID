@@ -451,41 +451,6 @@ textarea.pw-campo {
   overflow: hidden;
 }
 
-/* ---------------------------------------------------------------- precio en vivo */
-
-.pw-precio {
-  padding: 16px;
-  border-radius: 14px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-}
-
-.pw-precio-cifra {
-  margin: 0;
-  color: var(--navy-dark);
-  font-size: 17px;
-  font-weight: 800;
-  line-height: 1.35;
-}
-
-.pw-precio-vacio {
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.pw-precio-nota {
-  margin: 6px 0 0;
-  color: #4f5f71;
-  font-size: 13px;
-  line-height: 1.45;
-}
-
-.pw-recordatorio {
-  margin: 4px 0 0;
-  color: #4f5f71;
-  font-size: 14px;
-}
-
 /* ---------------------------------------------------------------- pie fijo */
 
 .pw-pie {
@@ -566,17 +531,6 @@ textarea.pw-campo {
 
 .pw-wa strong {
   color: #0b7a3e;
-}
-
-.pw-pie-precio {
-  margin: 0 0 4px;
-  color: #4f5f71;
-  font-size: 14px;
-  text-align: center;
-}
-
-.pw-pie-precio strong {
-  color: var(--navy-dark);
 }
 
 /* Teléfonos y cifras en una sola línea. */
