@@ -91,3 +91,21 @@
     flex: 1 1 100%;
   }
 }
+
+.cta-ventajas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #dbe6f1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cta-ventajas li::before {
+  content: '✓ ';
+  color: #7ee2a8;
+  font-weight: 800;
+}

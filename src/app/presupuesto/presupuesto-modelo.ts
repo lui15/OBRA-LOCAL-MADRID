@@ -15,7 +15,7 @@ import {
   textoPrecio,
 } from '../datos/precios';
 
-export type IdObra = 'piso' | 'bano' | 'cocina' | 'pintura' | 'suelos' | 'pladur' | 'albanileria' | 'local' | 'otro';
+export type IdObra = 'piso' | 'bano' | 'cocina' | 'pintura' | 'suelos' | 'pladur' | 'albanileria' | 'local' | 'terraza' | 'otro';
 
 export interface Obra {
   id: IdObra;
@@ -36,6 +36,7 @@ export const OBRAS: Obra[] = [
   { id: 'pladur', nombre: 'Pladur y techos', servicio: 'Pladur y techos', icono: 'M3 5h18M5 5v15m14-15v15M5 10h14M9 14h2m4 0h0' },
   { id: 'albanileria', nombre: 'Albañilería o humedades', servicio: 'Albañilería o humedades', icono: 'M3 6h8v4H3V6Zm10 0h8v4h-8V6ZM7 10h10v4H7v-4ZM3 14h8v4H3v-4Zm10 0h8v4h-8v-4Z' },
   { id: 'local', nombre: 'Local u oficina', servicio: 'Reforma de local u oficina', icono: 'M3 9l2-5h14l2 5M3 9h18v11H3V9Zm6 11v-6h6v6' },
+  { id: 'terraza', nombre: 'Terraza', servicio: 'Reforma de terraza', icono: 'M3 20h18M5 20V9h14v11M3 9l9-5 9 5M9 20v-5h6v5' },
   { id: 'otro', nombre: 'Otro', servicio: 'Otra reforma', icono: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm-4-9h8m-4-4v8' },
 ];
 
@@ -52,6 +53,12 @@ const OBRA_DE_SERVICIO: Record<string, IdObra> = {
   Paredes: 'pintura',
   Pladur: 'pladur',
   Albañilería: 'albanileria',
+  'Reforma de locales': 'local',
+  'Reforma de terrazas': 'terraza',
+  'Tratamiento de humedades': 'albanileria',
+  Alicatados: 'albanileria',
+  'Instalación de suelos': 'suelos',
+  'Cambiar ventanas': 'otro',
 };
 
 export function obraDeServicio(servicio: string): IdObra | '' {
@@ -83,6 +90,12 @@ const T_PEQUENO: Tramo[] = [
   { texto: '10–30 m²', min: 10, max: 30 },
   { texto: '30–60 m²', min: 30, max: 60 },
   { texto: 'Más de 60 m²', min: 60, max: null },
+];
+const T_TERRAZA: Tramo[] = [
+  { texto: 'Menos de 10 m²', min: 5, max: 10 },
+  { texto: '10–20 m²', min: 10, max: 20 },
+  { texto: '20–40 m²', min: 20, max: 40 },
+  { texto: 'Más de 40 m²', min: 40, max: null },
 ];
 const T_LOCAL: Tramo[] = [
   { texto: 'Menos de 50 m²', min: 30, max: 50 },
@@ -142,6 +155,11 @@ export const PREGUNTAS: Record<IdObra, PreguntasObra> = {
     metros: { titulo: '¿Cuántos metros tiene el local?', tramos: T_LOCAL, obligatorio: true },
     comentario: true,
   },
+  terraza: {
+    metros: { titulo: '¿Cuántos metros tiene la terraza?', tramos: T_TERRAZA, obligatorio: true },
+    opciones: { titulo: '¿Qué quieres hacer? (opcional)', lista: ['Suelo nuevo', 'Impermeabilizar', 'Cerramiento', 'Iluminación'] },
+    comentario: true,
+  },
   otro: {
     metros: { titulo: '¿Cuántos metros, más o menos? (opcional)', tramos: T_PEQUENO, obligatorio: false },
     comentario: true,
@@ -165,7 +183,7 @@ export function explicacionCalidad(obra: IdObra | '', calidad: Calidad): string 
 
 /* ------------------------------------------------------------ pasos 3 y 4 */
 
-export const CUANDO = ['Lo antes posible', 'En 1–3 meses', 'En más de 3 meses', 'Solo me estoy informando'];
+export const CUANDO = ['Lo antes posible', '1–3 meses', 'Más de 3 meses', 'Solo me informo'];
 export const INMUEBLES = ['Vivienda', 'Local u oficina'];
 
 /* ------------------------------------------------------------ estado del formulario */
@@ -302,6 +320,11 @@ export function estimar(d: DatosFormulario): Estimacion | null {
     case 'piso': {
       if (!tramo) return null;
       const r = precioM2('integral').calidades[calidad];
+      return porMetros(tramo, r.minimo, r.maximo);
+    }
+    case 'terraza': {
+      if (!tramo) return null;
+      const r = precioM2('terraza').calidades[calidad];
       return porMetros(tramo, r.minimo, r.maximo);
     }
     case 'local': {

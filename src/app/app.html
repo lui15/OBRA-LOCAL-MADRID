@@ -19,7 +19,7 @@
   [attr.tabindex]="scroll.avanzado() && !presupuesto.abierto() ? 0 : -1"
   (click)="presupuesto.abrir(contexto.servicio(), 'boton_flotante')"
 >
-  Pedir presupuesto <span>↗</span>
+  Pide presupuesto <span>↗</span>
 </button>
 
 <div class="barra-movil" data-ubicacion="barra_movil" [class.oculta]="presupuesto.abierto()">
@@ -40,7 +40,7 @@
     class="button button-orange bm-cta"
     (click)="presupuesto.abrir(contexto.servicio(), 'barra_movil')"
   >
-    Pedir presupuesto
+    Pide presupuesto
   </button>
 </div>
 

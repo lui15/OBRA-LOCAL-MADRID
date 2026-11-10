@@ -4,6 +4,11 @@
       <span class="eyebrow eyebrow-light">{{ etiqueta() }}</span>
       <h2>{{ titulo() }}</h2>
       <p>{{ texto() }}</p>
+      <ul class="cta-ventajas" aria-label="Así trabajamos">
+        <li>Te atendemos solo nosotros</li>
+        <li>Visita sin compromiso</li>
+        <li>Una sola persona de contacto</li>
+      </ul>
     </div>
 
     <div class="cta-acciones">
@@ -12,7 +17,7 @@
         type="button"
         (click)="presupuesto.abrir(servicio(), 'cta_final')"
       >
-        Crear mi solicitud <span>↗</span>
+        Pide presupuesto <span>↗</span>
       </button>
       <a class="button button-claro" [href]="contexto.whatsapp()" target="_blank" rel="noopener">
         <app-icono nombre="whatsapp" /> WhatsApp
