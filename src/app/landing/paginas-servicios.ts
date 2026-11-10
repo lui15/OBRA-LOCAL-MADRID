@@ -1,3 +1,4 @@
+import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo } from './pagina-seo';
 
 /** Páginas de cada servicio del catálogo. */
@@ -7,9 +8,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reformas-integrales-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reformas integrales en Madrid desde 500 €/m² | ObraLocal',
+    title: 'Reformas integrales en Madrid | Visita sin compromiso',
     description:
-      'Reformas integrales en Madrid: 500–650 €/m² en calidad básica, 650–850 € en media y 850–1.200 € en alta. Plazo de 8–12 semanas y presupuesto cerrado.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas integrales de pisos en Madrid.`,
     etiqueta: 'Reformas integrales',
     resumen: 'Renovación completa o parcial de viviendas y locales, ordenada por partidas.',
     h1: { antes: 'Reformas', resaltado: 'integrales', despues: 'en Madrid' },
@@ -132,9 +133,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reforma-banos-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reforma de baños en Madrid desde 5.000 € | ObraLocal',
+    title: 'Reforma de baños en Madrid con visita sin compromiso',
     description:
-      'Reforma de baños en Madrid: baño completo de 4–6 m² por 5.500–10.000 € en calidad media, en 2–3 semanas. Cambiar bañera por plato, 1.000–2.200 €.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Baño completo o cambio de bañera por ducha.`,
     etiqueta: 'Reforma de baños',
     resumen: 'Azulejos, sanitarios, muebles, grifería e instalaciones, por partes o por completo.',
     h1: { antes: 'Reforma de', resaltado: 'baños', despues: 'en Madrid' },
@@ -260,9 +261,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reforma-cocinas-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reforma de cocinas en Madrid desde 8.000 € | ObraLocal',
+    title: 'Reforma de cocinas en Madrid con visita sin compromiso',
     description:
-      'Reforma de cocinas en Madrid: cocina completa de 8–12 m² por 8.000–18.000 €, sin electrodomésticos, en 3–4 semanas. Presupuesto cerrado por escrito.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Cocinas nuevas, encimeras y distribución.`,
     etiqueta: 'Reforma de cocinas',
     resumen: 'Muebles, encimeras, revestimientos e instalaciones de agua y luz.',
     h1: { antes: 'Reforma de', resaltado: 'cocinas', despues: 'en Madrid' },
@@ -393,9 +394,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'albanileria-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Albañilería en Madrid: oficial desde 25 €/h | ObraLocal',
+    title: 'Albañiles en Madrid con trato cercano | ObraLocal',
     description:
-      'Albañilería en Madrid: tabiques, alicatados a 35–60 €/m², humedades a 30–60 €/m² y obra. Oficial a 25–35 €/h, IVA incluido y presupuesto cerrado.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Tabiques, alicatados, humedades y obra.`,
     etiqueta: 'Albañilería',
     resumen: 'Tabiques, enfoscados, alicatados, solados, huecos y reparaciones de obra.',
     h1: { antes: '', resaltado: 'Albañilería', despues: 'en Madrid' },
@@ -531,9 +532,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'pintores-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Pintores en Madrid: piso de 80 m² desde 1.400 € | ObraLocal',
+    title: 'Pintores en Madrid con presupuesto ajustado | ObraLocal',
     description:
-      'Pintores en Madrid: pintar un piso de 80 m² cuesta 1.400–2.600 € en 3–5 días, a 8–14 €/m² de pared. Con gotelé, 14–22 €/m². Presupuesto cerrado.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Pintamos tu piso y quitamos el gotelé.`,
     etiqueta: 'Pintores',
     resumen: 'Pintura de paredes y techos, preparación de superficies y acabados.',
     h1: { antes: '', resaltado: 'Pintores', despues: 'en Madrid' },
@@ -665,9 +666,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'pladur-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Pladur en Madrid: tabiques y techos desde 30 €/m²',
+    title: 'Pladur en Madrid: tabiques y techos | ObraLocal',
     description:
-      'Pladur en Madrid: tabiques a 35–55 €/m², falsos techos a 30–50 €/m² y puntos de luz a 25–40 €. Precios con IVA y presupuesto cerrado por escrito.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Tabiques, falsos techos y trasdosados.`,
     etiqueta: 'Pladur',
     resumen: 'Tabiques, falsos techos, trasdosados y aislamiento térmico y acústico.',
     h1: { antes: '', resaltado: 'Pladur', despues: 'en Madrid' },
@@ -797,9 +798,9 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'alisado-paredes-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Alisado de paredes en Madrid desde 10 €/m² | ObraLocal',
+    title: 'Alisado de paredes en Madrid | ObraLocal',
     description:
-      'Alisado de paredes en Madrid a 10–16 €/m²; con gotelé, quitar, alisar y pintar a 14–22 €/m². Un piso completo en 1–2 semanas, presupuesto cerrado.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Te atendemos solo nosotros · ✓ Una sola persona de contacto. Paredes lisas, listas para pintar.`,
     etiqueta: 'Alisado y reparación de paredes',
     resumen: 'Reparación, alisado, enlucido y renovación de paredes.',
     h1: { antes: 'Alisado de', resaltado: 'paredes', despues: 'en Madrid' },

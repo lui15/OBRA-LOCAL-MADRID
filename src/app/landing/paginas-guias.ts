@@ -1,3 +1,4 @@
+import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo } from './pagina-seo';
 
 const PUBLICADO = '2026-11-09';
@@ -10,7 +11,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     tipo: 'hub',
     title: 'Guías de reformas en Madrid | ObraLocal Madrid',
     description:
-      'Guías para preparar tu reforma en Madrid: cuánto cuesta un piso de 70 m², el orden de los trabajos, cómo comparar presupuestos y gotelé o alisado.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Guías para preparar tu reforma en Madrid.`,
     etiqueta: 'Guías',
     resumen: 'Artículos para preparar tu reforma antes de pedir presupuesto.',
     h1: { antes: 'Guías para preparar tu', resaltado: 'reforma', despues: 'en Madrid' },
@@ -113,7 +114,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     publicado: PUBLICADO,
     title: 'Reformar un piso de 70 m² en Madrid: desde 35.000 €',
     description:
-      'Cuánto cuesta reformar un piso de 70 m² en Madrid en 2026: de 35.000 a 84.000 € según calidad, escenarios sin obra integral, plazos y qué lo encarece.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformar un piso de 70 m²: desde 35.000 €.`,
     etiqueta: 'Cuánto cuesta reformar un piso de 70 m²',
     resumen: 'Rangos con y sin redistribución, y qué hace subir o bajar el precio.',
     h1: { antes: 'Cuánto cuesta reformar un piso de', resaltado: '70 m²', despues: 'en Madrid' },
@@ -272,7 +273,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     publicado: PUBLICADO,
     title: 'Orden de los trabajos en una reforma integral',
     description:
-      'En qué orden se hace una reforma integral: de la demolición a la limpieza final, qué va antes y qué decidir en cada fase para no repetir trabajos.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. En qué orden se hace una reforma integral.`,
     etiqueta: 'Orden de los trabajos en una reforma integral',
     resumen: 'De la demolición a la limpieza final, fase por fase.',
     h1: { antes: 'Orden de los trabajos en una', resaltado: 'reforma integral', despues: '' },
@@ -420,7 +421,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     publicado: PUBLICADO,
     title: 'Qué pedir en un presupuesto de reforma y cómo comparar',
     description:
-      'Qué debe incluir un presupuesto de reforma y cómo comparar ofertas: partidas, materiales, exclusiones, imprevistos, IVA, plazos y forma de pago.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Qué debe incluir un presupuesto de reforma.`,
     etiqueta: 'Qué pedir en un presupuesto de reforma',
     resumen: 'Lista de comprobación para comparar presupuestos con el mismo alcance.',
     h1: { antes: 'Qué pedir en un', resaltado: 'presupuesto de reforma', despues: 'y cómo comparar' },
@@ -585,7 +586,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     publicado: PUBLICADO,
     title: 'Alisar paredes o quitar gotelé: diferencias y precio',
     description:
-      'Alisar paredes o quitar el gotelé: en qué se diferencian, qué método conviene a tu pared, cuánto cuesta en Madrid y cuánto polvo y tiempo implica.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Alisar paredes o quitar gotelé: diferencias.`,
     etiqueta: 'Alisar paredes o quitar gotelé',
     resumen: 'Diferencias, métodos y precios orientativos para tus paredes.',
     h1: { antes: 'Alisar paredes o', resaltado: 'quitar gotelé', despues: ': diferencias y precio' },

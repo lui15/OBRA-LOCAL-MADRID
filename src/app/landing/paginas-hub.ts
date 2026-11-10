@@ -1,3 +1,4 @@
+import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo } from './pagina-seo';
 
 /** Portada e índices del sitio. */
@@ -6,9 +7,9 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: '',
     tipo: 'inicio',
-    title: 'Reformas en Madrid con presupuesto cerrado | ObraLocal',
+    title: 'Reformas en Madrid con visita sin compromiso | ObraLocal',
     description:
-      'Reformas en Madrid con presupuesto cerrado por escrito: baño desde 5.000 €, cocina desde 8.000 € e integral desde 500 €/m². Un único interlocutor.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Te atendemos solo nosotros · ✓ Sin llamadas de 5 empresas · ✓ Una sola persona de contacto. Baños, cocinas e integrales.`,
     etiqueta: 'Reformas en Madrid',
     resumen: 'Reformas de viviendas y locales en Madrid y alrededores.',
     h1: { antes: 'Reformas en Madrid', resaltado: 'con presupuesto cerrado por escrito', despues: '' },
@@ -85,7 +86,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     tipo: 'hub',
     title: 'Servicios de reformas en Madrid | ObraLocal Madrid',
     description:
-      'Servicios de reformas en Madrid: integrales, baños, cocinas, albañilería, pintura, pladur y paredes. Elige qué necesitas y consulta sus precios.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Integrales, baños, cocinas, pintura, pladur y más.`,
     etiqueta: 'Servicios',
     resumen: 'Todos los trabajos de reforma que realizamos.',
     h1: { antes: 'Servicios de', resaltado: 'reformas', despues: 'en Madrid' },
@@ -197,9 +198,9 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: 'precios',
     tipo: 'hub',
-    title: 'Precios de reformas en Madrid 2026: baño desde 5.000 €',
+    title: 'Precios de reformas en Madrid 2026 | ObraLocal',
     description:
-      'Cuánto cuesta una reforma en Madrid en 2026: baño 5.500–10.000 €, cocina 8.000–18.000 €, piso 500–1.200 €/m². Tablas, plazos y ejemplos por partidas.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Baño desde 5.000 €, cocina desde 8.000 € y piso por m².`,
     etiqueta: 'Precios',
     resumen: 'Precios por m² y por trabajo, un piso de 80 m² por partidas, plazos y ejemplos.',
     h1: { antes: '¿Cuánto cuesta una', resaltado: 'reforma en Madrid', despues: 'en 2026?' },
@@ -354,7 +355,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     tipo: 'hub',
     title: 'Zonas de trabajo: reformas en Madrid | ObraLocal Madrid',
     description:
-      'Zonas donde hacemos reformas: Madrid capital y municipios como Alcobendas, Getafe o Móstoles. Consulta tu zona y lo que debes tener en cuenta en cada una.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Madrid capital y municipios de alrededor.`,
     etiqueta: 'Zonas de trabajo',
     resumen: 'Madrid capital, distritos y municipios en los que trabajamos.',
     h1: { antes: 'Zonas donde hacemos', resaltado: 'reformas', despues: '' },
@@ -466,9 +467,9 @@ export const PAGINAS_HUB: PaginaSeo[] = [
   {
     path: 'como-trabajamos',
     tipo: 'hub',
-    title: 'Cómo trabajamos: pasos de una reforma | ObraLocal Madrid',
+    title: 'Cómo trabajamos: visita sin compromiso y trato cercano',
     description:
-      'Así funciona tu reforma con ObraLocal Madrid en cinco pasos: tu idea, la visita o las fotos, el presupuesto cerrado, la obra y la entrega final.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Así es tu reforma con nosotros, paso a paso.`,
     etiqueta: 'Cómo trabajamos',
     resumen: 'De tu solicitud a la llamada, y qué conviene preparar antes.',
     h1: { antes: 'Así funciona tu', resaltado: 'reforma', despues: 'con ObraLocal' },
@@ -601,7 +602,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     tipo: 'hub',
     title: 'Opiniones de clientes de reformas | ObraLocal Madrid',
     description:
-      'Opiniones de clientes que reformaron con ObraLocal Madrid: baños, cocinas, pisos completos, pintura, pladur y humedades. Publicadas completas, sin editar.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Lo que cuentan nuestros clientes, sin editar.`,
     etiqueta: 'Opiniones',
     resumen: 'Lo que cuentan los clientes que ya reformaron con nosotros, sin editar.',
     h1: { antes: 'Opiniones de', resaltado: 'nuestros clientes', despues: '' },
@@ -686,7 +687,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     tipo: 'hub',
     title: 'Preguntas frecuentes sobre reformas | ObraLocal Madrid',
     description:
-      'Dudas habituales sobre reformas en Madrid: permisos, comunidad de vecinos, horarios, presupuestos, IVA y cómo funciona nuestra solicitud de presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Permisos, comunidad, plazos e IVA de tu reforma.`,
     etiqueta: 'Preguntas frecuentes',
     resumen: 'Permisos, comunidad, presupuestos y cómo funciona la solicitud.',
     h1: { antes: 'Preguntas', resaltado: 'frecuentes', despues: 'sobre reformas' },
