@@ -89,6 +89,11 @@
               @case (0) {
                 <h2 id="pw-titulo" tabindex="-1" data-titulo-paso>{{ titulos[0] }}</h2>
                 <p class="pw-sub">Elige una opción. Tardas menos de un minuto.</p>
+                <ul class="pw-ventajas" aria-label="Así trabajamos">
+                  <li>Te atendemos solo nosotros</li>
+                  <li>Visita sin compromiso</li>
+                  <li>Una sola persona de contacto</li>
+                </ul>
                 <div class="pw-obras" role="group" aria-labelledby="pw-titulo" [class.grupo-error]="errores().obra">
                   @for (o of obras; track o.id) {
                     <button

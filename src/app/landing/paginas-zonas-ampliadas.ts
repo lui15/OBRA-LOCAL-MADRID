@@ -1,3 +1,4 @@
+import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo, SeccionPagina, Faq } from './pagina-seo';
 
 /** Datos propios de cada zona; el resto de la página se completa igual en todas. */
@@ -56,9 +57,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-getafe',
     zona: 'Getafe',
-    title: 'Reformas en Getafe: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Getafe con visita sin compromiso',
     description:
-      'Reformas en Getafe: pisos de los años 60 y 70 en el Centro y Las Margaritas, vivienda reciente en El Bercial y Los Molinos. Trámites y presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto ajustado · ✓ Trato cercano y ordenado. Reformas en Getafe: bloques de los 60 y 70 y barrios nuevos.`,
     resumen: 'Bloques del crecimiento industrial y barrios nuevos del norte y el sur.',
     intro:
       'Getafe creció muy deprisa a partir de los años sesenta, de la mano de su industria, y eso se nota en su vivienda: muchos bloques de esa época en el Centro, Juan de la Cierva, Las Margaritas o San Isidro, y barrios mucho más recientes como Getafe Norte, El Bercial, Los Molinos o Buenavista. Una reforma aquí empieza por saber en cuál de los dos mundos está tu piso.',
@@ -151,9 +152,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-leganes',
     zona: 'Leganés',
-    title: 'Reformas en Leganés: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Leganés con visita sin compromiso',
     description:
-      'Reformas en Leganés: pisos de Zarzaquemada y San Nicasio, vivienda nueva en Arroyo Culebro y Solagua. Qué cambiar primero, trámites y presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Leganés: grandes conjuntos de bloques.`,
     resumen: 'Zarzaquemada, San Nicasio y los desarrollos de Arroyo Culebro y Solagua.',
     intro:
       'Zarzaquemada es uno de los grandes conjuntos de vivienda de los años sesenta y setenta del sur de Madrid, y buena parte de las reformas de Leganés se concentran en pisos así: muchos metros de bloque, distribuciones repetidas y un potencial grande de mejora. A su lado conviven barrios como San Nicasio, El Carrascal, La Fortuna y los desarrollos más nuevos de Arroyo Culebro, Valdepelayo o Solagua.',
@@ -238,9 +239,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-alcorcon',
     zona: 'Alcorcón',
-    title: 'Reformas en Alcorcón: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Alcorcón con visita sin compromiso',
     description:
-      'Reformas en Alcorcón: pisos de Parque Lisboa, San José de Valderas y Ondarreta, viviendas del Ensanche Sur y chalets de Campodón. Trámites y precios.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto ajustado · ✓ Trato cercano y ordenado. Reformas en Alcorcón: parques residenciales y Ensanche Sur.`,
     resumen: 'Parques residenciales de los setenta, Ensanche Sur y chalets de Campodón.',
     intro:
       'Alcorcón se organizó en buena parte en grandes «parques» residenciales: Parque Lisboa, Parque Ondarreta o San José de Valderas, con bloques de los años setenta rodeados de zonas verdes. A ellos se suman el Ensanche Sur, mucho más reciente, y la zona de chalets de Campodón. Cada uno pide un enfoque de reforma distinto.',
@@ -329,9 +330,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-mostoles',
     zona: 'Móstoles',
-    title: 'Reformas en Móstoles: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Móstoles con visita sin compromiso',
     description:
-      'Reformas en Móstoles: pisos del Centro y Villafontana, vivienda de Móstoles Sur y chalets de Parque Coimbra. Trabajos habituales, trámites y precios.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Móstoles: bloques y vivienda reciente.`,
     resumen: 'Centro, Villafontana, Móstoles Sur y los chalets de Parque Coimbra.',
     intro:
       'Móstoles pasó de pueblo a gran ciudad en pocas décadas, y su vivienda lo refleja: bloques del Centro y Villafontana levantados durante ese crecimiento, barrios recientes como Móstoles Sur y urbanizaciones de chalets como Parque Coimbra. Conocer la época del edificio es la mejor forma de anticipar qué necesita tu reforma.',
@@ -425,9 +426,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-pozuelo-de-alarcon',
     zona: 'Pozuelo de Alarcón',
-    title: 'Reformas en Pozuelo de Alarcón: baño desde 5.000 €',
+    title: 'Reformas en Pozuelo de Alarcón con visita sin compromiso',
     description:
-      'Reformas en Pozuelo de Alarcón: pisos del Pueblo y la Estación, viviendas de la zona de Avenida de Europa y chalets de Somosaguas y Monteclaro.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Pozuelo de Alarcón: pisos y unifamiliares.`,
     resumen: 'Pueblo, Estación, Avenida de Europa y chalets de Somosaguas o Monteclaro.',
     intro:
       'Pozuelo de Alarcón mezcla un casco urbano con pisos de varias épocas (el Pueblo y la Estación), zonas residenciales más recientes alrededor de la Avenida de Europa y grandes urbanizaciones de vivienda unifamiliar como Somosaguas o Monteclaro. Las reformas aquí suelen ser amplias y con calidades altas, y la organización de la obra importa tanto como el proyecto.',
@@ -517,9 +518,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-las-rozas',
     zona: 'Las Rozas',
-    title: 'Reformas en Las Rozas: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Las Rozas con visita sin compromiso',
     description:
-      'Reformas en Las Rozas: pisos del centro, viviendas de Las Matas y chalets de El Pinar o Molino de la Hoz. Qué reformar primero, trámites y presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Las Rozas: pisos y urbanizaciones.`,
     resumen: 'Centro, Las Matas y urbanizaciones de chalets como El Pinar o Molino de la Hoz.',
     intro:
       'Las Rozas es un municipio repartido en varios núcleos: el centro urbano, Las Matas y un buen número de urbanizaciones de vivienda unifamiliar, como El Pinar o Molino de la Hoz. Hay pisos, adosados y chalets de distintas épocas, y por eso aquí la pregunta clave antes de reformar es qué tipo de vivienda tienes.',
@@ -608,9 +609,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-majadahonda',
     zona: 'Majadahonda',
-    title: 'Reformas en Majadahonda: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Majadahonda con visita sin compromiso',
     description:
-      'Reformas en Majadahonda: pisos del casco, urbanizaciones como Los Satélites o Roza Martín y chalets junto al Monte del Pilar. Trámites y presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Majadahonda: urbanizaciones y pisos amplios.`,
     resumen: 'Casco, urbanizaciones de pisos con zonas comunes y chalets.',
     intro:
       'Majadahonda combina un casco con pisos de varias décadas, urbanizaciones de bloques con zonas comunes, como Los Satélites o Roza Martín, y vivienda unifamiliar en el entorno del Monte del Pilar. Muchas de sus viviendas se compraron hace años y ahora necesitan una actualización completa, con cambios de distribución pensados para la vida actual.',
@@ -707,9 +708,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-moncloa',
     zona: 'Moncloa-Aravaca',
-    title: 'Reformas en Moncloa-Aravaca: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Moncloa-Aravaca con visita sin compromiso',
     description:
-      'Reformas en Moncloa-Aravaca: pisos clásicos de Argüelles, bloques de Valdezarza y chalets de Aravaca y El Plantío. Trámites en Madrid y presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto ajustado · ✓ Trato cercano y ordenado. Reformas en Moncloa-Aravaca: fincas en Argüelles y chalets.`,
     resumen: 'Pisos clásicos de Argüelles, bloques de Valdezarza y chalets de Aravaca.',
     intro:
       'Moncloa-Aravaca es uno de los distritos más variados de Madrid: los edificios clásicos de Argüelles, junto a la calle Princesa; los bloques de mediados del siglo XX de Valdezarza; y la vivienda unifamiliar de Aravaca, El Plantío o Valdemarín, al otro lado de la Casa de Campo. Reformar en Argüelles y reformar en Aravaca se parecen poco.',
@@ -805,9 +806,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-tetuan',
     zona: 'Tetuán',
-    title: 'Reformas en Tetuán: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Tetuán con visita sin compromiso',
     description:
-      'Reformas en Tetuán: pisos pequeños en Bellas Vistas, Cuatro Caminos y Valdeacederas, edificios de varias épocas y calles estrechas. Trámites y precios.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Tetuán: pisos pequeños y calles estrechas.`,
     resumen: 'Pisos pequeños, edificios de varias épocas y calles estrechas.',
     intro:
       'Tetuán es un distrito de contrastes: junto a los grandes edificios de oficinas cercanos a la Castellana, barrios como Bellas Vistas, Cuatro Caminos, Valdeacederas, Berruguete o Almenara conservan calles estrechas y una mezcla de edificios de muchas épocas. Abundan los pisos pequeños, que con una buena reforma pueden ganar mucho.',
@@ -910,9 +911,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-arganzuela',
     zona: 'Arganzuela',
-    title: 'Reformas en Arganzuela: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Arganzuela con visita sin compromiso',
     description:
-      'Reformas en Arganzuela: pisos de Delicias, Acacias, Legazpi o Imperial, edificios de principios y mediados del siglo XX junto a Madrid Río. Con precios.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Arganzuela: fincas junto a Madrid Río.`,
     resumen: 'Delicias, Acacias, Legazpi e Imperial, junto a Madrid Río.',
     intro:
       'Arganzuela fue durante décadas un distrito ligado al ferrocarril y a la industria, y su vivienda lo refleja: edificios de principios y mediados del siglo XX en Delicias, Acacias, Chopera o Imperial, y desarrollos más recientes en zonas como Legazpi. La renovación del entorno del río ha hecho que muchos de esos pisos se estén reformando a fondo.',
@@ -1010,9 +1011,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-chamartin',
     zona: 'Chamartín',
-    title: 'Reformas en Chamartín: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Chamartín con visita sin compromiso',
     description:
-      'Reformas en Chamartín: pisos amplios en Hispanoamérica, Prosperidad y Castilla, y la colonia El Viso. Qué tener en cuenta, trámites y presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Chamartín: pisos amplios y colonias.`,
     resumen: 'Pisos amplios, colonias históricas como El Viso y comunidades exigentes.',
     intro:
       'Chamartín reúne barrios como Hispanoamérica, Nueva España, Castilla, Prosperidad, Ciudad Jardín y El Viso. Predominan los pisos amplios en edificios de la segunda mitad del siglo XX, junto a colonias históricas de viviendas unifamiliares. Son reformas de nivel medio-alto, en las que el detalle y la coordinación con la comunidad importan.',
@@ -1109,9 +1110,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-latina',
     zona: 'Latina',
-    title: 'Reformas en Latina: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Latina con visita sin compromiso',
     description:
-      'Reformas en Latina: pisos de Aluche, Lucero, Los Cármenes y Puerta del Ángel, bloques de los años 50 a 70. Qué reformar primero, trámites y precios.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Latina: bloques de los 50 a los 70.`,
     resumen: 'Aluche, Lucero, Los Cármenes y Puerta del Ángel: bloques de los 50 a los 70.',
     intro:
       'Latina es uno de los distritos más poblados de Madrid y gran parte de su vivienda se construyó entre los años cincuenta y setenta: los grandes conjuntos de Aluche, los barrios de Lucero y Los Cármenes, y la zona más antigua de Puerta del Ángel. Son pisos con mucha vida por delante si se renuevan bien.',
@@ -1208,9 +1209,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-ciudad-lineal',
     zona: 'Ciudad Lineal',
-    title: 'Reformas en Ciudad Lineal: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Ciudad Lineal con visita sin compromiso',
     description:
-      'Reformas en Ciudad Lineal: pisos de Ventas, Pueblo Nuevo, Quintana o Concepción y viviendas unifamiliares en el entorno de Arturo Soria. Con precios.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Te atendemos solo nosotros · ✓ Visita sin compromiso · ✓ Presupuesto detallado. Reformas en Ciudad Lineal: pisos y casas en Arturo Soria.`,
     resumen: 'Ventas, Pueblo Nuevo, Quintana, Concepción y el eje de Arturo Soria.',
     intro:
       'El distrito toma su nombre del proyecto de Ciudad Lineal de Arturo Soria, de finales del siglo XIX, y todavía conserva en el entorno de esa calle algunas viviendas unifamiliares y colonias. Pero la mayor parte de su vivienda son bloques de pisos de mediados del siglo XX en barrios como Ventas, Pueblo Nuevo, Quintana, Concepción o San Pascual.',
@@ -1307,9 +1308,9 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
   zona({
     path: 'reformas-vallecas',
     zona: 'Vallecas',
-    title: 'Reformas en Vallecas: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Vallecas con visita sin compromiso',
     description:
-      'Reformas en Puente de Vallecas y Villa de Vallecas: pisos de Entrevías, Palomeras o Numancia y vivienda nueva en el Ensanche de Vallecas. Con precios.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Vallecas: Puente y Villa de Vallecas.`,
     resumen: 'Puente de Vallecas, Villa de Vallecas y el Ensanche de Vallecas.',
     intro:
       'Vallecas son en realidad dos distritos: Puente de Vallecas, con barrios como Entrevías, San Diego, Palomeras, Portazgo o Numancia, y Villa de Vallecas, que incluye el casco histórico, Santa Eugenia y el Ensanche de Vallecas. Entre ellos hay vivienda de casi todas las épocas, desde edificios antiguos hasta promociones muy recientes.',

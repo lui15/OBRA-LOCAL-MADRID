@@ -67,7 +67,7 @@ export const OPINIONES: Opinion[] = [
       'Reformaron el suelo y la pintura de toda la casa. Todo impecable, limpio y dentro del presupuesto acordado.',
     servicio: 'Suelos y pintura',
     tipo: 'Pintura',
-    paginas: ['/pintores-madrid/'],
+    paginas: ['/pintores-madrid/', '/instalacion-suelos-madrid/'],
   },
   {
     estrellas: 4,
@@ -76,7 +76,7 @@ export const OPINIONES: Opinion[] = [
       'Muy contenta con el resultado final del alicatado. Tuvieron que corregir un pequeño detalle en un remate, pero lo solucionaron rápido.',
     servicio: 'Alicatado',
     tipo: 'Albañilería',
-    paginas: ['/albanileria-madrid/'],
+    paginas: ['/alicatados-madrid/', '/albanileria-madrid/'],
   },
   {
     estrellas: 5,
@@ -85,7 +85,7 @@ export const OPINIONES: Opinion[] = [
       'Impecable trabajo de pladur e iluminación. Dejaron el local listo para abrir a tiempo. Repetiré para la próxima obra.',
     servicio: 'Pladur e iluminación',
     tipo: 'Pladur',
-    paginas: ['/pladur-madrid/'],
+    paginas: ['/pladur-madrid/', '/reforma-locales-comerciales-madrid/'],
   },
   {
     estrellas: 5,
@@ -94,7 +94,7 @@ export const OPINIONES: Opinion[] = [
       'Grandes profesionales. Solucionaron un problema de humedades que llevaba años dándome dolores de cabeza.',
     servicio: 'Humedades',
     tipo: 'Albañilería',
-    paginas: ['/albanileria-madrid/'],
+    paginas: ['/tratamiento-humedades-madrid/', '/albanileria-madrid/'],
   },
   {
     estrellas: 5,
@@ -110,7 +110,7 @@ export const OPINIONES: Opinion[] = [
     texto:
       'Calidad, rapidez y buen precio. Transformaron mi terraza por completo. Los recomiendo totalmente en Madrid.',
     servicio: 'Reforma de terraza',
-    paginas: ['/servicios/', '/'],
+    paginas: ['/reforma-terrazas-madrid/', '/'],
   },
 ];
 

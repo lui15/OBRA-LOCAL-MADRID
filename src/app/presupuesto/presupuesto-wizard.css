@@ -159,6 +159,25 @@ h2 {
   line-height: 1.5;
 }
 
+/* «Así trabajamos» en corto */
+.pw-ventajas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: -8px 0 18px;
+  padding: 0;
+  list-style: none;
+  color: var(--navy-dark);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pw-ventajas li::before {
+  content: '✓ ';
+  color: #0b7a3e;
+  font-weight: 800;
+}
+
 /* ---------------------------------------------------------------- paso 1: tarjetas */
 
 .pw-obras {

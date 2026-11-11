@@ -1,3 +1,4 @@
+import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo } from './pagina-seo';
 import { ZONAS_AMPLIADAS } from './paginas-zonas-ampliadas';
 
@@ -11,9 +12,9 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-chamberi',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Chamberí: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Chamberí con visita sin compromiso',
     description:
-      'Reformas en Chamberí: pisos antiguos, techos altos y edificios con protección. Trámites, horarios y comunidad de vecinos, con presupuesto paso a paso.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Chamberí: fincas antiguas y techos altos.`,
     etiqueta: 'Reformas en Chamberí',
     resumen: 'Pisos de principios del siglo XX, techos altos y edificios con valor patrimonial.',
     zona: 'Chamberí',
@@ -123,9 +124,9 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-salamanca',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Salamanca: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Salamanca con visita sin compromiso',
     description:
-      'Reformas en el distrito de Salamanca: fincas señoriales, normas de comunidad y fachadas protegidas. Qué revisar antes de empezar y presupuesto paso a paso.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Salamanca: pisos amplios en fincas clásicas.`,
     etiqueta: 'Reformas en Salamanca',
     resumen: 'Fincas señoriales, comunidades exigentes y reformas de altas calidades.',
     zona: 'Distrito de Salamanca',
@@ -233,9 +234,9 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-retiro',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Retiro: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Retiro con visita sin compromiso',
     description:
-      'Reformas en Retiro: Jerónimos, Ibiza, Pacífico, Adelfas, Estrella y Niño Jesús. Edificios, permisos y trabajos frecuentes por barrio, con presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto ajustado · ✓ Trato cercano y ordenado. Reformas en Retiro: fincas de varias épocas junto al parque.`,
     etiqueta: 'Reformas en Retiro',
     resumen: 'Del entorno protegido de Jerónimos a los bloques de Estrella y Adelfas.',
     zona: 'Retiro',
@@ -345,9 +346,9 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-carabanchel',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Carabanchel: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Carabanchel con visita sin compromiso',
     description:
-      'Reformas en Carabanchel: pisos de los años 50 a 70, gotelé, bañeras e instalaciones antiguas. Qué priorizar, precios orientativos y presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Te atendemos solo nosotros · ✓ Visita sin compromiso · ✓ Presupuesto detallado. Reformas en Carabanchel: bloques de mediados del siglo XX.`,
     etiqueta: 'Reformas en Carabanchel',
     resumen: 'Pisos compactos por actualizar y vivienda más reciente en el PAU.',
     zona: 'Carabanchel',
@@ -456,9 +457,9 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
     path: 'reformas-alcobendas',
     tipo: 'zona',
     padre: 'zonas',
-    title: 'Reformas en Alcobendas: baño desde 5.000 € | ObraLocal',
+    title: 'Reformas en Alcobendas con visita sin compromiso',
     description:
-      'Reformas en Alcobendas: pisos del Centro, viviendas de Valdelasfuentes y chalets de La Moraleja. Trámites municipales, urbanizaciones y presupuesto.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas en Alcobendas: pisos, adosados y chalets.`,
     etiqueta: 'Reformas en Alcobendas',
     resumen: 'Pisos del centro, vivienda reciente y chalets de La Moraleja y El Soto.',
     zona: 'Alcobendas',

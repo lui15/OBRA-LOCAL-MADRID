@@ -11,6 +11,7 @@ import { BloqueConfianza } from '../compartido/bloque-confianza';
 import { Icono } from '../compartido/icono';
 import { Revision } from '../compartido/revision';
 import { BloqueOpiniones } from '../compartido/bloque-opiniones';
+import { AsiTrabajamos } from '../compartido/asi-trabajamos';
 import { OPINIONES, opinionesDe } from '../datos/opiniones';
 import { MAS_PEDIDOS, cifra } from '../datos/precios';
 import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
@@ -32,6 +33,7 @@ import { SeoService } from '../seo.service';
   standalone: true,
   imports: [
     BloqueOpiniones,
+    AsiTrabajamos,
     RouterLink,
     RevealDirective,
     CtaPresupuesto,

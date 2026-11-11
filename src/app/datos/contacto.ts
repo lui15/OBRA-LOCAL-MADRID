@@ -24,6 +24,9 @@ export const EMPRESA = {
   correo: 'lpichardosanchez2@gmail.com',
 };
 
+/** Nota media de la ficha de Google. Todas las meta descriptions la leen de aquí. */
+export const NOTA_GOOGLE = '4,8';
+
 /** Dominio final, sin barra al final. */
 export const SITE_URL = 'https://obralocalmadrid.es';
 

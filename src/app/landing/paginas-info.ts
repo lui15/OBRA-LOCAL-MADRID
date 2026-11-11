@@ -1,3 +1,4 @@
+import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo } from './pagina-seo';
 
 /** Páginas informativas con fuentes oficiales, y la calculadora. */
@@ -9,7 +10,7 @@ export const PAGINAS_INFO: PaginaSeo[] = [
     padre: 'precios',
     title: 'Calculadora de reforma en Madrid | ObraLocal Madrid',
     description:
-      'Calcula un rango orientativo para tu reforma en Madrid según los metros, la cocina, los baños, la pintura y la calidad. Con nuestros precios de referencia.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Calcula precio y plazo de tu reforma en un minuto.`,
     etiqueta: 'Calculadora de reforma',
     resumen: 'Un rango orientativo en un minuto, con nuestros precios de referencia.',
     h1: { antes: 'Calculadora de', resaltado: 'reforma', despues: 'en Madrid' },
@@ -73,7 +74,7 @@ export const PAGINAS_INFO: PaginaSeo[] = [
     tipo: 'info',
     title: 'Licencia de obra en Madrid: declaración responsable e ICIO',
     description:
-      'Qué trámite pide tu reforma en Madrid: obras sin título, declaración responsable o licencia según la Ordenanza 6/2022, y el ICIO del 3,75 %. Con fuentes.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Licencia, declaración responsable e ICIO.`,
     etiqueta: 'Licencia de obra en Madrid',
     resumen: 'Obras sin trámite, declaración responsable, licencia e ICIO en Madrid capital.',
     h1: { antes: 'Licencia de obra en Madrid:', resaltado: 'qué necesitas', despues: '' },
@@ -187,7 +188,7 @@ export const PAGINAS_INFO: PaginaSeo[] = [
     tipo: 'info',
     title: 'Ayudas para reformas en Madrid 2026: qué hay y dónde mirar',
     description:
-      'Ayudas para reformas en Madrid en 2026: Plan Rehabilita del Ayuntamiento y deducciones del IRPF por eficiencia energética. Solo datos con fuente oficial.',
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Plan Rehabilita y deducciones del IRPF.`,
     etiqueta: 'Ayudas para reformas en Madrid',
     resumen: 'Plan Rehabilita 2026 y deducciones del IRPF, con sus fuentes oficiales.',
     h1: { antes: 'Ayudas para reformas en', resaltado: 'Madrid 2026', despues: '' },

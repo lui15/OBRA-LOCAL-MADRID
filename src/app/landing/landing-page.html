@@ -20,7 +20,7 @@
           type="button"
           (click)="presupuesto.abrir(pagina.servicioFormulario, 'hero_landing')"
         >
-          Pedir presupuesto <span>↗</span>
+          Pide presupuesto <span>↗</span>
         </button>
         <a class="button button-outline" [href]="whatsapp" target="_blank" rel="noopener">
           <app-icono nombre="whatsapp" /> WhatsApp
@@ -75,6 +75,14 @@
 }
 }
 
+<!-- ================= ASÍ TRABAJAMOS (bloque principal de /como-trabajamos/) ================= -->
+
+@defer (hydrate on viewport) {
+@if (pagina.modulo === 'proceso') {
+  <app-asi-trabajamos [principal]="true" />
+}
+}
+
 <!-- ================= TABLAS DE PRECIOS (solo /precios/) ================= -->
 
 @defer (hydrate on viewport) {
@@ -86,20 +94,20 @@
 <!-- ================= PRECIOS DEL SERVICIO ================= -->
 
 @defer (hydrate on viewport) {
-@if (servicioCatalogo; as s) {
+@if (servicioCatalogo || filasPrecio.length) {
   <section class="section lp-banda" id="precios">
     <div class="container">
       <div class="section-heading" appReveal>
         <span class="eyebrow eyebrow-oscura">GUÍA DE PRECIOS</span>
-        @if (pagina.preciosSoloReferencia) {
-          <h2>Precios de referencia: {{ s.nombre.toLowerCase() }}</h2>
+        @if (pagina.preciosSoloReferencia && servicioCatalogo) {
+          <h2>Precios de referencia: {{ servicioCatalogo.nombre.toLowerCase() }}</h2>
           <p>Son los rangos del servicio completo, no el precio de este trabajo concreto.</p>
         } @else {
           <h2>¿Cuánto cuesta?</h2>
-          <p>{{ s.nota }}</p>
+          <p>{{ servicioCatalogo?.nota ?? notaPrecios }}</p>
         }
       </div>
-      <app-guia-precios [precios]="filasPrecio.length ? filasPrecio : s.precios" [conCabecera]="false" />
+      <app-guia-precios [precios]="filasPrecio.length ? filasPrecio : servicioCatalogo!.precios" [conCabecera]="false" />
       <p class="lp-ver-todo">
         <a routerLink="/precios">Ver todos los precios de reformas en Madrid →</a>
         <a routerLink="/calculadora-reforma">Calcular mi reforma →</a>
@@ -341,40 +349,6 @@
       </div>
     </section>
   }
-  @case ('proceso') {
-    <section class="section lp-banda" id="pasos">
-      <div class="container">
-        <div class="section-heading" appReveal>
-          <span class="eyebrow eyebrow-oscura">PASO A PASO</span>
-          <h2>Los cinco pasos de tu reforma</h2>
-        </div>
-        <ol class="lp-pasos">
-          @for (paso of pasos; track paso.titulo; let i = $index) {
-            <li class="lp-paso" appReveal>
-              <img
-                [src]="fotoTarjeta(paso.imagen)"
-                [attr.srcset]="srcset(paso.imagen)"
-                sizes="(max-width: 560px) 60vw, 360px"
-                [alt]="paso.imagenAlt"
-                [attr.width]="ancho(paso.imagen)"
-                [attr.height]="alto(paso.imagen)"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="lp-paso-texto">
-                <span class="lp-paso-num">
-                  <app-icono [nombre]="paso.icono" />
-                  Paso {{ i + 1 }}
-                </span>
-                <h3>{{ paso.titulo }}</h3>
-                <p>{{ paso.texto }}</p>
-              </div>
-            </li>
-          }
-        </ol>
-      </div>
-    </section>
-  }
 }
 }
 
@@ -410,30 +384,11 @@
 }
 }
 
-<!-- ================= PROCESO (servicios) ================= -->
+<!-- ================= ASÍ TRABAJAMOS (servicios) ================= -->
 
 @defer (hydrate on viewport) {
-@if (pagina.tipo === 'servicio' || pagina.tipo === 'trabajo') {
-  <section class="section lp-proceso-corto" aria-labelledby="proceso-titulo">
-    <div class="container">
-      <div class="section-heading" appReveal>
-        <span class="eyebrow eyebrow-oscura">CÓMO TRABAJAMOS</span>
-        <h2 id="proceso-titulo">Así hacemos tu {{ pagina.etiqueta.toLowerCase() }}</h2>
-      </div>
-      <ol class="lp-pasos-cortos">
-        @for (p of pasos; track p.titulo; let i = $index) {
-          <li>
-            <span class="lp-paso-num" aria-hidden="true">{{ i + 1 }}</span>
-            <div>
-              <h3>{{ p.titulo }}</h3>
-              <p>{{ p.texto }}</p>
-            </div>
-          </li>
-        }
-      </ol>
-      <p class="lp-ver-todo"><a routerLink="/como-trabajamos">Ver cómo trabajamos →</a></p>
-    </div>
-  </section>
+@if (['servicio', 'trabajo', 'zona', 'guia'].includes(pagina.tipo)) {
+  <app-asi-trabajamos [servicio]="pagina.servicioFormulario" />
 }
 }
 

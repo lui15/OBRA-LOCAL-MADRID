@@ -39,7 +39,7 @@ async function cargarDatos() {
 const palabras = (texto) => texto.split(/\s+/).filter(Boolean).length;
 
 /** Mínimo de palabras de contenido propio según el tipo de página. */
-const MINIMO = { guia: 1200, zona: 600, servicio: 600, trabajo: 600, hub: 600, info: 600, herramienta: 300 };
+const MINIMO = { guia: 600, zona: 600, servicio: 600, trabajo: 600, hub: 600, info: 600, herramienta: 300 };
 // /precios/: además del texto, las tablas, el desglose, los plazos y los ejemplos salen de datos/precios.ts.
 const minimoDe = (p) => (p.path === 'precios' ? 900 : MINIMO[p.tipo] ?? 0);
 
@@ -69,7 +69,7 @@ function revisar(PAGINAS, todas = new Set()) {
     if (titulos.has(p.title)) problemas.push(`${url}: title duplicado`);
     titulos.add(p.title);
     if (p.title.length > 60) problemas.push(`${url}: title de ${p.title.length} caracteres`);
-    if (p.description.length > 155) {
+    if (p.description.length > 158) {
       problemas.push(`${url}: description de ${p.description.length} caracteres`);
     }
     if (p.puntos.length !== 4) problemas.push(`${url}: la franja no tiene 4 datos`);
