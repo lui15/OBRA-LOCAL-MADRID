@@ -1,5 +1,6 @@
 import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo } from './pagina-seo';
+import { GUIAS_NUEVAS } from './paginas-guias-nuevas';
 
 const PUBLICADO = '2026-11-09';
 
@@ -735,4 +736,5 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     imagenAlt: 'Pared enlucida y lista para pintar',
     relacionadas: ['quitar-gotele-madrid', 'alisado-paredes-madrid', 'pintores-madrid', 'precios', 'calculadora-reforma'],
   },
+  ...GUIAS_NUEVAS,
 ];

@@ -243,6 +243,19 @@ export const PRECIOS_PAGINA: Record<string, string[]> = {
   'cambiar-banera-por-plato-ducha-madrid': ['banera-plato', 'bano'],
   'quitar-gotele-madrid': ['gotele', 'alisado', 'pintura-m2'],
   'reforma-piso-completo-madrid': ['integral-basica', 'integral-media', 'integral-alta', 'electricidad', 'fontaneria'],
+  // Servicios nuevos
+  'reforma-locales-comerciales-madrid': ['local-basica', 'local-media', 'local-alta'],
+  'reforma-terrazas-madrid': ['terraza-basica', 'terraza-media', 'terraza-alta'],
+  'tratamiento-humedades-madrid': ['humedades', 'alisado', 'pintura-m2'],
+  'alicatados-madrid': ['alicatado', 'bano', 'cocina'],
+  'instalacion-suelos-madrid': ['suelo-laminado', 'suelo-vinilico', 'suelo-porcelanico', 'tarima'],
+  'cambiar-ventanas-madrid': ['ventana'],
+  // Guías nuevas
+  'cuanto-cuesta-reformar-un-bano-en-madrid': ['bano', 'banera-plato', 'alicatado'],
+  'cuanto-cuesta-reformar-una-cocina-en-madrid': ['cocina', 'punto-luz', 'alicatado'],
+  'cuanto-tarda-una-reforma-integral': ['integral-basica', 'integral-media', 'integral-alta'],
+  'suelo-laminado-vinilico-o-porcelanico': ['suelo-laminado', 'suelo-vinilico', 'suelo-porcelanico', 'tarima'],
+  'como-quitar-humedades-de-la-pared': ['humedades', 'alisado', 'pintura-m2'],
 };
 
 export function filasDe(ids: string[]): FilaPrecio[] {

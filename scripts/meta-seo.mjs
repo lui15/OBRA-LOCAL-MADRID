@@ -53,6 +53,20 @@ export const META = {
   'orden-trabajos-reforma-integral': [null, 'En qué orden se hace una reforma integral.'],
   'que-pedir-presupuesto-reforma': [null, 'Qué debe incluir un presupuesto de reforma.'],
   'alisar-paredes-o-quitar-gotele': [null, 'Alisar paredes o quitar gotelé: diferencias.'],
+  // Servicios nuevos
+  'reforma-locales-comerciales-madrid': [null, 'Acondicionamos locales y oficinas para abrir.'],
+  'reforma-terrazas-madrid': [null, 'Suelo, impermeabilización y desagües de tu terraza.'],
+  'tratamiento-humedades-madrid': [null, 'Primero la causa de la humedad, luego la pared.'],
+  'alicatados-madrid': [null, 'Alicatamos baños, cocinas y otras estancias.'],
+  'instalacion-suelos-madrid': [null, 'Laminado, vinílico, porcelánico o tarima.'],
+  'cambiar-ventanas-madrid': [null, 'Ventanas de aluminio con rotura de puente térmico.'],
+  // Guías nuevas
+  'cuanto-cuesta-reformar-un-bano-en-madrid': [null, 'Reformar un baño en Madrid: de 5.000 a 13.000 €.'],
+  'cuanto-cuesta-reformar-una-cocina-en-madrid': [null, 'Reformar una cocina en Madrid: 8.000–18.000 €.'],
+  'cuanto-tarda-una-reforma-integral': [null, 'Cuánto dura una reforma integral, fase a fase.'],
+  'suelo-laminado-vinilico-o-porcelanico': [null, 'Laminado, vinílico o porcelánico: cuál elegir.'],
+  'como-quitar-humedades-de-la-pared': [null, 'Cómo quitar la humedad de una pared paso a paso.'],
+  'como-elegir-empresa-de-reformas': [null, 'Cómo elegir empresa de reformas sin equivocarte.'],
 };
 // Zonas: title «Reformas en {Zona} con visita sin compromiso» y un rasgo real de la zona.
 export const ZONAS = {
@@ -87,7 +101,7 @@ function descripcion(frase) {
 }
 
 const esc = (s) => s.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$\{/g, '\\${');
-const archivos = ['paginas-hub.ts', 'paginas-servicios.ts', 'paginas-trabajos.ts', 'paginas-zonas.ts', 'paginas-zonas-ampliadas.ts', 'paginas-guias.ts', 'paginas-info.ts', 'paginas-nuevas.ts'];
+const archivos = ['paginas-hub.ts', 'paginas-servicios.ts', 'paginas-trabajos.ts', 'paginas-zonas.ts', 'paginas-zonas-ampliadas.ts', 'paginas-guias.ts', 'paginas-info.ts', 'paginas-servicios-nuevos.ts', 'paginas-guias-nuevas.ts', 'paginas-zonas-nuevas.ts'];
 const problemas = [];
 let hechas = 0;
 for (const a of archivos) {
@@ -115,6 +129,7 @@ for (const a of archivos) {
     let t = trozos[i];
     if (title) t = t.replace(/\n    title: (?:'(?:[^'\\]|\\.)*'|`[^`]*`),/, `\n    title: '${title.replace(/'/g, "\\'")}',`);
     t = t.replace(/\n    description:\n      (?:'(?:[^'\\]|\\.)*'|`[^`]*`),/, `\n    description:\n      ${nuevaDesc},`);
+    t = t.replace(/\n    description: [VD]\([^\n]*\),/,`\n    description:\n      ${nuevaDesc},`);
     if (t === trozos[i] && !trozos[i].includes(nuevaDesc)) problemas.push(`/${path}: no se encontró title/description`);
     trozos[i] = t;
     hechas++;

@@ -272,6 +272,111 @@ export const FICHAS: FichaPagina[] = [
     ]
   },
   {
+    "grupo": "servicios",
+    "path": "reforma-locales-comerciales-madrid",
+    "tipo": "servicio",
+    "padre": "servicios",
+    "title": "Reforma de locales comerciales en Madrid | ObraLocal",
+    "etiqueta": "Reforma de locales comerciales",
+    "resumen": "Acondicionamiento de locales y oficinas: distribución, instalaciones, techos y acabados.",
+    "imagen": "/images/obra-en-curso.webp",
+    "imagenAlt": "Local en obra con trabajos de acondicionamiento",
+    "relacionadas": [
+      "pladur-madrid",
+      "albanileria-madrid",
+      "pintores-madrid",
+      "licencia-obra-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "servicios",
+    "path": "reforma-terrazas-madrid",
+    "tipo": "servicio",
+    "padre": "servicios",
+    "title": "Reforma de terrazas en Madrid | ObraLocal",
+    "etiqueta": "Reforma de terrazas",
+    "resumen": "Suelo, impermeabilización, desagües, iluminación y acabados de terrazas.",
+    "imagen": "/images/piso-reformado.webp",
+    "imagenAlt": "Vivienda reformada con salida a la terraza",
+    "relacionadas": [
+      "tratamiento-humedades-madrid",
+      "instalacion-suelos-madrid",
+      "albanileria-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "servicios",
+    "path": "tratamiento-humedades-madrid",
+    "tipo": "servicio",
+    "padre": "servicios",
+    "title": "Tratamiento de humedades en Madrid | ObraLocal",
+    "etiqueta": "Tratamiento de humedades",
+    "resumen": "Humedades por filtración, capilaridad o condensación: causa, reparación y acabado.",
+    "imagen": "/images/paredes-ejemplo.webp",
+    "imagenAlt": "Pared saneada y preparada después de tratar una humedad",
+    "relacionadas": [
+      "albanileria-madrid",
+      "alisado-paredes-madrid",
+      "pintores-madrid",
+      "como-quitar-humedades-de-la-pared",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "servicios",
+    "path": "alicatados-madrid",
+    "tipo": "servicio",
+    "padre": "servicios",
+    "title": "Alicatados en Madrid | ObraLocal",
+    "etiqueta": "Alicatados",
+    "resumen": "Alicatado de baños y cocinas: retirada del azulejo viejo, preparación y colocación.",
+    "imagen": "/images/bano-moderno.webp",
+    "imagenAlt": "Baño con alicatado nuevo y juntas finas",
+    "relacionadas": [
+      "reforma-banos-madrid",
+      "reforma-cocinas-madrid",
+      "albanileria-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "servicios",
+    "path": "instalacion-suelos-madrid",
+    "tipo": "servicio",
+    "padre": "servicios",
+    "title": "Instalación de suelos en Madrid | ObraLocal",
+    "etiqueta": "Instalación de suelos",
+    "resumen": "Suelo laminado, vinílico, porcelánico o tarima, con la base preparada y rodapié.",
+    "imagen": "/images/sala-vacia.webp",
+    "imagenAlt": "Habitación vacía con suelo nuevo instalado",
+    "relacionadas": [
+      "pintores-madrid",
+      "reformas-integrales-madrid",
+      "alicatados-madrid",
+      "suelo-laminado-vinilico-o-porcelanico",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "servicios",
+    "path": "cambiar-ventanas-madrid",
+    "tipo": "servicio",
+    "padre": "servicios",
+    "title": "Cambiar ventanas en Madrid | ObraLocal",
+    "etiqueta": "Cambiar ventanas",
+    "resumen": "Cambio de ventanas por aluminio con rotura de puente térmico, colocadas y rematadas.",
+    "imagen": "/images/edificio-ladrillo-madrid.webp",
+    "imagenAlt": "Fachada de un edificio de ladrillo de Madrid con sus ventanas",
+    "relacionadas": [
+      "reformas-integrales-madrid",
+      "reforma-piso-completo-madrid",
+      "pintores-madrid",
+      "precios"
+    ]
+  },
+  {
     "grupo": "trabajos",
     "path": "cambiar-banera-por-plato-ducha-madrid",
     "tipo": "trabajo",
@@ -831,6 +936,108 @@ export const FICHAS: FichaPagina[] = [
       "pintores-madrid",
       "precios",
       "calculadora-reforma"
+    ]
+  },
+  {
+    "grupo": "guias",
+    "path": "cuanto-cuesta-reformar-un-bano-en-madrid",
+    "tipo": "guia",
+    "padre": "guias",
+    "title": "Cuánto cuesta reformar un baño en Madrid en 2026",
+    "etiqueta": "Cuánto cuesta reformar un baño en Madrid",
+    "resumen": "Precio de un baño completo, del cambio de bañera por plato y qué lo encarece.",
+    "imagen": "/images/reforma-bano.webp",
+    "imagenAlt": "Baño reformado con plato de ducha y alicatado nuevo",
+    "relacionadas": [
+      "reforma-banos-madrid",
+      "cambiar-banera-por-plato-ducha-madrid",
+      "alicatados-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "guias",
+    "path": "cuanto-cuesta-reformar-una-cocina-en-madrid",
+    "tipo": "guia",
+    "padre": "guias",
+    "title": "Cuánto cuesta reformar una cocina en Madrid en 2026",
+    "etiqueta": "Cuánto cuesta reformar una cocina en Madrid",
+    "resumen": "Precio de una cocina completa, qué incluye y qué hace subir la cifra.",
+    "imagen": "/images/cocina-nueva.webp",
+    "imagenAlt": "Cocina reformada con muebles y encimera nuevos",
+    "relacionadas": [
+      "reforma-cocinas-madrid",
+      "alicatados-madrid",
+      "reformas-integrales-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "guias",
+    "path": "cuanto-tarda-una-reforma-integral",
+    "tipo": "guia",
+    "padre": "guias",
+    "title": "Cuánto tarda una reforma integral: plazos por fase",
+    "etiqueta": "Cuánto tarda una reforma integral",
+    "resumen": "La duración de cada fase de una reforma integral y qué la alarga o la acorta.",
+    "imagen": "/images/piso-en-obra.webp",
+    "imagenAlt": "Piso en obra durante una reforma integral",
+    "relacionadas": [
+      "reformas-integrales-madrid",
+      "reforma-piso-completo-madrid",
+      "orden-trabajos-reforma-integral",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "guias",
+    "path": "suelo-laminado-vinilico-o-porcelanico",
+    "tipo": "guia",
+    "padre": "guias",
+    "title": "Suelo laminado, vinílico o porcelánico: cuál elegir",
+    "etiqueta": "Suelo laminado, vinílico o porcelánico",
+    "resumen": "Diferencias entre suelo laminado, vinílico, porcelánico y tarima, con precio y plazo.",
+    "imagen": "/images/sala-vacia.webp",
+    "imagenAlt": "Habitación con suelo nuevo instalado",
+    "relacionadas": [
+      "instalacion-suelos-madrid",
+      "reformas-integrales-madrid",
+      "pintores-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "guias",
+    "path": "como-quitar-humedades-de-la-pared",
+    "tipo": "guia",
+    "padre": "guias",
+    "title": "Cómo quitar humedades de la pared paso a paso",
+    "etiqueta": "Cómo quitar humedades de la pared",
+    "resumen": "Cómo saber de dónde viene la humedad, cómo tratarla y qué no hacer.",
+    "imagen": "/images/paredes.webp",
+    "imagenAlt": "Pared preparada para reparar una humedad",
+    "relacionadas": [
+      "tratamiento-humedades-madrid",
+      "alisado-paredes-madrid",
+      "pintores-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "guias",
+    "path": "como-elegir-empresa-de-reformas",
+    "tipo": "guia",
+    "padre": "guias",
+    "title": "Cómo elegir empresa de reformas en Madrid",
+    "etiqueta": "Cómo elegir empresa de reformas",
+    "resumen": "Qué mirar en el presupuesto, en las opiniones y en la forma de trabajar.",
+    "imagen": "/images/planos-mesa.webp",
+    "imagenAlt": "Plano de una reforma sobre la mesa",
+    "relacionadas": [
+      "que-pedir-presupuesto-reforma",
+      "como-trabajamos",
+      "opiniones",
+      "precios"
     ]
   }
 ];

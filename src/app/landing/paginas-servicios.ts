@@ -1,5 +1,6 @@
 import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo } from './pagina-seo';
+import { SERVICIOS_NUEVOS } from './paginas-servicios-nuevos';
 
 /** Páginas de cada servicio del catálogo. */
 export const PAGINAS_SERVICIOS: PaginaSeo[] = [
@@ -937,4 +938,5 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       'albanileria-madrid',
     ],
   },
+  ...SERVICIOS_NUEVOS,
 ];

@@ -83,7 +83,7 @@ export class LandingPage {
       ? []
       : opinionesDe(
           this.pagina.path ? `/${this.pagina.path}/` : '/',
-          this.pagina.tipo === 'servicio' || this.pagina.tipo === 'trabajo',
+          ['servicio', 'trabajo', 'zona', 'guia'].includes(this.pagina.tipo),
         );
   readonly obras = this.pagina.tipo === 'zona' ? proyectosDeZona(this.pagina.path) : [];
   readonly esServicio = this.pagina.tipo === 'servicio' || this.pagina.tipo === 'trabajo';

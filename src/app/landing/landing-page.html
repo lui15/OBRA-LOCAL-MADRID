@@ -94,20 +94,20 @@
 <!-- ================= PRECIOS DEL SERVICIO ================= -->
 
 @defer (hydrate on viewport) {
-@if (servicioCatalogo; as s) {
+@if (servicioCatalogo || filasPrecio.length) {
   <section class="section lp-banda" id="precios">
     <div class="container">
       <div class="section-heading" appReveal>
         <span class="eyebrow eyebrow-oscura">GUÍA DE PRECIOS</span>
-        @if (pagina.preciosSoloReferencia) {
-          <h2>Precios de referencia: {{ s.nombre.toLowerCase() }}</h2>
+        @if (pagina.preciosSoloReferencia && servicioCatalogo) {
+          <h2>Precios de referencia: {{ servicioCatalogo.nombre.toLowerCase() }}</h2>
           <p>Son los rangos del servicio completo, no el precio de este trabajo concreto.</p>
         } @else {
           <h2>¿Cuánto cuesta?</h2>
-          <p>{{ s.nota }}</p>
+          <p>{{ servicioCatalogo?.nota ?? notaPrecios }}</p>
         }
       </div>
-      <app-guia-precios [precios]="filasPrecio.length ? filasPrecio : s.precios" [conCabecera]="false" />
+      <app-guia-precios [precios]="filasPrecio.length ? filasPrecio : servicioCatalogo!.precios" [conCabecera]="false" />
       <p class="lp-ver-todo">
         <a routerLink="/precios">Ver todos los precios de reformas en Madrid →</a>
         <a routerLink="/calculadora-reforma">Calcular mi reforma →</a>
@@ -387,7 +387,7 @@
 <!-- ================= ASÍ TRABAJAMOS (servicios) ================= -->
 
 @defer (hydrate on viewport) {
-@if (pagina.tipo === 'servicio' || pagina.tipo === 'trabajo') {
+@if (['servicio', 'trabajo', 'zona', 'guia'].includes(pagina.tipo)) {
   <app-asi-trabajamos [servicio]="pagina.servicioFormulario" />
 }
 }
