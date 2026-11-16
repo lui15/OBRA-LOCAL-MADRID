@@ -156,7 +156,7 @@ export const FICHAS: FichaPagina[] = [
     "path": "reforma-banos-madrid",
     "tipo": "servicio",
     "padre": "servicios",
-    "title": "Reforma de baños en Madrid con visita sin compromiso",
+    "title": "Reformas de baños en Madrid | Integrales y parciales",
     "etiqueta": "Reforma de baños",
     "resumen": "Azulejos, sanitarios, muebles, grifería e instalaciones, por partes o por completo.",
     "imagen": "/images/reforma-bano.webp",
@@ -166,9 +166,10 @@ export const FICHAS: FichaPagina[] = [
       "que-pedir-presupuesto-reforma",
       "calculadora-reforma",
       "cambiar-banera-por-plato-ducha-madrid",
+      "cuanto-cuesta-reformar-un-bano-en-madrid",
       "reforma-cocinas-madrid",
       "reformas-integrales-madrid",
-      "albanileria-madrid"
+      "alicatados-madrid"
     ]
   },
   {
