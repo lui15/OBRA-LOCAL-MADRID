@@ -134,12 +134,12 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reforma-banos-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reforma de baños en Madrid con visita sin compromiso',
+    title: 'Reformas de baños en Madrid | Integrales y parciales',
     description:
-      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Baño completo o cambio de bañera por ducha.`,
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reforma integral o parcial del cuarto de baño.`,
     etiqueta: 'Reforma de baños',
     resumen: 'Azulejos, sanitarios, muebles, grifería e instalaciones, por partes o por completo.',
-    h1: { antes: 'Reforma de', resaltado: 'baños', despues: 'en Madrid' },
+    h1: { antes: 'Reformas de', resaltado: 'baños', despues: 'en Madrid' },
     puntos: [
       'Baño completo desde 5.000 €',
       'Parcial o completa',
@@ -149,8 +149,25 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     whatsapp: 'Hola, quiero presupuesto para reformar un baño en Madrid',
     kicker: 'REFORMA DE BAÑO',
     intro:
-      'El baño concentra en pocos metros agua, electricidad, ventilación y revestimientos, y cualquier error se nota con el tiempo en forma de humedades. Te ayudamos a decidir hasta dónde merece la pena llegar: desde cambiar un mueble y la grifería hasta demoler y empezar de cero.',
+      'Reformas integrales y parciales del cuarto de baño en Madrid. El baño concentra en pocos metros agua, electricidad, ventilación y revestimientos, y cualquier error se nota con el tiempo en forma de humedades. Te ayudamos a decidir hasta dónde merece la pena llegar: desde cambiar un mueble y la grifería hasta demoler y empezar de cero.',
     secciones: [
+      {
+        id: 'que-incluye',
+        titulo: 'Qué incluye una reforma integral de baño',
+        parrafos: [
+          'En una reforma completa del cuarto de baño nos ocupamos de toda la obra, de principio a fin, con una sola persona de contacto. El presupuesto se detalla por partidas para que sepas qué se hace en cada una:',
+        ],
+        lista: [
+          'Protección de zonas de paso, demolición y retirada de escombros',
+          'Fontanería y desagües, revisados o renovados según su estado',
+          'Puntos de luz, enchufes y extractor',
+          'Impermeabilización de la zona de ducha',
+          'Alicatado de paredes y solado',
+          'Plato de ducha o bañera, inodoro, lavabo y mueble',
+          'Grifería, mampara y accesorios',
+          'Prueba de agua y desagües, y limpieza final',
+        ],
+      },
       {
         titulo: 'Tres niveles de reforma, tres presupuestos distintos',
         parrafos: [
@@ -216,9 +233,14 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         ],
       },
       {
+        id: 'plazos',
         titulo: 'Plazos orientativos',
         parrafos: [
           'Un cambio puntual puede resolverse en poco tiempo, mientras que un baño completo requiere secados y varios oficios que se suceden, por lo que se organiza por fases. Las fechas se acuerdan contigo al planificar, y conviene preverlas bien si es el único baño de la vivienda.',
+        ],
+        lista: [
+          'Baño completo de 4 a 6 m²: 2–3 semanas',
+          'Cambiar la bañera por un plato de ducha: 1–2 días',
         ],
       },
     ],
@@ -227,6 +249,21 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         pregunta: '¿Cuánto cuesta reformar un baño en Madrid?',
         respuesta:
           'Un baño completo de 4 a 6 m² cuesta entre 5.500 y 10.000 € en calidad media, IVA incluido: en básica parte de 5.000 € y en alta puede llegar a 13.000 €. Se hace en 2–3 semanas. Si solo quieres cambiar la bañera por un plato de ducha, son 1.000–2.200 € en 1–2 días.',
+      },
+      {
+        pregunta: '¿Cuánto tarda una reforma de baño?',
+        respuesta:
+          'Un baño completo de 4 a 6 m² suele llevar 2–3 semanas, porque intervienen varios oficios y la impermeabilización y los morteros necesitan su secado. Cambiar la bañera por un plato de ducha se hace en 1–2 días. Las fechas concretas se fijan contigo antes de empezar.',
+      },
+      {
+        pregunta: '¿Puedo usar el baño mientras dura la obra?',
+        respuesta:
+          'En una reforma completa, no: hay días sin agua en esa estancia y el baño queda fuera de servicio hasta la prueba final. Si es el único de la vivienda, dínoslo al pedir presupuesto para organizar las fases y reducir al mínimo los días sin baño.',
+      },
+      {
+        pregunta: '¿Puedo pedir presupuesto por WhatsApp?',
+        respuesta:
+          'Sí. Escríbenos por WhatsApp con las medidas aproximadas, unas fotos del baño actual y lo que quieres cambiar. Con eso te orientamos y, si quieres seguir adelante, concertamos una visita sin compromiso para cerrar el presupuesto.',
       },
       {
         pregunta: '¿Se puede alicatar encima del azulejo antiguo?',
@@ -251,9 +288,10 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       'que-pedir-presupuesto-reforma',
       'calculadora-reforma',
       'cambiar-banera-por-plato-ducha-madrid',
+      'cuanto-cuesta-reformar-un-bano-en-madrid',
       'reforma-cocinas-madrid',
       'reformas-integrales-madrid',
-      'albanileria-madrid',
+      'alicatados-madrid',
     ],
   },
 
