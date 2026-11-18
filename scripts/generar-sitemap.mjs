@@ -19,6 +19,7 @@ async function cargarDatos() {
         contents: `
           export { PAGINAS, PAGINAS_POR_GRUPO, TODAS_LAS_PAGINAS, ULTIMA_REVISION } from './src/app/landing/landing-data.ts';
           export { PROYECTOS_PUBLICADOS } from './src/app/datos/proyectos.ts';
+          export { COMBOS } from './src/app/combinaciones/indice.generado.ts';
           export { SITE_URL } from './src/app/datos/contacto.ts';
         `,
         resolveDir: raiz,
@@ -91,7 +92,7 @@ function revisar(PAGINAS, todas = new Set()) {
 }
 
 try {
-  const { PAGINAS, PAGINAS_POR_GRUPO, TODAS_LAS_PAGINAS, PROYECTOS_PUBLICADOS, ULTIMA_REVISION, SITE_URL } = await cargarDatos();
+  const { PAGINAS, PAGINAS_POR_GRUPO, TODAS_LAS_PAGINAS, PROYECTOS_PUBLICADOS, COMBOS, ULTIMA_REVISION, SITE_URL } = await cargarDatos();
 
   // Fichas ligeras para menús, tarjetas, migas y rutas: se derivan de los datos completos.
   const CAMPOS = ['path', 'tipo', 'padre', 'borrador', 'title', 'etiqueta', 'resumen', 'zona', 'imagen', 'imagenAlt', 'servicioCatalogo', 'preciosSoloReferencia', 'modulo', 'relacionadas'];
@@ -108,6 +109,7 @@ try {
   const rutas = [
     ...PAGINAS.map((p) => (p.path ? `/${p.path}/` : '/')),
     ...(PROYECTOS_PUBLICADOS.length ? ['/proyectos/', ...PROYECTOS_PUBLICADOS.map((p) => `/proyectos/${p.slug}/`)] : []),
+    ...COMBOS.map((c) => `/${c.servicio}/${c.zona}/`),
   ];
   const urls = rutas
     .map((r) => `  <url>\n    <loc>${SITE_URL}${r}</loc>\n    <lastmod>${ULTIMA_REVISION}</lastmod>\n  </url>`)

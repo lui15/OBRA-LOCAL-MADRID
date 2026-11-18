@@ -1,0 +1,104 @@
+<section class="cb-hero" data-ubicacion="hero">
+  <div class="container">
+    <app-migas [migas]="migas" />
+    <span class="eyebrow">{{ servicio.nombre.toUpperCase() }} · {{ zona.nombre.toUpperCase() }}</span>
+    <h1>{{ p.h1 }}</h1>
+    @for (t of p.intro; track $index) {
+      <p class="cb-intro">{{ t }}</p>
+    }
+    <div class="cb-acciones">
+      <button type="button" class="button button-orange" (click)="presupuesto.abrir(servicio.formulario, 'hero_combo')">
+        Pide presupuesto <span aria-hidden="true">↗</span>
+      </button>
+      <a class="button button-outline" href="#precio-{{ p.servicio }}">Cuánto cuesta</a>
+    </div>
+  </div>
+</section>
+
+<section class="section cb-barrio" aria-label="La zona">
+  <div class="container cb-texto">
+    @for (b of p.barrio; track b.titulo) {
+      <h2>{{ b.titulo }}</h2>
+      @for (t of b.parrafos; track $index) {
+        <p>{{ t }}</p>
+      }
+    }
+  </div>
+</section>
+
+<section class="section cb-proceso" aria-labelledby="cb-proceso-titulo">
+  <div class="container cb-texto">
+    <h2 id="cb-proceso-titulo">Cómo lo hacemos en {{ zona.nombre }}, paso a paso</h2>
+    <ol class="cb-pasos">
+      @for (x of p.proceso; track x.titulo; let i = $index) {
+        <li>
+          <span class="cb-num" aria-hidden="true">{{ i + 1 }}</span>
+          <div>
+            <h3>{{ x.titulo }}</h3>
+            <p>{{ x.texto }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section lp-banda" [id]="'precio-' + p.servicio" aria-labelledby="cb-precio-titulo">
+  <div class="container">
+    <div class="cb-texto">
+      <h2 id="cb-precio-titulo">Qué incluye y cuánto cuesta</h2>
+      <ul class="cb-incluye">
+        @for (x of p.incluye; track $index) {
+          <li>{{ x }}</li>
+        }
+      </ul>
+      @for (t of p.precios; track $index) {
+        <p>{{ t }}</p>
+      }
+    </div>
+    <app-guia-precios [precios]="filas" [conCabecera]="false" />
+    <p class="cb-enlace"><a routerLink="/precios/">Ver todos los precios de reformas en Madrid →</a></p>
+  </div>
+</section>
+
+<app-asi-trabajamos [servicio]="servicio.formulario" />
+
+<app-faq-seccion
+  [faqs]="p.faqs"
+  [titulo]="servicio.nombre + ' en ' + zona.nombre + ': preguntas'"
+  texto="Lo que más nos preguntan en esta zona."
+  [servicio]="servicio.formulario"
+/>
+
+<nav class="section cb-enlaces" aria-label="Más páginas relacionadas">
+  <div class="container cb-columnas">
+    @if (cercanas.length) {
+      <div>
+        <h2>{{ servicio.nombre }} cerca de {{ zona.nombre }}</h2>
+        <ul>
+          @for (c of cercanas; track c.url) {
+            <li><a [routerLink]="c.url">{{ servicio.nombre }} en {{ c.nombre }}</a></li>
+          }
+        </ul>
+      </div>
+    }
+    <div>
+      <h2>Otros servicios en {{ zona.nombre }}</h2>
+      <ul>
+        @for (r of relacionados; track r.url) {
+          <li><a [routerLink]="r.url">{{ r.nombre }}</a></li>
+        }
+        @if (zona.pagina) {
+          <li><a [routerLink]="'/' + zona.pagina + '/'">Reformas en {{ zona.nombre }}</a></li>
+        }
+        <li><a [routerLink]="'/' + servicio.pagina + '/'">{{ servicio.nombre }} en Madrid</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<app-cta-presupuesto
+  [servicio]="servicio.formulario"
+  [titulo]="servicio.nombre + ' en ' + zona.nombre"
+  texto="Cuéntanos tu reforma en un minuto. Te atendemos solo nosotros."
+/>

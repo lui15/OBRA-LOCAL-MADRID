@@ -1,0 +1,136 @@
+.cb-hero {
+  padding: calc(var(--hh) + 28px) 0 40px;
+  background: linear-gradient(180deg, #fff7f1, #fff);
+}
+
+.cb-hero h1 {
+  max-width: 820px;
+  margin: 14px 0 16px;
+  color: var(--navy-dark);
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
+  font-size: clamp(30px, 4.4vw, 50px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.1;
+}
+
+.cb-intro {
+  max-width: 760px;
+  margin: 0 0 12px;
+  color: #33475d;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.cb-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.cb-texto {
+  max-width: 820px;
+}
+
+.cb-texto h2 {
+  margin: 34px 0 12px;
+  color: var(--navy-dark);
+  font-family: 'Montserrat', 'Montserrat Fallback', sans-serif;
+  font-size: clamp(23px, 2.6vw, 30px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.cb-texto h2:first-child {
+  margin-top: 0;
+}
+
+.cb-texto p {
+  margin: 0 0 14px;
+  color: #33475d;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.cb-pasos {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cb-pasos li {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+}
+
+.cb-num {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: white;
+  background: #b84800;
+  font-weight: 800;
+}
+
+.cb-pasos h3 {
+  margin: 4px 0 6px;
+  color: var(--navy-dark);
+  font-size: 17px;
+}
+
+.cb-pasos p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.cb-incluye {
+  margin: 0 0 18px;
+  padding-left: 20px;
+  color: #33475d;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cb-enlace a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #b84800;
+  font-weight: 700;
+}
+
+.cb-columnas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 24px;
+}
+
+.cb-enlaces h2 {
+  margin: 0 0 10px;
+  color: var(--navy-dark);
+  font-size: 20px;
+}
+
+.cb-enlaces ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cb-enlaces a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--navy);
+  font-weight: 600;
+}

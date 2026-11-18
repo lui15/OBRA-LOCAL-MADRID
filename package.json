@@ -8,9 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:obra-local-madrid": "node dist/obra-local-madrid/server/server.mjs",
-    "prebuild": "node scripts/generar-sitemap.mjs",
+    "prebuild": "node scripts/generar-combos.mjs && node scripts/generar-sitemap.mjs",
     "seo:comprobar": "node scripts/generar-sitemap.mjs --comprobar",
-    "pendientes": "node scripts/pendientes.mjs"
+    "pendientes": "node scripts/pendientes.mjs",
+    "combos": "node scripts/generar-combos.mjs"
   },
   "prettier": {
     "printWidth": 100,
