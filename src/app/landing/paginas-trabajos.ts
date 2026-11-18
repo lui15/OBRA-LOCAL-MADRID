@@ -1,5 +1,6 @@
 import { NOTA_GOOGLE } from '../datos/contacto';
 import { PaginaSeo } from './pagina-seo';
+import { TRABAJOS_NUEVOS } from './paginas-trabajos-nuevos';
 
 /** Trabajos más pedidos: búsquedas concretas derivadas de los servicios. */
 export const PAGINAS_TRABAJOS: PaginaSeo[] = [
@@ -406,4 +407,5 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
       'reforma-cocinas-madrid',
     ],
   },
+  ...TRABAJOS_NUEVOS,
 ];

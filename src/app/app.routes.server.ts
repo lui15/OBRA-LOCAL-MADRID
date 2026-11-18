@@ -1,4 +1,4 @@
-import { RenderMode, ServerRoute } from '@angular/ssr';
+import { PrerenderFallback, RenderMode, ServerRoute } from '@angular/ssr';
 
 import { PROYECTOS_PUBLICADOS } from './datos/proyectos';
 import { FICHAS } from './landing/fichas';
@@ -28,6 +28,14 @@ export const serverRoutes: ServerRoute[] = [
         : { path: f.path, renderMode: RenderMode.Prerender },
   ),
   ...rutasProyectos,
+  // Servicio × zona: HTML estático de cada combinación escrita (índice generado por scripts/generar-combos.mjs)
+  {
+    path: ':servicio/:zona',
+    renderMode: RenderMode.Prerender,
+    fallback: PrerenderFallback.None,
+    getPrerenderParams: async () =>
+      (await import('./combinaciones/indice.generado')).COMBOS.map((c) => ({ servicio: c.servicio, zona: c.zona })),
+  },
   { path: 'aviso-legal', renderMode: RenderMode.Prerender },
   { path: 'politica-privacidad', renderMode: RenderMode.Prerender },
   { path: 'politica-cookies', renderMode: RenderMode.Prerender },

@@ -1,5 +1,7 @@
 import { Route, Routes } from '@angular/router';
 
+import { RUTA_COMBO } from './combinaciones/rutas-combo';
+
 import { resolverPagina } from './landing/cargar-pagina';
 import { FICHAS } from './landing/fichas';
 
@@ -41,6 +43,8 @@ export const routes: Routes = [
     loadComponent: () => import('./legal/legal-page').then((m) => m.LegalPage),
     data: { tipo: 'cookies' },
   },
+  // Servicio × zona (/:servicio/:zona/): solo las combinaciones que existen.
+  RUTA_COMBO,
   {
     path: '**',
     loadComponent: () => import('./not-found/not-found-page').then((m) => m.NotFoundPage),

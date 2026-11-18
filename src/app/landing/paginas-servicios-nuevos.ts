@@ -109,6 +109,18 @@ export const SERVICIOS_NUEVOS: PaginaSeo[] = [
         respuesta:
           'Sí. Lo normal es hacer la reforma con el local cerrado; lo organizamos contigo en la visita para que el plan de obra encaje con tu fecha de apertura.',
       },
+      {
+        pregunta: '¿Podéis hacer los aseos del local?',
+        respuesta: 'Sí. Los aseos van dentro de la reforma, con su fontanería, alicatado y sanitarios, y se adaptan a lo que pida la actividad.',
+      },
+      {
+        pregunta: '¿Qué necesitáis para daros un presupuesto?',
+        respuesta: 'La dirección del local, la actividad que tendrá y, si los tienes, un plano o unas medidas y fotos. Con eso preparamos la visita, que es sin compromiso.',
+      },
+      {
+        pregunta: '¿Se puede reformar un local por fases?',
+        respuesta: 'Sí, si la actividad lo permite. Por ejemplo, empezar por las instalaciones y los aseos y dejar los acabados para el final. Lo planificamos contigo para que cada fase quede terminada antes de pasar a la siguiente y el local pueda abrir cuanto antes.',
+      },
     ],
     formulario: 'Reforma de locales',
     imagen: '/images/obra-en-curso.webp',
@@ -159,6 +171,13 @@ export const SERVICIOS_NUEVOS: PaginaSeo[] = [
           'Para exterior hace falta un material resistente a las heladas y que no resbale mojado. En la visita te enseñamos opciones según el uso que le vayas a dar, el sol que recibe y el mantenimiento que quieras hacer, y te damos un presupuesto ajustado y detallado con la calidad que elijas.',
         ],
       },
+      {
+        titulo: 'Luz y enchufes en la terraza',
+        parrafos: [
+          'Si vas a usar la terraza por la noche, merece la pena dejar preparados puntos de luz y algún enchufe para exterior, con su protección contra el agua. Una iluminación baja y cálida en el suelo o en la pared da mucho juego y no molesta a los vecinos. Se instala antes de colocar el suelo, para que los cables no queden a la vista.',
+          'Si quieres un toldo o una pérgola, conviene decidirlo también al principio: necesitan anclajes, y si se ven desde la calle hay que contar con la comunidad.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -175,6 +194,14 @@ export const SERVICIOS_NUEVOS: PaginaSeo[] = [
         pregunta: '¿Se puede usar la casa durante la obra?',
         respuesta:
           'Sí. La obra se hace en la terraza; solo hay que proteger el paso por la vivienda para sacar el escombro y entrar el material.',
+      },
+      {
+        pregunta: '¿Cuánto dura la reforma de una terraza?',
+        respuesta: 'Depende de los metros y de si hay que impermeabilizar de nuevo. Te damos el plazo en el presupuesto, después de ver la terraza.',
+      },
+      {
+        pregunta: '¿Qué suelo aguanta mejor la intemperie?',
+        respuesta: 'Uno pensado para exterior: resistente a las heladas, que no absorba agua y que no resbale mojado. Te enseñamos opciones en la visita.',
       },
     ],
     formulario: 'Reforma de terrazas',
@@ -340,6 +367,10 @@ export const SERVICIOS_NUEVOS: PaginaSeo[] = [
         respuesta:
           'Tú. Te orientamos sobre formatos y materiales según la estancia, y el presupuesto indica la calidad de la pieza que entra en el precio.',
       },
+      {
+        pregunta: '¿Cuánto tarda un alicatado?',
+        respuesta: 'Depende de los metros y de si hay que retirar el azulejo antiguo; te lo concretamos en el presupuesto tras la visita.',
+      },
     ],
     formulario: 'Alicatados',
     imagen: '/images/bano-moderno.webp',
@@ -424,6 +455,18 @@ export const SERVICIOS_NUEVOS: PaginaSeo[] = [
         pregunta: '¿Se puede poner encima del suelo viejo?',
         respuesta:
           'Muchas veces sí, sobre todo con suelos flotantes, si el suelo antiguo está firme y nivelado. Hay que comprobar la altura de las puertas y de los encuentros con otras estancias.',
+      },
+      {
+        pregunta: '¿Qué suelo es mejor si tengo mascotas?',
+        respuesta: 'El vinílico y el porcelánico aguantan mejor los arañazos y el agua. El laminado de buena calidad también resiste, pero no le conviene el agua.',
+      },
+      {
+        pregunta: '¿Hay que cambiar el rodapié?',
+        respuesta: 'Normalmente sí: el rodapié nuevo tapa la junta perimetral del suelo y deja el trabajo acabado. Se elige a juego con el suelo o con las puertas.',
+      },
+      {
+        pregunta: '¿Se puede poner suelo nuevo en la cocina sin quitar los muebles?',
+        respuesta: 'A veces sí, rematando contra los zócalos de los muebles. Lo valoramos en la visita según el suelo elegido y la altura disponible.',
       },
     ],
     formulario: 'Instalación de suelos',

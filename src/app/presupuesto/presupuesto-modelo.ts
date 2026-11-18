@@ -59,6 +59,7 @@ const OBRA_DE_SERVICIO: Record<string, IdObra> = {
   Alicatados: 'albanileria',
   'Instalación de suelos': 'suelos',
   'Cambiar ventanas': 'otro',
+  'Rehabilitación de fachadas': 'otro',
 };
 
 export function obraDeServicio(servicio: string): IdObra | '' {
