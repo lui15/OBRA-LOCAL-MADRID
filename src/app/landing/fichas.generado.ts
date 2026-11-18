@@ -437,6 +437,91 @@ export const FICHAS: FichaPagina[] = [
     ]
   },
   {
+    "grupo": "trabajos",
+    "path": "abrir-cocina-al-salon-madrid",
+    "tipo": "trabajo",
+    "padre": "reforma-cocinas-madrid",
+    "title": "Abrir la cocina al salón en Madrid | ObraLocal",
+    "etiqueta": "Abrir la cocina al salón",
+    "resumen": "Cocina abierta o semiabierta: muros, instalaciones, humos y cómo se organiza la obra.",
+    "imagen": "/images/cocina-abierta.webp",
+    "imagenAlt": "Cocina abierta al salón con isla",
+    "relacionadas": [
+      "reforma-cocinas-madrid",
+      "cuanto-cuesta-reformar-una-cocina-en-madrid",
+      "instalacion-suelos-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "trabajos",
+    "path": "cambiar-azulejos-cocina-madrid",
+    "tipo": "trabajo",
+    "padre": "reforma-cocinas-madrid",
+    "title": "Cambiar azulejos de la cocina en Madrid | ObraLocal",
+    "etiqueta": "Cambiar azulejos de la cocina",
+    "resumen": "Renovar el alicatado de la cocina, con o sin cambiar muebles: opciones y cómo se hace.",
+    "imagen": "/images/reforma-cocina-ejemplo.webp",
+    "imagenAlt": "Pared de cocina con alicatado nuevo",
+    "relacionadas": [
+      "reforma-cocinas-madrid",
+      "alicatados-madrid",
+      "abrir-cocina-al-salon-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "trabajos",
+    "path": "reformar-bano-pequeno-madrid",
+    "tipo": "trabajo",
+    "padre": "reforma-banos-madrid",
+    "title": "Reformar un baño pequeño en Madrid | ObraLocal",
+    "etiqueta": "Reformar un baño pequeño",
+    "resumen": "Ideas y obra para ganar espacio en baños pequeños: ducha, sanitarios suspendidos, luz.",
+    "imagen": "/images/bano-moderno.webp",
+    "imagenAlt": "Baño pequeño reformado con ducha y lavabo suspendido",
+    "relacionadas": [
+      "reforma-banos-madrid",
+      "cambiar-banera-por-plato-ducha-madrid",
+      "cuanto-cuesta-reformar-un-bano-en-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "trabajos",
+    "path": "cambiar-azulejos-bano-madrid",
+    "tipo": "trabajo",
+    "padre": "reforma-banos-madrid",
+    "title": "Cambiar azulejos del baño en Madrid | ObraLocal",
+    "etiqueta": "Cambiar azulejos del baño",
+    "resumen": "Renovar el alicatado del baño: cuándo basta con eso y cuándo conviene ir más allá.",
+    "imagen": "/images/reforma-bano-ejemplo.webp",
+    "imagenAlt": "Baño con azulejos nuevos en la zona de ducha",
+    "relacionadas": [
+      "reforma-banos-madrid",
+      "alicatados-madrid",
+      "reformar-bano-pequeno-madrid",
+      "precios"
+    ]
+  },
+  {
+    "grupo": "trabajos",
+    "path": "rehabilitacion-fachadas-madrid",
+    "tipo": "trabajo",
+    "padre": "servicios",
+    "title": "Rehabilitación de fachadas en Madrid | ObraLocal",
+    "etiqueta": "Rehabilitación de fachadas",
+    "resumen": "Reparación, limpieza y pintura de fachadas para comunidades de vecinos.",
+    "imagen": "/images/edificio-clasico-madrid.webp",
+    "imagenAlt": "Fachada de un edificio clásico de viviendas en Madrid",
+    "relacionadas": [
+      "ayudas-reformas-madrid",
+      "licencia-obra-madrid",
+      "tratamiento-humedades-madrid",
+      "servicios"
+    ]
+  },
+  {
     "grupo": "zonas",
     "path": "reformas-chamberi",
     "tipo": "zona",

@@ -250,6 +250,11 @@ export const PRECIOS_PAGINA: Record<string, string[]> = {
   'alicatados-madrid': ['alicatado', 'bano', 'cocina'],
   'instalacion-suelos-madrid': ['suelo-laminado', 'suelo-vinilico', 'suelo-porcelanico', 'tarima'],
   'cambiar-ventanas-madrid': ['ventana'],
+  // Trabajos de cocina y baño
+  'abrir-cocina-al-salon-madrid': ['cocina', 'tabique-pladur'],
+  'cambiar-azulejos-cocina-madrid': ['alicatado', 'cocina'],
+  'reformar-bano-pequeno-madrid': ['bano', 'banera-plato'],
+  'cambiar-azulejos-bano-madrid': ['alicatado', 'bano'],
   // Guías nuevas
   'cuanto-cuesta-reformar-un-bano-en-madrid': ['bano', 'banera-plato', 'alicatado'],
   'cuanto-cuesta-reformar-una-cocina-en-madrid': ['cocina', 'punto-luz', 'alicatado'],

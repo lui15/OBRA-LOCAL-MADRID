@@ -304,6 +304,10 @@ export const GUIAS_NUEVAS: PaginaSeo[] = [
         respuesta:
           'Antes de empezar. La Ley de Propiedad Horizontal obliga a comunicar las obras previamente a quien represente a la comunidad.',
       },
+      {
+        pregunta: '¿El plazo empieza al firmar?',
+        respuesta: 'Empieza cuando arranca la obra. Antes hay que tener el presupuesto aceptado, los materiales elegidos y el trámite resuelto.',
+      },
     ],
     formulario: 'Reformas integrales',
     imagen: '/images/piso-en-obra.webp',
@@ -396,6 +400,10 @@ export const GUIAS_NUEVAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuál es el más rápido de instalar?',
         respuesta: 'El laminado y el vinílico, en 2–4 días. El porcelánico lleva 1–2 semanas.',
+      },
+      {
+        pregunta: '¿Cuál es el más barato?',
+        respuesta: 'El laminado: colocado, cuesta 25–45 €/m². El vinílico va de 30 a 55 €/m², el porcelánico de 45 a 80 €/m² y la tarima de 55 a 95 €/m².',
       },
     ],
     formulario: 'Instalación de suelos',
@@ -575,6 +583,10 @@ export const GUIAS_NUEVAS: PaginaSeo[] = [
         pregunta: '¿Qué hago si durante la obra hace falta un cambio?',
         respuesta:
           'Pide que te lo presupuesten por escrito y apruébalo antes de que se haga. Así el precio final coincide con lo que has aceptado.',
+      },
+      {
+        pregunta: '¿Qué pregunto en la visita?',
+        respuesta: 'Qué incluye el presupuesto, cuánto dura la obra, quién será tu persona de contacto y cómo se aprueban los cambios.',
       },
     ],
     formulario: '',
