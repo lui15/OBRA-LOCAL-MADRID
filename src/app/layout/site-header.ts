@@ -29,7 +29,7 @@ import { ScrollEstado } from './scroll-estado.service';
 export class SiteHeader {
   readonly scroll = inject(ScrollEstado);
   private readonly presupuesto = inject(PresupuestoService);
-  private readonly contexto = inject(ContextoPagina);
+  protected readonly contexto = inject(ContextoPagina);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
   private readonly doc = inject(DOCUMENT);
   private readonly esNavegador = isPlatformBrowser(inject(PLATFORM_ID));

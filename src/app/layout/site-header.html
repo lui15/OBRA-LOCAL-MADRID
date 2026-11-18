@@ -78,9 +78,9 @@
     </nav>
 
     <div class="header-acciones">
-      <a class="header-tel" [href]="telefono">
-        <app-icono nombre="telefono" />
-        {{ telefonoVisible }}
+      <a class="header-wa" [href]="contexto.whatsapp()" target="_blank" rel="noopener" data-ubicacion="cabecera">
+        <app-icono nombre="whatsapp" />
+        WhatsApp
       </a>
       <button type="button" class="button button-ink nav-button" (click)="pedirPresupuesto('cabecera')">
         Pide presupuesto
