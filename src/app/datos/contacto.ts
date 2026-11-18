@@ -11,7 +11,10 @@ export const NEGOCIO = {
   whatsapp: '34624671374',
   zonaServicio: 'Madrid y alrededores',
   /** URLs públicas de redes sociales. */
-  redes: [] as string[],
+  redes: [
+    // Ficha de Google Maps (Google Business Profile).
+    'https://maps.google.com/?cid=15723302441996727686',
+  ] as string[],
   /** Correo que recibe el aviso de cada solicitud. */
   correoSolicitudes: 'tramoreforma@gmail.com',
 };
