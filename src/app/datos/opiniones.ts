@@ -1,6 +1,6 @@
 /*
- * Opiniones de clientes, publicadas completas y sin editar (texto y estrellas tal como las dio cada
- * cliente). Por protección de datos solo se guarda el nombre y la inicial del apellido.
+ * Reseñas de clientes en la ficha de Google, copiadas completas y sin editar (texto y estrellas tal
+ * como las dio cada cliente). Por protección de datos solo se guarda el nombre y la inicial del apellido.
  *
  * No se añade Review ni AggregateRating a los datos estructurados: Google no muestra estrellas de
  * opiniones que una empresa publica sobre sí misma y puede imponer una acción manual.
@@ -26,100 +26,25 @@ export interface Opinion {
 export const OPINIONES: Opinion[] = [
   {
     estrellas: 5,
-    nombre: 'Fernando R.',
+    nombre: 'Estefany C.',
     texto:
-      'Hicieron la reforma integral de mi baño y el resultado es espectacular. Cumplieron los plazos al pie de la letra.',
+      'Muy contenta con la reforma de mi baño. Han hecho un trabajo excelente, cuidando cada detalle y demostrando mucha profesionalidad. El resultado ha quedado precioso, moderno y con unos acabados impecables. Fueron responsables, atentos y cumplieron con lo acordado. Sin duda, una empresa totalmente recomendable. ¡Muchas gracias por el gran trabajo!',
     servicio: 'Reforma de baño',
     tipo: 'Baños',
-    paginas: ['/reforma-banos-madrid/'],
-  },
-  {
-    estrellas: 5,
-    nombre: 'Carmen M.',
-    texto:
-      'Gran equipo de profesionales. Nos asesoraron con la distribución y los materiales para la cocina y quedó increíble.',
-    servicio: 'Reforma de cocina',
-    tipo: 'Cocinas',
-    paginas: ['/reforma-cocinas-madrid/'],
-  },
-  {
-    estrellas: 5,
-    nombre: 'Adrián V.',
-    texto:
-      'Muy serios con las fechas de entrega, algo difícil de encontrar hoy en día en obras. Acabados de máxima calidad.',
-    servicio: 'Reforma integral',
-    tipo: 'Integral',
-    paginas: ['/reformas-integrales-madrid/', '/'],
-  },
-  {
-    estrellas: 5,
-    nombre: 'Sofía N.',
-    texto:
-      'Excelente comunicación durante todo el proceso. Nos mantenían informados día a día del avance del proyecto.',
-    servicio: 'Reforma de piso completo',
-    tipo: 'Integral',
-    paginas: ['/reforma-piso-completo-madrid/', '/como-trabajamos/'],
-  },
-  {
-    estrellas: 5,
-    nombre: 'Manuel T.',
-    texto:
-      'Reformaron el suelo y la pintura de toda la casa. Todo impecable, limpio y dentro del presupuesto acordado.',
-    servicio: 'Suelos y pintura',
-    tipo: 'Pintura',
-    paginas: ['/pintores-madrid/', '/instalacion-suelos-madrid/'],
-  },
-  {
-    estrellas: 4,
-    nombre: 'Isabel B.',
-    texto:
-      'Muy contenta con el resultado final del alicatado. Tuvieron que corregir un pequeño detalle en un remate, pero lo solucionaron rápido.',
-    servicio: 'Alicatado',
-    tipo: 'Albañilería',
-    paginas: ['/alicatados-madrid/', '/albanileria-madrid/'],
-  },
-  {
-    estrellas: 5,
-    nombre: 'Alberto V.',
-    texto:
-      'Impecable trabajo de pladur e iluminación. Dejaron el local listo para abrir a tiempo. Repetiré para la próxima obra.',
-    servicio: 'Pladur e iluminación',
-    tipo: 'Pladur',
-    paginas: ['/pladur-madrid/', '/reforma-locales-comerciales-madrid/'],
-  },
-  {
-    estrellas: 5,
-    nombre: 'Lucía D.',
-    texto:
-      'Grandes profesionales. Solucionaron un problema de humedades que llevaba años dándome dolores de cabeza.',
-    servicio: 'Humedades',
-    tipo: 'Albañilería',
-    paginas: ['/tratamiento-humedades-madrid/', '/albanileria-madrid/'],
-  },
-  {
-    estrellas: 5,
-    nombre: 'Enrique S.',
-    texto:
-      'Presupuesto detallado sin sorpresas al final. Da gusto trabajar con una empresa de reformas tan transparente.',
-    servicio: 'Reforma',
-    paginas: ['/precios/', '/'],
-  },
-  {
-    estrellas: 5,
-    nombre: 'Marina E.',
-    texto:
-      'Calidad, rapidez y buen precio. Transformaron mi terraza por completo. Los recomiendo totalmente en Madrid.',
-    servicio: 'Reforma de terraza',
-    paginas: ['/reforma-terrazas-madrid/', '/'],
+    paginas: ['/', '/reforma-banos-madrid/', '/opiniones/'],
+    fecha: 'noviembre de 2026',
   },
 ];
 
 export const TIPOS_OPINION: TipoOpinion[] = ['Integral', 'Baños', 'Cocinas', 'Pintura', 'Pladur', 'Albañilería'];
 
 export const NOTA_OPINIONES =
-  'Opiniones enviadas por clientes que contrataron la obra. Las publicamos completas, sin editar.';
+  'Reseñas que nuestros clientes han dejado en nuestra ficha de Google, copiadas sin editar.';
 
-/** Resumen calculado desde el archivo: «4,9 de 5 · 10 opiniones de clientes». */
+/** Tipos de obra que tienen al menos una opinión (los filtros vacíos no se muestran). */
+export const TIPOS_CON_OPINIONES: TipoOpinion[] = TIPOS_OPINION.filter((t) => OPINIONES.some((o) => o.tipo === t));
+
+/** Resumen calculado desde el archivo: «5,0 de 5 · 1 opinión en Google». */
 export function resumenOpiniones(lista: Opinion[] = OPINIONES): { media: string; total: number; texto: string } {
   const total = lista.length;
   const media = total ? lista.reduce((n, o) => n + o.estrellas, 0) / total : 0;
@@ -127,11 +52,11 @@ export function resumenOpiniones(lista: Opinion[] = OPINIONES): { media: string;
   return {
     media: mediaTexto,
     total,
-    texto: `${mediaTexto} de 5 · ${total} ${total === 1 ? 'opinión' : 'opiniones'} de clientes`,
+    texto: `${mediaTexto} de 5 · ${total} ${total === 1 ? 'opinión' : 'opiniones'} en Google`,
   };
 }
 
-/** Opiniones de una página. Si no tiene propias y se pide, 2 generales (las de la portada). */
+/** Opiniones de una página. Si no tiene propias y se pide, hasta 2 generales (las de la portada). */
 export function opinionesDe(ruta: string, conGenerales = false): Opinion[] {
   const propias = OPINIONES.filter((o) => o.paginas.includes(ruta));
   if (propias.length || !conGenerales) return propias;

@@ -28,7 +28,10 @@ export const EMPRESA = {
 };
 
 /** Nota media de la ficha de Google. Todas las meta descriptions la leen de aquí. */
-export const NOTA_GOOGLE = '4,8';
+export const NOTA_GOOGLE = '5,0';
+
+/** Ficha de Google Maps: para leer las opiniones y para dejar una nueva. */
+export const PERFIL_GOOGLE = 'https://maps.google.com/?cid=15723302441996727686';
 
 /** Dominio final, sin barra al final. */
 export const SITE_URL = 'https://obralocalmadrid.es';

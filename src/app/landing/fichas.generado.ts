@@ -100,7 +100,7 @@ export const FICHAS: FichaPagina[] = [
     "tipo": "hub",
     "title": "Opiniones de clientes de reformas | ObraLocal Madrid",
     "etiqueta": "Opiniones",
-    "resumen": "Lo que cuentan los clientes que ya reformaron con nosotros, sin editar.",
+    "resumen": "Las reseñas que nuestros clientes han dejado en nuestra ficha de Google, sin editar.",
     "imagen": "/images/piso-reformado.webp",
     "imagenAlt": "Salón de un piso reformado, luminoso y con suelo de madera",
     "modulo": "opiniones",

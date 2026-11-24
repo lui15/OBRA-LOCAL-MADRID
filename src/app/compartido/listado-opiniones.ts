@@ -1,13 +1,14 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 
-import { NOTA_OPINIONES, OPINIONES, TIPOS_OPINION, TipoOpinion, resumenOpiniones } from '../datos/opiniones';
+import { NOTA_OPINIONES, OPINIONES, TIPOS_CON_OPINIONES, TipoOpinion, resumenOpiniones } from '../datos/opiniones';
+import { BotonesGoogle } from './botones-google';
 import { TarjetaOpinion } from './tarjeta-opinion';
 
 /** /opiniones/: todas las opiniones con filtro por tipo de obra. El HTML del servidor las trae todas. */
 @Component({
   selector: 'app-listado-opiniones',
   standalone: true,
-  imports: [TarjetaOpinion],
+  imports: [BotonesGoogle, TarjetaOpinion],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="section lp-banda" id="opiniones" aria-labelledby="listado-titulo">
@@ -15,15 +16,22 @@ import { TarjetaOpinion } from './tarjeta-opinion';
         <h2 id="listado-titulo" class="lo-titulo">Todas las opiniones</h2>
         <p class="lo-resumen"><span aria-hidden="true">★★★★★</span> {{ resumen.texto }}</p>
 
-        <div class="lo-filtro" role="group" aria-label="Filtrar por tipo de obra">
-          @for (t of filtros; track t) {
-            <button type="button" [attr.aria-pressed]="filtro() === t" (click)="filtro.set(t)">
-              {{ t }} <span>({{ cuenta(t) }})</span>
-            </button>
-          }
-        </div>
+        <app-botones-google />
 
-        <p class="lo-visibles" aria-live="polite">{{ visibles().length }} {{ visibles().length === 1 ? 'opinión' : 'opiniones' }}</p>
+        <!-- Solo los tipos con opiniones; si solo hay uno, el filtro no aporta nada y no se muestra. -->
+        @if (filtros.length > 2) {
+          <div class="lo-filtro" role="group" aria-label="Filtrar por tipo de obra">
+            @for (t of filtros; track t) {
+              <button type="button" [attr.aria-pressed]="filtro() === t" (click)="filtro.set(t)">
+                {{ t }} <span>({{ cuenta(t) }})</span>
+              </button>
+            }
+          </div>
+        }
+
+        @if (filtros.length > 2) {
+          <p class="lo-visibles" aria-live="polite">{{ visibles().length }} {{ visibles().length === 1 ? 'opinión' : 'opiniones' }}</p>
+        }
         <ul class="lo-lista">
           @for (o of visibles(); track o.nombre) {
             <li><app-tarjeta-opinion [opinion]="o" /></li>
@@ -42,7 +50,7 @@ import { TarjetaOpinion } from './tarjeta-opinion';
       font-weight: 800;
     }
     .lo-resumen {
-      margin: 0 0 20px;
+      margin: 0;
       color: #4f5f71;
       font-size: 16px;
     }
@@ -52,6 +60,7 @@ import { TarjetaOpinion } from './tarjeta-opinion';
     }
     .lo-filtro {
       display: flex;
+      margin-top: 20px;
       flex-wrap: wrap;
       gap: 8px;
     }
@@ -80,7 +89,7 @@ import { TarjetaOpinion } from './tarjeta-opinion';
       color: white;
     }
     .lo-visibles {
-      margin: 16px 0 12px;
+      margin: 16px 0 0;
       color: #4f5f71;
       font-size: 14px;
     }
@@ -88,7 +97,7 @@ import { TarjetaOpinion } from './tarjeta-opinion';
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
       gap: 16px;
-      margin: 0;
+      margin: 20px 0 0;
       padding: 0;
       list-style: none;
     }
@@ -100,7 +109,7 @@ import { TarjetaOpinion } from './tarjeta-opinion';
   `,
 })
 export class ListadoOpiniones {
-  readonly filtros: ('Todas' | TipoOpinion)[] = ['Todas', ...TIPOS_OPINION];
+  readonly filtros: ('Todas' | TipoOpinion)[] = ['Todas', ...TIPOS_CON_OPINIONES];
   readonly filtro = signal<'Todas' | TipoOpinion>('Todas');
   readonly visibles = computed(() =>
     this.filtro() === 'Todas' ? OPINIONES : OPINIONES.filter((o) => o.tipo === this.filtro()),

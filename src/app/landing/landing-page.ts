@@ -77,14 +77,9 @@ export class LandingPage {
   readonly migas = migasDe(this.pagina);
   readonly relacionadas = relacionadasDe(this.pagina);
   readonly guias = this.pagina.tipo === 'guia' ? [] : guiasSobre(this.pagina.path);
-  /** Opiniones de la página; en las de servicio, si no tiene propias, 2 generales. */
+  /** Opiniones de la página; si no tiene propias, las generales (las de la portada). */
   readonly opiniones =
-    this.pagina.modulo === 'opiniones'
-      ? []
-      : opinionesDe(
-          this.pagina.path ? `/${this.pagina.path}/` : '/',
-          ['servicio', 'trabajo', 'zona', 'guia'].includes(this.pagina.tipo),
-        );
+    this.pagina.modulo === 'opiniones' ? [] : opinionesDe(this.pagina.path ? `/${this.pagina.path}/` : '/', true);
   readonly obras = this.pagina.tipo === 'zona' ? proyectosDeZona(this.pagina.path) : [];
   readonly esServicio = this.pagina.tipo === 'servicio' || this.pagina.tipo === 'trabajo';
   readonly servicioCatalogo = buscarServicio(this.pagina.servicioCatalogo ?? '');

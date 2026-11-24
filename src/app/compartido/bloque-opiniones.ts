@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { NOTA_OPINIONES, Opinion, resumenOpiniones } from '../datos/opiniones';
+import { NOTA_OPINIONES, OPINIONES, Opinion, resumenOpiniones } from '../datos/opiniones';
+import { BotonesGoogle } from './botones-google';
 import { TarjetaOpinion } from './tarjeta-opinion';
 
 /**
@@ -13,11 +14,11 @@ import { TarjetaOpinion } from './tarjeta-opinion';
 @Component({
   selector: 'app-bloque-opiniones',
   standalone: true,
-  imports: [RouterLink, TarjetaOpinion],
+  imports: [RouterLink, BotonesGoogle, TarjetaOpinion],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (opiniones().length) {
-      <section class="section bo" [class.bo-cinta]="carrusel()" aria-labelledby="opiniones-titulo">
+      <section class="section bo" [class.bo-cinta]="cinta()" aria-labelledby="opiniones-titulo">
         <div class="container">
           <div class="bo-cabecera">
             <span class="eyebrow">OPINIONES DE CLIENTES</span>
@@ -28,7 +29,7 @@ import { TarjetaOpinion } from './tarjeta-opinion';
             </p>
           </div>
 
-          @if (carrusel()) {
+          @if (cinta()) {
             <div class="bo-ventana">
               <div class="bo-pista" [style.--duracion]="duracion()">
                 <ul class="bo-fila">
@@ -53,7 +54,8 @@ import { TarjetaOpinion } from './tarjeta-opinion';
           }
 
           <p class="bo-nota">{{ nota }}</p>
-          @if (enlaceTodas()) {
+          <app-botones-google />
+          @if (verTodas()) {
             <a class="bo-todas" routerLink="/opiniones/">Ver todas las opiniones <span aria-hidden="true">→</span></a>
           }
         </div>
@@ -175,5 +177,9 @@ export class BloqueOpiniones {
   readonly nota = NOTA_OPINIONES;
   /** El resumen es siempre el de todas las opiniones, no solo las de la página. */
   readonly resumen = resumenOpiniones();
+  /** Con pocas opiniones la cinta no tiene sentido: se muestran en rejilla. */
+  readonly cinta = computed(() => this.carrusel() && this.opiniones().length >= 3);
+  /** «Ver todas» solo si en /opiniones/ hay más de las que ya se ven aquí. */
+  readonly verTodas = computed(() => this.enlaceTodas() && OPINIONES.length > this.opiniones().length);
   readonly duracion = computed(() => `${this.opiniones().length * this.segundosPorOpinion()}s`);
 }
