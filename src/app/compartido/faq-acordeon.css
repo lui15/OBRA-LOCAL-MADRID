@@ -64,3 +64,19 @@
   animation: riseSmall 0.45s var(--ease-out);
 }
 
+
+.faq-item p.faq-enlace {
+  margin-top: -8px;
+}
+
+.faq-enlace a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.faq-enlace a:hover {
+  color: var(--orange);
+}

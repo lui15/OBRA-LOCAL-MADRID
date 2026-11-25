@@ -65,7 +65,7 @@ export const PAGINAS: PaginaCombo[] = [
       'Suelos, carpintería interior, alisado y pintura.',
     ],
     precios: [
-      'Una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Para un piso de 80 m² en calidad media, desglosado por partidas, la referencia está entre 44.000 y 73.500 €, y el plazo habitual de un piso de 70–80 m² es de 8–12 semanas.',
+      'Una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Para un piso de 80 m² en calidad media, desglosado por partidas, la referencia está entre 44.000 y 73.500 €, y el plazo habitual de un piso de 70–80 m² es de 8–12 semanas.',
       'En Chamberí lo que más suele mover la cifra es el estado de las instalaciones y la logística de la finca. Por eso damos el precio después de ver el piso.',
     ],
     faqs: [

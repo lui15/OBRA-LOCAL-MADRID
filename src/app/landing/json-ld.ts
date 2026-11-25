@@ -1,5 +1,5 @@
 import { SITE_URL } from '../datos/contacto';
-import { ULTIMA_REVISION } from '../datos/revision';
+import { ULTIMA_REVISION, fechaDe } from '../datos/revision';
 import { extremosFilas, preciosDePagina } from '../datos/precios';
 import {
   ID_NEGOCIO,
@@ -25,7 +25,7 @@ function textoH1(p: PaginaSeo): string {
 /** Datos estructurados de una página. Las FAQ son exactamente las que se muestran en ella. */
 export function crearJsonLd(p: PaginaSeo, faqs: readonly Faq[] = faqsDe(p)): object {
   const url = SITE_URL + urlDePagina(p);
-  const nodos: object[] = [nodoNegocio(), nodoWeb(), nodoPagina(url, p.title)];
+  const nodos: object[] = [nodoNegocio(), nodoWeb(), nodoPagina(url, p.title, fechaDe(urlDePagina(p)))];
 
   if (p.tipo !== 'inicio') nodos.push(nodoMigas(migasDe(p)));
 
@@ -78,7 +78,7 @@ export function crearJsonLd(p: PaginaSeo, faqs: readonly Faq[] = faqsDe(p)): obj
       image: SITE_URL + p.imagen,
       inLanguage: 'es-ES',
       datePublished: p.publicado ?? ULTIMA_REVISION,
-      dateModified: ULTIMA_REVISION,
+      dateModified: fechaDe(urlDePagina(p)),
       // Mientras el nombre del responsable esté pendiente, firma la empresa.
       author: { '@id': ID_NEGOCIO },
       publisher: { '@id': ID_NEGOCIO },

@@ -100,7 +100,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en Chamberí?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En fincas antiguas influyen mucho la altura de los techos, el estado de las instalaciones y el acceso.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En fincas antiguas influyen mucho la altura de los techos, el estado de las instalaciones y el acceso.',
       },
     ],
     servicio: {
@@ -210,7 +210,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en el barrio de Salamanca?',
         respuesta:
-          'Como referencia, en un piso de más de 90 m² una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Con calidades muy altas o instalaciones nuevas, el importe se sitúa en la parte alta. El importe final se fija al ver la vivienda.',
+          'Como referencia, en un piso de más de 90 m² una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Con calidades muy altas o instalaciones nuevas, el importe se sitúa en la parte alta. El importe final se fija al ver la vivienda.',
       },
     ],
     servicio: {
@@ -317,7 +317,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso en Retiro?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido, y un baño completo cuesta 5.500–10.000 € en calidad media. El importe final depende del edificio, de las instalaciones y de las calidades.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido, y un baño completo cuesta 5.500–10.000 € en calidad media. El importe final depende del edificio, de las instalaciones y de las calidades.',
       },
       {
         pregunta: '¿Necesito licencia para pintar o cambiar el suelo?',
@@ -423,7 +423,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 60 m² en Carabanchel?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 50 m² en calidad media, 32.500–42.500 €. El importe depende de las instalaciones, de la distribución y de las calidades.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 50 m² en calidad media, 32.500–42.500 €. El importe depende de las instalaciones, de la distribución y de las calidades.',
       },
       {
         pregunta: 'Si no tengo ascensor, ¿es más caro?',
@@ -545,7 +545,7 @@ export const PAGINAS_ZONAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en Alcobendas?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. La obra exterior de un chalet se presupuesta aparte, porque no entra en estos precios.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. La obra exterior de un chalet se presupuesta aparte, porque no entra en estos precios.',
       },
     ],
     servicio: {

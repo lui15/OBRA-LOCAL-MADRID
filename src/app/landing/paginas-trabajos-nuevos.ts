@@ -235,7 +235,7 @@ export const TRABAJOS_NUEVOS: PaginaSeo[] = [
       },
     ],
     faqs: [
-      { pregunta: '¿Cuánto cuesta reformar un baño pequeño?', respuesta: 'Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, IVA incluido; en básica parte de 5.000 €. Solo cambiar la bañera por un plato de ducha cuesta 1.000–2.200 €.' },
+      { pregunta: '¿Cuánto cuesta reformar un baño pequeño?', respuesta: 'Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, IVA incluido; en básica parte de 5.000 €. Solo cambiar la bañera por un plato de ducha cuesta 1.000–2.200 €.', enlace: { texto: 'Reforma de baños en Madrid', ruta: '/reforma-banos-madrid/' } },
       { pregunta: '¿Ducha o bañera en un baño pequeño?', respuesta: 'En la mayoría de los casos, ducha: ocupa menos, es más cómoda de usar y deja sitio para almacenaje.' },
       { pregunta: '¿Los sanitarios suspendidos aguantan?', respuesta: 'Sí. Se fijan a un bastidor anclado a la pared o al suelo, pensado para soportar el uso diario.' },
       { pregunta: '¿Cuánto tarda?', respuesta: 'Un baño completo, 2–3 semanas. Cambiar la bañera por un plato, 1–2 días.' },
@@ -315,7 +315,7 @@ export const TRABAJOS_NUEVOS: PaginaSeo[] = [
       },
     ],
     faqs: [
-      { pregunta: '¿Cuánto cuesta cambiar los azulejos del baño?', respuesta: 'El alicatado cuesta 35–60 €/m², IVA incluido. Si se convierte en una reforma completa, un baño de 4 a 6 m² cuesta 5.500–10.000 € en calidad media.' },
+      { pregunta: '¿Cuánto cuesta cambiar los azulejos del baño?', respuesta: 'El alicatado cuesta 35–60 €/m², IVA incluido. Si se convierte en una reforma completa, un baño de 4 a 6 m² cuesta 5.500–10.000 € en calidad media.', enlace: { texto: 'Reforma de baño completa en Madrid', ruta: '/reforma-banos-madrid/' } },
       { pregunta: '¿Se puede alicatar encima del azulejo viejo?', respuesta: 'Sí, si está firme y plano. Si suena hueco o hay que cambiar tuberías, se retira.' },
       { pregunta: '¿Hay que quitar los sanitarios?', respuesta: 'Normalmente se desmontan para alicatar bien detrás y se vuelven a montar al terminar.' },
       { pregunta: '¿Cuánto tiempo estaré sin baño?', respuesta: 'Depende de los metros y de si se retira el azulejo antiguo; suelen ser pocos días. Te lo concretamos en el presupuesto.' },

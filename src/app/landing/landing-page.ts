@@ -27,6 +27,7 @@ import {
   formatearPrecio,
 } from '../datos/catalogo-servicios';
 import { enlaceWhatsApp } from '../datos/contacto';
+import { fechaDe } from '../datos/revision';
 import { altoDe, anchoDe, srcsetDe, tarjetaDe } from '../datos/imagenes';
 import { ContextoPagina } from '../layout/contexto-pagina.service';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
@@ -42,6 +43,23 @@ import {
 } from './fichas';
 import { crearJsonLd } from './json-ld';
 import { PaginaSeo } from './pagina-seo';
+import { COMBOS } from '../combinaciones/indice.generado';
+import { SERVICIOS_COMBO } from '../combinaciones/servicios';
+import { ZONAS_COMBO } from '../combinaciones/zonas';
+
+/**
+ * Páginas servicio × zona que enlaza cada página: la del servicio enlaza sus barrios, la de zona
+ * sus servicios y el índice de zonas todas. Así ninguna combinación se queda sin enlaces.
+ */
+function combosDe(p: PaginaSeo): { texto: string; url: string }[] {
+  return COMBOS.map((c) => ({
+    c,
+    s: SERVICIOS_COMBO.find((x) => x.slug === c.servicio)!,
+    z: ZONAS_COMBO.find((x) => x.slug === c.zona)!,
+  }))
+    .filter(({ s, z }) => p.modulo === 'zonas' || s.pagina === p.path || z.pagina === p.path)
+    .map(({ c, s, z }) => ({ texto: `${s.nombre} en ${z.nombre}`, url: `/${c.servicio}/${c.zona}/` }));
+}
 
 /** Plantilla de todas las URL de contenido. Cada una se define con un objeto de datos. */
 @Component({
@@ -86,6 +104,16 @@ export class LandingPage {
   readonly whatsapp = enlaceWhatsApp(this.pagina.whatsapp);
 
   readonly desde = precioCabecera(this.pagina);
+  readonly fecha = fechaDe(urlDePagina(this.pagina));
+
+  /** Páginas por servicio y barrio relacionadas con esta. */
+  readonly combos = combosDe(this.pagina);
+  readonly tituloCombos =
+    this.pagina.tipo === 'zona'
+      ? `Servicios en ${this.pagina.zona}, en detalle`
+      : this.pagina.modulo === 'zonas'
+        ? 'Servicios por barrio, en detalle'
+        : `${this.pagina.etiqueta} por barrios`;
 
   /** Índices: todo lo que cuelga de ellos. */
   readonly paginasServicio = FICHAS_PUBLICADAS.filter((p) => p.tipo === 'servicio');

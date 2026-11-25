@@ -32,7 +32,7 @@ export const PRECIOS_M2: PrecioM2[] = [
   {
     id: 'integral',
     trabajo: 'Reforma integral de piso',
-    calidades: { basica: { minimo: 500, maximo: 650 }, media: { minimo: 650, maximo: 850 }, alta: { minimo: 850, maximo: 1200 } },
+    calidades: { basica: { minimo: 450, maximo: 650 }, media: { minimo: 650, maximo: 850 }, alta: { minimo: 850, maximo: 1200 } },
   },
   {
     id: 'terraza',
@@ -273,7 +273,7 @@ export function preciosDePagina(path: string, servicioCatalogo?: string): FilaPr
   return ids ? filasDe(ids) : [];
 }
 
-/** Rango con su unidad: «5.500–10.000 €», «500–650 €/m²». */
+/** Rango con su unidad: «5.500–10.000 €», «450–650 €/m²». */
 export function textoFila(f: FilaPrecio): string {
   return rango(f, f.unidad ?? '€');
 }
@@ -292,12 +292,12 @@ export function extremosFilas(filas: FilaPrecio[]): Rango | null {
   return { minimo: Math.min(...mismas.map((r) => r.minimo)), maximo: Math.max(...mismas.map((r) => r.maximo)) };
 }
 
-/** Precio de partida sin la palabra «Desde»: «5.000 €», «500 €/m²». */
+/** Precio de partida sin la palabra «Desde»: «5.000 €», «450 €/m²». */
 export function valorDesde(f: FilaPrecio): string {
   return `${cifra(extremosFila(f).minimo)} ${f.unidad ?? '€'}`;
 }
 
-/** «Desde 5.000 €», «Desde 500 €/m²». */
+/** «Desde 5.000 €», «Desde 450 €/m²». */
 export function desdeFila(f: FilaPrecio): string {
   return `Desde ${valorDesde(f)}`;
 }

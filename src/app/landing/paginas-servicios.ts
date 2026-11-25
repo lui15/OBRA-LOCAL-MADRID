@@ -9,14 +9,14 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reformas-integrales-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reformas integrales en Madrid | Visita sin compromiso',
+    title: 'Reforma integral en Madrid: precio desde 450 €/m²',
     description:
       `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformas integrales de pisos en Madrid.`,
     etiqueta: 'Reformas integrales',
     resumen: 'Renovación completa o parcial de viviendas y locales, ordenada por partidas.',
     h1: { antes: 'Reformas', resaltado: 'integrales', despues: 'en Madrid' },
     puntos: [
-      'Desde 500 €/m²',
+      'Desde 450 €/m²',
       'Presupuesto por partidas',
       'Viviendas y locales',
       'Distribución e instalaciones',
@@ -93,7 +93,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 80 m² en Madrid?',
         respuesta:
-          'Una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En un piso de 80 m² en calidad media, desglosado por partidas, queda entre 44.000 y 73.500 €. Un piso de 70–80 m² se reforma en 8–12 semanas. Te damos el presupuesto cerrado por escrito cuando vemos tu caso.',
+          'Una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En un piso de 80 m² en calidad media, desglosado por partidas, queda entre 44.000 y 73.500 €. Un piso de 70–80 m² se reforma en 8–12 semanas. Te damos el presupuesto cerrado por escrito cuando vemos tu caso.',
       },
       {
         pregunta: '¿Puedo vivir en casa durante una reforma integral?',
@@ -109,6 +109,30 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         pregunta: '¿Hacéis también reformas integrales de locales?',
         respuesta:
           'Sí, el servicio cubre viviendas y locales. En un local, el uso previsto puede añadir requisitos de accesibilidad, ventilación o protección contra incendios, así que cuéntanos a qué se va a dedicar.',
+      },
+      {
+        pregunta: '¿Qué incluye el precio por metro cuadrado?',
+        respuesta:
+          'Se calcula sobre la superficie útil e incluye mano de obra y materiales con IVA: demolición y desescombro, albañilería y tabiques, electricidad y fontanería, cocina y baño, suelos, carpintería interior y pintura. Aparte quedan el ICIO y las tasas cuando hacen falta, los electrodomésticos y los muebles. El presupuesto por escrito detalla qué entra en cada partida.',
+        enlace: { texto: 'Ver un piso de 80 m² desglosado por partidas', ruta: '/precios/' },
+      },
+      {
+        pregunta: '¿Necesito licencia para una reforma integral?',
+        respuesta:
+          'Depende de la obra. En Madrid capital, la Ordenanza 6/2022 establece la declaración responsable como vía general y reserva la licencia para los casos de su anexo, como obras que afectan a la estructura, a la fachada o a edificios protegidos. Las obras que necesitan uno de los dos trámites pagan además el ICIO, el 3,75 % del presupuesto de ejecución material. En otros municipios lo marca su ayuntamiento.',
+        enlace: { texto: 'Licencia de obra en Madrid: qué trámite necesita tu reforma', ruta: '/licencia-obra-madrid/' },
+      },
+      {
+        pregunta: '¿Hay ayudas para una reforma integral?',
+        respuesta:
+          'Las que hemos comprobado se dirigen a edificios residenciales (Plan Rehabilita del Ayuntamiento de Madrid) o a obras que mejoran la eficiencia energética (deducciones del IRPF). Una reforma que solo cambia acabados no suele encajar; si renuevas ventanas o aislamiento, puede merecer la pena revisarlas. Comprueba siempre la convocatoria vigente.',
+        enlace: { texto: 'Ayudas para reformas en Madrid y sus fuentes oficiales', ruta: '/ayudas-reformas-madrid/' },
+      },
+      {
+        pregunta: '¿Cuánto tarda una reforma integral?',
+        respuesta:
+          'Un piso de 70–80 m² se reforma en 8–12 semanas: demolición, instalaciones, albañilería, alicatados y suelos, carpintería, pintura y remates, por ese orden. Lo que más alarga la obra son los cambios de decisión a mitad de camino y los materiales que tardan en llegar.',
+        enlace: { texto: 'Cuánto tarda una reforma integral, fase a fase', ruta: '/cuanto-tarda-una-reforma-integral/' },
       },
     ],
     servicio: {
@@ -134,7 +158,7 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
     path: 'reforma-banos-madrid',
     tipo: 'servicio',
     padre: 'servicios',
-    title: 'Reforma de baños en Madrid con visita sin compromiso',
+    title: 'Reforma de baños en Madrid: precio desde 5.000 €',
     description:
       `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Baño completo o cambio de bañera por ducha.`,
     etiqueta: 'Reforma de baños',
@@ -237,6 +261,30 @@ export const PAGINAS_SERVICIOS: PaginaSeo[] = [
         pregunta: '¿Necesito permiso para reformar el baño?',
         respuesta:
           'En Madrid capital, los acabados interiores de una vivienda no protegida no suelen necesitar título urbanístico, pero cambiar instalaciones o distribución puede requerir declaración responsable. Comunícalo también a tu comunidad antes de empezar.',
+      },
+      {
+        pregunta: '¿Se puede ganar espacio en un baño pequeño?',
+        respuesta:
+          'Sí. Lo que más se nota es cambiar la bañera por una ducha, poner sanitarios suspendidos y una puerta corredera, y elegir colores claros con pocas juntas. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media; en básica parte de 5.000 €.',
+        enlace: { texto: 'Reformar un baño pequeño en Madrid', ruta: '/reformar-bano-pequeno-madrid/' },
+      },
+      {
+        pregunta: '¿Puedo cambiar solo la bañera por un plato de ducha?',
+        respuesta:
+          'Sí, si el resto del baño está bien. Cuesta 1.000–2.200 € y se hace en 1–2 días. Lo que más influye es cómo está el desagüe y lo que aparece al retirar la bañera, por eso lo valoramos al ver el baño.',
+        enlace: { texto: 'Cambiar bañera por plato de ducha en Madrid', ruta: '/cambiar-banera-por-plato-ducha-madrid/' },
+      },
+      {
+        pregunta: '¿Y si solo quiero cambiar los azulejos?',
+        respuesta:
+          'También se puede. El alicatado cuesta 35–60 €/m², IVA incluido. Los sanitarios se desmontan para alicatar bien detrás y se vuelven a montar. Si las tuberías son antiguas, conviene aprovechar para cambiarlas, y entonces se acerca más a un baño completo.',
+        enlace: { texto: 'Cambiar azulejos del baño en Madrid', ruta: '/cambiar-azulejos-bano-madrid/' },
+      },
+      {
+        pregunta: '¿Qué hace subir el precio de un baño?',
+        respuesta:
+          'Sobre todo la calidad de los materiales, que marca la diferencia entre los 5.000 € de partida en básica y los 13.000 € en alta. También influyen cambiar tuberías antiguas, alicatar hasta el techo o solo la ducha, mover sanitarios de sitio y elegir mampara o mueble a medida.',
+        enlace: { texto: 'Cuánto cuesta reformar un baño en Madrid', ruta: '/cuanto-cuesta-reformar-un-bano-en-madrid/' },
       },
     ],
     servicio: {

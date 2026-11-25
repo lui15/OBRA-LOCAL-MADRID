@@ -8,6 +8,7 @@ import { GuiaPrecios } from '../compartido/guia-precios';
 import { Migas } from '../compartido/migas';
 import { MENSAJE_GENERAL, SITE_URL } from '../datos/contacto';
 import { extremosFilas, filasDe } from '../datos/precios';
+import { fechaDe } from '../datos/revision';
 import { Miga, nodoMigas, nodoNegocio, nodoPagina, nodoWeb, ID_NEGOCIO } from '../landing/fichas';
 import { ContextoPagina } from '../layout/contexto-pagina.service';
 import { PresupuestoService } from '../presupuesto/presupuesto.service';
@@ -69,7 +70,7 @@ export class ComboPage {
         '@graph': [
           nodoNegocio(),
           nodoWeb(),
-          nodoPagina(url, this.p.title),
+          nodoPagina(url, this.p.title, fechaDe(this.url)),
           nodoMigas(this.migas),
           {
             '@type': 'Service',

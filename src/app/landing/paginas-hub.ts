@@ -61,7 +61,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma en Madrid?',
         respuesta:
-          'Depende del alcance. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, una cocina completa 8.000–18.000 € y una reforma integral 500–1.200 €/m² según la calidad, IVA incluido. Te damos el presupuesto cerrado por escrito cuando vemos tu caso.',
+          'Depende del alcance. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, una cocina completa 8.000–18.000 € y una reforma integral 450–1.200 €/m² según la calidad, IVA incluido. Te damos el presupuesto cerrado por escrito cuando vemos tu caso.',
       },
       {
         pregunta: '¿Cómo pido presupuesto?',
@@ -204,11 +204,11 @@ export const PAGINAS_HUB: PaginaSeo[] = [
     etiqueta: 'Precios',
     resumen: 'Precios por m² y por trabajo, un piso de 80 m² por partidas, plazos y ejemplos.',
     h1: { antes: '¿Cuánto cuesta una', resaltado: 'reforma en Madrid', despues: 'en 2026?' },
-    puntos: ['Baño: 5.500–10.000 €', 'Cocina: 8.000–18.000 €', 'Piso: 500–1.200 €/m²', 'IVA incluido'],
+    puntos: ['Baño: 5.500–10.000 €', 'Cocina: 8.000–18.000 €', 'Piso: 450–1.200 €/m²', 'IVA incluido'],
     whatsapp: 'Hola, quiero que me orientéis sobre el precio de una reforma',
     kicker: 'PRECIOS 2026',
     intro:
-      'Un baño, entre 5.500 y 10.000 €. Una cocina, entre 8.000 y 18.000 €. Un piso completo, entre 500 y 1.200 €/m² según calidad. Debajo tienes el precio por metro cuadrado de cada calidad, el precio y el plazo de cada trabajo, una reforma de 80 m² desglosada por partidas, cuánto dura cada fase y tres presupuestos de ejemplo hechos paso a paso.',
+      'Un baño, entre 5.500 y 10.000 €. Una cocina, entre 8.000 y 18.000 €. Un piso completo, entre 450 y 1.200 €/m² según calidad. Debajo tienes el precio por metro cuadrado de cada calidad, el precio y el plazo de cada trabajo, una reforma de 80 m² desglosada por partidas, cuánto dura cada fase y tres presupuestos de ejemplo hechos paso a paso.',
     secciones: [
       {
         id: 'que-sube',
@@ -235,7 +235,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
           {
             titulo: 'La calidad de los materiales',
             texto:
-              'Es la diferencia más grande. Una reforma integral en calidad básica cuesta 500–650 €/m²; en calidad alta, 850–1.200 €/m². En un piso de 80 m², eso va de 40.000–52.000 € a 68.000–96.000 €.',
+              'Es la diferencia más grande. Una reforma integral en calidad básica cuesta 450–650 €/m²; en calidad alta, 850–1.200 €/m². En un piso de 80 m², eso va de 36.000–52.000 € a 68.000–96.000 €.',
           },
           {
             titulo: 'La planta y el acceso',
@@ -310,7 +310,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta la reforma integral de un piso?',
         respuesta:
-          'Entre 500 y 1.200 €/m² según la calidad: 500–650 € en básica, 650–850 € en media y 850–1.200 € en alta. Desglosada por partidas, la reforma de un piso de 80 m² en calidad media queda entre 44.000 y 73.500 €, y dura 8–12 semanas.',
+          'Entre 450 y 1.200 €/m² según la calidad: 450–650 € en básica, 650–850 € en media y 850–1.200 € en alta. Desglosada por partidas, la reforma de un piso de 80 m² en calidad media queda entre 44.000 y 73.500 €, y dura 8–12 semanas.',
       },
       {
         pregunta: '¿Cuánto cuesta pintar un piso?',
@@ -736,7 +736,7 @@ export const PAGINAS_HUB: PaginaSeo[] = [
           {
             pregunta: '¿Cuánto cuesta una reforma en Madrid?',
             respuesta:
-              'Depende del alcance. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, una cocina completa 8.000–18.000 € y una reforma integral 500–1.200 €/m² según la calidad, IVA incluido. Tienes todos los precios en nuestra página de precios.',
+              'Depende del alcance. Un baño completo de 4 a 6 m² cuesta 5.500–10.000 € en calidad media, una cocina completa 8.000–18.000 € y una reforma integral 450–1.200 €/m² según la calidad, IVA incluido. Tienes todos los precios en nuestra página de precios.',
           },
           {
             pregunta: '¿Por qué no dais un precio por metro cuadrado?',

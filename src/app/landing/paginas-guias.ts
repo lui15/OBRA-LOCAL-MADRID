@@ -113,13 +113,13 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
     tipo: 'guia',
     padre: 'guias',
     publicado: PUBLICADO,
-    title: 'Reformar un piso de 70 m² en Madrid: desde 35.000 €',
+    title: 'Reformar un piso de 70 m² en Madrid: desde 31.500 €',
     description:
-      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformar un piso de 70 m²: desde 35.000 €.`,
+      `⭐ ${NOTA_GOOGLE} en Google · ✓ Visita sin compromiso · ✓ Presupuesto detallado · ✓ Una sola persona de contacto. Reformar un piso de 70 m²: desde 31.500 €.`,
     etiqueta: 'Cuánto cuesta reformar un piso de 70 m²',
     resumen: 'Rangos con y sin redistribución, y qué hace subir o bajar el precio.',
     h1: { antes: 'Cuánto cuesta reformar un piso de', resaltado: '70 m²', despues: 'en Madrid' },
-    puntos: ['Integral: 35.000–84.000 €', 'Escenarios sin obra integral', 'Plazo: 8–12 semanas', 'Qué lo encarece'],
+    puntos: ['Integral: 31.500–84.000 €', 'Escenarios sin obra integral', 'Plazo: 8–12 semanas', 'Qué lo encarece'],
     whatsapp: 'Hola, quiero pedir presupuesto para reformar un piso de 70 m²',
     kicker: 'GUÍA DE PRECIOS',
     intro:
@@ -128,7 +128,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
       {
         titulo: 'La respuesta corta',
         parrafos: [
-          'Una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En un piso de 70 m² eso supone 35.000–45.500 € en básica, 45.500–59.500 € en media y 59.500–84.000 € en alta. Un piso de 70–80 m² se reforma en 8–12 semanas.',
+          'Una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. En un piso de 70 m² eso supone 31.500–45.500 € en básica, 45.500–59.500 € en media y 59.500–84.000 € en alta. Un piso de 70–80 m² se reforma en 8–12 semanas.',
           'Si no tocas la distribución y solo renuevas algunas estancias, el importe puede ser bastante menor. Más abajo tienes varios escenarios calculados con los mismos precios.',
           'Son cifras orientativas: el presupuesto real debe confirmar cantidades, materiales, mano de obra, impuestos y exclusiones.',
         ],
@@ -157,7 +157,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
           {
             titulo: 'Reforma integral con redistribución',
             texto:
-              'Cuando se mueven tabiques y se renuevan todas las instalaciones, se calcula como reforma integral: en 70 m², de 35.000 € en calidad básica a 84.000 € en alta. Incluye cocina, baño y acabados dentro de ese importe.',
+              'Cuando se mueven tabiques y se renuevan todas las instalaciones, se calcula como reforma integral: en 70 m², de 31.500 € en calidad básica a 84.000 € en alta. Incluye cocina, baño y acabados dentro de ese importe.',
           },
         ],
       },
@@ -243,7 +243,8 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 70 m² en Madrid?',
         respuesta:
-          'Con redistribución e instalaciones nuevas, entre 35.000 € en calidad básica y 84.000 € en alta (45.500–59.500 € en media). Sin cambiar la distribución, renovando cocina, baño y pintura, entre 14.700 y 30.300 €. IVA incluido.',
+          'Con redistribución e instalaciones nuevas, entre 31.500 € en calidad básica y 84.000 € en alta (45.500–59.500 € en media). Sin cambiar la distribución, renovando cocina, baño y pintura, entre 14.700 y 30.300 €. IVA incluido.',
+        enlace: { texto: 'Reforma integral en Madrid: precios por calidad y qué incluye', ruta: '/reformas-integrales-madrid/' },
       },
       {
         pregunta: '¿El precio incluye IVA?',
@@ -392,6 +393,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
         pregunta: '¿Qué se hace primero en una reforma integral?',
         respuesta:
           'La protección y la demolición, después las instalaciones y la albañilería, luego alicatados y solados, y al final carpintería, suelos delicados, pintura y remates.',
+        enlace: { texto: 'Así hacemos una reforma integral en Madrid', ruta: '/reformas-integrales-madrid/' },
       },
       {
         pregunta: '¿Por qué la pintura va al final?',
@@ -557,6 +559,7 @@ export const PAGINAS_GUIAS: PaginaSeo[] = [
         pregunta: '¿Cuántos presupuestos conviene pedir?',
         respuesta:
           'Más que el número, importa que sean comparables. Dos o tres presupuestos con el mismo alcance y desglosados por partidas son más útiles que muchos presupuestos globales.',
+        enlace: { texto: 'Reforma integral en Madrid con presupuesto por partidas', ruta: '/reformas-integrales-madrid/' },
       },
       {
         pregunta: '¿Es normal pagar por adelantado?',

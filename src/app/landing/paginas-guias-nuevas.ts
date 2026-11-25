@@ -119,6 +119,7 @@ export const GUIAS_NUEVAS: PaginaSeo[] = [
         pregunta: '¿El precio incluye los sanitarios y la grifería?',
         respuesta:
           'Los precios de esta guía son de mano de obra y materiales de gama media, IVA incluido. El presupuesto detalla qué piezas entran y su calidad.',
+        enlace: { texto: 'Reforma de baños en Madrid: qué incluye y cómo trabajamos', ruta: '/reforma-banos-madrid/' },
       },
     ],
     formulario: 'Reforma de baño',

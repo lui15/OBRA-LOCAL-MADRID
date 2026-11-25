@@ -1,0 +1,10 @@
+# Hostinger (LiteSpeed / Apache). Solo la redirección de www a sin www.
+# El resto ya lo hace el hosting y no se toca aquí: http -> https (en su CDN), la barra final
+# de las carpetas prerenderizadas y la página 404.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www.obralocalmadrid.es -> https://obralocalmadrid.es, con la misma ruta y parámetros (301).
+  RewriteCond %{HTTP_HOST} ^www\.obralocalmadrid\.es$ [NC]
+  RewriteRule ^(.*)$ https://obralocalmadrid.es/$1 [R=301,L]
+</IfModule>

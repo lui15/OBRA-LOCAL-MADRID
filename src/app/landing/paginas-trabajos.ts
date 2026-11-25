@@ -116,6 +116,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
         pregunta: '¿Cuánto cuesta cambiar la bañera por un plato de ducha?',
         respuesta:
           'Depende del desagüe, del azulejo y de la mampara elegida, por lo que no publicamos un precio cerrado. Pide una valoración e indica las medidas en los detalles de tu solicitud.',
+        enlace: { texto: 'Si prefieres renovar todo el baño: reforma de baños en Madrid', ruta: '/reforma-banos-madrid/' },
       },
     ],
     servicio: {
@@ -286,7 +287,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
     resumen: 'Qué revisar al comprar un piso y cómo priorizar el presupuesto.',
     h1: { antes: 'Reforma de', resaltado: 'piso completo', despues: 'en Madrid' },
     puntos: [
-      'Desde 500 €/m²',
+      'Desde 450 €/m²',
       'Si acabas de comprar',
       'Prioridades de obra',
       'Comunidad y logística',
@@ -372,7 +373,7 @@ export const PAGINAS_TRABAJOS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso completo en Madrid?',
         respuesta:
-          'Reformar un piso completo cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Si hay que renovar instalaciones, la eléctrica completa de un piso de 80 m² cuesta 3.500–7.000 € y la fontanería 2.500–5.000 €. Un piso de 70–80 m² se reforma en 8–12 semanas.',
+          'Reformar un piso completo cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Si hay que renovar instalaciones, la eléctrica completa de un piso de 80 m² cuesta 3.500–7.000 € y la fontanería 2.500–5.000 €. Un piso de 70–80 m² se reforma en 8–12 semanas.',
       },
       {
         pregunta: '¿Por dónde empiezo si acabo de comprar un piso?',

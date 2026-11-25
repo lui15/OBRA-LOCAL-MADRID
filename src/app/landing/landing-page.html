@@ -27,7 +27,7 @@
         </a>
       </div>
 
-      <app-revision class="rise" style="--i: 5" />
+      <app-revision class="rise" style="--i: 5" [fecha]="fecha" />
     </div>
 
     <figure class="lp-hero-foto">
@@ -378,6 +378,21 @@
     <ul class="lp-chips lp-chips-izq">
       @for (z of paginasZona; track z.path) {
         <li><a [routerLink]="url(z)">{{ z.zona }}</a></li>
+      }
+    </ul>
+  </nav>
+}
+}
+
+<!-- ================= SERVICIO × BARRIO ================= -->
+
+@defer (hydrate on viewport) {
+@if (combos.length) {
+  <nav class="lp-zonas container" aria-labelledby="combos-titulo">
+    <h2 id="combos-titulo">{{ tituloCombos }}</h2>
+    <ul class="lp-chips lp-chips-izq">
+      @for (c of combos; track c.url) {
+        <li><a [routerLink]="c.url">{{ c.texto }}</a></li>
       }
     </ul>
   </nav>

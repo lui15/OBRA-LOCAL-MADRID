@@ -137,7 +137,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso en Getafe?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido, y un baño completo cuesta 5.500–10.000 € en calidad media. El importe depende del estado del piso y de las calidades.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido, y un baño completo cuesta 5.500–10.000 € en calidad media. El importe depende del estado del piso y de las calidades.',
       },
       {
         pregunta: '¿Necesito licencia para reformar en Getafe?',
@@ -229,7 +229,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma integral en Leganés?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 60 m² en calidad media, 39.000–51.000 €.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 60 m² en calidad media, 39.000–51.000 €.',
       },
     ],
     relacionadas: ['reformas-getafe', 'reformas-alcorcon', 'reforma-piso-completo-madrid', 'calculadora-reforma', 'zonas'],
@@ -416,7 +416,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 80 m² en Móstoles?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. El importe depende del estado y de las calidades.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. El importe depende del estado y de las calidades.',
       },
     ],
     relacionadas: ['reformas-alcorcon', 'reformas-integrales-madrid', 'calculadora-reforma', 'precios', 'zonas'],
@@ -599,7 +599,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un chalet en Las Rozas?',
         respuesta:
-          'Depende mucho de la superficie y de si hay obra exterior. Como referencia, la reforma integral de una vivienda cuesta 500–1.200 €/m² según la calidad; la obra exterior de un chalet se presupuesta aparte.',
+          'Depende mucho de la superficie y de si hay obra exterior. Como referencia, la reforma integral de una vivienda cuesta 450–1.200 €/m² según la calidad; la obra exterior de un chalet se presupuesta aparte.',
       },
     ],
     relacionadas: ['reformas-majadahonda', 'reformas-pozuelo-de-alarcon', 'pladur-madrid', 'reformas-integrales-madrid', 'zonas'],
@@ -698,7 +698,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso grande en Majadahonda?',
         respuesta:
-          'La reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta. Las calidades y los cambios de distribución marcan dónde se sitúa cada caso.',
+          'La reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta. Las calidades y los cambios de distribución marcan dónde se sitúa cada caso.',
       },
     ],
     relacionadas: ['reformas-las-rozas', 'reformas-pozuelo-de-alarcon', 'reforma-cocinas-madrid', 'reforma-piso-completo-madrid', 'zonas'],
@@ -901,7 +901,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso pequeño en Tetuán?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 50 m² en calidad media, 32.500–42.500 €. Depende del estado y de lo que se quiera cambiar.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido: en un piso de 50 m² en calidad media, 32.500–42.500 €. Depende del estado y de lo que se quiera cambiar.',
       },
     ],
     relacionadas: ['reformas-chamartin', 'reformas-chamberi', 'quitar-gotele-madrid', 'calculadora-reforma', 'zonas'],
@@ -1001,7 +1001,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma integral en Arganzuela?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido.',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido.',
       },
     ],
     relacionadas: ['reformas-retiro', 'reformas-latina', 'reformas-integrales-madrid', 'pladur-madrid', 'zonas'],
@@ -1080,7 +1080,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta una reforma integral de un piso grande?',
         respuesta:
-          'La reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta. Las calidades y los cambios de distribución marcan dónde se sitúa cada caso.',
+          'La reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta. Las calidades y los cambios de distribución marcan dónde se sitúa cada caso.',
       },
       {
         pregunta: '¿Qué debe describir un presupuesto de calidad alta?',
@@ -1199,7 +1199,7 @@ export const ZONAS_AMPLIADAS: PaginaSeo[] = [
       {
         pregunta: '¿Cuánto cuesta reformar un piso de 70 m² en Latina?',
         respuesta:
-          'Como referencia, una reforma integral cuesta 500–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Tienes un desglose de qué influye en nuestra guía sobre un piso de 70 m².',
+          'Como referencia, una reforma integral cuesta 450–650 €/m² en calidad básica, 650–850 €/m² en media y 850–1.200 €/m² en alta, IVA incluido. Tienes un desglose de qué influye en nuestra guía sobre un piso de 70 m².',
       },
     ],
     relacionadas: ['reformas-carabanchel', 'reformas-arganzuela', 'reforma-piso-completo-madrid', 'quitar-gotele-madrid', 'zonas'],

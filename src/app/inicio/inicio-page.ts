@@ -18,6 +18,7 @@ import { ProcesoTrabajo } from '../compartido/proceso-trabajo';
 import { TarjetaPagina } from '../compartido/tarjeta-pagina';
 import { TarjetaServicio } from '../compartido/tarjeta-servicio';
 import { enlaceWhatsApp } from '../datos/contacto';
+import { fechaDe } from '../datos/revision';
 import { srcsetDe } from '../datos/imagenes';
 import { ContextoPagina } from '../layout/contexto-pagina.service';
 import { PREGUNTAS_PORTADA, SERVICIOS } from '../datos/catalogo-servicios';
@@ -69,6 +70,7 @@ export class InicioPage {
 
   /** Contenido SEO de la URL actual. */
   readonly pagina: PaginaSeo = inject(ActivatedRoute).snapshot.data['pagina'];
+  readonly fecha = fechaDe('/');
   readonly seccion = this.pagina.secciones[0];
   readonly whatsapp = enlaceWhatsApp(this.pagina.whatsapp);
   /** Enlazado interno: primero los índices, después todo lo demás. */

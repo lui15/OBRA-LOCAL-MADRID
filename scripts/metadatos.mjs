@@ -25,8 +25,11 @@ try {
     const avisos = [];
     if (p.title.length > 60) avisos.push(`title ${p.title.length}`);
     if (p.description.length < 140 || p.description.length > 158) avisos.push(`desc ${p.description.length}`);
-    // Sin precios salvo en /precios/, la calculadora y las guías de precios.
-    const conPrecios = p.path === 'precios' || p.path === 'calculadora-reforma' || p.path.startsWith('cuanto-cuesta');
+    // Sin precios salvo en /precios/, la calculadora, las guías de precios y los servicios con precio en el
+    // title por decisión del dueño (25-11-2026: integrales y baños).
+    const CON_PRECIO_EN_TITLE = ['reformas-integrales-madrid', 'reforma-banos-madrid'];
+    const conPrecios =
+      p.path === 'precios' || p.path === 'calculadora-reforma' || p.path.startsWith('cuanto-cuesta') || CON_PRECIO_EN_TITLE.includes(p.path);
     if (!conPrecios && /€|\d+\s*euros/.test(p.title + p.description)) avisos.push('precio en title o description');
     for (const campo of ['title', 'description']) {
       const clave = campo + p[campo];
